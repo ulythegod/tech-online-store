@@ -1,0 +1,30 @@
+.header {
+    background-color: #020202;
+    color: #ACACAC;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 12px;
+    padding-left: 10em;
+    padding-right: 10em;
+    justify-content: space-between;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+}
+
+.header-time {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-rest {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
