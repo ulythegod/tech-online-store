@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './index.module.scss';
-import { ReactComponent as ArrowDown } from '../images/arrow-down.svg';
+import styles from '../index.module.scss';
+import { ReactComponent as ArrowDown } from '../../images/arrow-down.svg';
 
 class HeaderTime extends React.Component {
     render(): React.ReactNode {

@@ -1,7 +1,7 @@
 import React from 'react';
-import { ReactComponent as SearchIcon } from '../images/search.svg';
-import { ReactComponent as SearchOpenIcon } from '../images/search-open.svg';
-import { ReactComponent as SearchCloseIcon } from '../images/search-close.svg';
+import { ReactComponent as SearchIcon } from '../../images/search.svg';
+import { ReactComponent as SearchOpenIcon } from '../../images/search-open.svg';
+import { ReactComponent as SearchCloseIcon } from '../../images/search-close.svg';
 
 class TopMenuSearch extends React.Component {
     render(): React.ReactNode {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as Logo } from '../images/logo.svg';
+import { ReactComponent as Logo } from '../../images/logo.svg';
 
 class TopMenuNavagation extends React.Component {
     render(): React.ReactNode {
