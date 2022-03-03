@@ -1,13 +1,13 @@
 import React from 'react';
-import { ReactComponent as ArrowRight } from '../images/arrow-right.svg';
-import { ReactComponent as ArrowLeft } from '../images/arrow-left.svg';
-import ProductItem from './ProductItem';
-import prodImg1 from '../images/new-prod-img1.png';
-import prodImg2 from '../images/new-prod-img2.png';
-import prodImg3 from '../images/new-prod-img3.png';
-import prodImg4 from '../images/new-prod-img4.png';
-import prodImg5 from '../images/new-prod-img5.png';
-import prodImg6 from '../images/new-prod-img6.png';
+import { ReactComponent as ArrowRight } from '../../images/arrow-right.svg';
+import { ReactComponent as ArrowLeft } from '../../images/arrow-left.svg';
+import ProductItem from 'components/CatalogItem/ProductItem';
+import prodImg1 from '../../images/new-prod-img1.png';
+import prodImg2 from '../../images/new-prod-img2.png';
+import prodImg3 from '../../images/new-prod-img3.png';
+import prodImg4 from '../../images/new-prod-img4.png';
+import prodImg5 from '../../images/new-prod-img5.png';
+import prodImg6 from '../../images/new-prod-img6.png';
 
 interface CustomInputProps {
     name: string;

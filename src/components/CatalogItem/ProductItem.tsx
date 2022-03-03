@@ -1,10 +1,10 @@
 import React from 'react';
 import RatingButton from './RatingButton';
-import { ReactComponent as InStock } from '../images/in-stock.svg';
-import { ReactComponent as CheckAvailability } from '../images/check-availability.svg';
-import { ReactComponent as AddToFav } from '../images/prod-add-fav.svg';
-import { ReactComponent as AddToRating } from '../images/prod-add-rating.svg';
-import { ReactComponent as AddToCart } from '../images/add-to-card-prod.svg';
+import { ReactComponent as InStock } from '../../images/in-stock.svg';
+import { ReactComponent as CheckAvailability } from '../../images/check-availability.svg';
+import { ReactComponent as AddToFav } from '../../images/prod-add-fav.svg';
+import { ReactComponent as AddToRating } from '../../images/prod-add-rating.svg';
+import { ReactComponent as AddToCart } from '../../images/add-to-card-prod.svg';
 
 interface CustomInputProps {
     status: string;

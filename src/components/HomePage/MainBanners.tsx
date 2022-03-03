@@ -1,7 +1,7 @@
 import React from 'react';
-import { ReactComponent as ArrowRight } from '../images/arrow-right.svg';
-import { ReactComponent as ArrowLeft } from '../images/arrow-left.svg';
-import banner from '../images/banner.png';
+import { ReactComponent as ArrowRight } from '../../images/arrow-right.svg';
+import { ReactComponent as ArrowLeft } from '../../images/arrow-left.svg';
+import banner from '../../images/banner.png';
 
 class MainBanners extends React.Component {
     render(): React.ReactNode {

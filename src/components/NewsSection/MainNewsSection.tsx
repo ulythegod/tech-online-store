@@ -1,13 +1,13 @@
 import React from 'react';
 import NewsItem from './NewsItem';
-import newsImg1 from '../images/news1.png';
-import newsImg2 from '../images/news2.png';
-import newsImg3 from '../images/news3.png';
-import newsImg4 from '../images/news4.png';
-import newsImg5 from '../images/news5.png';
-import newsImg6 from '../images/news6.png';
-import newsImg7 from '../images/news7.png';
-import newsImg8 from '../images/news8.png';
+import newsImg1 from '../../images/news1.png';
+import newsImg2 from '../../images/news2.png';
+import newsImg3 from '../../images/news3.png';
+import newsImg4 from '../../images/news4.png';
+import newsImg5 from '../../images/news5.png';
+import newsImg6 from '../../images/news6.png';
+import newsImg7 from '../../images/news7.png';
+import newsImg8 from '../../images/news8.png';
 
 class MainNewsSection extends React.Component {
     render(): React.ReactNode {

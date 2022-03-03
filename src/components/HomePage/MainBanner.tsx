@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as ZipLogo } from '../images/zip-logo.svg';
+import { ReactComponent as ZipLogo } from '../../images/zip-logo.svg';
 
 class MainBanner extends React.Component {
     render(): React.ReactNode {

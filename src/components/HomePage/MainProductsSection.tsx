@@ -1,7 +1,7 @@
 import React from 'react';
-import ProductItem from './ProductItem';
-import prodImg from '../images/new-prod-img1.png';
-import sectionBanner from '../images/msi-laptops.png';
+import ProductItem from 'components/CatalogItem/ProductItem';
+import prodImg from '../../images/new-prod-img1.png';
+import sectionBanner from '../../images/msi-laptops.png';
 
 interface CustomInputProps {
     name: string;

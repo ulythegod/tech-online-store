@@ -1,7 +1,7 @@
 import React from 'react';
-import TopMenuNavagation from './TopMenuNavagation';
 import TopMenuSearch from './TopMenuSearch';
 import TopMenuBasket from './TopMenuBasket';
+import TopMenuNavagation from './TopMenuNavagation';
 import avatar from '../../images/avatar.png';
 
 class TopMenu extends React.Component {
