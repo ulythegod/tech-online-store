@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import RatingButton from './RatingButton';
 import { ReactComponent as InStock } from '../../images/in-stock.svg';
 import { ReactComponent as CheckAvailability } from '../../images/check-availability.svg';
@@ -37,7 +38,7 @@ class ProductItem extends React.Component<CustomInputProps> {
                         <AddToRating />
                     </button>
                 </div>
-                <img src={this.props.productImage} alt="Product" />
+                <Link to="/product"><img src={this.props.productImage} alt="Product" /></Link>
                 <div className="product-rating">
                     <div>
                         <RatingButton />

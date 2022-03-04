@@ -1,6 +1,6 @@
 import React from 'react';
-import { ReactComponent as TableView } from '../images/table-view.svg';
-import { ReactComponent as LinesView } from '../images/lines-view.svg';
+import { ReactComponent as TableView } from '../../images/table-view.svg';
+import { ReactComponent as LinesView } from '../../images/lines-view.svg';
 
 class CatalogTopElements extends React.Component {
     constructor(props: any) {

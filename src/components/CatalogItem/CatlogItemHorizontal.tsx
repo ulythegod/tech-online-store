@@ -1,7 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import RatingButton from './RatingButton';
 import { ReactComponent as InStock } from '../../images/in-stock.svg';
 import { ReactComponent as CheckAvailability } from '../../images/check-availability.svg';
+import { ReactComponent as ProductMail } from '../../images/product-mail.svg';
+import { ReactComponent as ProductRating } from '../../images/product-rating.svg';
+import { ReactComponent as ProductFav } from '../../images/product-fav.svg';
+import { ReactComponent as AddToCart } from '../../images/add-to-card-prod.svg';
 
 interface CustomInputProps {
     status: string;
@@ -28,7 +33,7 @@ class CatlogItemHorizontal extends React.Component<CustomInputProps> {
                     {(this.props.status == "check-availability") ? "check availability" : ""}
                 </p>
                 <div className="product-info">
-                    <img src={this.props.productImage} alt="Product"/>
+                    <Link to="/product"><img src={this.props.productImage} alt="Product" /></Link>
                     <div className="about-product">
                         <span className="product-model">{this.props.model}</span>
                         <span className="product-title">
@@ -68,18 +73,18 @@ class CatlogItemHorizontal extends React.Component<CustomInputProps> {
                         <span>Reviews ({this.props.reviewsCount})</span>
                     </div>
                     <button>
-                        <img src="./images/add-to-card.png" alt=""/>
+                        <AddToCart />
                         Add To Cart
                     </button>
                     <div className="product-buttons">
                         <button>
-                            <img src="./images/product-mail.png" alt=""/>
+                            <ProductMail />
                         </button>
                         <button>
-                            <img src="./images/product-rating.png" alt=""/>
+                            <ProductRating />
                         </button>
                         <button>
-                            <img src="./images/product-fav.png" alt=""/>
+                            <ProductFav />
                         </button>
                     </div>
                 </div>                        

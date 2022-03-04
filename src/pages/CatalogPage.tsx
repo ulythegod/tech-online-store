@@ -1,8 +1,8 @@
 import React from 'react';
-import Breadcrumbs from 'components/Breadcrumbs';
-import CatalogBanner from 'components/CatalogBanner';
-import PageTitle from 'components/PageTitle';
-import Catalog from 'components/Catalog';
+import Breadcrumbs from 'components/CommonComponents/Breadcrumbs';
+import CatalogBanner from 'components/CatalogPage/CatalogBanner';
+import PageTitle from 'components/CommonComponents/PageTitle';
+import Catalog from 'components/CatalogPage/Catalog';
 import banner from '../images/catalog-banner.png';
 
 class CatalogPage extends React.Component {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as DeleteFilter } from '../images/delete-filter.svg';
+import { ReactComponent as DeleteFilter } from '../../images/delete-filter.svg';
 
 interface CustomInputProps {
     name: string;

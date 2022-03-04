@@ -1,5 +1,6 @@
 import React from 'react';
 import ReviewItem from './ReviewItem';
+import { ReactComponent as PaginationButton } from '../../images/pagiantion-button.svg';
 
 class MainReviews extends React.Component {
     render(): React.ReactNode {
@@ -20,10 +21,10 @@ class MainReviews extends React.Component {
                     />
                     <button>Leave Us A Review</button>
                     <div className="reviews-scrolling">
-                        <img src="./images/active-review.png" alt=""/>
-                        <img src="./images/review.png" alt=""/>
-                        <img src="./images/review.png" alt=""/>
-                        <img src="./images/review.png" alt=""/>
+                        <PaginationButton />
+                        <PaginationButton />
+                        <PaginationButton />
+                        <PaginationButton />
                     </div>
                 </div>
             </section>

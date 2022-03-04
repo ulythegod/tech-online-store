@@ -1,13 +1,13 @@
 import React from 'react';
-import ProductItem from './CatalogItem/ProductItem';
+import ProductItem from 'components/CatalogItem/ProductItem';
 import CatalogTopElements from './CatalogTopElements';
 import CatalogSelectedFilters from './CatalogSelectedFilters';
 import CatalogPagination from './CatalogPagination';
 import CatalogFilterBanner from './CatalogFilterBanner';
 import FilterItem from './FilterItem';
 import FilterBrands from './FilterBrands';
-import prodImg from '../images/new-prod-img1.png';
-import banner from '../images/filters-banner.png';
+import prodImg from '../../images/new-prod-img1.png';
+import banner from '../../images/filters-banner.png';
 
 class Catalog extends React.Component {
     constructor(props: any) {
