@@ -1,5 +1,4 @@
 import React from 'react';
-import parse from 'html-react-parser';
 
 interface ComponentProps {
     image: string;
@@ -25,7 +24,7 @@ class AboutUsRight extends React.Component<ComponentProps> {
                     }
                     <span>{this.props.title}</span>
                     <p>
-                        {parse(this.props.description)}
+                        {this.props.description}
                     </p>
                 </div>
                 <div className="image">
