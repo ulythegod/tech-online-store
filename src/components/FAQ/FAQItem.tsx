@@ -1,11 +1,9 @@
 import React from 'react';
 
-const parse = require('html-react-parser');
-
 interface ComponentProps {
     name: string;
     id: string;
-    description: string;
+    description: any;
 }
 
 class FAQItem extends React.Component<ComponentProps> {
@@ -18,7 +16,7 @@ class FAQItem extends React.Component<ComponentProps> {
             <div id={this.props.id}>
                 <h3>{this.props.name}</h3>
                 <p>
-                    {parse(this.props.description)}
+                    {this.props.description}
                 </p>
             </div>
         );

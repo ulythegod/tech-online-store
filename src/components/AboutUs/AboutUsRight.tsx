@@ -5,7 +5,7 @@ interface ComponentProps {
     image: string;
     icon?: string;
     title: string;
-    description: string;
+    description: any;
 }
 
 class AboutUsRight extends React.Component<ComponentProps> {
