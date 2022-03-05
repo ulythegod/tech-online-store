@@ -24,12 +24,18 @@ class ProductItem extends React.Component<CustomInputProps> {
 
     render(): React.ReactNode {
         return (
-            <div className="product-preview">
-                <p className="product-status">
-                    {(this.props.status == "in-stock") ? <InStock /> : ""}
-                    {(this.props.status == "in-stock") ? "in stock" : ""}
-                    {(this.props.status == "check-availability") ? <CheckAvailability /> : ""}
-                    {(this.props.status == "check-availability") ? "check availability" : ""}
+            <div className={`${styles["product-preview"]}`}>
+                <p className={`${styles["product-status"]}`}>
+                    {
+                        (this.props.status == "in-stock") ? <InStock /> : 
+                        (this.props.status == "check-availability") ? <CheckAvailability /> : 
+                        ""
+                    }
+                    {
+                        (this.props.status == "in-stock") ? "in stock" : 
+                        (this.props.status == "check-availability") ? "check availability" : 
+                        ""
+                    }
                 </p>
                 <div className="product-buttons">
                     <button>
@@ -53,7 +59,7 @@ class ProductItem extends React.Component<CustomInputProps> {
                     <span className="product-price">${this.props.price}</span>
                     <span className="product-discount">${this.props.discount}</span>
                 </div>
-                <button>
+                <button className={`${styles["hidden"]}`}>
                     <AddToCart />
                     <span>Add To Cart</span>
                 </button>
