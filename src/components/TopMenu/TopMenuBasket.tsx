@@ -1,18 +1,19 @@
 import React from 'react';
+import styles from './topMenuBasket.module.scss';
 import SmallBasketItem from './SmallBasketItem';
 import { ReactComponent as BasketLogo } from '../../images/basket.svg';
 import { ReactComponent as PayPal } from '../../images/paypal.svg';
 import imgPath from '../../images/small-card.png';
 
 class TopMenuBasket extends React.Component {
-    render(): React.ReactNode {
+    render(): React.ReactNode {        
         return (
-            <div className="basket-top">
+            <div className={`${styles["basket-top"]}`}>
                 <a href="#">
-                    <BasketLogo />
+                    <BasketLogo className={`${styles["basket-logo"]}`} />
+                    <span className={`${styles["basket-amount"]}`}>2</span>
                 </a>
-                <span className="basket-amount">2</span>
-                <div className="small-basket">
+                <div className={`${styles["hidden-basket-top"]}`}>
                     <div className="basket-top">
                         <span>My Cart</span>
                         <span>2 item in cart</span>

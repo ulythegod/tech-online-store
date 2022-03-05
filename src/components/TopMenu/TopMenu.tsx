@@ -1,20 +1,23 @@
 import React from 'react';
+import styles from './topMenu.module.scss'
 import TopMenuSearch from './TopMenuSearch';
 import TopMenuBasket from './TopMenuBasket';
-import TopMenuNavagation from './TopMenuNavagation';
+import TopMenuNavigation from './TopMenuNavigation';
 import avatar from '../../images/avatar.png';
 
 class TopMenu extends React.Component {
     render(): React.ReactNode {
         return (
-            <nav>
-                <TopMenuNavagation />
-                <div className="main-top-tools">
-                    <TopMenuSearch />
-                    <TopMenuBasket />
-                    <a href="#"><img src={avatar} alt="avatar"/></a>
-                </div>
-            </nav>
+            <div className={`${styles["header-navigation-block"]}`}>
+                <nav className={`${styles["header-navigation"]}`}>
+                    <TopMenuNavigation />
+                    <div className={`${styles["main-top-tools"]}`}>
+                        <TopMenuSearch />
+                        <TopMenuBasket />
+                        <a href="#"><img src={avatar} alt="avatar"/></a>
+                    </div>
+                </nav>
+            </div>
         );
     }
 }

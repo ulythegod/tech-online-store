@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../index.module.scss';
+import styles from './headerContacts.module.scss';
 import { ReactComponent as FacebookIcon } from '../../images/facebook.svg';
 import { ReactComponent as InstagramIcon } from '../../images/instagram.svg';
 

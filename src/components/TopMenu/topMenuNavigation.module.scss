@@ -1,0 +1,15 @@
+.main-top-menu {
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 65%;
+}
+
+.main-top-menu a {
+    text-decoration: none;
+    color: black;
+}

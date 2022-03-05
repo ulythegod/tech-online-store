@@ -1,15 +1,21 @@
 import React from 'react';
-import { ReactComponent as ArrowRight } from '../../images/arrow-right.svg';
-import { ReactComponent as ArrowLeft } from '../../images/arrow-left.svg';
+import styles from './mainBanners.module.scss';
+import TurnOverButton from 'components/CommonComponents/TurnOverButton';
 import banner from '../../images/banner.png';
 
 class MainBanners extends React.Component {
     render(): React.ReactNode {
         return (
             <section className="main-banners-section">
-                <button><ArrowRight /></button>
-                <img src={banner} alt="banner main" />
-                <button><ArrowLeft /></button>
+                <div className={`${styles["main-banners"]}`}>
+                    <img className={`${styles["banner"]}`} src={banner} alt="banner main" />
+                    <TurnOverButton
+                        type="button-left"
+                    />
+                    <TurnOverButton
+                        type="button-right"
+                    />
+                </div>
             </section>
         );
     }

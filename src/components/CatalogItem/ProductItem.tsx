@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './productItem.module.scss';
 import { Link } from 'react-router-dom';
 import RatingButton from './RatingButton';
 import { ReactComponent as InStock } from '../../images/in-stock.svg';
