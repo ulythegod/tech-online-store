@@ -63,12 +63,22 @@ class CatlogItemHorizontal extends React.Component<CustomInputProps> {
                 </div>
                 <div className="product-bottom">
                     <div className="product-rating">
-                        <div>
-                            <RatingButton />
-                            <RatingButton />
-                            <RatingButton />
-                            <RatingButton />
-                            <RatingButton />
+                            <div>
+                            <RatingButton 
+                                isFilled={true}
+                            />
+                            <RatingButton 
+                                isFilled={true}
+                            />
+                            <RatingButton 
+                                isFilled={true}
+                            />
+                            <RatingButton 
+                                isFilled={false}
+                            />
+                            <RatingButton 
+                                isFilled={false}
+                            />
                         </div>
                         <span>Reviews ({this.props.reviewsCount})</span>
                     </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './productItem.module.scss';
 import { Link } from 'react-router-dom';
 import RatingButton from './RatingButton';
+import StoreButton from 'components/CommonComponents/StoreButton';
 import { ReactComponent as InStock } from '../../images/in-stock.svg';
 import { ReactComponent as CheckAvailability } from '../../images/check-availability.svg';
 import { ReactComponent as AddToFav } from '../../images/prod-add-fav.svg';
@@ -23,42 +24,58 @@ class ProductItem extends React.Component<CustomInputProps> {
     }
 
     render(): React.ReactNode {
+        let statusText: string = '';
+        
+        if (this.props.status == "in-stock") {
+            statusText = "in-stock";
+        } else if (this.props.status == "check-availability") {
+            statusText = "check-availability";
+        }
+
         return (
             <div className={`${styles["product-preview"]}`}>
-                <p className={`${styles["product-status"]}`}>
+                <p className={`${styles["product-status"]}` + ' ' + `${styles[this.props.status]}`}>
                     {
                         (this.props.status == "in-stock") ? <InStock /> : 
                         (this.props.status == "check-availability") ? <CheckAvailability /> : 
                         ""
                     }
-                    {
-                        (this.props.status == "in-stock") ? "in stock" : 
-                        (this.props.status == "check-availability") ? "check availability" : 
-                        ""
-                    }
+                    <span className={`${styles["status-text"]}`}>{statusText}</span>
                 </p>
-                <div className="product-buttons">
-                    <button>
-                        <AddToFav />
-                    </button>
-                    <button>
-                        <AddToRating />
-                    </button>
+                <div className={`${styles["product-buttons"]}`}>
+                    <StoreButton
+                        style="icon-button"
+                        content={<AddToFav />}
+                    />
+                    <StoreButton
+                        style="icon-button"
+                        content={<AddToRating />}
+                    />
                 </div>
-                <Link to="/product"><img src={this.props.productImage} alt="Product" /></Link>
-                <div className="product-rating">
-                    <div>
-                        <RatingButton />
-                        <RatingButton />
-                        <RatingButton />
-                        <RatingButton />
-                        <RatingButton />
+                <Link to="/product"><img className={`${styles["product-image"]}`} src={this.props.productImage} alt="Product" /></Link>
+                <div className={`${styles["product-rating"]}`}>
+                    <div className={`${styles["rating-buttons"]}`}>
+                        <RatingButton 
+                            isFilled={true}
+                        />
+                        <RatingButton 
+                            isFilled={true}
+                        />
+                        <RatingButton 
+                            isFilled={true}
+                        />
+                        <RatingButton 
+                            isFilled={false}
+                        />
+                        <RatingButton 
+                            isFilled={false}
+                        />
                     </div>
                     <a href='#'>Reviews ({this.props.reviewsCount})</a>
-                    <span className="product-title">{this.props.name}</span>
-                    <span className="product-price">${this.props.price}</span>
-                    <span className="product-discount">${this.props.discount}</span>
                 </div>
+                <Link to="/product" className={`${styles["product-title"]}`}>{this.props.name}</Link>
+                <span className={`${styles["product-price"]}`}>${this.props.price}</span>
+                <span className={`${styles["product-discount"]}`}>${this.props.discount}</span>
                 <button className={`${styles["hidden"]}`}>
                     <AddToCart />
                     <span>Add To Cart</span>

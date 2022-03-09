@@ -1,0 +1,38 @@
+.main-banner-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.main-banner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #F5F7FF;
+    padding: 20px 440px;
+}
+
+.banner-text:before {
+    content: "";
+    background: #00AEB8;
+    width: 2px;
+    height: 27px;
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.banner-text {
+    color: #272560;
+    font-size: 18px;
+}
+
+.banner-text span {
+    font-weight: 600;
+}
+
+.banner-text a {
+    font-size: 14px;
+}

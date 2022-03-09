@@ -3,7 +3,7 @@ import styles from './storeButton.module.scss';
 
 interface ComponentProps{
     style: string;
-    content: string;
+    content: any;
 }
 
 class StoreButton extends React.Component<ComponentProps> {
