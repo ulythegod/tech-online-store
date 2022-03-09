@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './mainCompaniesSection.module.scss';
 import CompanyLogo1 from '../../images/companies1.png';
 import CompanyLogo2 from '../../images/companies2.png';
 import CompanyLogo3 from '../../images/companies3.png';
@@ -10,8 +11,8 @@ import CompanyLogo7 from '../../images/companies7.png';
 class MainCompaniesSection extends React.Component {
     render(): React.ReactNode {
         return (
-            <section className="main-companies-section">
-                <ul className="companies-list">
+            <section className={`${styles["main-companies-section"]}`}>
+                <ul className={`${styles["companies-list"]}`}>
                     <li>
                         <a href="#"><img src={CompanyLogo1} alt="roccat" /></a>
                     </li>

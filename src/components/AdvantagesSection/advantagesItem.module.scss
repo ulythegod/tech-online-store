@@ -1,0 +1,16 @@
+.advantages-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.advantages-item span {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.advantages-item p {
+    font-size: 14px;
+    text-align: center;
+    width: 55%;
+}

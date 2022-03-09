@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './advantagesSection.module.scss';
 import AdvantageItem from './AdvantageItem';
 import Support from '../../images/Support.png';
 import Account from '../../images/Account.png';
@@ -7,8 +8,8 @@ import Saving from '../../images/Saving.png';
 class AdvantagesSection extends React.Component {
     render(): React.ReactNode {
         return (
-            <section className="advantages-section">
-                <div className="advantages-list">
+            <section className={`${styles["advantages-section"]}`}>
+                <div className={`${styles["advantages-list"]}`}>
                     <AdvantageItem
                         image={Support}
                         name={"Product Support"}

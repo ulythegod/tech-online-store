@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './reviewItem.module.scss';
 
 interface CustomInputProps {
     text: string;
@@ -12,11 +13,14 @@ class ReviewItem extends React.Component<CustomInputProps> {
 
     render(): React.ReactNode {
         return (
-            <div className="reviews-item">
-                <p className="review-text">
-                    {this.props.text}
-                </p>
-                <span>- {this.props.author}</span>
+            <div className={`${styles["reviews-item"]}`}>
+                <div className={`${styles["reviews-quotes-sign"]}`}>‘’</div>
+                <div className={`${styles["review-content"]}`}>
+                    <p className={`${styles["review-text"]}`}>
+                        {this.props.text}
+                    </p>
+                    <span>- {this.props.author}</span>
+                </div>
             </div>
         );
     }

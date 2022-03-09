@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './advantagesItem.module.scss';
 
 interface CustomInputProps {
     image: any;
@@ -14,7 +15,7 @@ class AdvantageItem extends React.Component<CustomInputProps> {
 
     render(): React.ReactNode {
         return (
-            <div className="advantages-item">
+            <div className={`${styles["advantages-item"]}`}>
                 <img src={this.props.image} alt={this.props.name}/>
                 <span>{this.props.name}</span>
                 <p>

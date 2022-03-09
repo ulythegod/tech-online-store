@@ -1,0 +1,43 @@
+.main-reviews-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviews-list {
+    background: #F5F7FF;
+    width: 70%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.reviews-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.reviews-scrolling {    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.reviews-scrolling svg {
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.reviews-scrolling circle {
+    opacity: 1;
+    fill: #CCCCCC;
+}
+
+.filled circle {
+    fill: #0156FF;
+}

@@ -1,13 +1,14 @@
 import React from 'react';
+import styles from './footerMenu.module.scss';
 
 class FooterMenu extends React.Component {
     render(): React.ReactNode {
         return (
-            <nav className="footer-menu">
+            <nav className={`${styles["footer-menu"]}`}>
                 <ul>
                     <li>
-                        Information
-                        <ul>
+                        <span className={`${styles["menu-title"]}`}>Information</span>
+                        <ul className={`${styles["inner-items"]}`}>
                             <li>About Us</li>
                             <li>About Zip</li>
                             <li>Privacy Policy</li>
@@ -20,8 +21,8 @@ class FooterMenu extends React.Component {
                         </ul>
                     </li>
                     <li>
-                        PC Parts
-                        <ul>
+                        <span className={`${styles["menu-title"]}`}>PC Parts</span>
+                        <ul className={`${styles["inner-items"]}`}>
                             <li>CPUS</li>
                             <li>Add On Cards</li>
                             <li>Hard Drives (Internal)</li>
@@ -34,8 +35,8 @@ class FooterMenu extends React.Component {
                         </ul>
                     </li>
                     <li>
-                        Desktop PCs
-                        <ul>
+                        <span className={`${styles["menu-title"]}`}>Desktop PCs</span>
+                        <ul className={`${styles["inner-items"]}`}>
                             <li>Custom PCs</li>
                             <li>Servers</li>
                             <li>MSI All-In-One PCs</li>
@@ -45,8 +46,8 @@ class FooterMenu extends React.Component {
                         </ul>
                     </li>
                     <li>
-                        Laptops
-                        <ul>
+                        <span className={`${styles["menu-title"]}`}>Laptops</span>
+                        <ul className={`${styles["inner-items"]}`}>
                             <li>Evryday Use Notebooks</li>
                             <li>MSI Workstation Series</li>
                             <li>MSI Prestige Series</li>
@@ -56,8 +57,8 @@ class FooterMenu extends React.Component {
                         </ul>
                     </li>
                     <li>
-                        Laptops
-                        <ul>
+                        <span className={`${styles["menu-title"]}`}>Laptops</span>
+                        <ul className={`${styles["inner-items"]}`}>
                             <li>Address: 1234 Street Adress City Address, 1234</li>
                             <li>Phones <a href="tel:00-1234-5678">(00) 1234 5678</a></li>
                             <li>We are open: Monday-Thursday: 9:00 AM - 5:30 PM</li>

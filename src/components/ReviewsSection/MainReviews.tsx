@@ -1,13 +1,14 @@
 import React from 'react';
+import styles from './mainReviews.module.scss';
+import StoreButton from 'components/CommonComponents/StoreButton';
 import ReviewItem from './ReviewItem';
 import { ReactComponent as PaginationButton } from '../../images/pagiantion-button.svg';
 
 class MainReviews extends React.Component {
     render(): React.ReactNode {
         return (
-            <section className="main-reviews-section">
-                <div className="reviews-list">
-                    <div className="reviews-quotes-sign">"</div>
+            <section className={`${styles["main-reviews-section"]}`}>
+                <div className={`${styles["reviews-list"]}`}>
                     <ReviewItem 
                         text={
                             `My first order arrived today in perfect condition.
@@ -19,12 +20,17 @@ class MainReviews extends React.Component {
                         }
                         author={"Tama Brown"}
                     />
-                    <button>Leave Us A Review</button>
-                    <div className="reviews-scrolling">
-                        <PaginationButton />
-                        <PaginationButton />
-                        <PaginationButton />
-                        <PaginationButton />
+                    <div className={`${styles["reviews-bottom"]}`}>
+                        <StoreButton 
+                            style="light-button"
+                            content={"Leave Us A Review"}
+                        />
+                        <div className={`${styles["reviews-scrolling"]}`} >
+                            <PaginationButton className={`${styles["filled"]}`} />
+                            <PaginationButton />
+                            <PaginationButton />
+                            <PaginationButton />
+                        </div>
                     </div>
                 </div>
             </section>

@@ -8,9 +8,18 @@ button {
     border-color: #0156FF;
     font-size: 14px;
     font-weight: 600;
-    border-radius: 10%;
     border-radius: 50px;
     padding: 4px 15px;
+}
+
+.blue-button {
+    background-color: #0156FF;
+    color: white;
+    border-color: #0156FF;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 10px 30px;
 }
 
 .icon-button {
