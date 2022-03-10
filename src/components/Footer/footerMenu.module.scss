@@ -6,6 +6,8 @@
     font-size: 14px;
     font-weight: 600;
     opacity: .5;
+    display: block;
+    padding-bottom: 20px;
 }
 
 .footer-menu .inner-items {
@@ -25,6 +27,11 @@
 }
 
 .inner-items a {
+    text-decoration: none;
+    color: white;
+}
+
+.inner-items .contacts-link {
     text-decoration: none;
     color: #01A4FF;
 }
