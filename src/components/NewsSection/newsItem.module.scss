@@ -1,3 +1,5 @@
+@use '../../_colors.scss' as colors;
+
 .news-item {
     display: flex;
     flex-direction: column;
@@ -19,5 +21,5 @@
 
 .news-item span {
     font-size: 10px;
-    color: #8C8C8C;
+    color: colors.$darkGrey;
 }

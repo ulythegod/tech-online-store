@@ -1,0 +1,41 @@
+@use '../../_colors.scss' as colors;
+
+.breadcrumbs-navigation {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.breadcrumbs {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    width: 40%;
+    padding: 0px;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: colors.$black;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.breadcrumbs .active {
+    color: colors.$darkGrey;
+}
+
+.breadcrumbs li:not(:last-child) a::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-top: 1px solid colors.$darkBlue;
+    border-right: 1px solid colors.$darkBlue;
+    margin-left: 9px;
+    transform: rotate(45deg);
+}

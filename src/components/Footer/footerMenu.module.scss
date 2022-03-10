@@ -1,3 +1,5 @@
+@use '../../_colors.scss' as colors;
+
 .footer-menu ul {
     list-style: none;
 }
@@ -33,5 +35,5 @@
 
 .inner-items .contacts-link {
     text-decoration: none;
-    color: #01A4FF;
+    color: colors.$blue;
 }

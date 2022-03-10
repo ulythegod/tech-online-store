@@ -1,3 +1,5 @@
+@use '../../_colors.scss' as colors;
+
 .main-banner-section {
     display: flex;
     flex-direction: column;
@@ -10,13 +12,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    background: #F5F7FF;
+    background: colors.$lightBlue;
     padding: 20px 440px;
 }
 
 .banner-text:before {
     content: "";
-    background: #00AEB8;
+    background: colors.$aquamarine;
     width: 2px;
     height: 27px;
     float: left;

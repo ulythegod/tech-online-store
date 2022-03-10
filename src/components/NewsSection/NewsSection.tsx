@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './mainNewsSection.module.scss';
+import styles from './newsSection.module.scss';
 import NewsItem from './NewsItem';
 import newsImg1 from '../../images/news1.png';
 import newsImg2 from '../../images/news2.png';
@@ -10,7 +10,7 @@ import newsImg6 from '../../images/news6.png';
 import newsImg7 from '../../images/news7.png';
 import newsImg8 from '../../images/news8.png';
 
-class MainNewsSection extends React.Component {
+class NewsSection extends React.Component {
     render(): React.ReactNode {
         return (
             <section className={`${styles["main-news-section"]}`}>
@@ -123,4 +123,4 @@ class MainNewsSection extends React.Component {
     }
 }
 
-export default MainNewsSection;
+export default NewsSection;

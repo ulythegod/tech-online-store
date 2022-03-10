@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './mainProductsSection.module.scss';
+import styles from './productsSection.module.scss';
 import ProductItem from 'components/CatalogItem/ProductItem';
 import prodImg from '../../images/new-prod-img1.png';
 import sectionBanner from '../../images/msi-laptops.png';
@@ -9,7 +9,7 @@ interface CustomInputProps {
     sections: boolean;
 }
 
-class MainProductsSection extends React.Component<CustomInputProps> {
+class ProductsSection extends React.Component<CustomInputProps> {
     constructor(props: any) {
         super(props);
     }
@@ -83,4 +83,4 @@ class MainProductsSection extends React.Component<CustomInputProps> {
     }
 }
 
-export default MainProductsSection;
+export default ProductsSection;

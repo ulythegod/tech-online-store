@@ -1,21 +1,22 @@
 import React from 'react';
+import styles from './singleBanner.module.scss';
 
 interface CustomComponentProps {
     image: string;
 }
 
-class CatalogBanner extends React.Component<CustomComponentProps> {
+class SingleBanner extends React.Component<CustomComponentProps> {
     constructor(props: any) {
         super(props);
     }
 
     render(): React.ReactNode {
         return (
-            <section className="catalog-banner">
+            <section className={`${styles["banner-section"]}`}>
                 <a href="/catalog"><img src={this.props.image} alt="Catalog" /></a>
             </section>
         );
     }
 }
 
-export default CatalogBanner;
+export default SingleBanner;

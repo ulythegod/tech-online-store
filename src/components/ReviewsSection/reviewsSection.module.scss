@@ -1,3 +1,5 @@
+@use '../../_colors.scss' as colors;
+
 .main-reviews-section {
     display: flex;
     flex-direction: column;
@@ -5,7 +7,7 @@
 }
 
 .reviews-list {
-    background: #F5F7FF;
+    background: colors.$lightBlue;
     width: 70%;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -35,9 +37,9 @@
 
 .reviews-scrolling circle {
     opacity: 1;
-    fill: #CCCCCC;
+    fill: colors.$grey;
 }
 
 .filled circle {
-    fill: #0156FF;
+    fill: colors.$darkBlue;
 }

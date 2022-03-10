@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './mainBanners.module.scss';
+import styles from './bannersSlider.module.scss';
 import TurnOverButton from 'components/CommonComponents/TurnOverButton';
 import banner from '../../images/banner.png';
 
-class MainBanners extends React.Component {
+class BannersSlider extends React.Component {
     render(): React.ReactNode {
         return (
             <section className="main-banners-section">
@@ -21,4 +21,4 @@ class MainBanners extends React.Component {
     }
 }
 
-export default MainBanners;
+export default BannersSlider;

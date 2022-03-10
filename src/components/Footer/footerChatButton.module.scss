@@ -1,5 +1,7 @@
+@use '../../_colors.scss' as colors;
+
 .chat-button {
-    background-color: #0156FF;
+    background-color: colors.$darkBlue;
     border: none;
     border-radius: 50%;
     display: flex;

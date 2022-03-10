@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './catalog.module.scss';
 import ProductItem from 'components/CatalogItem/ProductItem';
 import CatalogTopElements from './CatalogTopElements';
 import CatalogSelectedFilters from './CatalogSelectedFilters';
@@ -16,8 +17,8 @@ class Catalog extends React.Component {
 
     render(): React.ReactNode {
         return (
-            <section className="catalog-section">
-                <div className="catalog-block">
+            <section className={`${styles["catalog-section"]}`}>
+                <div className={`${styles["catalog-block"]}`}>
                     <div className="catalog-filter-block">
                         <a href="#">Back</a>
                         <div className="filters">

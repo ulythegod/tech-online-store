@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './mainReviews.module.scss';
+import styles from './reviewsSection.module.scss';
 import StoreButton from 'components/CommonComponents/StoreButton';
 import ReviewItem from './ReviewItem';
 import { ReactComponent as PaginationButton } from '../../images/pagiantion-button.svg';
 
-class MainReviews extends React.Component {
+class ReviewsSection extends React.Component {
     render(): React.ReactNode {
         return (
             <section className={`${styles["main-reviews-section"]}`}>
@@ -38,4 +38,4 @@ class MainReviews extends React.Component {
     }
 }
 
-export default MainReviews;
+export default ReviewsSection;

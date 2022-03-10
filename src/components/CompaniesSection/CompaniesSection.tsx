@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './mainCompaniesSection.module.scss';
+import styles from './companiesSection.module.scss';
 import CompanyLogo1 from '../../images/companies1.png';
 import CompanyLogo2 from '../../images/companies2.png';
 import CompanyLogo3 from '../../images/companies3.png';
@@ -8,7 +8,7 @@ import CompanyLogo5 from '../../images/companies5.png';
 import CompanyLogo6 from '../../images/companies6.png';
 import CompanyLogo7 from '../../images/companies7.png';
 
-class MainCompaniesSection extends React.Component {
+class CompaniesSection extends React.Component {
     render(): React.ReactNode {
         return (
             <section className={`${styles["main-companies-section"]}`}>
@@ -40,4 +40,4 @@ class MainCompaniesSection extends React.Component {
     }
 }
 
-export default MainCompaniesSection;
+export default CompaniesSection;

@@ -1,6 +1,6 @@
 import React from 'react';
 import Breadcrumbs from 'components/CommonComponents/Breadcrumbs';
-import CatalogBanner from 'components/CatalogPage/CatalogBanner';
+import SingleBanner from 'components/Banners/SingleBanner';
 import PageTitle from 'components/CommonComponents/PageTitle';
 import Catalog from 'components/CatalogPage/Catalog';
 import banner from '../images/catalog-banner.png';
@@ -9,7 +9,7 @@ class CatalogPage extends React.Component {
     render(): React.ReactNode {
         return (
             <>
-                <CatalogBanner
+                <SingleBanner
                     image={banner}
                 />
                 <Breadcrumbs />

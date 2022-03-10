@@ -1,3 +1,5 @@
+@use '../../_colors.scss' as colors;
+
 .product-preview {
     display: flex;
     flex-direction: column;
@@ -14,11 +16,11 @@
 }
 
 .product-status.in-stock {
-    color: #78A962;
+    color: colors.$green;
 }
 
 .product-status.check-availability {
-    color: #C94D3F;
+    color: colors.$burgundy;
 }
 
 .status-text {
@@ -36,7 +38,7 @@
 }
 
 .product-rating a {
-    color: #8C8C8C;
+    color: colors.$darkGrey;
     text-decoration: none;
     margin-left: 5px;
 }
@@ -53,7 +55,7 @@
 }
 
 .product-price {
-    color: #8C8C8C;
+    color: colors.$darkGrey;
     text-decoration: line-through;
     font-size: 14px;
     margin-top: 10px;

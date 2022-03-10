@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './mainBanner.module.scss';
+import styles from './logoBanner.module.scss';
 import { ReactComponent as ZipLogo } from '../../images/zip-logo.svg';
 
-class MainBanner extends React.Component {
+class LogoBanner extends React.Component {
     render(): React.ReactNode {
         return (
             <section className={`${styles["main-banner-section"]}`}>
@@ -15,4 +15,4 @@ class MainBanner extends React.Component {
     }
 }
 
-export default MainBanner;
+export default LogoBanner;

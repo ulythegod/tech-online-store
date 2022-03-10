@@ -1,40 +1,40 @@
 import React from 'react';
-import NewProductsSection from 'components/HomePage/NewProductsSection'
-import MainBanners from 'components/HomePage/MainBanners';
-import MainBanner from 'components/HomePage/MainBanner';
-import MainProductsSection from 'components/HomePage/MainProductsSection';
-import MainCompaniesSection from 'components/HomePage/MainCompaniesSection';
-import MainNewsSection from 'components/NewsSection/MainNewsSection';
-import MainReviews from 'components/ReviewsSection/MainReviews';
+import NewProductsSection from 'components/CatalogSections/NewProductsSection'
+import BannersSlider from 'components/Banners/BannersSlider';
+import LogoBanner from 'components/Banners/logoBanner';
+import ProductsSection from 'components/CatalogSections/ProductsSection';
+import CompaniesSection from 'components/CompaniesSection/CompaniesSection';
+import NewsSection from 'components/NewsSection/NewsSection';
+import ReviewsSection from 'components/ReviewsSection/ReviewsSection';
 
 class Home extends React.Component {
     render(): React.ReactNode {
         return (
             <>
-                <MainBanners />
+                <BannersSlider />
                 <NewProductsSection 
                   name='New Products'
                 />
-                <MainBanner />
-                <MainProductsSection 
+                <LogoBanner />
+                <ProductsSection 
                   name='MSI Laptops'
                   sections={false}
                 />
-                <MainProductsSection 
+                <ProductsSection 
                   name='MSI Laptops'
                   sections={true}
                 />
-                <MainProductsSection 
+                <ProductsSection 
                   name='MSI Laptops'
                   sections={true}
                 />
-                <MainProductsSection 
+                <ProductsSection 
                   name='MSI Laptops'
                   sections={true}
                 />
-                <MainCompaniesSection />
-                <MainNewsSection />
-                <MainReviews />
+                <CompaniesSection />
+                <NewsSection />
+                <ReviewsSection />
             </>
         );
     }

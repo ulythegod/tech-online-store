@@ -3,7 +3,7 @@ import Breadcrumbs from 'components/CommonComponents/Breadcrumbs';
 import PageTitle from 'components/CommonComponents/PageTitle';
 import AboutUsLeft from 'components/AboutUs/AboutUsLeft';
 import AboutUsRight from 'components/AboutUs/AboutUsRight';
-import MainReviews from 'components/ReviewsSection/MainReviews';
+import ReviewsSection from 'components/ReviewsSection/ReviewsSection';
 import au1 from '../images/about-us1.png';
 import au2 from '../images/about-us2.png';
 import aui1 from '../images/about-us-sign1.png';
@@ -103,7 +103,7 @@ class AboutUs extends React.Component {
                     `}
                     icon={aui4}
                 />
-                <MainReviews />
+                <ReviewsSection />
             </>
         );
     }

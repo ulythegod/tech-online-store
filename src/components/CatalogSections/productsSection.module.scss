@@ -1,3 +1,5 @@
+@use '../../_colors.scss' as colors;
+
 .main-products-list-section {
     display: flex;
     flex-direction: row;
@@ -35,7 +37,7 @@
 
 .products-list-menu .active {
     color: black;
-    border-bottom: 2px solid #0156FF;
+    border-bottom: 2px solid colors.$darkBlue;
 }
 
 .products-list-common {
