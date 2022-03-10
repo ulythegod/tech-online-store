@@ -2,3 +2,20 @@
     background: #020203;
     color: white;
 }
+
+.footer-bottom-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    box-shadow: 0px -1px 2px 0px #ebebeb6e;
+}
+
+.footer-bottom-section span {
+    opacity: .5;
+}

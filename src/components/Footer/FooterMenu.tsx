@@ -5,7 +5,7 @@ class FooterMenu extends React.Component {
     render(): React.ReactNode {
         return (
             <nav className={`${styles["footer-menu"]}`}>
-                <ul>
+                <ul className={`${styles["menu-outer-part"]}`}>
                     <li>
                         <span className={`${styles["menu-title"]}`}>Information</span>
                         <ul className={`${styles["inner-items"]}`}>
@@ -60,7 +60,7 @@ class FooterMenu extends React.Component {
                         <span className={`${styles["menu-title"]}`}>Laptops</span>
                         <ul className={`${styles["inner-items"]}`}>
                             <li>Address: 1234 Street Adress City Address, 1234</li>
-                            <li>Phones <a href="tel:00-1234-5678">(00) 1234 5678</a></li>
+                            <li>Phones: <a href="tel:00-1234-5678">(00) 1234 5678</a></li>
                             <li>We are open: Monday-Thursday: 9:00 AM - 5:30 PM</li>
                             <li>Friday: 9:00 AM - 6:00 PM</li>
                             <li>Saturday: 11:00 AM - 5:00 PM</li>

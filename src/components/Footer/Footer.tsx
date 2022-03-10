@@ -12,7 +12,7 @@ class Footer extends React.Component {
             <footer className={`${styles["footer"]}`}>
                 <FooterSubscribeForm />
                 <FooterMenu />
-                <div className="footer-bottom-section">
+                <div className={`${styles["footer-bottom-section"]}`}>
                     <FooterSocials />
                     <FooterCards />
                     <span>Copyright © 2020 Shop Pty. Ltd.</span>

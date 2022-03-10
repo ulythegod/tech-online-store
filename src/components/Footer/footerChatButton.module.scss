@@ -1,0 +1,14 @@
+.chat-button {
+    background-color: #0156FF;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    height: 53px;
+    width: 53px;
+    position: fixed;
+    bottom: 100px !important;
+    right: 10px;
+}
