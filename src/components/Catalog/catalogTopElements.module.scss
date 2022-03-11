@@ -1,0 +1,14 @@
+@use '../../_colors.scss' as colors;
+
+.catalog-top-elements {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.catalog-top-elements span {
+    font-size: 13px;
+    color: colors.$darkGrey;
+    width: 57%;
+}

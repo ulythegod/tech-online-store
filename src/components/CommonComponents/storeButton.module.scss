@@ -2,12 +2,13 @@
 
 button {
     cursor: pointer;
+    outline: none;
 }
 
 .light-button {
     background-color: transparent;
     color: colors.$darkBlue;
-    border-color: colors.$darkBlue;
+    border: solid 2px colors.$darkBlue;
     font-size: 14px;
     font-weight: 600;
     border-radius: 50px;
@@ -17,11 +18,21 @@ button {
 .blue-button {
     background-color: colors.$darkBlue;
     color: white;
-    border-color: colors.$darkBlue;
+    border: none;
     font-size: 14px;
     font-weight: 600;
     border-radius: 50px;
-    padding: 10px 30px;
+    padding: 10px 55px;
+}
+
+.grey-button {
+    background-color: transparent;
+    color: colors.$deepGrey;
+    border: solid 2px colors.$deepGrey;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 4px 70px;
 }
 
 .icon-button {

@@ -10,3 +10,12 @@
     align-items: baseline;
     justify-content: space-between;
 }
+
+.catalog {
+    width: 80%;
+}
+
+.catalog-table-view {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}

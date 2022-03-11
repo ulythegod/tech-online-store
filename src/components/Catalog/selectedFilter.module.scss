@@ -1,0 +1,21 @@
+@use '../../_colors.scss' as colors;
+
+.selected-filter {
+    color: colors.$black;
+    font-size: 13px;
+    font-weight: 600;
+    background-color: transparent;
+    border: solid 2px colors.$grey;
+    height: 3em;
+    width: 13em;
+    margin: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.selected-number {
+    font-weight: 400;
+}

@@ -1,5 +1,7 @@
 import React from 'react';
-import BrandsItem from './BrandsItem';
+import styles from './filterBrands.module.scss';
+import BrandsItem from '../Catalog/BrandsItem';
+import StoreButton from 'components/CommonComponents/StoreButton';
 import img1 from '../../images/brand1.png';
 import img2 from '../../images/brand2.png';
 import img3 from '../../images/brand3.png';
@@ -14,9 +16,12 @@ class FilterBrands extends React.Component {
 
     render(): React.ReactNode {
         return (
-            <div className="brands">
+            <div className={`${styles["brands"]}`}>
                 <span>Brands</span>
-                <button>All Brands</button>
+                <StoreButton
+                    style='grey-button'
+                    content={"All Brands"}
+                />
                 <ul>
                     <BrandsItem
                         name='brand'

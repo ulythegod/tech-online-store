@@ -2,7 +2,7 @@ import React from 'react';
 import Breadcrumbs from 'components/CommonComponents/Breadcrumbs';
 import SingleBanner from 'components/Banners/SingleBanner';
 import PageTitle from 'components/CommonComponents/PageTitle';
-import Catalog from 'components/CatalogPage/Catalog';
+import Catalog from 'components/Catalog/Catalog';
 import banner from '../images/catalog-banner.png';
 
 class CatalogPage extends React.Component {
