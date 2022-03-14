@@ -19,3 +19,8 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
+
+.catalog-column-view {
+    display: flex;
+    flex-direction: column;
+}

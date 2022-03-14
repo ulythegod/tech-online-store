@@ -1,0 +1,29 @@
+.catalog-description {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.description-text {
+    position: relative;
+}
+
+.description-text::after {
+    content: "";
+    display: block;
+    width: 100%;
+	height: 100%;    
+	position: absolute;
+    top: 0;      
+	left: 0;   
+	background: transparent;
+	background-image: linear-gradient(#ffffff, #ffffff00, #ffffff);
+	opacity: 0.8;
+}
+
+.catalog-description button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}

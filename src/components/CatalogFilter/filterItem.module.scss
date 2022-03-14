@@ -8,6 +8,7 @@
     text-decoration: none;
     color: colors.$black;
     font-size: 14px;
+    width: 75%;
 }
 
 .item span {
@@ -22,6 +23,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    text-decoration: none;
+    color: colors.$black;
+    font-size: 14px;
+    width: 105%;
 }
 
 .item-opened::after {
@@ -47,18 +52,33 @@
 .item ul {
     list-style: none;
     padding: 0px;
-    width: 130%;
+    width: 120%;
     font-size: 13px;
 }
 
 .item ul li {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    justify-content: space-between;
-    height: 3em;
+    display: flex;
+    flex-direction: row;
+    height: 2em;
 }
 
 .item ul li span {
     margin: 0px auto;
+}
+
+.item-with-icons ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.item-with-icons ul li {
+    display: block;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.item-with-icons ul span img {
+    border: 4px double black;
 }

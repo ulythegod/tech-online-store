@@ -1,0 +1,21 @@
+@use '../../_colors.scss' as colors;
+
+.product-preview {
+    display: flex;
+    flex-direction: row;
+}
+
+.product-status {
+    font-size: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.product-status.in-stock {
+    color: colors.$green;
+}
+
+.product-status.check-availability {
+    color: colors.$burgundy;
+}

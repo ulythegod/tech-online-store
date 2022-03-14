@@ -5,6 +5,8 @@ import FilterBrands from './FilterBrands';
 import CatalogFilterBanner from './CatalogFilterBanner';
 import StoreButton from '../CommonComponents/StoreButton';
 import banner from '../../images/filters-banner.png';
+import color1 from '../../images/color1.png';
+import color2 from '../../images/color2.png';
 
 class CatalogFilter extends React.Component {
     constructor(props: any) {
@@ -85,7 +87,17 @@ class CatalogFilter extends React.Component {
                         <FilterItem 
                             name='Color'
                             isOpened={true}
-                            items={false}
+                            items={
+                                <ul>
+                                    <li>
+                                        <a href="#"><img src={color1} alt="Black" /></a>
+                                    </li>
+                                    <li>
+                                        <span><img src={color2} alt="Red" /></span>
+                                    </li>
+                                </ul>
+                            }
+                            isIcons={true}
                         />
                         <FilterItem 
                             name='Filter Name'

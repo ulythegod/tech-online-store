@@ -5,6 +5,8 @@ import CatalogTopElements from './CatalogTopElements';
 import CatalogSelectedFilters from './CatalogSelectedFilters';
 import CatalogPagination from './CatalogPagination';
 import CatalogFilter from 'components/CatalogFilter/CatalogFilter';
+import CatalogDescription from './CatalogDescription';
+import CatlogItemHorizontal from 'components/CatalogItem/CatlogItemHorizontal';
 import prodImg from '../../images/new-prod-img1.png';
 
 class Catalog extends React.Component {
@@ -20,170 +22,38 @@ class Catalog extends React.Component {
                     <div className={`${styles["catalog"]}`}>
                         <CatalogTopElements />
                         <CatalogSelectedFilters />
-                        <div className={`${styles["catalog-table-view"]}`}>
-                            <ProductItem 
+                        <div className={`${styles["catalog-column-view"]}`}>
+                            <CatlogItemHorizontal 
                                 status='in-stock'
                                 productImage={prodImg}
+                                model="SKU D5515AI"
                                 name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
                                 price={499.00}
                                 discount={499.00}
                                 reviewsCount={4}
                             />
-                            <ProductItem 
+                            <CatlogItemHorizontal 
                                 status='in-stock'
                                 productImage={prodImg}
+                                model="SKU D5515AI"
                                 name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
                                 price={499.00}
                                 discount={499.00}
                                 reviewsCount={4}
                             />
-                            <ProductItem 
+                            <CatlogItemHorizontal 
                                 status='in-stock'
                                 productImage={prodImg}
+                                model="SKU D5515AI"
                                 name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
                                 price={499.00}
                                 discount={499.00}
                                 reviewsCount={4}
                             />
-                            <ProductItem 
+                            <CatlogItemHorizontal 
                                 status='in-stock'
                                 productImage={prodImg}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg}
+                                model="SKU D5515AI"
                                 name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
                                 price={499.00}
                                 discount={499.00}
@@ -191,6 +61,7 @@ class Catalog extends React.Component {
                             />
                         </div>
                         <CatalogPagination />
+                        <CatalogDescription />
                     </div>
                 </div>
             </section>

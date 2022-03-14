@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styles from './catalogItemHorizontal.module.scss';
 import RatingButton from './RatingButton';
 import { ReactComponent as InStock } from '../../images/in-stock.svg';
 import { ReactComponent as CheckAvailability } from '../../images/check-availability.svg';
@@ -24,13 +25,23 @@ class CatlogItemHorizontal extends React.Component<CustomInputProps> {
     }
 
     render(): React.ReactNode {
+        let statusText: string = '';
+        
+        if (this.props.status == "in-stock") {
+            statusText = "in-stock";
+        } else if (this.props.status == "check-availability") {
+            statusText = "check-availability";
+        }
+
         return (
-            <div className="product-preview">
-                <p className="product-status">
-                    {(this.props.status == "in-stock") ? <InStock /> : ""}
-                    {(this.props.status == "in-stock") ? "in stock" : ""}
-                    {(this.props.status == "check-availability") ? <CheckAvailability /> : ""}
-                    {(this.props.status == "check-availability") ? "check availability" : ""}
+            <div className={`${styles["product-preview"]}`}>
+                <p className={`${styles["product-status"]}`}>
+                    {
+                        (this.props.status == "in-stock") ? <InStock /> : 
+                        (this.props.status == "check-availability") ? <CheckAvailability /> : 
+                        ""
+                    }
+                    <span className={`${styles["status-text"]}`}>{statusText}</span>
                 </p>
                 <div className="product-info">
                     <Link to="/product"><img src={this.props.productImage} alt="Product" /></Link>

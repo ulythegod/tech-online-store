@@ -9,15 +9,15 @@ class CatalogPagination extends React.Component {
     render(): React.ReactNode {
         return (
             <div className={`${styles["catalog-pagination"]}`}>
-                <a href="#">
+                <a className={`${styles["pagination-element"]}`} href="#">
                     <div className={`${styles["prev"]}`}></div>    
                 </a>
-                <a href="#">1</a>
-                <a className={`${styles["active"]}`} href="#">2</a>
-                <a href="#">3</a>
-                ...
-                <a href="#">15</a>
-                <a href="#">
+                <a className={`${styles["pagination-element"]}`} href="#">1</a>
+                <a className={`${styles["active"]}` + " " + `${styles["pagination-element"]}`} href="#">2</a>
+                <a className={`${styles["pagination-element"]}`} href="#">3</a>
+                <span className={`${styles["pagination-element"]}`}>...</span>
+                <a className={`${styles["pagination-element"]}`} href="#">15</a>
+                <a className={`${styles["pagination-element"]}`} href="#">
                     <div className={`${styles["next"]}`}></div>    
                 </a>
             </div>
