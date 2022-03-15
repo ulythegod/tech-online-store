@@ -14,7 +14,6 @@ import AboutUs from 'pages/AboutUs';
 import FAQ from 'pages/FAQ';
 import Header from 'components/Header/Header';
 import TopMenu from 'components/TopMenu/TopMenu';
-import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 import Footer from 'components/Footer/Footer';
 
 ReactDOM.render(
@@ -35,7 +34,6 @@ ReactDOM.render(
             <Route path="/faq" element={<FAQ />}/>
         </Routes>
     </Router>
-    <AdvantagesSection />
     <Footer />
   </>,
   document.getElementById('root')

@@ -1,7 +1,7 @@
+@use '../../_sections.scss' as sections;
+
 .banner-section {
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
+    @include sections.section-margins;
 }
 
 .banner-section img {

@@ -1,16 +1,18 @@
+@use '../../_sections.scss' as sections;
+
 .subscribe-form-footer {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+    @include sections.section-margins;
 }
 
 .form-description {
     display: flex;
     flex-direction: column;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .form-description .form-title {

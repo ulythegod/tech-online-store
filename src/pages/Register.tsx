@@ -3,6 +3,7 @@ import Breadcrumbs from 'components/CommonComponents/Breadcrumbs';
 import PageTitle from 'components/CommonComponents/PageTitle';
 import LoginForm from 'components/Register/LoginForm';
 import LoginInfo from 'components/Register/LoginInfo';
+import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 
 class Register extends React.Component {
     constructor(props: any) {
@@ -11,16 +12,21 @@ class Register extends React.Component {
 
     render(): React.ReactNode {
         return (
-            <section className="register-section">
-                <Breadcrumbs />
-                <PageTitle
-                    title='Customer Login'
+            <>
+                <section className="register-section">
+                    <Breadcrumbs />
+                    <PageTitle
+                        title='Customer Login'
+                    />
+                    <div className="customer-login-block">
+                        <LoginForm/>
+                        <LoginInfo />
+                    </div>
+                </section>
+                <AdvantagesSection 
+                  isBackground={true}
                 />
-                <div className="customer-login-block">
-                    <LoginForm/>
-                    <LoginInfo />
-                </div>
-            </section>
+            </>
         );
     }
 }

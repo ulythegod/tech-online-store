@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './catalogItemHorizontal.module.scss';
 import RatingButton from './RatingButton';
+import StoreButton from 'components/CommonComponents/StoreButton';
 import { ReactComponent as InStock } from '../../images/in-stock.svg';
 import { ReactComponent as CheckAvailability } from '../../images/check-availability.svg';
 import { ReactComponent as ProductMail } from '../../images/product-mail.svg';
@@ -35,7 +36,7 @@ class CatlogItemHorizontal extends React.Component<CustomInputProps> {
 
         return (
             <div className={`${styles["product-preview"]}`}>
-                <p className={`${styles["product-status"]}`}>
+                <p className={`${styles["product-status"]}` + ' ' + `${styles[this.props.status]}`}>
                     {
                         (this.props.status == "in-stock") ? <InStock /> : 
                         (this.props.status == "check-availability") ? <CheckAvailability /> : 
@@ -43,25 +44,25 @@ class CatlogItemHorizontal extends React.Component<CustomInputProps> {
                     }
                     <span className={`${styles["status-text"]}`}>{statusText}</span>
                 </p>
-                <div className="product-info">
-                    <Link to="/product"><img src={this.props.productImage} alt="Product" /></Link>
-                    <div className="about-product">
-                        <span className="product-model">{this.props.model}</span>
-                        <span className="product-title">
+                <div className={`${styles["product-info"]}`}>
+                    <Link className={`${styles["product-image"]}`} to="/product"><img src={this.props.productImage} alt="Product" /></Link>
+                    <div className={`${styles["about-product"]}`}>
+                        <span className={`${styles["product-model"]}`}>{this.props.model}</span>
+                        <a className={`${styles["product-title"]}`}>
                             {this.props.name}
-                        </span>
-                        <div className="product-prices">
-                            <span className="product-price">${this.props.price}</span>
-                            <span className="product-discount">${this.props.discount}</span>
+                        </a>
+                        <div className={`${styles["product-prices"]}`}>
+                            <span className={`${styles["product-price"]}`}>${this.props.price}</span>
+                            <span className={`${styles["product-discount"]}`}>${this.props.discount}</span>
                         </div>
                     </div>
-                    <div className="features">
+                    <div className={`${styles["features"]}`}>
                         <table>
                             <tr>
                                 <td>CPU</td>
                                 <td>N/A</td>
                             </tr>
-                            <tr className="dark">
+                            <tr className={`${styles["dark"]}`}>
                                 <td>Featured</td>
                                 <td>N/A</td>
                             </tr>
@@ -72,32 +73,39 @@ class CatlogItemHorizontal extends React.Component<CustomInputProps> {
                         </table>
                     </div>
                 </div>
-                <div className="product-bottom">
-                    <div className="product-rating">
+                <div className={`${styles["product-bottom"]}`}>
+                    <div className={`${styles["product-rating"]}`}>
                             <div>
-                            <RatingButton 
-                                isFilled={true}
-                            />
-                            <RatingButton 
-                                isFilled={true}
-                            />
-                            <RatingButton 
-                                isFilled={true}
-                            />
-                            <RatingButton 
-                                isFilled={false}
-                            />
-                            <RatingButton 
-                                isFilled={false}
-                            />
-                        </div>
-                        <span>Reviews ({this.props.reviewsCount})</span>
+                                <RatingButton 
+                                    isFilled={true}
+                                />
+                                <RatingButton 
+                                    isFilled={true}
+                                />
+                                <RatingButton 
+                                    isFilled={true}
+                                />
+                                <RatingButton 
+                                    isFilled={false}
+                                />
+                                <RatingButton 
+                                    isFilled={false}
+                                />
+                            </div>
+                        <a>Reviews ({this.props.reviewsCount})</a>
                     </div>
-                    <button>
-                        <AddToCart />
-                        Add To Cart
-                    </button>
-                    <div className="product-buttons">
+                    <div className={`${styles["product-button"]}`}>
+                        <StoreButton 
+                            style='light-button'
+                            content={
+                                <>
+                                    <AddToCart />
+                                    Add To Cart
+                                </>
+                            }
+                        />  
+                    </div>                    
+                    <div className={`${styles["product-buttons"]}`}>
                         <button>
                             <ProductMail />
                         </button>

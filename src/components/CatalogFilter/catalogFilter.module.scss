@@ -1,4 +1,5 @@
 @use '../../_colors.scss' as colors;
+@use '../../_arrows.scss' as arrows;
 
 .catalog-filter-block {
     width: 18%;
@@ -19,13 +20,7 @@
 }
 
 .filter-title-link:before {
-    content: "";
-    display: block;
-    width: 4px;
-    height: 4px;
-    border-top: 2px solid colors.$black;
-    border-right: 2px solid colors.$black;
-    transform: rotate(226deg);
+    @include arrows.arrow-left-black;
     margin-right: 2px;
 }
 

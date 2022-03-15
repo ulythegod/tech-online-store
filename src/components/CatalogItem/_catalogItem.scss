@@ -1,0 +1,55 @@
+@use '../../_colors.scss' as colors;
+
+@mixin item-inner-elements-direction {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin product-status-style {
+    font-size: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@mixin in-stock-status {
+    color: colors.$green;
+}
+
+@mixin check-availability-status {
+    color: colors.$burgundy;
+}
+
+@mixin status-text-style {
+    margin-left: 3px;
+}
+
+@mixin product-rating {
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin product-rating-link {
+    color: colors.$darkGrey;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+@mixin product-title {
+    font-size: 13px;
+    text-decoration: none;
+    color: black;
+}
+
+@mixin product-price {
+    color: colors.$darkGrey;
+    text-decoration: line-through;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+@mixin product-discount {
+    font-size: 18px;
+    font-weight: 600;
+}

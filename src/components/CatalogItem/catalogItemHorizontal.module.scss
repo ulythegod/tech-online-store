@@ -1,21 +1,129 @@
 @use '../../_colors.scss' as colors;
+@use './_catalogItem.scss' as commonStyles;
 
 .product-preview {
-    display: flex;
-    flex-direction: row;
+    @include commonStyles.item-inner-elements-direction;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.product-preview:hover {
+    box-shadow: -1px 1px 13px 4px colors.$grey;
 }
 
 .product-status {
-    font-size: 10px;
+    @include commonStyles.product-status-style;
+    justify-content: flex-end;
+    margin-right: 25px;
+}
+
+.product-status.in-stock {
+    @include commonStyles.in-stock-status;
+}
+
+.product-status.check-availability {
+    @include commonStyles.check-availability-status;
+}
+
+.status-text {
+    @include commonStyles.status-text-style;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px 45px 20px 25px;
+}
+
+.product-image img {
+    height: 250px;
+}
+
+.about-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 33%;
+}
+
+.product-model {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.product-title {
+    @include commonStyles.product-title;
+}
+
+.product-prices {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.product-price {
+    @include commonStyles.product-price;
+}
+
+.product-discount {
+    @include commonStyles.product-discount;
+    margin-left: 5px;
+}
+
+.product-rating {
+    @include commonStyles.product-rating;
+}
+
+.product-rating a {
+    @include commonStyles.product-rating-link;
+}
+
+.features {
+    width: 25%;
+}
+
+.features td {
+    width: 90px;
+    margin-left: 5px;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.features td:nth-child(2n) {
+    color: colors.$grey;
+}
+
+.features .dark {
+    background-color: colors.$lightBlue;
+}
+
+.product-button {
+    width: 45%;
+}
+
+.product-buttons {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.product-status.in-stock {
-    color: colors.$green;
-}
-
-.product-status.check-availability {
-    color: colors.$burgundy;
+.product-buttons button {
+    background-color: transparent;
+    border: 2px solid colors.$darkGrey;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
 }

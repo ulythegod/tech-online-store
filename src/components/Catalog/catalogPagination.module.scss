@@ -1,4 +1,5 @@
 @use '../../_colors.scss' as colors;
+@use '../../_arrows.scss' as arrows;
 
 .catalog-pagination {
     display: flex;
@@ -43,21 +44,13 @@
 }
 
 .prev {
-    content: "";
-    display: block;
-    width: 4px;
-    height: 4px;
+    @include arrows.arrow-left-black;
     border-top: 2px solid colors.$darkGrey;
     border-right: 2px solid colors.$darkGrey;
-    transform: rotate(224deg);
 }
 
 .next {
-    content: "";
-    display: block;
-    width: 4px;
-    height: 4px;
+    @include arrows.arrow-right-black;
     border-top: 2px solid colors.$darkGrey;
     border-right: 2px solid colors.$darkGrey;
-    transform: rotate(44deg);
 }

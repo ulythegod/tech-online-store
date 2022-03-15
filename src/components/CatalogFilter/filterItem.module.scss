@@ -1,4 +1,5 @@
 @use '../../_colors.scss' as colors;
+@use '../../_arrows.scss' as arrows;
 
 .item {
     margin: 8px auto;
@@ -30,23 +31,11 @@
 }
 
 .item-opened::after {
-    content: "";
-    display: block;
-    width: 4px;
-    height: 4px;
-    border-top: 2px solid colors.$black;
-    border-right: 2px solid colors.$black;
-    transform: rotate(317deg);
+    @include arrows.arrow-up-black;
 }
 
 .item-closed::after {
-    content: "";
-    display: block;
-    width: 4px;
-    height: 4px;
-    border-top: 2px solid colors.$black;
-    border-right: 2px solid colors.$black;
-    transform: rotate(137deg);
+    @include arrows.arrow-down-black;
 }
 
 .item ul {

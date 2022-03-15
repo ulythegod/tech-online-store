@@ -6,6 +6,7 @@ import ProductsSection from 'components/CatalogSections/ProductsSection';
 import CompaniesSection from 'components/CompaniesSection/CompaniesSection';
 import NewsSection from 'components/NewsSection/NewsSection';
 import ReviewsSection from 'components/ReviewsSection/ReviewsSection';
+import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 
 class Home extends React.Component {
     render(): React.ReactNode {
@@ -35,6 +36,9 @@ class Home extends React.Component {
                 <CompaniesSection />
                 <NewsSection />
                 <ReviewsSection />
+                <AdvantagesSection 
+                  isBackground={false}
+                />
             </>
         );
     }

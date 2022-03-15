@@ -1,3 +1,5 @@
+@use '../../_sections.scss' as sections;
+
 .main-companies-section {
     display: flex;
     flex-direction: column;
@@ -7,10 +9,7 @@
 }
 
 .companies-list {
+    @include sections.section-styles;
     list-style: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: space-between;
-    width: 70%;
 }

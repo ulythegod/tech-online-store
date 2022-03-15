@@ -3,6 +3,7 @@ import Breadcrumbs from 'components/CommonComponents/Breadcrumbs';
 import SingleBanner from 'components/Banners/SingleBanner';
 import PageTitle from 'components/CommonComponents/PageTitle';
 import Catalog from 'components/Catalog/Catalog';
+import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 import banner from '../images/catalog-banner.png';
 
 class CatalogPage extends React.Component {
@@ -17,6 +18,9 @@ class CatalogPage extends React.Component {
                     title='MSI PS Series (20)'
                 />
                 <Catalog />
+                <AdvantagesSection 
+                  isBackground={true}
+                />
             </>
         );
     }

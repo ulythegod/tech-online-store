@@ -3,6 +3,7 @@ import ProductLinks from 'components/ProductPage/ProductLinks';
 import ProductFeatures from 'components/ProductPage/ProductFeatures';
 import ProductBanners from 'components/ProductPage/ProductBanners';
 import ProductSection from 'components/ProductPage/ProductSection/ProductSection';
+import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 import AddToCart from 'components/ProductPage/AddToCart';
 
 class ProductDetailed extends React.Component {
@@ -20,6 +21,9 @@ class ProductDetailed extends React.Component {
                         full expression in color with advanced RGB lighting 
                         control and synchronization.`
                     }
+                />
+                <AdvantagesSection 
+                  isBackground={true}
                 />
             </>
         );

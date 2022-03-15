@@ -1,5 +1,5 @@
+@use '../../_sections.scss' as sections;
+
 .page-title {
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+    @include sections.section-margins
 }

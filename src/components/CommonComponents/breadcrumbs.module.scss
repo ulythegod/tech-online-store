@@ -1,9 +1,9 @@
 @use '../../_colors.scss' as colors;
+@use '../../_sections.scss' as sections;
+@use '../../_arrows.scss' as arrows;
 
 .breadcrumbs-navigation {
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
+    @include sections.section-margins;
 }
 
 .breadcrumbs {
@@ -30,12 +30,8 @@
 }
 
 .breadcrumbs li:not(:last-child) a::before {
-    content: "";
-    display: block;
-    width: 4px;
-    height: 4px;
+    @include arrows.thing-right-arrow-black;
     border-top: 1px solid colors.$darkBlue;
     border-right: 1px solid colors.$darkBlue;
     margin-left: 9px;
-    transform: rotate(45deg);
 }

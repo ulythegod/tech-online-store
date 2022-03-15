@@ -3,6 +3,7 @@ import Breadcrumbs from 'components/CommonComponents/Breadcrumbs';
 import PageTitle from 'components/CommonComponents/PageTitle';
 import FAQNav from 'components/FAQ/FAQNav';
 import FAQItem from 'components/FAQ/FAQItem';
+import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 
 class FAQ extends React.Component {
     constructor(props: any) {
@@ -188,6 +189,9 @@ class FAQ extends React.Component {
                     </div>
                     <FAQNav />
                 </section>
+                <AdvantagesSection 
+                  isBackground={true}
+                />
             </>
         );
     }

@@ -1,0 +1,51 @@
+@use './_colors.scss' as colors;
+
+@mixin arrow-down-black {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-top: 2px solid colors.$black;
+    border-right: 2px solid colors.$black;
+    transform: rotate(137deg);
+}
+
+@mixin arrow-up-black {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-top: 2px solid colors.$black;
+    border-right: 2px solid colors.$black;
+    transform: rotate(317deg);
+}
+
+@mixin arrow-left-black {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-top: 2px solid colors.$black;
+    border-right: 2px solid colors.$black;
+    transform: rotate(226deg);
+}
+
+@mixin arrow-right-black {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-top: 2px solid colors.$black;
+    border-right: 2px solid colors.$black;
+    transform: rotate(44deg);
+}
+
+@mixin thing-right-arrow-black {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-top: 1px solid colors.$black;
+    border-right: 1px solid colors.$black;
+    transform: rotate(45deg);
+}

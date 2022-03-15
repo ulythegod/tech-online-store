@@ -4,6 +4,7 @@ import PageTitle from 'components/CommonComponents/PageTitle';
 import AboutUsLeft from 'components/AboutUs/AboutUsLeft';
 import AboutUsRight from 'components/AboutUs/AboutUsRight';
 import ReviewsSection from 'components/ReviewsSection/ReviewsSection';
+import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 import au1 from '../images/about-us1.png';
 import au2 from '../images/about-us2.png';
 import aui1 from '../images/about-us-sign1.png';
@@ -104,6 +105,9 @@ class AboutUs extends React.Component {
                     icon={aui4}
                 />
                 <ReviewsSection />
+                <AdvantagesSection 
+                  isBackground={true}
+                />
             </>
         );
     }

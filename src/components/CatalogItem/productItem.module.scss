@@ -1,30 +1,27 @@
 @use '../../_colors.scss' as colors;
+@use './_catalogItem.scss' as commonStyles;
 
 .product-preview {
-    display: flex;
-    flex-direction: column;
+    @include commonStyles.item-inner-elements-direction;
     max-width: 234px;
     padding-left: 10px;
     padding-right: 10px;
 }
 
 .product-status {
-    font-size: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include commonStyles.product-status-style;
 }
 
 .product-status.in-stock {
-    color: colors.$green;
+    @include commonStyles.in-stock-status;
 }
 
 .product-status.check-availability {
-    color: colors.$burgundy;
+    @include commonStyles.check-availability-status;
 }
 
 .status-text {
-    margin-left: 3px;
+    @include commonStyles.status-text-style;
 }
 
 .product-image {
@@ -32,15 +29,11 @@
 }
 
 .product-rating {
-    font-size: 12px;
-    display: flex;
-    flex-direction: row;
+    @include commonStyles.product-rating;
 }
 
 .product-rating a {
-    color: colors.$darkGrey;
-    text-decoration: none;
-    margin-left: 5px;
+    @include commonStyles.product-rating-link;
 }
 
 .rating-buttons {
@@ -49,21 +42,15 @@
 }
 
 .product-title {
-    font-size: 13px;
-    text-decoration: none;
-    color: black;
+    @include commonStyles.product-title;
 }
 
 .product-price {
-    color: colors.$darkGrey;
-    text-decoration: line-through;
-    font-size: 14px;
-    margin-top: 10px;
+    @include commonStyles.product-price;
 }
 
 .product-discount {
-    font-size: 18px;
-    font-weight: 600;
+    @include commonStyles.product-discount;
 }
 
 .product-buttons {

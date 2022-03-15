@@ -5,10 +5,24 @@ import Support from '../../images/Support.png';
 import Account from '../../images/Account.png';
 import Saving from '../../images/Saving.png';
 
-class AdvantagesSection extends React.Component {
+interface ComponentProps {
+    isBackground: boolean;
+}
+
+class AdvantagesSection extends React.Component<ComponentProps> {
+    constructor(props: any) {
+        super(props);
+    }
+
     render(): React.ReactNode {
+        let backgroundClass = "";
+
+        if (this.props.isBackground) {
+            backgroundClass = "advantages-background";
+        }
+
         return (
-            <section className={`${styles["advantages-section"]}`}>
+            <section className={`${styles["advantages-section"]}` + " " + `${styles[backgroundClass]}`}>
                 <div className={`${styles["advantages-list"]}`}>
                     <AdvantageItem
                         image={Support}

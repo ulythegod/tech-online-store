@@ -8,6 +8,7 @@ import CatalogFilter from 'components/CatalogFilter/CatalogFilter';
 import CatalogDescription from './CatalogDescription';
 import CatlogItemHorizontal from 'components/CatalogItem/CatlogItemHorizontal';
 import prodImg from '../../images/new-prod-img1.png';
+import prodImgHorizontal from '../../images/catalog2.png';
 
 class Catalog extends React.Component {
     constructor(props: any) {
@@ -25,36 +26,36 @@ class Catalog extends React.Component {
                         <div className={`${styles["catalog-column-view"]}`}>
                             <CatlogItemHorizontal 
                                 status='in-stock'
-                                productImage={prodImg}
+                                productImage={prodImgHorizontal}
                                 model="SKU D5515AI"
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
+                                name='MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop'
                                 price={499.00}
                                 discount={499.00}
                                 reviewsCount={4}
                             />
                             <CatlogItemHorizontal 
                                 status='in-stock'
-                                productImage={prodImg}
+                                productImage={prodImgHorizontal}
                                 model="SKU D5515AI"
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
+                                name='MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop'
                                 price={499.00}
                                 discount={499.00}
                                 reviewsCount={4}
                             />
                             <CatlogItemHorizontal 
                                 status='in-stock'
-                                productImage={prodImg}
+                                productImage={prodImgHorizontal}
                                 model="SKU D5515AI"
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
+                                name='MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop'
                                 price={499.00}
                                 discount={499.00}
                                 reviewsCount={4}
                             />
                             <CatlogItemHorizontal 
                                 status='in-stock'
-                                productImage={prodImg}
+                                productImage={prodImgHorizontal}
                                 model="SKU D5515AI"
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
+                                name='MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop'
                                 price={499.00}
                                 discount={499.00}
                                 reviewsCount={4}
