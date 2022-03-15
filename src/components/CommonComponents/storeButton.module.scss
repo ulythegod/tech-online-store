@@ -25,6 +25,16 @@ button {
     padding: 10px 55px;
 }
 
+.yellow-button {
+    background-color: colors.$yellow;
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 10px 55px;
+}
+
 .grey-button {
     background-color: transparent;
     color: colors.$deepGrey;

@@ -1,0 +1,87 @@
+@use '../../_sections.scss' as sections;
+@use '../../_colors.scss' as colors;
+@use '../../_arrows.scss' as arrows;
+
+.add-to-card-section {
+    @include sections.section-margins;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prices-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 55%;
+}
+
+.on-sale {
+    font-size: 14px;
+}
+
+.on-sale span {
+    font-weight: 600;
+}
+
+.prices-block .number {
+    display: inline-block;
+	position: relative;
+}
+
+.prices-block .number input {
+    background: colors.$lightGrey;
+    border: none;
+    -moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+}
+
+.prices-block input:focus-visible {
+    border: none;
+}
+
+.prices-block input::-webkit-outer-spin-button,
+.prices-block input::-webkit-inner-spin-button {
+    display: none;
+}
+
+// .add-number {
+//     position: absolute;
+// 	top: 1px;
+// 	left: 1px;
+// 	bottom: 1px;
+// 	width: 20px;
+// 	padding: 0;
+// 	display: block;
+// 	text-align: center;
+// 	border: none;
+// 	border-right: 1px solid #ddd;
+// 	font-size: 16px;
+// 	font-weight: 600;
+// }
+
+// .add-number::after {
+//     @include arrows.arrow-up-black;
+// }
+
+// .decrease-number {
+//     position: absolute;
+// 	top: 1px;
+// 	right: 1px;
+// 	bottom: 1px;
+// 	width: 20px;
+// 	padding: 0;
+// 	display: block;
+// 	text-align: center;
+// 	border: none;
+// 	border-left: 1px solid #ddd;
+// 	font-size: 16px;
+// 	font-weight: 600;
+// }
+
+// .decrease-number::after {
+//     @include arrows.arrow-down-black;
+// }

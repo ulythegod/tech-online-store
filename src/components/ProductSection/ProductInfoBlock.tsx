@@ -1,7 +1,7 @@
 import React from 'react';
-import color1 from '../../../images/prod-color1.png';
-import color2 from '../../../images/prod-color2.png';
-import color3 from '../../../images/prod-color3.png';
+import color1 from '../../images/prod-color1.png';
+import color2 from '../../images/prod-color2.png';
+import color3 from '../../images/prod-color3.png';
 
 interface ComponentProps {
     name: string;

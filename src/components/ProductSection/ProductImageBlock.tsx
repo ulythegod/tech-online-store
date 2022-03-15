@@ -1,8 +1,8 @@
 import React from 'react';
-import { ReactComponent as ZipLogo } from '../../../images/zip-logo.svg';
-import { ReactComponent as ProductMail } from '../../../images/product-mail.svg';
-import { ReactComponent as ProductRating } from '../../../images/product-rating.svg';
-import { ReactComponent as ProductFav } from '../../../images/product-fav.svg';
+import { ReactComponent as ZipLogo } from '../../images/zip-logo.svg';
+import { ReactComponent as ProductMail } from '../../images/product-mail.svg';
+import { ReactComponent as ProductRating } from '../../images/product-rating.svg';
+import { ReactComponent as ProductFav } from '../../images/product-fav.svg';
 
 interface ComponentProps {
     image: string;

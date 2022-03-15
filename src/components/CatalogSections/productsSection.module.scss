@@ -1,4 +1,5 @@
 @use '../../_colors.scss' as colors;
+@use '../../_lists.scss' as lists;
 
 .main-products-list-section {
     display: flex;
@@ -20,24 +21,18 @@
 }
 
 .products-list-menu {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    align-items: center;
-    justify-content: space-between;
+    @include lists.list-style;
     width: 35%;
     font-size: 16px;
     font-weight: 600;
 }
 
 .products-list-menu a {
-    text-decoration: none;
-    color: #838383;
+    @include lists.list-item;
 }
 
 .products-list-menu .active {
-    color: black;
-    border-bottom: 2px solid colors.$darkBlue;
+    @include lists.active-list-item;
 }
 
 .products-list-common {

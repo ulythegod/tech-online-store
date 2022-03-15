@@ -2,15 +2,15 @@ import React from 'react';
 import ProductLinks from 'components/ProductPage/ProductLinks';
 import ProductFeatures from 'components/ProductPage/ProductFeatures';
 import ProductBanners from 'components/ProductPage/ProductBanners';
-import ProductSection from 'components/ProductPage/ProductSection/ProductSection';
+import ProductSection from 'components/ProductSection/ProductSection';
 import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
-import AddToCart from 'components/ProductPage/AddToCart';
+import AddToCart from 'components/AddToCartBlock/AddToCart';
 
 class ProductDetailed extends React.Component {
     render(): React.ReactNode {
         return (
             <>
-                <AddToCart/>
+                <AddToCart />
                 <ProductSection />
                 <ProductBanners />
                 <ProductLinks />

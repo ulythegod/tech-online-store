@@ -58,18 +58,20 @@ class CatlogItemHorizontal extends React.Component<CustomInputProps> {
                     </div>
                     <div className={`${styles["features"]}`}>
                         <table>
-                            <tr>
-                                <td>CPU</td>
-                                <td>N/A</td>
-                            </tr>
-                            <tr className={`${styles["dark"]}`}>
-                                <td>Featured</td>
-                                <td>N/A</td>
-                            </tr>
-                            <tr>
-                                <td>I/O Ports</td>
-                                <td>N/A</td>
-                            </tr>
+                            <tbody>
+                                <tr>
+                                    <td>CPU</td>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr className={`${styles["dark"]}`}>
+                                    <td>Featured</td>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <td>I/O Ports</td>
+                                    <td>N/A</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>

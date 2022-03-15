@@ -1,0 +1,19 @@
+@use './_colors.scss' as colors;
+
+@mixin list-style {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin list-item {
+    color: colors.$darkGrey;
+    text-decoration: none;
+}
+
+@mixin active-list-item {
+    color: colors.$black;
+    border-bottom: 2px solid colors.$darkBlue;
+}
