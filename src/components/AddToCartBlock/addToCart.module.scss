@@ -3,6 +3,12 @@
 @use '../../_arrows.scss' as arrows;
 
 .add-to-card-section {
+    padding: 15px;
+    width: 100%;
+    box-shadow: 0px 1px 2px 1px #ebebeb;
+}
+
+.add-to-card-block {
     @include sections.section-margins;
     display: flex;
     flex-direction: row;
@@ -15,7 +21,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 55%;
+    width: 43%;
 }
 
 .on-sale {
@@ -34,6 +40,12 @@
 .prices-block .number input {
     background: colors.$lightGrey;
     border: none;
+    height: 50px;
+    width: 60px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 6px;
+    padding-left: 15px;
     -moz-appearance: textfield;
 	-webkit-appearance: textfield;
 	appearance: textfield;
@@ -48,40 +60,46 @@
     display: none;
 }
 
-// .add-number {
-//     position: absolute;
-// 	top: 1px;
-// 	left: 1px;
-// 	bottom: 1px;
-// 	width: 20px;
-// 	padding: 0;
-// 	display: block;
-// 	text-align: center;
-// 	border: none;
-// 	border-right: 1px solid #ddd;
-// 	font-size: 16px;
-// 	font-weight: 600;
-// }
+.add-number {
+    position: absolute;
+	top: 1px;
+	right: 1px;
+	width: 20px;
+    height: 35px;
+	padding: 0;
+	display: block;
+	text-align: center;
+	border: none;
+    background-color: transparent;
+}
 
-// .add-number::after {
-//     @include arrows.arrow-up-black;
-// }
+.add-number::after {
+    @include arrows.arrow-up-black;
+    width: 3px;
+    height: 3px;
+    border-top: 1px solid colors.$deepGrey;
+    border-right: 1px solid colors.$deepGrey;
+}
 
-// .decrease-number {
-//     position: absolute;
-// 	top: 1px;
-// 	right: 1px;
-// 	bottom: 1px;
-// 	width: 20px;
-// 	padding: 0;
-// 	display: block;
-// 	text-align: center;
-// 	border: none;
-// 	border-left: 1px solid #ddd;
-// 	font-size: 16px;
-// 	font-weight: 600;
-// }
+.decrease-number {
+    position: absolute;
+	right: 1px;
+	bottom: 1px;
+	width: 20px;
+    height: 35px;
+	padding: 0;
+	display: block;
+	text-align: center;
+	border: none;
+	font-size: 16px;
+	font-weight: 600;
+    background-color: transparent;
+}
 
-// .decrease-number::after {
-//     @include arrows.arrow-down-black;
-// }
+.decrease-number::after {
+    @include arrows.arrow-down-black;
+    width: 3px;
+    height: 3px;
+    border-top: 1px solid colors.$deepGrey;
+    border-right: 1px solid colors.$deepGrey;
+}

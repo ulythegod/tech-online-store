@@ -1,0 +1,30 @@
+@use '../../_colors.scss' as colors;
+
+.product-advantages-banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner-description {
+    width: 50%;
+}
+
+.banner-description span {
+    font-size: 44px;
+    color: white;
+}
+
+.banner-description div {
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+}
+
+.banner-image {
+    width: 68%;
+    height: 681px;
+    box-shadow: inset -19px 0px 20px 20px colors.$black;
+    margin: auto;
+}

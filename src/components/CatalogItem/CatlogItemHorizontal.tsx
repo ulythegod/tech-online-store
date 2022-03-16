@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './catalogItemHorizontal.module.scss';
 import RatingButton from './RatingButton';
 import StoreButton from 'components/CommonComponents/StoreButton';
+import RoundButton from 'components/CommonComponents/RoundButton';
 import { ReactComponent as InStock } from '../../images/in-stock.svg';
 import { ReactComponent as CheckAvailability } from '../../images/check-availability.svg';
 import { ReactComponent as ProductMail } from '../../images/product-mail.svg';
@@ -108,15 +109,15 @@ class CatlogItemHorizontal extends React.Component<CustomInputProps> {
                         />  
                     </div>                    
                     <div className={`${styles["product-buttons"]}`}>
-                        <button>
-                            <ProductMail />
-                        </button>
-                        <button>
-                            <ProductRating />
-                        </button>
-                        <button>
-                            <ProductFav />
-                        </button>
+                        <RoundButton 
+                            content={<ProductMail />}
+                        />
+                        <RoundButton 
+                            content={<ProductRating />}
+                        />
+                        <RoundButton 
+                            content={<ProductFav />}
+                        />
                     </div>
                 </div>                        
             </div>

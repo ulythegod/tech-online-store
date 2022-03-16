@@ -3,6 +3,7 @@ import styles from './pageTitle.module.scss';
 
 interface CustomComponentProps {
     title: string;
+    isProductPage?: boolean;
 }
 
 class PageTitle extends React.Component<CustomComponentProps> {
@@ -11,8 +12,16 @@ class PageTitle extends React.Component<CustomComponentProps> {
     }
 
     render(): React.ReactNode {
+        let className = "";
+
+        if (this.props.isProductPage) {
+            className = "page-title-product";
+        } else {
+            className = "page-title";
+        }
+
         return (
-            <h1 className={`${styles["page-title"]}`}>{this.props.title}</h1>
+            <h1 className={`${styles[className]}`}>{this.props.title}</h1>
         );
     }
 }

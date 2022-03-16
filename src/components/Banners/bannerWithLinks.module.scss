@@ -1,0 +1,59 @@
+@use '../../_colors.scss' as colors;
+
+.product-links-section {
+    background-color: colors.$lightBlue;
+}
+
+.product-links-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+.links {
+    margin-left: 490px;
+    margin-top: 100px;
+    position: absolute;
+}
+
+.links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.links ul li {
+    background-color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 280px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 2px solid colors.$lightGrey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.links ul li a {
+    color: colors.$black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.links ul li {
+    color: colors.$blue;
+}
+
+.banner-image {
+    width: 50%;
+    height: 407px;
+    background-blend-mode: multiply;
+    background-repeat: no-repeat !important;
+    margin-left: auto;
+    margin-right: 300px;
+}

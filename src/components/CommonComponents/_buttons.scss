@@ -1,0 +1,19 @@
+@use '../../_colors.scss' as colors;
+
+@mixin blue-button {
+    background-color: colors.$darkBlue;
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50px;
+}
+
+@mixin yellow-button {
+    background-color: colors.$yellow;
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50px;
+}

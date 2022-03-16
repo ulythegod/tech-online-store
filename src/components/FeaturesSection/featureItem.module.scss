@@ -1,0 +1,35 @@
+@use '../../_colors.scss' as colors;
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+}
+
+.item-icon {
+    background-color: colors.$black;
+    border-radius: 50%;
+    height: 125px;
+    width: 125px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.item-icon img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item-text {
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.item-text span {
+    font-weight: 600;
+}

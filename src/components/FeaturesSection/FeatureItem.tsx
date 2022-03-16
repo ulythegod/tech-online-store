@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './featureItem.module.scss';
 
 interface ComponentProps {
     image: string;
-    description: string;
+    description: any;
 }
 
 class FeatureItem extends React.Component<ComponentProps> {
@@ -12,9 +13,11 @@ class FeatureItem extends React.Component<ComponentProps> {
 
     render(): React.ReactNode {
         return (
-            <div className="feature-item">
-                <img src={this.props.image} alt="intel"/>
-                <p>
+            <div className={`${styles["feature-item"]}`}>
+                <div className={`${styles["item-icon"]}`}>
+                    <img src={this.props.image} alt="intel" />
+                </div>
+                <p className={`${styles["item-text"]}`}>
                     {this.props.description}
                 </p>
             </div>

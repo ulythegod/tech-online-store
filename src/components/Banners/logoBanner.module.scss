@@ -1,3 +1,4 @@
+@use '../../_zipLogo.scss' as zipLogo;
 @use '../../_colors.scss' as colors;
 
 .main-banner-section {
@@ -9,21 +10,11 @@
 }
 
 .main-banner {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background: colors.$lightBlue;
-    padding: 20px 440px;
+    @include zipLogo.zip-block;
 }
 
 .banner-text:before {
-    content: "";
-    background: colors.$aquamarine;
-    width: 2px;
-    height: 27px;
-    float: left;
-    margin-right: 10px;
-    margin-left: 10px;
+    @include zipLogo.zip-line;
 }
 
 .banner-text {

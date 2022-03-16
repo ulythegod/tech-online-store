@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './productDetailes.module.scss';
 
 class ProductDetailes extends React.Component {
     constructor(props: any) {
@@ -7,7 +8,7 @@ class ProductDetailes extends React.Component {
 
     render(): React.ReactNode {
         return (
-            <p className="product-detailes">
+            <p className={`${styles["product-detailes"]}`}>
                 <ul>
                     <li>Intel Core i7-10700F</li>
                     <li>Intel H410</li>

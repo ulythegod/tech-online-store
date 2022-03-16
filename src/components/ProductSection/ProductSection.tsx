@@ -1,7 +1,8 @@
 import React from 'react';
+import styles from './productSection.module.scss';
 import ProductImageBlock from './ProductImageBlock';
 import ProductInfoBlock from './ProductInfoBlock';
-import productImage from '../../images/product-banner.png';
+import productImage from '../../images/detailed-product.png';
 import Breadcrumbs from 'components/CommonComponents/Breadcrumbs';
 import PageTitle from 'components/CommonComponents/PageTitle';
 import ProductDetailes from './ProductDetailes';
@@ -14,35 +15,30 @@ class ProductSection extends React.Component {
 
     render(): React.ReactNode {
         return (
-            <section className="product-section">
-                <div className="product-info-block">
+            <section className={`${styles["product-section"]}`}>
+                <div className={`${styles["product-block"]}`}>
+                    <div className={`${styles["product-info-block"]}`}>
                     <Breadcrumbs />
                     <PageTitle
                         title="MSI MPG Trident 3"
+                        isProductPage={true}
                     />
-                    <a href="#">Be the first to review this product</a>
-                    <ProductInfoBlock 
-                        name="MSI MPG Trident 3"
-                        description={`
-                            MSI MPG Trident 3 10SC-005AU Intel i7 10700F, 2060 SUPER, 
-                            16GB RAM, 512GB SSD, 2TB HDD, Windows 10 Home, Gaming 
-                            Keyboard and Mouse 3 Years Warranty Gaming Desktop
-                        `}
-                        model="SKU D5515AI"
-                    />                     
-                    <div className="product-rest">
-                        <p className="product-have-questions">
+                    <a className={`${styles["review-link"]}`} href="#">Be the first to review this product</a>
+                    <ProductDetailes />                     
+                    <div className={`${styles["product-rest"]}`}>
+                        <p className={`${styles["product-have-questions"]}`}>
                             <span>Have a Question?</span>
                             <span><a href="#">Contact Us</a></span>
                         </p>
                         <span>SKU D5515AI</span>
                     </div>
-                    <a href="#">+ More information</a>
-                 </div>
-                <ProductImageBlock 
-                    image={productImage}
-                    name="MSI MPG Trident 3"
-                />
+                    <a className={`${styles["more-info-link"]}`} href="#">+ More information</a>
+                     </div>
+                    <ProductImageBlock 
+                        image={productImage}
+                        name="MSI MPG Trident 3"
+                    />
+                </div>
             </section>
         );
     }

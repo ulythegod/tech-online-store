@@ -1,0 +1,35 @@
+@use '../../_sections.scss' as sections;
+@use '../../_colors.scss' as colors;
+
+.product-description {
+    @include sections.section-margins;
+    width: 80%;
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 2px;
+}
+
+.product-options {
+    margin-left: 65px;
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.product-options button {
+    border: none;
+    background-color: transparent;
+}
+
+.product-options .active {
+    border: 2px solid colors.$darkBlue;
+    border-radius: 50%;
+    height: 39px;
+    width: 39px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 2px;
+    margin-right: 1px;
+}

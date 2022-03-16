@@ -1,0 +1,32 @@
+@use '../../_colors.scss' as colors;
+@use '../../_sections.scss' as sections;
+
+.features-section {
+    background: colors.$deepBlue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0px;
+}
+
+.features-title {
+    color: white;
+    font-size: 48px;
+}
+
+.features-description {
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+    width: 22%;
+}
+
+.features-block {
+    @include sections.section-margins;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

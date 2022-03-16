@@ -1,0 +1,11 @@
+@use '../../_sections.scss' as sections;
+
+.product-detailes {
+    @include sections.section-margins;
+    width: 80%;
+}
+
+.product-detailes ul {
+    font-size: 14px;
+    font-weight: 300;
+}

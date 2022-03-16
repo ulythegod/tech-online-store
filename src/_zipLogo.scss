@@ -1,0 +1,17 @@
+@use './_colors.scss' as colors;
+
+@mixin zip-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@mixin zip-line {
+    content: "";
+    background: colors.$aquamarine;
+    width: 2px;
+    height: 27px;
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+}

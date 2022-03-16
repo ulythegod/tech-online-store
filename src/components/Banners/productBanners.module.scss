@@ -1,0 +1,36 @@
+@use '../../_srolling.scss' as scrolling;
+@use '../../_sections.scss' as sections;
+@use '../../_colors.scss' as colors;
+
+.product-advantages-banners-section {
+    display: flex;
+    flex-direction: column;
+    background-color: colors.$black;
+}
+
+.product-advantages-banners {
+    @include sections.section-margins;
+    position: relative;
+}
+
+.banners-scrolling {
+    @include scrolling.scrolling-block;
+    width: 3%;
+    margin-left: 160px;
+    margin-right: auto;
+    position: absolute;
+    margin-top: 30%;
+}
+
+.banners-scrolling svg {
+    @include scrolling.scrolling-svg;
+}
+
+.banners-scrolling circle {
+    opacity: .5;
+    fill: white;
+}
+
+.filled circle {
+    opacity: 1;
+}

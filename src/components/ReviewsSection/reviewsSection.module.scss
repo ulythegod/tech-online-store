@@ -1,4 +1,5 @@
 @use '../../_colors.scss' as colors;
+@use '../../_srolling.scss' as scrolling;
 
 .main-reviews-section {
     display: flex;
@@ -24,15 +25,11 @@
 }
 
 .reviews-scrolling {    
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
+    @include scrolling.scrolling-block;
 }
 
 .reviews-scrolling svg {
-    padding-left: 10px;
-    cursor: pointer;
+    @include scrolling.scrolling-svg;
 }
 
 .reviews-scrolling circle {

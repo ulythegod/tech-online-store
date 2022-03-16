@@ -1,0 +1,72 @@
+@use '../../_sections.scss' as sections;
+@use '../../_srolling.scss' as scrolling;
+@use '../../_zipLogo.scss' as zipLogo;
+@use '../../_colors.scss' as colors;
+
+.product-image-block {
+    width: 50%;
+}
+
+.product-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.product-buttons button {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.product-image {
+    @include sections.section-margins;
+    width: 80%;
+    position: relative;
+    margin-top: 5px;
+}
+
+.product-image img {
+    height: 444px;
+}
+
+.zip-info {
+    @include zipLogo.zip-block;
+    @include sections.section-margins;
+    width: 80%;
+}
+
+.zip-line:before {
+    @include zipLogo.zip-line;
+}
+
+.zip-text {
+    font-size: 12px;
+    width: 39%;
+}
+
+.zip-text a {
+    color: colors.$black;
+}
+
+.product-scrolling {
+    margin-left: auto;
+    margin-top: 10px;
+    width: 10%;
+    @include scrolling.scrolling-block;
+}
+
+.product-scrolling svg {
+    @include scrolling.scrolling-svg;
+}
+
+.product-scrolling circle {
+    opacity: .5;
+    fill: colors.$darkBlue;
+}
+
+.filled circle {
+    opacity: 1;
+}

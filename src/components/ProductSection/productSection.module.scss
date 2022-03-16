@@ -1,0 +1,69 @@
+@use '../../_sections.scss' as sections;
+@use '../../_colors.scss' as colors;
+
+.product-section {
+    margin-top: 3px;
+    padding-top: 65px;
+    padding-bottom: 65px;
+    background: linear-gradient(to right, colors.$lightBlue 50%, white 50%);
+}
+
+.product-block {
+    @include sections.section-margins;
+    display: flex;
+    flex-direction: row;
+}
+
+.product-info-block {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: colors.$lightBlue;
+}
+
+.product-info-block nav {
+    width: 80%;
+}
+
+.review-link {
+    @include sections.section-margins;
+    width: 80%;
+    color: colors.$blue;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.product-rest {
+    @include sections.section-margins;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.product-have-questions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.product-have-questions span {
+    font-weight: 600;
+}
+
+.product-have-questions span a {
+    font-weight: 400;
+    color: colors.$blue;
+    margin-left: 5px;
+}
+
+.more-info-link {
+    font-size: 14px;
+    font-weight: 700;
+    color: colors.$black;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: auto;
+}

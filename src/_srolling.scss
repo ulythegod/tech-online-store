@@ -1,0 +1,11 @@
+@mixin scrolling-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+@mixin scrolling-svg {
+    padding-left: 10px;
+    cursor: pointer;
+}
