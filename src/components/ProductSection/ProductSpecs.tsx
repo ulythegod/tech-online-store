@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './productSpecs.module.scss';
 
 class ProductSpecs extends React.Component {
     constructor(props: any) {
@@ -7,22 +8,24 @@ class ProductSpecs extends React.Component {
 
     render(): React.ReactNode {
         return (
-            <p className="product-detailes">
+            <div className={`${styles["features"]}`}>
                 <table>
-                    <tr>
-                        <td>CPU</td>
-                        <td>N/A</td>
-                    </tr>
-                    <tr>
-                        <td>Featured</td>
-                        <td>N/A</td>
-                    </tr>
-                    <tr>
-                        <td>I/O Ports</td>
-                        <td>N/A</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>CPU</td>
+                            <td>N/A</td>
+                        </tr>
+                        <tr className={`${styles["dark"]}`}>
+                            <td>Featured</td>
+                            <td>N/A</td>
+                        </tr>
+                        <tr>
+                            <td>I/O Ports</td>
+                            <td>N/A</td>
+                        </tr>
+                    </tbody>
                 </table>
-            </p>
+            </div>
         );
     }
 }

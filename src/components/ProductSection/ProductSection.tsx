@@ -24,7 +24,7 @@ class ProductSection extends React.Component {
                         isProductPage={true}
                     />
                     <a className={`${styles["review-link"]}`} href="#">Be the first to review this product</a>
-                    <ProductDetailes />                     
+                    <ProductSpecs />                     
                     <div className={`${styles["product-rest"]}`}>
                         <p className={`${styles["product-have-questions"]}`}>
                             <span>Have a Question?</span>

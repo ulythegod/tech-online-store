@@ -1,0 +1,30 @@
+@use '../../_table.scss' as table;
+@use '../../_colors.scss' as colors;
+
+.features {
+    width: 80%;
+    margin: 15px auto;
+}
+
+.features table {
+    border: 2px solid colors.$grey;
+}
+
+.features td {
+    @include table.table-line;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.features td:nth-child(2n) {
+    @include table.table-value-style;
+    width: 200px;
+}
+
+.features tr {
+    background-color: white;
+}
+
+.features .dark {
+    @include table.table-dark-line;
+}

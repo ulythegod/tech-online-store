@@ -1,0 +1,16 @@
+@use './_colors.scss' as colors;
+
+@mixin table-line {
+    width: 90px;
+    margin-left: 5px;
+    display: inline-block;
+    font-size: 12px;
+}
+
+@mixin table-value-style {
+    color: colors.$grey;
+}
+
+@mixin table-dark-line {
+    background-color: colors.$lightBlue;
+}

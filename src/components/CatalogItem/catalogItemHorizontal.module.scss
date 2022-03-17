@@ -1,5 +1,6 @@
 @use '../../_colors.scss' as colors;
 @use './_catalogItem.scss' as commonStyles;
+@use '../../_table.scss' as table;
 
 .product-preview {
     @include commonStyles.item-inner-elements-direction;
@@ -93,18 +94,15 @@
 }
 
 .features td {
-    width: 90px;
-    margin-left: 5px;
-    display: inline-block;
-    font-size: 12px;
+    @include table.table-line;
 }
 
 .features td:nth-child(2n) {
-    color: colors.$grey;
+    @include table.table-value-style;
 }
 
 .features .dark {
-    background-color: colors.$lightBlue;
+    @include table.table-dark-line;
 }
 
 .product-button {
