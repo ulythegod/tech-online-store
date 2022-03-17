@@ -1,5 +1,14 @@
 @use '../../_colors.scss' as colors;
 
+@mixin light-button {
+    background-color: transparent;
+    color: colors.$darkBlue;
+    border: solid 2px colors.$darkBlue;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50px;
+}
+
 @mixin blue-button {
     background-color: colors.$darkBlue;
     color: white;

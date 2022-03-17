@@ -1,0 +1,63 @@
+@use '../../_sections.scss' as sections;
+@use '../../_colors.scss' as colors;
+
+.contact-us-block {
+    @include sections.section-margins;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contact-us-form-block {
+    width: 75%;
+}
+
+.form-description {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.contact-us-form {
+    margin-top: 10px;
+    margin-bottom: 100px;
+}
+
+.input-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+}
+
+.form-item label {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-item label span span {
+    color: colors.$burgundy;
+}
+
+.form-item input {
+    border: 1px solid colors.$grey;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 340px;
+}
+
+.form-item textarea {
+    border: 1px solid colors.$grey;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 200px;
+    width: 94%;
+}

@@ -1,0 +1,39 @@
+@use '../../_colors.scss' as colors;
+
+.contacts-block {
+    background-color: colors.$lightBlue;
+    width: 30%;
+    padding-top: 20px;
+    padding-bottom: 45px;
+    height: fit-content;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: row;
+    width: 82%;
+    margin: 10px auto;
+}
+
+.item-description {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.info {
+    font-size: 13px;
+    color: colors.$black;
+    text-decoration: none;
+}
+
+.link {
+    font-size: 13px;
+    color: colors.$blue;
+    text-decoration: none;
+}

@@ -7,13 +7,16 @@ button {
 }
 
 .light-button {
-    background-color: transparent;
-    color: colors.$darkBlue;
-    border: solid 2px colors.$darkBlue;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 50px;
+    @include buttons.light-button;
     padding: 4px 15px;
+}
+
+.light-button-narrow {
+    @include buttons.light-button;
+    width: 145px;
+    padding: 6px 0px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .blue-button {

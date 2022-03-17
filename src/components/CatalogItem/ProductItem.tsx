@@ -52,7 +52,7 @@ class ProductItem extends React.Component<CustomInputProps> {
                         content={<AddToRating />}
                     />
                 </div>
-                <Link to="/product"><img className={`${styles["product-image"]}`} src={this.props.productImage} alt="Product" /></Link>
+                <Link className={`${styles["product-image-link"]}`} to="/product"><img className={`${styles["product-image"]}`} src={this.props.productImage} alt="Product" /></Link>
                 <div className={`${styles["product-rating"]}`}>
                     <div className={`${styles["rating-buttons"]}`}>
                         <RatingButton 
@@ -76,10 +76,17 @@ class ProductItem extends React.Component<CustomInputProps> {
                 <Link to="/product" className={`${styles["product-title"]}`}>{this.props.name}</Link>
                 <span className={`${styles["product-price"]}`}>${this.props.price}</span>
                 <span className={`${styles["product-discount"]}`}>${this.props.discount}</span>
-                <button className={`${styles["hidden"]}`}>
-                    <AddToCart />
-                    <span>Add To Cart</span>
-                </button>
+                <div className={`${styles["add-to-card-btn"]}`}>
+                    <StoreButton 
+                        style="light-button-narrow"
+                        content={
+                            <>
+                                <AddToCart />
+                                <span>Add To Cart</span>
+                            </>
+                        }
+                    />
+                </div>
             </div>
         );
     }

@@ -1,12 +1,16 @@
 @use '../../_zipLogo.scss' as zipLogo;
 @use '../../_colors.scss' as colors;
+@use '../../_sections.scss' as sections;
 
 .main-banner-section {
+    @include sections.section-margins;
+    width: 74%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 10px;
+    background-color: colors.$lightBlue;
 }
 
 .main-banner {

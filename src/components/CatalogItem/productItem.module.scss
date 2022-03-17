@@ -6,6 +6,26 @@
     max-width: 234px;
     padding-left: 10px;
     padding-right: 10px;
+    padding-bottom: 15px;
+    height: 338px;
+    position: relative;
+}
+
+.product-preview:hover {
+    box-shadow: -1px 1px 13px 4px colors.$grey;
+    animation-duration: 1s;
+    animation-name: producthover;
+    animation-fill-mode: forwards;
+}
+
+@keyframes producthover {
+    from {
+        height: 338px;
+    }
+  
+    to {
+        height: 377px;
+    }
 }
 
 .product-status {
@@ -22,6 +42,11 @@
 
 .status-text {
     @include commonStyles.status-text-style;
+}
+
+.product-image-link {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .product-image {
@@ -51,12 +76,25 @@
 
 .product-discount {
     @include commonStyles.product-discount;
+    margin-bottom: 5px;
 }
 
 .product-buttons {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 70%;
 }
 
-.hidden {
+.product-preview:hover .product-buttons {
+    display: flex;
+}
+
+.add-to-card-btn {
     display: none;
+}
+
+.product-preview:hover .add-to-card-btn {
+    display: flex;
 }

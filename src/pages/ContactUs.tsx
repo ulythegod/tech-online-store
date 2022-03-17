@@ -1,8 +1,7 @@
 import React from 'react';
 import Breadcrumbs from 'components/CommonComponents/Breadcrumbs';
 import PageTitle from 'components/CommonComponents/PageTitle';
-import ContactsBlock from 'components/ContactUs/ContactsBlock';
-import ContactUsForm from 'components/ContactUs/ContactUsForm';
+import ContactUsForm from 'components/ContactUsForm/ContactUsForm';
 import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 
 class ContactUs extends React.Component {
@@ -19,7 +18,6 @@ class ContactUs extends React.Component {
                         title='Contact Us'
                     />
                     <ContactUsForm />
-                    <ContactsBlock />
                 </section>
                 <AdvantagesSection 
                   isBackground={true}

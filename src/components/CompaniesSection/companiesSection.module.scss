@@ -1,4 +1,5 @@
 @use '../../_sections.scss' as sections;
+@use '../../_colors.scss' as colors;
 
 .main-companies-section {
     display: flex;
@@ -12,4 +13,32 @@
     @include sections.section-styles;
     list-style: none;
     justify-content: space-between;
+}
+
+.companies-item {
+    height: 150px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.companies-item a {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.companies-item:hover {
+    animation-duration: 1s;
+    animation-name: itemcolor;
+}
+
+@keyframes itemcolor {
+    from {
+        background-color: transparent;
+    }
+
+    to {
+        background-color: colors.$lightGrey;
+    }
 }

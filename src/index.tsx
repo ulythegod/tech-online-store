@@ -18,8 +18,8 @@ import Footer from 'components/Footer/Footer';
 
 ReactDOM.render(
   <>
-    <Header />
     <Router>
+        <Header />
         <TopMenu />
         <Routes>
             <Route path="/" element={<Home />}/>
@@ -33,8 +33,8 @@ ReactDOM.render(
             <Route path="/about-us" element={<AboutUs />}/>
             <Route path="/faq" element={<FAQ />}/>
         </Routes>
+        <Footer />
     </Router>
-    <Footer />
   </>,
   document.getElementById('root')
 );
