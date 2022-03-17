@@ -1,0 +1,33 @@
+@use '../../_sections.scss' as sections;
+@use '../../_forms.scss' as forms;
+@use '../../_colors.scss' as colors;
+
+.customer-login-block {
+    @include sections.section-margins;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.customer-login-form-block {
+    background-color: colors.$lightBlue;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-title {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.contact-us-form-item label {
+    @include forms.from-label;
+}
+
+.contact-us-form-item label span span {
+    @include forms.required-field;
+}
+
+.contact-us-form-item input {
+    @include forms.form-input;
+}

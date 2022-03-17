@@ -1,0 +1,23 @@
+@use './_colors.scss' as colors;
+
+@mixin from-label {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+@mixin required-field {
+    color: colors.$burgundy;
+}
+
+@mixin form-input {
+    border: 1px solid colors.$grey;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 340px;
+}

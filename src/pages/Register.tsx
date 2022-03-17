@@ -1,8 +1,8 @@
 import React from 'react';
 import Breadcrumbs from 'components/CommonComponents/Breadcrumbs';
 import PageTitle from 'components/CommonComponents/PageTitle';
-import LoginForm from 'components/Register/LoginForm';
-import LoginInfo from 'components/Register/LoginInfo';
+import LoginForm from 'components/LoginForm/LoginForm';
+import LoginInfo from 'components/LoginForm/LoginInfo';
 import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 
 class Register extends React.Component {
@@ -18,10 +18,7 @@ class Register extends React.Component {
                     <PageTitle
                         title='Customer Login'
                     />
-                    <div className="customer-login-block">
-                        <LoginForm/>
-                        <LoginInfo />
-                    </div>
+                    <LoginForm/>
                 </section>
                 <AdvantagesSection 
                   isBackground={true}
