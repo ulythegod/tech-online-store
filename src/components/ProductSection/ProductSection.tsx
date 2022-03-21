@@ -16,7 +16,6 @@ function ProductSection(props: any): any {
                 <Breadcrumbs />
                 <PageTitle
                     title="MSI MPG Trident 3"
-                    isProductPage={true}
                 />
                 <a className={`${styles["review-link"]}`} href="#">Be the first to review this product</a>
                 <ProductSpecs />                     

@@ -15,6 +15,7 @@ function CatalogPage(props: any): any {
             <Breadcrumbs />
             <PageTitle
                 title='MSI PS Series (20)'
+                isCatalogPage={true}
             />
             <Catalog />
             <AdvantagesSection 

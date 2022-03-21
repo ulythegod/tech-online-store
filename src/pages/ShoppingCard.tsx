@@ -1,8 +1,7 @@
 import React from 'react';
 import Breadcrumbs from 'components/CommonComponents/Breadcrumbs';
 import PageTitle from 'components/CommonComponents/PageTitle';
-import CardLists from 'components/ShoppingCard/CardLists';
-import CardSummaryForm from 'components/ShoppingCard/CardSummaryForm';
+import Card from 'components/ShoppingCard/Card';
 import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 
 function ShoppingCard(props: any): any {
@@ -13,12 +12,7 @@ function ShoppingCard(props: any): any {
                 <PageTitle
                     title='Shopping Cart'
                 />
-                <div className="shopping-card-block">
-                    <CardLists />
-                    <div className="card-summary">
-                        <CardSummaryForm />
-                    </div>
-                </div>
+                <Card />
                 <AdvantagesSection 
                   isBackground={true}
                 />

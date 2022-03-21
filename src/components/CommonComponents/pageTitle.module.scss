@@ -1,10 +1,10 @@
 @use '../../_sections.scss' as sections;
 
-.page-title {
+.page-title-catalog {
     @include sections.section-margins;
 }
 
-.page-title-product {
+.page-title {
     @include sections.section-margins;
     width: 80%;
     font-size: 32px;

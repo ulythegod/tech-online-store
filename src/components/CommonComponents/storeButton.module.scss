@@ -52,6 +52,16 @@ button {
     padding: 4px 70px;
 }
 
+.black-button {
+    background-color: colors.$black;
+    color: white;
+    border: solid 2px colors.$black;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 4px 70px;
+}
+
 .icon-button {
     background-color: transparent;
     border: none;
