@@ -1,34 +1,22 @@
 import React from 'react';
 import styles from './productBannerItem.module.scss';
 
-interface ComponentProps {
-    name: string;
-    description: any;
-    image: string;
-}
-
-class ProductBannerItem extends React.Component<ComponentProps> {
-    constructor(props: any) {
-        super(props);
+function ProductBannerItem(props: any): any {
+    const imageStyles = {
+        background: `url(${props.image})`,
     }
 
-    render(): React.ReactNode {
-        const imageStyles = {
-            background: `url(${this.props.image})`,
-        }
-
-        return (
-            <div className={`${styles["product-advantages-banner"]}`}>
-                <div className={`${styles["banner-description"]}`}>
-                    <span>{this.props.name}</span>
-                    <div>
-                        {this.props.description}
-                    </div>
+    return (
+        <div className={`${styles["product-advantages-banner"]}`}>
+            <div className={`${styles["banner-description"]}`}>
+                <span>{props.name}</span>
+                <div>
+                    {props.description}
                 </div>
-                <div className={`${styles["banner-image"]}`} style={imageStyles}></div>
             </div>
-        );
-    }
+            <div className={`${styles["banner-image"]}`} style={imageStyles}></div>
+        </div>
+    );
 }
 
 export default ProductBannerItem;

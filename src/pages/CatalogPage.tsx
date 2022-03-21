@@ -6,24 +6,22 @@ import Catalog from 'components/Catalog/Catalog';
 import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 import banner from '../images/catalog-banner.png';
 
-class CatalogPage extends React.Component {
-    render(): React.ReactNode {
-        return (
-            <>
-                <SingleBanner
-                    image={banner}
-                />
-                <Breadcrumbs />
-                <PageTitle
-                    title='MSI PS Series (20)'
-                />
-                <Catalog />
-                <AdvantagesSection 
-                  isBackground={true}
-                />
-            </>
-        );
-    }
+function CatalogPage(props: any): any {
+    return (
+        <>
+            <SingleBanner
+                image={banner}
+            />
+            <Breadcrumbs />
+            <PageTitle
+                title='MSI PS Series (20)'
+            />
+            <Catalog />
+            <AdvantagesSection 
+              isBackground={true}
+            />
+        </>
+    );
 }
 
 export default CatalogPage;

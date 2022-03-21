@@ -9,54 +9,48 @@ import img4 from '../../images/brand4.png';
 import img5 from '../../images/brand5.png';
 import img6 from '../../images/brand6.png';
 
-class FilterBrands extends React.Component {
-    constructor(props: any) {
-        super(props);
-    }
-
-    render(): React.ReactNode {
-        return (
-            <div className={`${styles["brands"]}`}>
-                <span>Brands</span>
-                <StoreButton
-                    style='grey-button'
-                    content={"All Brands"}
+function FilterBrands(props: any): any {
+    return (
+        <div className={`${styles["brands"]}`}>
+            <span>Brands</span>
+            <StoreButton
+                style='grey-button'
+                content={"All Brands"}
+            />
+            <ul>
+                <BrandsItem
+                    name='brand'
+                    image={img1}
+                    link='#'
                 />
-                <ul>
-                    <BrandsItem
-                        name='brand'
-                        image={img1}
-                        link='#'
-                    />
-                    <BrandsItem
-                        name='brand'
-                        image={img2}
-                        link='#'
-                    />
-                    <BrandsItem
-                        name='brand'
-                        image={img3}
-                        link='#'
-                    />
-                    <BrandsItem
-                        name='brand'
-                        image={img4}
-                        link='#'
-                    />
-                    <BrandsItem
-                        name='brand'
-                        image={img5}
-                        link='#'
-                    />
-                    <BrandsItem
-                        name='brand'
-                        image={img6}
-                        link='#'
-                    />
-                </ul>
-            </div>
-        );
-    }
+                <BrandsItem
+                    name='brand'
+                    image={img2}
+                    link='#'
+                />
+                <BrandsItem
+                    name='brand'
+                    image={img3}
+                    link='#'
+                />
+                <BrandsItem
+                    name='brand'
+                    image={img4}
+                    link='#'
+                />
+                <BrandsItem
+                    name='brand'
+                    image={img5}
+                    link='#'
+                />
+                <BrandsItem
+                    name='brand'
+                    image={img6}
+                    link='#'
+                />
+            </ul>
+        </div>
+    );
 }
 
 export default FilterBrands;

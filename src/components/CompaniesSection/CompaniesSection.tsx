@@ -8,36 +8,34 @@ import CompanyLogo5 from '../../images/companies5.png';
 import CompanyLogo6 from '../../images/companies6.png';
 import CompanyLogo7 from '../../images/companies7.png';
 
-class CompaniesSection extends React.Component {
-    render(): React.ReactNode {
-        return (
-            <section className={`${styles["main-companies-section"]}`}>
-                <ul className={`${styles["companies-list"]}`}>
-                    <li className={`${styles["companies-item"]}`}>
-                        <a href="#"><img src={CompanyLogo1} alt="roccat" /></a>
-                    </li>
-                    <li className={`${styles["companies-item"]}`}>
-                        <a href="#"><img src={CompanyLogo2} alt="msi" /></a>
-                    </li>
-                    <li className={`${styles["companies-item"]}`}>
-                        <a href="#"><img src={CompanyLogo3} alt="razer"/></a>
-                    </li>
-                    <li className={`${styles["companies-item"]}`}>
-                        <a href="#"><img src={CompanyLogo4} alt="thermaltake"/></a>
-                    </li>
-                    <li className={`${styles["companies-item"]}`}>
-                        <a href="#"><img src={CompanyLogo5} alt="adata"/></a>
-                    </li>
-                    <li className={`${styles["companies-item"]}`}>
-                        <a href="#"><img src={CompanyLogo6} alt="hewlett packard"/></a>
-                    </li>
-                    <li className={`${styles["companies-item"]}`}>
-                        <a href="#"><img src={CompanyLogo7} alt="gigabyte"/></a>
-                    </li>
-                </ul>
-            </section>
-        );
-    }
+function CompaniesSection(props: any): any {
+    return (
+        <section className={`${styles["main-companies-section"]}`}>
+            <ul className={`${styles["companies-list"]}`}>
+                <li className={`${styles["companies-item"]}`}>
+                    <a href="#"><img src={CompanyLogo1} alt="roccat" /></a>
+                </li>
+                <li className={`${styles["companies-item"]}`}>
+                    <a href="#"><img src={CompanyLogo2} alt="msi" /></a>
+                </li>
+                <li className={`${styles["companies-item"]}`}>
+                    <a href="#"><img src={CompanyLogo3} alt="razer"/></a>
+                </li>
+                <li className={`${styles["companies-item"]}`}>
+                    <a href="#"><img src={CompanyLogo4} alt="thermaltake"/></a>
+                </li>
+                <li className={`${styles["companies-item"]}`}>
+                    <a href="#"><img src={CompanyLogo5} alt="adata"/></a>
+                </li>
+                <li className={`${styles["companies-item"]}`}>
+                    <a href="#"><img src={CompanyLogo6} alt="hewlett packard"/></a>
+                </li>
+                <li className={`${styles["companies-item"]}`}>
+                    <a href="#"><img src={CompanyLogo7} alt="gigabyte"/></a>
+                </li>
+            </ul>
+        </section>
+    );
 }
 
 export default CompaniesSection;

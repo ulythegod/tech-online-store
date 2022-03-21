@@ -1,29 +1,18 @@
 import React from 'react';
 import styles from './pageTitle.module.scss';
 
-interface CustomComponentProps {
-    title: string;
-    isProductPage?: boolean;
-}
+function PageTitle(props: any): any {
+    let className = "";
 
-class PageTitle extends React.Component<CustomComponentProps> {
-    constructor(props: any) {
-        super(props);
+    if (props.isProductPage) {
+        className = "page-title-product";
+    } else {
+        className = "page-title";
     }
 
-    render(): React.ReactNode {
-        let className = "";
-
-        if (this.props.isProductPage) {
-            className = "page-title-product";
-        } else {
-            className = "page-title";
-        }
-
-        return (
-            <h1 className={`${styles[className]}`}>{this.props.title}</h1>
-        );
-    }
+    return (
+        <h1 className={`${styles[className]}`}>{props.title}</h1>
+    );
 }
 
 export default PageTitle

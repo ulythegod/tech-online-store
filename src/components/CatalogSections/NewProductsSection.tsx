@@ -9,86 +9,76 @@ import prodImg4 from '../../images/new-prod-img4.png';
 import prodImg5 from '../../images/new-prod-img5.png';
 import prodImg6 from '../../images/new-prod-img6.png';
 
-interface CustomInputProps {
-    name: string;
-}
-
-class ProductSection extends React.Component<CustomInputProps> {
-    constructor(props: any) {
-        super(props);
-    }
-
-    render(): React.ReactNode {
-        return (
-            <section className="new-products-section">
-                <div className={`${styles["new-products"]}`}>
-                    <div className={`${styles["section-title"]}`}>
-                        <h3>{this.props.name}</h3>
-                        <a href="#">See All New Products</a>
-                    </div>
-                    <div className={`${styles["new-products-list"]}`}>
-                        <div className={`${styles["items"]}`}>           
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg1}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='check-availability'
-                                productImage={prodImg2}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg3}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg4}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg5}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <ProductItem 
-                                status='in-stock'
-                                productImage={prodImg6}
-                                name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                        </div>
-                        <TurnOverButton
-                            type="button-left"
-                        />
-                        <TurnOverButton
-                            type="button-right"
-                        />
-                    </div>
-                    
+function ProductSection(props: any): any {
+    return (
+        <section className="new-products-section">
+            <div className={`${styles["new-products"]}`}>
+                <div className={`${styles["section-title"]}`}>
+                    <h3>{props.name}</h3>
+                    <a href="#">See All New Products</a>
                 </div>
-            </section>
-        );
-    }
+                <div className={`${styles["new-products-list"]}`}>
+                    <div className={`${styles["items"]}`}>           
+                        <ProductItem 
+                            status='in-stock'
+                            productImage={prodImg1}
+                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
+                            price={499.00}
+                            discount={499.00}
+                            reviewsCount={4}
+                        />
+                        <ProductItem 
+                            status='check-availability'
+                            productImage={prodImg2}
+                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
+                            price={499.00}
+                            discount={499.00}
+                            reviewsCount={4}
+                        />
+                        <ProductItem 
+                            status='in-stock'
+                            productImage={prodImg3}
+                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
+                            price={499.00}
+                            discount={499.00}
+                            reviewsCount={4}
+                        />
+                        <ProductItem 
+                            status='in-stock'
+                            productImage={prodImg4}
+                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
+                            price={499.00}
+                            discount={499.00}
+                            reviewsCount={4}
+                        />
+                        <ProductItem 
+                            status='in-stock'
+                            productImage={prodImg5}
+                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
+                            price={499.00}
+                            discount={499.00}
+                            reviewsCount={4}
+                        />
+                        <ProductItem 
+                            status='in-stock'
+                            productImage={prodImg6}
+                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
+                            price={499.00}
+                            discount={499.00}
+                            reviewsCount={4}
+                        />
+                    </div>
+                    <TurnOverButton
+                        type="button-left"
+                    />
+                    <TurnOverButton
+                        type="button-right"
+                    />
+                </div>
+                
+            </div>
+        </section>
+    );
 }
 
 export default ProductSection;

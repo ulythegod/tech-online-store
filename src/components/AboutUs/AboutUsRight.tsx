@@ -1,38 +1,25 @@
 import React from 'react';
 
-interface ComponentProps {
-    image: string;
-    icon?: string;
-    title: string;
-    description: any;
-}
-
-class AboutUsRight extends React.Component<ComponentProps> {
-    constructor(props: any) {
-        super(props);
-    }
-
-    render(): React.ReactNode {
-        return (
-            <section className="about-us-right">
-                <div className="description">
-                    {
-                        this.props.icon && 
-                        <div className="description-sign">
-                            <img src={this.props.icon} alt={this.props.title}/>
-                        </div>
-                    }
-                    <span>{this.props.title}</span>
-                    <p>
-                        {this.props.description}
-                    </p>
-                </div>
-                <div className="image">
-                    <img src={this.props.image} alt={this.props.title}/>
-                </div>
-            </section>
-        );
-    }
+function AboutUsRight(props: any): any {
+    return (
+        <section className="about-us-right">
+            <div className="description">
+                {
+                    props.icon && 
+                    <div className="description-sign">
+                        <img src={props.icon} alt={props.title}/>
+                    </div>
+                }
+                <span>{props.title}</span>
+                <p>
+                    {props.description}
+                </p>
+            </div>
+            <div className="image">
+                <img src={props.image} alt={props.title}/>
+            </div>
+        </section>
+    );
 }
 
 export default AboutUsRight;

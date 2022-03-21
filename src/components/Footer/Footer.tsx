@@ -6,21 +6,19 @@ import FooterSubscribeForm from './FooterSubscribeForm';
 import FooterCards from './FooterCards';
 import FooterChatButton from './FooterChatButton';
 
-class Footer extends React.Component {
-    render(): React.ReactNode {
-        return (
-            <footer className={`${styles["footer"]}`}>
-                <FooterSubscribeForm />
-                <FooterMenu />
-                <div className={`${styles["footer-bottom-section"]}`}>
-                    <FooterSocials />
-                    <FooterCards />
-                    <span>Copyright © 2020 Shop Pty. Ltd.</span>
-                </div>
-                <FooterChatButton />
-            </footer>
-        );
-    }
+function Footer(props: any): any {
+    return (
+        <footer className={`${styles["footer"]}`}>
+            <FooterSubscribeForm />
+            <FooterMenu />
+            <div className={`${styles["footer-bottom-section"]}`}>
+                <FooterSocials />
+                <FooterCards />
+                <span>Copyright © 2020 Shop Pty. Ltd.</span>
+            </div>
+            <FooterChatButton />
+        </footer>
+    );
 }
 
 export default Footer;

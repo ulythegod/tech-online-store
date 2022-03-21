@@ -10,64 +10,58 @@ import CatlogItemHorizontal from 'components/CatalogItem/CatlogItemHorizontal';
 import prodImg from '../../images/new-prod-img1.png';
 import prodImgHorizontal from '../../images/catalog2.png';
 
-class Catalog extends React.Component {
-    constructor(props: any) {
-        super(props);
-    }
-
-    render(): React.ReactNode {
-        return (
-            <section className={`${styles["catalog-section"]}`}>
-                <div className={`${styles["catalog-block"]}`}>
-                    <CatalogFilter />
-                    <div className={`${styles["catalog"]}`}>
-                        <CatalogTopElements />
-                        <CatalogSelectedFilters />
-                        <div className={`${styles["catalog-column-view"]}`}>
-                            <CatlogItemHorizontal 
-                                status='in-stock'
-                                productImage={prodImgHorizontal}
-                                model="SKU D5515AI"
-                                name='MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <CatlogItemHorizontal 
-                                status='in-stock'
-                                productImage={prodImgHorizontal}
-                                model="SKU D5515AI"
-                                name='MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <CatlogItemHorizontal 
-                                status='in-stock'
-                                productImage={prodImgHorizontal}
-                                model="SKU D5515AI"
-                                name='MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                            <CatlogItemHorizontal 
-                                status='in-stock'
-                                productImage={prodImgHorizontal}
-                                model="SKU D5515AI"
-                                name='MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop'
-                                price={499.00}
-                                discount={499.00}
-                                reviewsCount={4}
-                            />
-                        </div>
-                        <CatalogPagination />
-                        <CatalogDescription />
+function Catalog(props: any): any {
+    return (
+        <section className={`${styles["catalog-section"]}`}>
+            <div className={`${styles["catalog-block"]}`}>
+                <CatalogFilter />
+                <div className={`${styles["catalog"]}`}>
+                    <CatalogTopElements />
+                    <CatalogSelectedFilters />
+                    <div className={`${styles["catalog-column-view"]}`}>
+                        <CatlogItemHorizontal 
+                            status='in-stock'
+                            productImage={prodImgHorizontal}
+                            model="SKU D5515AI"
+                            name='MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop'
+                            price={499.00}
+                            discount={499.00}
+                            reviewsCount={4}
+                        />
+                        <CatlogItemHorizontal 
+                            status='in-stock'
+                            productImage={prodImgHorizontal}
+                            model="SKU D5515AI"
+                            name='MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop'
+                            price={499.00}
+                            discount={499.00}
+                            reviewsCount={4}
+                        />
+                        <CatlogItemHorizontal 
+                            status='in-stock'
+                            productImage={prodImgHorizontal}
+                            model="SKU D5515AI"
+                            name='MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop'
+                            price={499.00}
+                            discount={499.00}
+                            reviewsCount={4}
+                        />
+                        <CatlogItemHorizontal 
+                            status='in-stock'
+                            productImage={prodImgHorizontal}
+                            model="SKU D5515AI"
+                            name='MSI CREATOR 17 A10SFS-240AU 17 UHD 4K HDR Thin Bezel Intel 10th Gen i7 10875H - RTX 2070 SUPER MAX Q - 16GB RAM - 1TB SSD NVME - Windows 10 PRO Laptop'
+                            price={499.00}
+                            discount={499.00}
+                            reviewsCount={4}
+                        />
                     </div>
+                    <CatalogPagination />
+                    <CatalogDescription />
                 </div>
-            </section>
-        );
-    }
+            </div>
+        </section>
+    );
 }
 
 export default Catalog;

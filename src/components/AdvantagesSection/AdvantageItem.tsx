@@ -1,29 +1,15 @@
 import React from 'react';
-import styles from './advantagesItem.module.scss';
+import styles from './advantageItem.module.scss';
 
-interface CustomInputProps {
-    image: any;
-    name: string;
-    description: string;
+function AdvantageItem(props: any): any {
+    return (
+        <div className={`${styles["advantages-item"]}`}>
+            <img src={props.image} alt={props.name}/>
+            <span>{props.name}</span>
+            <p>
+                {props.description}
+            </p>
+        </div>
+    );
 }
-
-
-class AdvantageItem extends React.Component<CustomInputProps> {
-    constructor(props: any) {
-        super(props);
-    }
-
-    render(): React.ReactNode {
-        return (
-            <div className={`${styles["advantages-item"]}`}>
-                <img src={this.props.image} alt={this.props.name}/>
-                <span>{this.props.name}</span>
-                <p>
-                    {this.props.description}
-                </p>
-            </div>
-        );
-    }
-}
-
 export default AdvantageItem;

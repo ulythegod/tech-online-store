@@ -10,117 +10,115 @@ import newsImg6 from '../../images/news6.png';
 import newsImg7 from '../../images/news7.png';
 import newsImg8 from '../../images/news8.png';
 
-class NewsSection extends React.Component {
-    render(): React.ReactNode {
-        return (
-            <section className={`${styles["main-news-section"]}`}>
-                <div className={`${styles["main-news-block"]}`}>
-                    <p className={`${styles["news-title"]}`}>Follow us on Instagram for News, Offers & More</p>
-                    <div className={`${styles["news-list"]}`}>
-                        <NewsItem
-                            image={newsImg1}
-                            name={
-                                `If you’ve recently made a desktop PC or 
-                                laptop purchase, you might want to consider 
-                                adding peripherals to enhance your home 
-                                office setup, your gaming rig, or your 
-                                business workspace...`
-                            }
-                            date={"01.09.2020"}
-                        />
-                        <NewsItem
-                            image={newsImg1}
-                            name={
-                                `If you’ve recently made a desktop PC or 
-                                laptop purchase, you might want to consider 
-                                adding peripherals to enhance your home 
-                                office setup, your gaming rig, or your 
-                                business workspace...`
-                            }
-                            date={"01.09.2020"}
-                        />
-                        <NewsItem
-                            image={newsImg2}
-                            name={
-                                `If you’ve recently made a desktop PC or 
-                                laptop purchase, you might want to consider 
-                                adding peripherals to enhance your home 
-                                office setup, your gaming rig, or your 
-                                business workspace...`
-                            }
-                            date={"01.09.2020"}
-                        />
-                        <NewsItem
-                            image={newsImg3}
-                            name={
-                                `If you’ve recently made a desktop PC or 
-                                laptop purchase, you might want to consider 
-                                adding peripherals to enhance your home 
-                                office setup, your gaming rig, or your 
-                                business workspace...`
-                            }
-                            date={"01.09.2020"}
-                        />
-                        <NewsItem
-                            image={newsImg4}
-                            name={
-                                `If you’ve recently made a desktop PC or 
-                                laptop purchase, you might want to consider 
-                                adding peripherals to enhance your home 
-                                office setup, your gaming rig, or your 
-                                business workspace...`
-                            }
-                            date={"01.09.2020"}
-                        />
-                        <NewsItem
-                            image={newsImg5}
-                            name={
-                                `If you’ve recently made a desktop PC or 
-                                laptop purchase, you might want to consider 
-                                adding peripherals to enhance your home 
-                                office setup, your gaming rig, or your 
-                                business workspace...`
-                            }
-                            date={"01.09.2020"}
-                        />
-                        <NewsItem
-                            image={newsImg6}
-                            name={
-                                `If you’ve recently made a desktop PC or 
-                                laptop purchase, you might want to consider 
-                                adding peripherals to enhance your home 
-                                office setup, your gaming rig, or your 
-                                business workspace...`
-                            }
-                            date={"01.09.2020"}
-                        />
-                        <NewsItem
-                            image={newsImg7}
-                            name={
-                                `If you’ve recently made a desktop PC or 
-                                laptop purchase, you might want to consider 
-                                adding peripherals to enhance your home 
-                                office setup, your gaming rig, or your 
-                                business workspace...`
-                            }
-                            date={"01.09.2020"}
-                        />
-                        <NewsItem
-                            image={newsImg8}
-                            name={
-                                `If you’ve recently made a desktop PC or 
-                                laptop purchase, you might want to consider 
-                                adding peripherals to enhance your home 
-                                office setup, your gaming rig, or your 
-                                business workspace...`
-                            }
-                            date={"01.09.2020"}
-                        />
-                    </div>
+function NewsSection(props: any): any {
+    return (
+        <section className={`${styles["main-news-section"]}`}>
+            <div className={`${styles["main-news-block"]}`}>
+                <p className={`${styles["news-title"]}`}>Follow us on Instagram for News, Offers & More</p>
+                <div className={`${styles["news-list"]}`}>
+                    <NewsItem
+                        image={newsImg1}
+                        name={
+                            `If you’ve recently made a desktop PC or 
+                            laptop purchase, you might want to consider 
+                            adding peripherals to enhance your home 
+                            office setup, your gaming rig, or your 
+                            business workspace...`
+                        }
+                        date={"01.09.2020"}
+                    />
+                    <NewsItem
+                        image={newsImg1}
+                        name={
+                            `If you’ve recently made a desktop PC or 
+                            laptop purchase, you might want to consider 
+                            adding peripherals to enhance your home 
+                            office setup, your gaming rig, or your 
+                            business workspace...`
+                        }
+                        date={"01.09.2020"}
+                    />
+                    <NewsItem
+                        image={newsImg2}
+                        name={
+                            `If you’ve recently made a desktop PC or 
+                            laptop purchase, you might want to consider 
+                            adding peripherals to enhance your home 
+                            office setup, your gaming rig, or your 
+                            business workspace...`
+                        }
+                        date={"01.09.2020"}
+                    />
+                    <NewsItem
+                        image={newsImg3}
+                        name={
+                            `If you’ve recently made a desktop PC or 
+                            laptop purchase, you might want to consider 
+                            adding peripherals to enhance your home 
+                            office setup, your gaming rig, or your 
+                            business workspace...`
+                        }
+                        date={"01.09.2020"}
+                    />
+                    <NewsItem
+                        image={newsImg4}
+                        name={
+                            `If you’ve recently made a desktop PC or 
+                            laptop purchase, you might want to consider 
+                            adding peripherals to enhance your home 
+                            office setup, your gaming rig, or your 
+                            business workspace...`
+                        }
+                        date={"01.09.2020"}
+                    />
+                    <NewsItem
+                        image={newsImg5}
+                        name={
+                            `If you’ve recently made a desktop PC or 
+                            laptop purchase, you might want to consider 
+                            adding peripherals to enhance your home 
+                            office setup, your gaming rig, or your 
+                            business workspace...`
+                        }
+                        date={"01.09.2020"}
+                    />
+                    <NewsItem
+                        image={newsImg6}
+                        name={
+                            `If you’ve recently made a desktop PC or 
+                            laptop purchase, you might want to consider 
+                            adding peripherals to enhance your home 
+                            office setup, your gaming rig, or your 
+                            business workspace...`
+                        }
+                        date={"01.09.2020"}
+                    />
+                    <NewsItem
+                        image={newsImg7}
+                        name={
+                            `If you’ve recently made a desktop PC or 
+                            laptop purchase, you might want to consider 
+                            adding peripherals to enhance your home 
+                            office setup, your gaming rig, or your 
+                            business workspace...`
+                        }
+                        date={"01.09.2020"}
+                    />
+                    <NewsItem
+                        image={newsImg8}
+                        name={
+                            `If you’ve recently made a desktop PC or 
+                            laptop purchase, you might want to consider 
+                            adding peripherals to enhance your home 
+                            office setup, your gaming rig, or your 
+                            business workspace...`
+                        }
+                        date={"01.09.2020"}
+                    />
                 </div>
-            </section>
-        );
-    }
+            </div>
+        </section>
+    );
 }
 
 export default NewsSection;

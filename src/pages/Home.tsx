@@ -8,40 +8,38 @@ import NewsSection from 'components/NewsSection/NewsSection';
 import ReviewsSection from 'components/ReviewsSection/ReviewsSection';
 import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 
-class Home extends React.Component {
-    render(): React.ReactNode {
-        return (
-            <>
-                <BannersSlider />
-                <NewProductsSection 
-                  name='New Products'
-                />
-                <LogoBanner />
-                <ProductsSection 
-                  name='MSI Laptops'
-                  sections={false}
-                />
-                <ProductsSection 
-                  name='MSI Laptops'
-                  sections={true}
-                />
-                <ProductsSection 
-                  name='MSI Laptops'
-                  sections={true}
-                />
-                <ProductsSection 
-                  name='MSI Laptops'
-                  sections={true}
-                />
-                <CompaniesSection />
-                <NewsSection />
-                <ReviewsSection />
-                <AdvantagesSection 
-                  isBackground={false}
-                />
-            </>
-        );
-    }
+function Home(props: any): any {
+    return (
+        <>
+            <BannersSlider />
+            <NewProductsSection 
+                name='New Products'
+            />
+            <LogoBanner />
+            <ProductsSection 
+                name='MSI Laptops'
+                sections={false}
+            />
+            <ProductsSection 
+                name='MSI Laptops'
+                sections={true}
+            />
+            <ProductsSection 
+                name='MSI Laptops'
+                sections={true}
+            />
+            <ProductsSection 
+                name='MSI Laptops'
+                sections={true}
+            />
+            <CompaniesSection />
+            <NewsSection />
+            <ReviewsSection />
+            <AdvantagesSection 
+                isBackground={false}
+            />
+        </>
+    );
 }
 
 export default Home;
