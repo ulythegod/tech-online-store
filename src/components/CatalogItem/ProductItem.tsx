@@ -3,6 +3,7 @@ import styles from './productItem.module.scss';
 import { Link } from 'react-router-dom';
 import RatingButton from './RatingButton';
 import StoreButton from 'components/CommonComponents/StoreButton';
+import classNames from 'classnames';
 import { ReactComponent as InStock } from '../../images/in-stock.svg';
 import { ReactComponent as CheckAvailability } from '../../images/check-availability.svg';
 import { ReactComponent as AddToFav } from '../../images/prod-add-fav.svg';
@@ -20,7 +21,7 @@ function ProductItem(props: any): any {
 
     return (
         <div className={`${styles["product-preview"]}`}>
-            <p className={`${styles["product-status"]}` + ' ' + `${styles[props.status]}`}>
+            <p className={`${classNames(styles["product-status"], styles[props.status])}`}>
                 {
                     (props.status == "in-stock") ? <InStock /> : 
                     (props.status == "check-availability") ? <CheckAvailability /> : 

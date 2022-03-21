@@ -1,5 +1,6 @@
 @use '../../_sections.scss' as sections;
 @use '../../_forms.scss' as forms;
+@use './_form.scss' as form;
 @use '../../_colors.scss' as colors;
 
 .customer-login-block {
@@ -7,27 +8,55 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 50px;
 }
 
 .customer-login-form-block {
-    background-color: colors.$lightBlue;
-    display: flex;
-    flex-direction: column;
+    @include form.section-half;
+}
+
+.block-inner {
+    @include form.block-inner;
 }
 
 .form-title {
-    font-size: 18px;
-    font-weight: 700;
+    @include form.light-text;
+}
+
+.form-description {
+    font-size: 14px;
+    font-weight: 300; 
+    margin-bottom: 20px;
+    @include sections.section-margins;
+    width: 75%;
 }
 
 .contact-us-form-item label {
     @include forms.from-label;
+    @include sections.section-margins;
+    width: 75%;
 }
 
 .contact-us-form-item label span span {
     @include forms.required-field;
+    @include sections.section-margins;
+    width: 75%;
 }
 
 .contact-us-form-item input {
     @include forms.form-input;
+    @include sections.section-margins;
+    width: 94%;
+}
+
+.form-buttons {
+    @include sections.section-margins;
+    width: 75%;
+}
+
+.forget-password-link {
+    font-size: 14px;
+    color: colors.$blue;
+    text-decoration: none;
+    margin-left: 10px;
 }

@@ -19,7 +19,7 @@ function ContactUsForm(props: any): any {
                         <div className={`${styles["form-item"]}`}>
                             <label>
                                 <span>Your Name <span>*</span></span>
-                                <input type="text" id="name" required placeholder="Your Name"></input>
+                                <input type="text" id="name" required placeholder="Your Name" />
                             </label>
                         </div>
                         <div className={`${styles["form-item"]}`}>

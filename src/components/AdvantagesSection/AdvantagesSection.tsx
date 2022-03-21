@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './advantagesSection.module.scss';
 import AdvantageItem from './AdvantageItem';
+import classNames from 'classnames';
 import Support from '../../images/Support.png';
 import Account from '../../images/Account.png';
 import Saving from '../../images/Saving.png';
@@ -13,7 +14,7 @@ function AdvantagesSection(props: any): any {
     }
 
     return (
-        <section className={`${styles["advantages-section"]}` + " " + `${styles[backgroundClass]}`}>
+        <section className={`${classNames(styles["advantages-section"], styles[backgroundClass])}`}>
             <div className={`${styles["advantages-list"]}`}>
                 <AdvantageItem
                     image={Support}

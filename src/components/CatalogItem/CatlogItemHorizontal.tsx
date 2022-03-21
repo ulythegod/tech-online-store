@@ -4,6 +4,7 @@ import styles from './catalogItemHorizontal.module.scss';
 import RatingButton from './RatingButton';
 import StoreButton from 'components/CommonComponents/StoreButton';
 import RoundButton from 'components/CommonComponents/RoundButton';
+import classNames from 'classnames';
 import { ReactComponent as InStock } from '../../images/in-stock.svg';
 import { ReactComponent as CheckAvailability } from '../../images/check-availability.svg';
 import { ReactComponent as ProductMail } from '../../images/product-mail.svg';
@@ -22,7 +23,7 @@ function CatlogItemHorizontal(props: any): any {
 
     return (
         <div className={`${styles["product-preview"]}`}>
-            <p className={`${styles["product-status"]}` + ' ' + `${styles[props.status]}`}>
+            <p className={`${classNames(styles["product-status"], styles[props.status])}`}>
                 {
                     (props.status == "in-stock") ? <InStock /> : 
                     (props.status == "check-availability") ? <CheckAvailability /> : 

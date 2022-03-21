@@ -1,0 +1,24 @@
+@use '../../_sections.scss' as sections;
+@use '../../_colors.scss' as colors;
+
+@mixin section-half {
+    width: 50%;
+}
+
+@mixin block-inner {
+    width: 89%;
+    background-color: colors.$lightBlue;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 45px;
+    height: 320px;
+}
+
+@mixin light-text {
+    font-size: 14px;
+    font-weight: 300; 
+    margin-bottom: 20px;
+    @include sections.section-margins;
+    width: 75%;
+}

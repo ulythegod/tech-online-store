@@ -1,0 +1,37 @@
+@use '../../_sections.scss' as sections;
+@use '../../_forms.scss' as forms;
+@use './_form.scss' as form;
+@use '../../_colors.scss' as colors;
+
+.customer-login-info {
+    @include form.section-half;
+}
+
+.block-inner {
+    @include form.block-inner;
+}
+
+.info-title {
+    @include form.light-text;
+}
+
+.info-description {
+    font-size: 14px;
+    font-weight: 300; 
+    margin-bottom: 20px;
+    @include sections.section-margins;
+    width: 75%;
+}
+
+.info-list {
+    font-size: 14px;
+    font-weight: 300; 
+    margin-bottom: 20px;
+    @include sections.section-margins;
+    width: 75%;
+}
+
+.info-buttons {
+    @include sections.section-margins;
+    width: 75%;
+}
