@@ -1,0 +1,21 @@
+@use '../../_sections.scss' as sections;
+
+.section-header {
+    @include sections.section-margins;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-part {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-part button {
+    width: 180px;
+    height: 50px;
+}

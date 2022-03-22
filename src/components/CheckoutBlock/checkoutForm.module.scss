@@ -1,0 +1,14 @@
+@use '../../_forms.scss' as forms;
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-item label span {
+    @include forms.from-label;
+}
+
+.form-item label span span {
+    @include forms.required-field;
+}

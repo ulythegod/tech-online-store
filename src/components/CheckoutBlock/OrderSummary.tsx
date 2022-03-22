@@ -1,5 +1,5 @@
 import React from 'react';
-import SummaryItem from 'components/Checkout/SummaryItem';
+import SummaryItem from 'components/CheckoutBlock/SummaryItem';
 import image1 from '../../images/summary1.png';
 import image2 from '../../images/summary2.png';
 

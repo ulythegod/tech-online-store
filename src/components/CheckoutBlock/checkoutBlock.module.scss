@@ -1,0 +1,7 @@
+@use '../../_sections.scss' as sections;
+
+.checkout-block {
+    @include sections.section-margins;
+    display: flex;
+    flex-direction: row;
+}

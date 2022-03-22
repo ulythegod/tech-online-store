@@ -1,0 +1,66 @@
+@use '../../_colors.scss' as colors;
+
+.steps {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.indicator-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.step-indicator {
+    border: 2px solid colors.$grey;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.indicator-left-border {
+    content: "";
+    border: none;
+    background-color: colors.$grey;
+    color: colors.$darkGrey;
+    height: 3px;
+    width: 80px;
+}
+
+.indicator-right-border {
+    content: "";
+    border: none;
+    background-color: colors.$grey;
+    color: colors.$darkGrey;
+    height: 3px;
+    width: 80px;
+}
+
+.active {
+    border: 2px solid colors.$darkBlue;
+}
+
+.active-border {
+    background-color: colors.$darkBlue;
+    color: colors.$darkBlue;
+}
+
+.step-indicator svg {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.step-indicator span {
+    margin-left: auto;
+    margin-right: auto;
+}

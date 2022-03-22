@@ -1,92 +1,93 @@
 import React from 'react';
+import styles from './checkoutForm.module.scss';
 
 function CheckoutForm(props: any): any {
     return (
-        <form action="#">
+        <form className={`${styles["checkout-form"]}`} action="#">
             <span>Shipping Address</span>
-            <div className="form-item">
+            <div className={`${styles["form-item"]}`}>
                 <label>
-                    Email Address <span>*</span>
+                    <span>Email Address <span>*</span></span>
                     <input type="email" id="email" required />
                     <span>You can create an account after checkout.</span>
                 </label>
             </div>
-            <div className="form-item">
+            <div className={`${styles["form-item"]}`}>
                 <label>
-                    First Name <span>*</span>
+                    <span>First Name <span>*</span></span>
                     <input type="text" id="first-name" required></input>
                 </label>
             </div>
-            <div className="form-item">
+            <div className={`${styles["form-item"]}`}>
                 <label>
-                    Last Name <span>*</span>
+                    <span>Last Name <span>*</span></span>
                     <input type="text" id="last-name" required></input>
                 </label>
             </div>
-            <div className="form-item">
+            <div className={`${styles["form-item"]}`}>
                 <label>
-                    Company <span>*</span>
+                    <span>Company <span>*</span></span>
                     <input type="text" id="company" required></input>
                 </label>
             </div>
-            <div className="form-item">
+            <div className={`${styles["form-item"]}`}>
                 <label>
-                    Street Address <span>*</span>
+                    <span>Street Address <span>*</span></span>
                     <input type="text" id="street-address-1" required></input>
                 </label>
                 <label>
                     <input type="text" id="street-address-2" required></input>
                 </label>
             </div>
-            <div className="form-item">
+            <div className={`${styles["form-item"]}`}>
                 <label>
-                    City <span>*</span>
+                    <span>City <span>*</span></span>
                     <input type="text" id="city" required></input>
                 </label>
             </div>
-            <div className="form-item">
+            <div className={`${styles["form-item"]}`}>
                 <label>
-                    State/Province <span>*</span>
+                    <span>State/Province <span>*</span></span>
                     <select name="state" id="state">
                         <option value="1">Please, select a region, state or province</option>
                     </select>
                 </label>
             </div>
-            <div className="form-item">
+            <div className={`${styles["form-item"]}`}>
                 <label>
-                    Zip/Postal Code <span>*</span>
+                    <span>Zip/Postal Code <span>*</span></span>
                     <input type="text" id="zip-code" required></input>
                 </label>
             </div>
             <div className="form-item">
                 <label>
-                    Country <span>*</span>
+                    <span>Country <span>*</span></span>
                     <select name="country" id="country">
                         <option value="1">United States</option>
                     </select>
                 </label>
             </div>
-            <div className="form-item">
+            <div className={`${styles["form-item"]}`}>
                 <label>
-                    Phone Number <span>*</span>
+                    <span>Phone Number <span>*</span></span>
                     <input type="text" id="phone-number" required></input>
                 </label>
             </div>
-            <div className="form-item">
+            <div className={`${styles["form-item"]}`}>
                 <span>Standard Rate</span>
                 <div className="radio-input">
                     <label>
-                        Price may vary depending on the item/destination. Shop Staff will contact you. $21.00
+                        <span>Price may vary depending on the item/destination. Shop Staff will contact you. $21.00</span>
                         <input type="radio" id="rate" required></input>
                         <span>$21.00</span>
                     </label>
                 </div>                    
             </div>
-            <div className="form-item">
+            <div className={`${styles["form-item"]}`}>
                 <span>Pickup from store</span>
                 <div className="radio-input">
                     <label>
-                        1234 Street Adress City Address, 1234
+                        <span>1234 Street Adress City Address, 1234</span>
                         <input type="radio" id="rate" required></input>
                         <span>$0.00</span>
                     </label>
