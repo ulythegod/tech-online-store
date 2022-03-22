@@ -27,7 +27,7 @@ function CardItem(props: any): any {
             <td className={`${styles["item-subtotal"]}`}>
                 <span>${props.subtotal}</span>
             </td>
-            <td>
+            <td className={`${styles["item-buttons"]}`}>
                 <RoundButton 
                     content={<DeleteItem />}
                 />

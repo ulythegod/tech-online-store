@@ -25,7 +25,15 @@
     justify-content: space-between;
 }
 
+.card-buttons button {
+    padding: 4px 6px;
+}
+
+.inner-buttons button {
+    padding: 4px 6px;
+    margin-left: 4px;
+}
+
 .card-buttons button:last-child {
-    width: 50%;
     float: right;
 } 

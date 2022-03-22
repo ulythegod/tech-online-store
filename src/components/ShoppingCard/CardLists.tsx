@@ -44,14 +44,16 @@ function CardLists(props: any): any {
                 </table>
             </div>
             <div className={`${styles["card-buttons"]}`}>
-                <StoreButton 
-                    style="grey-button"
-                    content="Continue Shopping"
-                />
-                <StoreButton 
-                    style="black-button"
-                    content="Clear Shopping Cart"
-                />
+                <div className={`${styles["inner-buttons"]}`}>
+                    <StoreButton 
+                        style="grey-button"
+                        content="Continue Shopping"
+                    />
+                    <StoreButton 
+                        style="black-button"
+                        content="Clear Shopping Cart"
+                    />
+                </div>
                 <StoreButton 
                     style="black-button"
                     content="Update Shopping Cart"

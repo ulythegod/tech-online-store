@@ -4,9 +4,15 @@
     @include sections.section-margins;
 }
 
-.page-title {
+.page-title-product {
     @include sections.section-margins;
     width: 80%;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.page-title {
+    @include sections.section-margins;
     font-size: 32px;
     font-weight: 500;
 }

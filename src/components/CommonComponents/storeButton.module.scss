@@ -39,17 +39,34 @@ button {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
     padding: 16px 40px;
 }
 
+.yellow-button-general {
+    @include buttons.yellow-button;
+    color: colors.$deepBlue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 114px;
+}
+
+.yellow-button-general svg {
+    padding-left: 2px;
+}
+
 .grey-button {
-    background-color: transparent;
-    color: colors.$deepGrey;
-    border: solid 2px colors.$deepGrey;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 50px;
+    @include buttons.grey-button;
     padding: 4px 70px;
+}
+
+.grey-button-general {
+    @include buttons.grey-button;
+    padding: 10px 50px;
 }
 
 .black-button {

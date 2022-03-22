@@ -4,10 +4,12 @@ import styles from './pageTitle.module.scss';
 function PageTitle(props: any): any {
     let className = "";
 
-    if (!props.isCatalogPage) {
-        className = "page-title";
-    } else {
+    if (props.isCatalogPage && !props.isProductPage) {
         className = "page-title-catalog";
+    } else if (!props.isCatalogPage && props.isProductPage) {
+        className = "page-title-product";
+    } else {
+        className = "page-title";
     }
 
     return (

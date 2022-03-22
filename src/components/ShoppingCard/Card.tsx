@@ -7,9 +7,7 @@ function Card(props: any): any {
     return (
         <div className={`${styles["shopping-card-block"]}`}>
             <CardLists />
-            <div className={`${styles["card-summary"]}`}>
-                <CardSummaryForm />
-            </div>
+            <CardSummaryForm />
         </div>
     );    
 }

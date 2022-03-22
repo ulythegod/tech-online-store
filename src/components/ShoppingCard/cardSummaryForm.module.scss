@@ -1,0 +1,173 @@
+@use '../../_colors.scss' as colors;
+@use '../../_arrows.scss' as arrows;
+@use '../../_forms.scss' as forms;
+@use '../../_zipLogo.scss' as zipLogo;
+
+.card-summary {
+    width: 34%;
+    background-color: colors.$lightBlue;
+    margin-bottom: 40px;
+}
+
+.card-summary form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.form-title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.form-unit-title a {
+    font-size: 18px;
+    color: colors.$black;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-unit-title span {
+    @include arrows.arrow-down-black;
+}
+
+.form-block-inner {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.form-block-inner p {
+    font-size: 14px;
+    color: colors.$darkGrey;
+}
+
+.form-block-inner-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-block-inner-input span {
+    @include forms.from-label;
+}
+
+.form-block-inner-input select {
+    @include forms.form-input;
+    width: 414px;
+}
+
+.form-block-inner-input input {
+    @include forms.form-input;
+    width: 392px;
+}
+
+.radio-input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.radio-input-button {
+    display: inline !important;
+}
+
+.radio-input-text {
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    display: inline !important;
+}
+
+.radio-input-field {
+    position: absolute;
+    opacity: 0;
+}
+
+.radio-input .radio-input-button:before {
+    content: '';
+    border-radius: 100%;
+    border: 2px solid colors.$darkBlue;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    margin-right: 5px; 
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    transition: all 250ms ease;
+}
+
+.radio-input-field:checked + .radio-input-button:before {
+    background-color: colors.$darkBlue;
+    box-shadow: inset 0 0 0 2px white;
+}
+
+.summary-info {
+    border-top: 2px solid colors.$grey;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.summary-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.summary-item span {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.summary-total span {
+    font-size: 18px;
+}
+
+.summary-item-note {
+    font-size: 10px;
+    font-weight: 400;
+    color: colors.$darkGrey;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.zip-block {
+    @include zipLogo.zip-block;
+}
+
+.zip-logo {
+    height: 20px;
+}
+
+.zip-line::before {
+    @include zipLogo.zip-line;
+    margin-left: 0px;
+}
+
+.zip-line {
+    color: colors.$deepBlue;
+    font-size: 12px;
+}
+
+.zip-line span {
+    font-weight: 600;
+}
+
+.zip-line a {
+    color: colors.$deepBlue;
+    font-size: 10px;
+}
+
+.summary-info button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

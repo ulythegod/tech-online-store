@@ -26,3 +26,12 @@
     font-weight: 600;
     border-radius: 50px;
 }
+
+@mixin grey-button {
+    background-color: transparent;
+    color: colors.$deepGrey;
+    border: solid 2px colors.$deepGrey;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50px;
+}
