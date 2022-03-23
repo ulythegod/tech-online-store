@@ -1,9 +1,10 @@
 import React from 'react';
+import styles from './rightPictureBanner.module.scss';
 
 function AboutUsRight(props: any): any {
     return (
-        <section className="about-us-right">
-            <div className="description">
+        <section className={`${styles["about-us-right"]}`}>
+            <div className={`${styles["description"]}`}>
                 {
                     props.icon && 
                     <div className="description-sign">
@@ -11,11 +12,11 @@ function AboutUsRight(props: any): any {
                     </div>
                 }
                 <span>{props.title}</span>
-                <p>
+                <div className={`${styles["description-text"]}`}>
                     {props.description}
-                </p>
+                </div>
             </div>
-            <div className="image">
+            <div className={`${styles["image"]}`}>
                 <img src={props.image} alt={props.title}/>
             </div>
         </section>
