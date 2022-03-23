@@ -1,14 +1,15 @@
 import React from 'react';
+import styles from './orderSummary.module.scss';
 import SummaryItem from 'components/CheckoutBlock/SummaryItem';
 import image1 from '../../images/summary1.png';
 import image2 from '../../images/summary2.png';
 
 function OrderSummary(props: any): any {
     return (
-        <div className="order-summary">
-            <span>Order Summary</span>
-            <a href="#">{props.amount} Items in Cart</a>
-            <div className="summary-items">
+        <div className={`${styles["order-summary"]}`}>
+            <span className={`${styles["summary-title"]}`}>Order Summary</span>
+            <a className={`${styles["summary-link"]}`} href="#">{props.amount} Items in Cart</a>
+            <div className={`${styles["summary-items"]}`}>
                 <SummaryItem
                     amount={1}
                     price={3799.00}

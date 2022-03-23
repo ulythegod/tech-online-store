@@ -21,3 +21,45 @@
     margin-bottom: 10px;
     width: 340px;
 }
+
+@mixin radio-input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin radio-input-field {
+    position: absolute;
+    opacity: 0;
+}
+
+@mixin radio-input-button {
+    display: inline !important;
+}
+
+@mixin radio-style {
+    content: '';
+    border-radius: 100%;
+    border: 2px solid colors.$darkBlue;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    margin-right: 5px; 
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    transition: all 250ms ease;
+}
+
+@mixin checked-radio-style {
+    background-color: colors.$darkBlue;
+    box-shadow: inset 0 0 0 2px white;
+}
+
+@mixin radio-input-text {
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    display: inline !important;
+}

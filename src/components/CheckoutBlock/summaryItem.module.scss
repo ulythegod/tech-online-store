@@ -1,0 +1,35 @@
+@use '../../_colors.scss' as colors;
+
+.summary-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.summary-item a {
+    width: 62px;
+    height: 62px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.info-text {
+    font-size: 14px;
+}
+
+.info-price {
+    font-size: 14px;
+    color: colors.$grey;
+}
+
+.info-price span {
+    color: colors.$black;
+    font-weight: 600;
+    margin-right: 5px;
+}

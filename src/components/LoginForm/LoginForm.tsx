@@ -17,7 +17,7 @@ function LoginForm(props: any): any {
                         <div className={`${styles["contact-us-form-item"]}`}>
                             <label>
                                 <span>Email <span>*</span></span>
-                                <input type={"email"} placeholder="Your Email" pattern={emailMask} />
+                                <input type="email" placeholder="Your Email" pattern={emailMask} />
                             </label>
                         </div>
                         <div className={`${styles["contact-us-form-item"]}`}>

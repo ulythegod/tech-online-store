@@ -1,14 +1,103 @@
 @use '../../_forms.scss' as forms;
+@use '../../_colors.scss' as colors;
 
 .checkout-form {
     display: flex;
     flex-direction: column;
+    width: 65%;
+    margin: 10px 15px 100px;
+}
+
+.form-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.form-separator {
+    height: 2px;
+    background-color: colors.$lightGrey;
+    margin: 15px 0px;
+}
+
+.form-item {
+    width: 65%;
 }
 
 .form-item label span {
+    @include forms.from-label;
+    display: flex;
+    flex-direction: row;
+}
+
+.form-radio-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-radio-item span {
     @include forms.from-label;
 }
 
 .form-item label span span {
     @include forms.required-field;
+}
+
+.form-note {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    color: colors.$deepGrey;
+    margin-top: 10px;
+}
+
+.form-input {
+    @include forms.form-input;
+    border: 1px solid colors.$deepGrey;
+    width: 96%;
+}
+
+.form-select {
+    @include forms.form-input;
+    border: 1px solid colors.$deepGrey;
+    width: 100%;
+}
+
+.checkout-form button {
+    margin: 20px 0px;
+    width: 25%;
+}
+
+.radio-input {
+    @include forms.radio-input;
+}
+
+.radio-input-button {
+    @include forms.radio-input-button;
+}
+
+.radio-input-text {
+    @include forms.radio-input-text;
+}
+
+.radio-input-field {
+    @include forms.radio-input-field;
+}
+
+.radio-input .radio-input-button:before {
+    @include forms.radio-style;
+}
+
+.radio-input-field:checked + .radio-input-button:before {
+    @include forms.checked-radio-style;
+}
+
+.radio-price {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.radio-label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
