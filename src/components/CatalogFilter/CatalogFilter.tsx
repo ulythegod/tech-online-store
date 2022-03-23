@@ -7,6 +7,8 @@ import StoreButton from '../CommonComponents/StoreButton';
 import banner from '../../images/filters-banner.png';
 import color1 from '../../images/color1.png';
 import color2 from '../../images/color2.png';
+import WishList from 'components/WishList/WishList';
+import CompareProducts from 'components/CompareProducts/CompareProducts';
 
 function CatalogFilter(props: any): any {
     return (
@@ -106,14 +108,8 @@ function CatalogFilter(props: any): any {
                 />
             </div>
             <FilterBrands />
-            <div className={`${styles["compare-products"]}`}>
-                <span>Compare Products</span>
-                <p>You have no items to compare.</p>
-            </div>
-            <div className={`${styles["wish-list"]}`}>
-                <span>My Wish List</span>
-                <p>You have no items in your wish list.</p>
-            </div>
+            <CompareProducts />
+            <WishList />
             <CatalogFilterBanner 
                 image={banner}
                 link='#'

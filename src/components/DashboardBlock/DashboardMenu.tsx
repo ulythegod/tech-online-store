@@ -1,11 +1,12 @@
 import React from 'react';
+import styles from './dashboardMenu.module.scss';
 
 function DashboardMenu(props: any): any {
     return (
-        <ul>
-            <li>
+        <ul className={`${styles["menu"]}`}>
+            <li className={`${styles["menu-block"]}`}>
                 <ul>
-                    <li>
+                    <li className={`${styles["active"]}`}>
                         <a href="#">Account Dashboard</a>
                     </li>
                     <li>
@@ -19,7 +20,7 @@ function DashboardMenu(props: any): any {
                     </li>
                 </ul>
             </li>
-            <li>
+            <li className={`${styles["menu-block"]}`}>
                 <ul>
                     <li>
                         <a href="#">My Downloadable Products</a>
@@ -35,7 +36,7 @@ function DashboardMenu(props: any): any {
                     </li>
                 </ul>
             </li>
-            <li>
+            <li className={`${styles["menu-block"]}`}>
                 <ul>
                     <li>
                         <a href="#">My Product Reviews</a>

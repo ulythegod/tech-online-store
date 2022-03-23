@@ -1,0 +1,54 @@
+@use '../../_colors.scss' as colors;
+
+.information-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.item-title {
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    border-bottom: 1px solid colors.$grey;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.information-item a {
+    font-weight: 300;
+    color: colors.$darkBlue;
+}
+
+.item-title a {
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.description-table tr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.description-table tr td {
+    width: 48%;
+}
+
+.info-block {
+    color: colors.$darkGrey;
+    font-weight: 300;
+}
+
+.info-title {
+    font-weight: 600;
+}
+
+.info-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+}

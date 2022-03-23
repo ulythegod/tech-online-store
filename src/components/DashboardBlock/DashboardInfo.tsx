@@ -1,21 +1,22 @@
 import React from 'react';
+import styles from './dashboardAccountInfo.module.scss';
 
-function DashboardAccountInfo(props: any): any {
+function DashboardInfo(props: any): any {
     return (
-        <div className="information-item">
-            <span>Account Information</span>
+        <div className={`${styles["information-item"]}`}>
+            <span className={`${styles["item-title"]}`}>{props.title}</span>
             <div className="item-description">
-                <table>
+                <table className={`${styles["description-table"]}`}>
                     <tbody>
                         <tr>
                             <td>
                                 <div>
-                                    <span>Contact Information</span>
-                                    <p>
+                                    <span className={`${styles["info-title"]}`}>Contact Information</span>
+                                    <p className={`${styles["info-block"]}`}>
                                         Alex Driver
                                         ExampeAdress@gmail.com
                                     </p>
-                                    <p>
+                                    <p className={`${styles["info-links"]}`}>
                                         <a href="#">Edit</a>
                                         <a href="#">Change Password</a>
                                     </p>
@@ -23,12 +24,12 @@ function DashboardAccountInfo(props: any): any {
                             </td>
                             <td>
                                 <div>
-                                    <span>Newsletters</span>
-                                    <p>
+                                    <span className={`${styles["info-title"]}`}>Newsletters</span>
+                                    <p className={`${styles["info-block"]}`}>
                                         You don't subscribe 
                                         to our newsletter.
                                     </p>
-                                    <p>
+                                    <p className={`${styles["info-links"]}`}>
                                         <a href="#">Edit</a>
                                     </p>
                                 </div>
@@ -41,4 +42,4 @@ function DashboardAccountInfo(props: any): any {
     );
 }
 
-export default DashboardAccountInfo;
+export default DashboardInfo;

@@ -1,0 +1,48 @@
+@use '../../_colors.scss' as colors;
+
+.menu {
+    background-color: colors.$lightBlue;
+    list-style: none;
+    padding: 15px 0px;
+    margin-bottom: 0px;
+}
+
+.menu .menu-block:not(:last-child) {
+    border-bottom: 1px solid colors.$grey;
+}
+
+.menu-block ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.menu-block ul li a {
+    display: block;
+    font-size: 15px;
+    color: colors.$deepGrey;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.active a {
+    color: colors.$black !important;
+    font-weight: 600;
+}
+
+.active {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+}
+
+.active::before {
+    content: "";
+    display: block;
+    height: 1.5em;
+    width: 3px;
+    background-color: colors.$darkBlue;
+}

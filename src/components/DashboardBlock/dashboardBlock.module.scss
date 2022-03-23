@@ -1,0 +1,20 @@
+@use '../../_sections.scss' as sections;
+
+.dashboard-block {
+    @include  sections.section-margins;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.dashboard-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.dashboard-information {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
