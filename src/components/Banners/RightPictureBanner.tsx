@@ -7,7 +7,7 @@ function AboutUsRight(props: any): any {
             <div className={`${styles["description"]}`}>
                 {
                     props.icon && 
-                    <div className="description-sign">
+                    <div className={`${styles["description-sign"]}`}>
                         <img src={props.icon} alt={props.title}/>
                     </div>
                 }

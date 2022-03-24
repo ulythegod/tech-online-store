@@ -1,12 +1,12 @@
 @use './_sidedBanners.scss' as sidedBanners;
 
-.about-us-right {
-    background-color: black;
+.about-us-left {
+    background-color: white;
     @include sidedBanners.about-us-block;
 }
 
 .description {
-    color: white;
+    color: black;
     @include sidedBanners.description;
 }
 
