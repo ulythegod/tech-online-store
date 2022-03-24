@@ -1,0 +1,19 @@
+@use '../../_sections.scss' as sections;
+
+.faq-section {
+    @include sections.section-margins;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.faq-questions {
+    width: 70%;
+}
+
+.faq-questions h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}

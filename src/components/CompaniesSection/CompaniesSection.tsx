@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './companiesSection.module.scss';
+import classNames from 'classnames';
 import CompanyLogo1 from '../../images/companies1.png';
 import CompanyLogo2 from '../../images/companies2.png';
 import CompanyLogo3 from '../../images/companies3.png';
@@ -9,8 +10,14 @@ import CompanyLogo6 from '../../images/companies6.png';
 import CompanyLogo7 from '../../images/companies7.png';
 
 function CompaniesSection(props: any): any {
+    let sectionClass = ""; 
+
+    if (props.isInMenu) {
+        sectionClass = "section-in-menu";
+    }
+
     return (
-        <section className={`${styles["main-companies-section"]}`}>
+        <section className={`${classNames(styles["main-companies-section"], styles[sectionClass])}`}>
             <ul className={`${styles["companies-list"]}`}>
                 <li className={`${styles["companies-item"]}`}>
                     <a href="#"><img src={CompanyLogo1} alt="roccat" /></a>

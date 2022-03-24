@@ -1,0 +1,26 @@
+@use '../../_colors.scss' as colors;
+
+.faq-navigation {
+    background-color: colors.$lightBlue;
+    height: fit-content;
+    padding: 10px;
+}
+
+.faq-navigation ul {
+    list-style: none;
+    padding: 0px;
+    font-size: 14px;
+}
+
+.faq-navigation ul li {
+    margin: 10px;
+}
+
+.faq-navigation ul li a {
+    color: colors.$black;
+    text-decoration: none;
+}
+
+.active a {
+    font-weight: 700;
+}

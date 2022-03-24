@@ -1,12 +1,13 @@
 import React from 'react';
+import styles from './faqItem.module.scss';
 
 function FAQItem(props: any): any {
     return (
-        <div id={props.id}>
+        <div className={`${styles["faq-item"]}`} id={props.id}>
             <h3>{props.name}</h3>
-            <p>
+            <div>
                 {props.description}
-            </p>
+            </div>
         </div>
     );
 }

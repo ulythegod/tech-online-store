@@ -1,3 +1,5 @@
+@use '../../_colors.scss' as colors;
+
 .main-top-menu {
     display: flex;
     font-size: 14px;
@@ -6,10 +8,29 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    width: 65%;
+    width: 70%;
 }
 
-.main-top-menu a {
+.menu-link a {
     text-decoration: none;
-    color: black;
+    color: colors.$black;
+    padding: 10px 20px;
+}
+
+.menu-link .menu-link:hover {
+    color: white;
+    background-color: colors.$darkBlue;
+    border-radius: 100px;
+    padding: 10px 20px;
+}
+
+.hover-menu-block {
+    display: none;
+}
+
+.menu-link .menu-link:hover .hover-menu-block {
+    display: block;
+    position: absolute;
+    margin-top: 27px;
+    z-index: 1;
 }

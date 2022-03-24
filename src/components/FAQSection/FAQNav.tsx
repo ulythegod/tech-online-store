@@ -1,10 +1,11 @@
 import React from 'react';
+import styles from './faqNav.module.scss';
 
 function FAQNav(props: any): any {
     return (
-        <div className="faq-navigation">
+        <div className={`${styles["faq-navigation"]}`}>
             <ul>
-                <li>
+                <li className={`${styles["active"]}`}>
                     <a className="active" href="#definitions">Definitions & Interpretation</a>
                 </li>
                 <li>
