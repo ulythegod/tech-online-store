@@ -10,23 +10,6 @@
     position: relative;
 }
 
-.product-preview:hover {
-    box-shadow: -1px 1px 13px 4px colors.$grey;
-    animation-duration: 1s;
-    animation-name: producthover;
-    animation-fill-mode: forwards;
-}
-
-@keyframes producthover {
-    from {
-        height: 338px;
-    }
-  
-    to {
-        height: 377px;
-    }
-}
-
 .product-status {
     @include commonStyles.product-status-style;
 }
@@ -56,7 +39,7 @@
     @include commonStyles.product-rating;
 }
 
-.product-rating a {
+.reviews-link {
     @include commonStyles.product-rating-link;
 }
 
@@ -76,6 +59,7 @@
 .product-discount {
     @include commonStyles.product-discount;
     margin-bottom: 5px;
+    color: colors.$black !important;
 }
 
 .product-buttons {

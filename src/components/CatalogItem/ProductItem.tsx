@@ -58,7 +58,7 @@ function ProductItem(props: any): any {
                         isFilled={false}
                     />
                 </div>
-                <a href='#'>Reviews ({props.reviewsCount})</a>
+                <a className={`${styles["reviews-link"]}`} href='#'>Reviews ({props.reviewsCount})</a>
             </div>
             <Link to="/product" className={`${styles["product-title"]}`}>{props.name}</Link>
             <span className={`${styles["product-price"]}`}>${props.price}</span>

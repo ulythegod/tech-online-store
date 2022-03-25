@@ -1,0 +1,85 @@
+@use '../../_colors.scss' as colors;
+@use '../../_arrows.scss' as arrows;
+
+.menu-main-list {
+    border: 1px solid colors.$grey;
+    width: 23%;
+    list-style: none;
+    padding: 0px;
+    height: 408px;
+}
+
+.menu-link-inner {
+    text-decoration: none;
+    color: colors.$black;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.main-list-item {
+    padding: 10px;
+}
+
+.item-with-level {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-with-level:hover {
+    background-color: colors.$grey;
+}
+
+.arrow-next-level {
+    @include arrows.arrow-right-black;
+}
+
+.second-level-list {
+    display: none;
+}
+
+.item-with-level:hover .second-level-list {
+    display: block;
+    position: absolute;
+    background-color: white;
+    margin-left: 321px;
+    z-index: 1;
+    list-style: none;
+    top: 0;
+    bottom: 0;
+    padding: 0px;
+    height: 408px;
+    border: 1px solid colors.$grey;
+    width: 18%;
+}
+
+.item-with-third-level {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-with-third-level:hover {
+    background-color: colors.$grey;
+}
+
+.third-level-list {
+    display: none;
+}
+
+.item-with-third-level:hover .third-level-list {
+    display: block;
+    position: absolute;
+    background-color: white;
+    margin-left: 257px;
+    z-index: 1;
+    list-style: none;
+    top: 0;
+    bottom: 0;
+    padding: 0px;
+    height: 407px;
+    border: 1px solid #CCCCCC;
+    width: 100%;    
+}
