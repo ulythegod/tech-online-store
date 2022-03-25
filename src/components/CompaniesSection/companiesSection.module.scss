@@ -17,6 +17,13 @@
 
 .section-in-menu {
     align-items: flex-start;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.section-in-menu .companies-list {
+    width: 100%;
+    padding: 0px;
 }
 
 .companies-item {

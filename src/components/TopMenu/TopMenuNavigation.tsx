@@ -25,6 +25,9 @@ function TopMenuNavagation(props: any): any {
                 </li>
                 <li className={`${style["menu-link"]}`}>
                     <Link className={`${style["menu-link-inner"]}`} to="/catalog">Networking Devices</Link>
+                    <ul className={`${style["hover-menu-block"]}`}>
+                        <HoverMenu />
+                    </ul>
                 </li>
                 <li className={`${style["menu-link"]}`}>
                     <Link className={`${style["menu-link-inner"]}`} to="/catalog">Printers & Scanners</Link>

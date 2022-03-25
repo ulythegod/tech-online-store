@@ -21,11 +21,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 43%;
+    width: 44%;
 }
 
 .on-sale {
     font-size: 14px;
+    margin-right: 10px;
 }
 
 .on-sale span {
@@ -35,6 +36,7 @@
 .prices-block .number {
     display: inline-block;
 	position: relative;
+    margin-right: 10px;
 }
 
 .prices-block .number input {

@@ -14,13 +14,13 @@ function MultilevelMenu(props: any): any {
                         <span className={`${styles["arrow-next-level"]}`}></span>
                         <ul className={`${styles["third-level-list"]}`}>
                             <li className={`${styles["main-list-item"]}`}>
-                                <a className={`${styles["menu-link-inner"]}`} href="#">MSI WS Series <span>(12)</span></a>
+                                <a className={`${styles["menu-link-inner"]}`} href="#">MSI WS Series <span className={`${styles["amount"]}`}>(12)</span></a>
                             </li>
                             <li className={`${styles["main-list-item"]}`}>
-                                <a className={`${styles["menu-link-inner"]}`} href="#">MSI WT Series <span>(31)</span></a>
+                                <a className={`${styles["menu-link-inner"]}`} href="#">MSI WT Series <span className={`${styles["amount"]}`}>(31)</span></a>
                             </li>
                             <li className={`${styles["main-list-item"]}`}>
-                                <a className={`${styles["menu-link-inner"]}`} href="#">MSI WE Series <span>(7)</span></a>
+                                <a className={`${styles["menu-link-inner"]}`} href="#">MSI WE Series <span className={`${styles["amount"]}`}>(7)</span></a>
                             </li>
                         </ul>
                     </li>
@@ -38,13 +38,13 @@ function MultilevelMenu(props: any): any {
                         <span className={`${styles["arrow-next-level"]}`}></span>
                         <ul className={`${classNames(styles["main-list-item"], styles["third-level-list"])}`}>
                             <li className={`${styles["main-list-item"]}`}>
-                                <a className={`${styles["menu-link-inner"]}`} href="#">MSI WS Series <span>(12)</span></a>
+                                <a className={`${styles["menu-link-inner"]}`} href="#">MSI WS Series <span className={`${styles["amount"]}`}>(12)</span></a>
                             </li>
                             <li className={`${styles["main-list-item"]}`}>
-                                <a className={`${styles["menu-link-inner"]}`} href="#">MSI WT Series <span>(31)</span></a>
+                                <a className={`${styles["menu-link-inner"]}`} href="#">MSI WT Series <span className={`${styles["amount"]}`}>(31)</span></a>
                             </li>
                             <li className={`${styles["main-list-item"]}`}>
-                                <a className={`${styles["menu-link-inner"]}`} href="#">MSI WE Series <span>(7)</span></a>
+                                <a className={`${styles["menu-link-inner"]}`} href="#">MSI WE Series <span className={`${styles["amount"]}`}>(7)</span></a>
                             </li>
                         </ul>
                     </li>

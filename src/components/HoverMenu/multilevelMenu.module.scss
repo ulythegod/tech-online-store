@@ -14,6 +14,8 @@
     color: colors.$black;
     padding-left: 20px;
     padding-right: 20px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .main-list-item {
@@ -43,7 +45,7 @@
     display: block;
     position: absolute;
     background-color: white;
-    margin-left: 321px;
+    margin-left: 312px;
     z-index: 1;
     list-style: none;
     top: 0;
@@ -73,7 +75,7 @@
     display: block;
     position: absolute;
     background-color: white;
-    margin-left: 257px;
+    margin-left: 250px;
     z-index: 1;
     list-style: none;
     top: 0;
@@ -82,4 +84,10 @@
     height: 407px;
     border: 1px solid #CCCCCC;
     width: 100%;    
+}
+
+.amount {
+    font-size: 12px;
+    font-weight: 400;
+    color: colors.$grey;
 }

@@ -18,32 +18,32 @@ function HoverMenu(props: any): any {
                         status='in-stock'
                         productImage={prodImg1}
                         name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                        price={499.00}
-                        discount={499.00}
+                        price={"499.00"}
+                        discount={"499.00"}
                         reviewsCount={4}
                     />
                     <ProductItem 
                         status='check-availability'
                         productImage={prodImg2}
                         name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                        price={499.00}
-                        discount={499.00}
+                        price={"499.00"}
+                        discount={"499.00"}
                         reviewsCount={4}
                     />
                     <ProductItem 
                         status='in-stock'
                         productImage={prodImg3}
                         name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                        price={499.00}
-                        discount={499.00}
+                        price={"499.00"}
+                        discount={"499.00"}
                         reviewsCount={4}
                     />
                     <ProductItem 
                         status='in-stock'
                         productImage={prodImg4}
                         name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                        price={499.00}
-                        discount={499.00}
+                        price={"499.00"}
+                        discount={"499.00"}
                         reviewsCount={4}
                     />
                 </div>

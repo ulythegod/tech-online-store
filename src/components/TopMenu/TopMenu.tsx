@@ -3,7 +3,7 @@ import styles from './topMenu.module.scss'
 import TopMenuSearch from './TopMenuSearch';
 import TopMenuBasket from './TopMenuBasket';
 import TopMenuNavigation from './TopMenuNavigation';
-import avatar from '../../images/avatar.png';
+import AccountTopMenu from '../AccountTopMenu/AccountTopMenu';
 
 function TopMenu(props: any): any {
     return (
@@ -13,7 +13,7 @@ function TopMenu(props: any): any {
                 <div className={`${styles["main-top-tools"]}`}>
                     <TopMenuSearch />
                     <TopMenuBasket />
-                    <a href="#"><img src={avatar} alt="avatar"/></a>
+                    <AccountTopMenu />                    
                 </div>
             </nav>
         </div>

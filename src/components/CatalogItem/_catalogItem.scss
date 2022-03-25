@@ -7,6 +7,7 @@
 
 @mixin product-status-style {
     font-size: 10px;
+    font-weight: 400;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -28,18 +29,25 @@
     font-size: 12px;
     display: flex;
     flex-direction: row;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 @mixin product-rating-link {
     color: colors.$darkGrey;
     text-decoration: none;
     margin-left: 5px;
+    font-weight: 400;
 }
 
 @mixin product-title {
     font-size: 13px;
     text-decoration: none;
     color: black;
+    font-weight: 400;
+    width: 81%;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 @mixin product-price {
@@ -47,6 +55,7 @@
     text-decoration: line-through;
     font-size: 14px;
     margin-top: 10px;
+    font-weight: 400;
 }
 
 @mixin product-discount {

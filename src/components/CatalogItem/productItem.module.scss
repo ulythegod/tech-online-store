@@ -8,7 +8,19 @@
     padding-right: 10px;
     padding-bottom: 15px;
     position: relative;
+    height: 349px;
 }
+
+// .product-preview:hover {
+//     z-index: 2;
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     margin-right: auto;
+//     margin-left: auto;
+//     height: 396px;
+//     background-color: red;
+// }
 
 .product-status {
     @include commonStyles.product-status-style;
