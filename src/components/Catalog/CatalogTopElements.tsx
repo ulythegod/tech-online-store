@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './catalogTopElements.module.scss';
-import StoreButton from 'components/CommonComponents/StoreButton';
+import StoreButton from 'components/Buttons/StoreButton';
 import CatalogSelect from './CatalogSelect';
 import { ReactComponent as TableView } from '../../images/table-view.svg';
 import { ReactComponent as LinesView } from '../../images/lines-view.svg';

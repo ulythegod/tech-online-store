@@ -3,7 +3,7 @@ import styles from './catalogFilter.module.scss';
 import FilterItem from './FilterItem';
 import FilterBrands from './FilterBrands';
 import CatalogFilterBanner from './CatalogFilterBanner';
-import StoreButton from '../CommonComponents/StoreButton';
+import StoreButton from '../Buttons/StoreButton';
 import banner from '../../images/filters-banner.png';
 import color1 from '../../images/color1.png';
 import color2 from '../../images/color2.png';
@@ -23,7 +23,6 @@ function CatalogFilter(props: any): any {
                 <ul className={`${styles["filter-items"]}`}>
                     <FilterItem 
                         name='Category'
-                        isOpened={true}
                         items={
                             <ul>
                                 <li>
@@ -43,7 +42,6 @@ function CatalogFilter(props: any): any {
                     />
                     <FilterItem 
                         name='Price'
-                        isOpened={true}
                         items={
                             <ul>
                                 <li>
@@ -83,7 +81,6 @@ function CatalogFilter(props: any): any {
                     />
                     <FilterItem 
                         name='Color'
-                        isOpened={true}
                         items={
                             <ul>
                                 <li>
@@ -98,7 +95,6 @@ function CatalogFilter(props: any): any {
                     />
                     <FilterItem 
                         name='Filter Name'
-                        isOpened={false}
                         items={false}
                     />
                 </ul>

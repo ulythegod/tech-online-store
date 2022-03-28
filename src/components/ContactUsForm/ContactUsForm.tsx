@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './contactUsForm.module.scss';
 import ContactsBlock from 'components/ContactsBlock/ContactsBlock';
-import StoreButton from 'components/CommonComponents/StoreButton';
+import StoreButton from 'components/Buttons/StoreButton';
 import InputMask from "react-input-mask";
 
 function ContactUsForm(props: any): any {

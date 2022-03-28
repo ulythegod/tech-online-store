@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './productImageBlock.module.scss';
-import RoundButton from 'components/CommonComponents/RoundButton';
+import RoundButton from 'components/Buttons/RoundButton';
 import { ReactComponent as PaginationButton } from '../../images/pagiantion-button.svg';
 import { ReactComponent as ZipLogo } from '../../images/zip-logo.svg';
 import { ReactComponent as ProductMail } from '../../images/product-mail.svg';

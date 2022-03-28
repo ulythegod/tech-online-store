@@ -3,7 +3,7 @@ import styles from './productDetailes.module.scss';
 
 function ProductDetailes(props: any): any {
     return (
-        <p className={`${styles["product-detailes"]}`}>
+        <div className={`${styles["product-detailes"]}`}>
             <ul>
                 <li>Intel Core i7-10700F</li>
                 <li>Intel H410</li>
@@ -19,7 +19,7 @@ function ProductDetailes(props: any): any {
                 <li>PSU 330W</li>
                 <li>Fan Cooler</li>
             </ul>
-        </p>
+        </div>
     );
 }
 

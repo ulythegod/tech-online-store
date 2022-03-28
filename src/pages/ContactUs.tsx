@@ -1,6 +1,6 @@
 import React from 'react';
-import Breadcrumbs from 'components/CommonComponents/Breadcrumbs';
-import PageTitle from 'components/CommonComponents/PageTitle';
+import Breadcrumbs from 'components/Breadcrumbs/Breadcrumbs';
+import PageTitle from 'components/PageTitle/PageTitle';
 import ContactUsForm from 'components/ContactUsForm/ContactUsForm';
 import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 

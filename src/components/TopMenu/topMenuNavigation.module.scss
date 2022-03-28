@@ -11,6 +11,10 @@
     width: 70%;
 }
 
+.main-top-menu-closed {
+    width: 20%;
+}
+
 .menu-link-inner {
     text-decoration: none;
     color: colors.$black;
@@ -33,4 +37,8 @@
     position: absolute;
     margin-top: 27px;
     z-index: 1;
+}
+
+.hidden {
+    display: none;
 }

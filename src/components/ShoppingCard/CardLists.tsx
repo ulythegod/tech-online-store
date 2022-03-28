@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './cardList.module.scss';
 import CardItem from './CardItem';
-import StoreButton from 'components/CommonComponents/StoreButton';
+import StoreButton from 'components/Buttons/StoreButton';
 import card1 from '../../images/card1.png';
 import card2 from '../../images/card2.png';
 

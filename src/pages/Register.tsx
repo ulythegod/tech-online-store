@@ -1,8 +1,7 @@
 import React from 'react';
-import Breadcrumbs from 'components/CommonComponents/Breadcrumbs';
-import PageTitle from 'components/CommonComponents/PageTitle';
+import Breadcrumbs from 'components/Breadcrumbs/Breadcrumbs';
+import PageTitle from 'components/PageTitle/PageTitle';
 import LoginForm from 'components/LoginForm/LoginForm';
-import LoginInfo from 'components/LoginForm/LoginInfo';
 import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 
 function Register(props: any): any {

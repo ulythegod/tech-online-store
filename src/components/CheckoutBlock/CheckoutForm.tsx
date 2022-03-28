@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './checkoutForm.module.scss';
 import InputMask from "react-input-mask";
-import StoreButton from 'components/CommonComponents/StoreButton';
+import StoreButton from 'components/Buttons/StoreButton';
 
 function CheckoutForm(props: any): any {
     const emailMask = "/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/";

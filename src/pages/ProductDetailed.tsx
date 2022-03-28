@@ -1,16 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Product from 'components/ProductSection/Product';
 import ProductLinks from 'components/Banners/BannerWithLinks';
 import ProductFeatures from 'components/FeaturesSection/Features';
 import ProductBanners from 'components/Banners/ProductBanners';
-import ProductSection from 'components/ProductSection/ProductSection';
 import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
-import AddToCart from 'components/AddToCartBlock/AddToCart';
 
 function ProductDetailed(props: any): any {
     return (
         <>
-            <AddToCart />
-            <ProductSection />
+            <Product />
             <ProductBanners />
             <ProductLinks />
             <ProductFeatures 
@@ -27,5 +25,6 @@ function ProductDetailed(props: any): any {
         </>
     );
 }
+
 
 export default ProductDetailed;

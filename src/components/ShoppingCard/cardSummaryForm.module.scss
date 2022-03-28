@@ -30,8 +30,12 @@
     align-items: center;
 }
 
-.form-unit-title span {
+.opened-unit {
     @include arrows.arrow-down-black;
+}
+
+.closed-unit {
+    @include arrows.arrow-up-black;
 }
 
 .form-block-inner {
@@ -42,6 +46,10 @@
 .form-block-inner p {
     font-size: 14px;
     color: colors.$darkGrey;
+}
+
+.form-block-inner button {
+    width: 100%;
 }
 
 .form-block-inner-input {
@@ -152,4 +160,8 @@
 .summary-info button {
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.hidden {
+    display: none;
 }

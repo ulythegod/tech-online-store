@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './checkoutHeader.module.scss';
-import PageTitle from "components/CommonComponents/PageTitle";
-import StoreButton from "components/CommonComponents/StoreButton";
+import PageTitle from "components/PageTitle/PageTitle";
+import StoreButton from "components/Buttons/StoreButton";
 import Steps from "./Steps";
 
 function CheckoutHeader(props: any): any {

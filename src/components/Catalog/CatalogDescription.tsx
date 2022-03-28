@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './catalogDescription.module.scss';
-import StoreButton from 'components/CommonComponents/StoreButton';
+import StoreButton from 'components/Buttons/StoreButton';
 
 function CatalogDescription(props: any): any {
     return (

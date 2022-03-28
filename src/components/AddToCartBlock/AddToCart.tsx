@@ -2,13 +2,16 @@ import React from 'react';
 import styles from './addToCart.module.scss';
 import { ReactComponent as PayPal } from '../../images/paypal.svg';
 import AddToCartMenu from './AddToCartMenu';
-import StoreButton from 'components/CommonComponents/StoreButton';
+import StoreButton from 'components/Buttons/StoreButton';
 
 function AddToCart(props: any): any {
     return (
         <section className={`${styles["add-to-card-section"]}`}>
             <div className={`${styles["add-to-card-block"]}`}>
-                <AddToCartMenu />
+                <AddToCartMenu 
+                    handleInfoBlockChange={props.handleInfoBlockChange}
+                    activeInfoBlock={props.activeInfoBlock}
+                />
                 <div className={`${styles["prices-block"]}`}>
                     <span className={`${styles["on-sale"]}`}>On Sale from <span>$3,299.00</span></span>
                     <div className={`${styles["number"]}`}>

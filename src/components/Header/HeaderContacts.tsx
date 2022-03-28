@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './headerContacts.module.scss';
-import SocialsLinks from 'components/CommonComponents/SocialsLinks';
+import SocialsLinks from 'components/Buttons/SocialsLinks';
 
 function HeaderContacts(props: any): any {
     return (

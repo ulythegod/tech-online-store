@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './loginInfo.module.scss';
-import StoreButton from 'components/CommonComponents/StoreButton';
+import StoreButton from 'components/Buttons/StoreButton';
 
 function LoginInfo(props: any): any {
     return (

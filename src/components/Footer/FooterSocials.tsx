@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './footerSocials.module.scss';
-import SocialsLinks from 'components/CommonComponents/SocialsLinks';
+import SocialsLinks from 'components/Buttons/SocialsLinks';
 
 function FooterSocials(props: any): any {
     return (

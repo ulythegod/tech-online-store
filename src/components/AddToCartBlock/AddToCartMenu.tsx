@@ -6,9 +6,33 @@ function AddToCartMenu(props: any): any {
         <nav className={`${styles["navigation-block"]}`}>
             <div className={`${styles["product-menu"]}`}>
                 <ul>
-                    <li><a className={`${styles["active"]}`} href="#">About Product</a></li>
-                    <li><a href="#">Details</a></li>
-                    <li><a href="#">Specs</a></li>
+                    <li>
+                        <a 
+                            className={(props.activeInfoBlock === 'ProductInfoBlock') ? `${styles["active"]}` : ''}
+                            href="#ProductInfoBlock"
+                            onClick={(e) => props.handleInfoBlockChange(e)}
+                        >
+                            About Product
+                        </a>
+                    </li>
+                    <li>
+                        <a 
+                            className={(props.activeInfoBlock === 'ProductDetailes') ? `${styles["active"]}` : ''}
+                            href="#ProductDetailes"
+                            onClick={(e) => props.handleInfoBlockChange(e)}
+                        >
+                            Details
+                        </a>
+                    </li>
+                    <li>
+                        <a 
+                            className={(props.activeInfoBlock === 'ProductSpecs') ? `${styles["active"]}` : ''}
+                            href="#ProductSpecs"
+                            onClick={(e) => props.handleInfoBlockChange(e)}
+                        >
+                            Specs
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>

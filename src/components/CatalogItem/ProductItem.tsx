@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './productItem.module.scss';
 import { Link } from 'react-router-dom';
 import RatingButton from './RatingButton';
-import StoreButton from 'components/CommonComponents/StoreButton';
+import StoreButton from 'components/Buttons/StoreButton';
 import classNames from 'classnames';
 import { ReactComponent as InStock } from '../../images/in-stock.svg';
 import { ReactComponent as CheckAvailability } from '../../images/check-availability.svg';

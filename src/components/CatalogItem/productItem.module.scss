@@ -4,23 +4,18 @@
 .product-preview {
     @include commonStyles.item-inner-elements-direction;
     max-width: 234px;
-    padding-left: 10px;
-    padding-right: 10px;
     padding-bottom: 15px;
     position: relative;
     height: 349px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;
 }
 
-// .product-preview:hover {
-//     z-index: 2;
-//     position: absolute;
-//     top: 0;
-//     bottom: 0;
-//     margin-right: auto;
-//     margin-left: auto;
-//     height: 396px;
-//     background-color: red;
-// }
+.product-preview:hover {
+    z-index: 2;
+    box-shadow: -1px 1px 13px 4px colors.$grey;
+}
 
 .product-status {
     @include commonStyles.product-status-style;
@@ -92,4 +87,10 @@
 
 .product-preview:hover .add-to-card-btn {
     display: flex;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    box-shadow: -3px 13px 12px 3px #ccccccde;
 }

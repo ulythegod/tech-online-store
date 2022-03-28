@@ -1,5 +1,30 @@
-.search-field-hidden {
-    display: none;
+@use '../../_colors.scss' as colors;
+
+.search-field-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 92%;
+}
+
+.search-field-with-button {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search-field {
+    background-color: colors.$lightGrey;
+    color: colors.$darkGrey;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    border-radius: 31px;
+    padding: 15px;
+    margin-right: -45px;
+    width: 100%;
 }
 
 .search-icon {
@@ -7,4 +32,10 @@
     outline: none;
     background-color: transparent;
     cursor: pointer;
+}
+
+.icon-in-field {
+    position: relative;
+    z-index: 1;
+    padding-top: 10px;
 }

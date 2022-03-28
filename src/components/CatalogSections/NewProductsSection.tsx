@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './newProductsSection.module.scss';
-import TurnOverButton from 'components/CommonComponents/TurnOverButton';
+import TurnOverButton from 'components/Buttons/TurnOverButton';
 import ProductItem from 'components/CatalogItem/ProductItem';
 import prodImg1 from '../../images/new-prod-img1.png';
 import prodImg2 from '../../images/new-prod-img2.png';

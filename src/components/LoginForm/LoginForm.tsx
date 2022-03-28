@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './loginForm.module.scss';
 import LoginInfo from './LoginInfo';
-import StoreButton from 'components/CommonComponents/StoreButton';
+import StoreButton from 'components/Buttons/StoreButton';
 import InputMask from "react-input-mask";
 
 function LoginForm(props: any): any {

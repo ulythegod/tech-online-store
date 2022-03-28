@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './topMenuBasket.module.scss';
-import SmallBasketItem from './SmallBasketItem';
+import SmallBasketItem from '../TopMenu/SmallBasketItem';
 import { ReactComponent as BasketLogo } from '../../images/basket.svg';
 import { ReactComponent as PayPal } from '../../images/paypal.svg';
+import StoreButton from 'components/Buttons/StoreButton';
 import imgPath from '../../images/small-card.png';
 
 function TopMenuBasket(props: any): any {
@@ -12,11 +13,14 @@ function TopMenuBasket(props: any): any {
                 <BasketLogo className={`${styles["basket-logo"]}`} />
                 <span className={`${styles["basket-amount"]}`}>2</span>
             </a>
-            <div className={`${styles["hidden-basket-top"]}`}>
-                <div className="basket-top">
-                    <span>My Cart</span>
-                    <span>2 item in cart</span>
-                    <button>View or Edit Your Cart</button>
+            <div className={`${styles["appearing-basket-top"]}`}>
+                <div className={`${styles["basket-top"]}`}>
+                    <span className={`${styles["basket-title"]}`}>My Cart</span>
+                    <span className={`${styles["basket-amount-title"]}`}>2 item in cart</span>
+                    <StoreButton 
+                        style="light-button"
+                        content={"View or Edit Your Cart"}
+                    />
                 </div>
                 <div className="basket-list">
                     <SmallBasketItem 
@@ -32,11 +36,19 @@ function TopMenuBasket(props: any): any {
                 </div>
                 <div className="basket-bottom">
                     <span>Subtotal: <span>$499.00</span></span>
-                    <button>Go to Checkout</button>
-                    <button>
-                        Check out with
-                        <PayPal />
-                    </button>
+                    <StoreButton 
+                        style="blue-button"
+                        content={"Go to Checkout"}
+                    />
+                    <StoreButton 
+                        style="yellow-button-general"
+                        content={
+                            <>
+                                Check out with
+                                <PayPal />
+                            </>
+                        }
+                    />
                 </div>
             </div>
         </div>

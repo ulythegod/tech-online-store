@@ -1,0 +1,60 @@
+@use '../../_colors.scss' as colors;
+
+.basket-logo {
+    position: relative;
+    margin-right: -5px;
+}
+
+.basket-amount {
+    color: white;
+    background-color: colors.$darkBlue;
+    font-size: 10px;
+    font-weight: 700;
+    display: inline-block;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    line-height: 1.5em;
+    position: absolute;
+    top: 65px;
+}
+
+.appearing-basket-top {
+    position: absolute;
+    margin-left: -15.5%;
+    width: 15%;
+    z-index: 1;
+    list-style: none;
+    background-color: white;
+    padding: 20px;
+    box-shadow: -1px 1px 13px 4px #02020314;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.basket-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.basket-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.basket-amount-title {
+    color: colors.$grey;
+    font-size: 12px;
+    font-weight: 400px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.basket-list {
+    display: flex;
+    flex-direction: column;
+}
