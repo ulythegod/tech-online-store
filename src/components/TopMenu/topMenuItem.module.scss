@@ -1,0 +1,26 @@
+@use '../../_colors.scss' as colors;
+
+.hidden {
+    display: none;
+}
+
+.menu-link-inner {
+    text-decoration: none;
+    color: colors.$black;
+    padding: 10px 20px;
+}
+
+.menu-link-inner-hover {
+    color: white;
+    text-decoration: none;
+    background-color: colors.$darkBlue;
+    border-radius: 100px;
+    padding: 10px 20px;
+}
+
+.hover-menu-block {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    margin-top: 27px;
+}

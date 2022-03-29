@@ -3,6 +3,7 @@ import style from './topMenuNavigation.module.scss'
 import { ReactComponent as Logo } from '../../images/logo.svg';
 import { Link } from 'react-router-dom';
 import StoreButton from 'components/Buttons/StoreButton';
+import TopMenuItem from './TopMenuItem';
 import HoverMenu from '../HoverMenu/HoverMenu';
 import classNames from 'classnames';
 
@@ -13,35 +14,50 @@ function TopMenuNavagation(props: any): any {
                 <li>
                     <Link to="/"><Logo /></Link>
                 </li>
-                <li className={!props.isOpenSearchPannel ? `${style["menu-link"]}` : `${style["hidden"]}`}>
-                    <Link className={`${style["menu-link-inner"]}`} to="/catalog">
-                        Laptops
-                    </Link>
-                    <ul className={`${style["hover-menu-block"]}`}>
-                        <HoverMenu />
-                    </ul>
-                </li>
-                <li className={!props.isOpenSearchPannel ? `${style["menu-link"]}` : `${style["hidden"]}`}>
-                    <Link className={`${style["menu-link-inner"]}`} to="/catalog">Desktop PCs</Link>
-                </li>
-                <li className={!props.isOpenSearchPannel ? `${style["menu-link"]}` : `${style["hidden"]}`}>
-                    <Link className={`${style["menu-link-inner"]}`} to="/catalog">Networking Devices</Link>
-                    <ul className={`${style["hover-menu-block"]}`}>
-                        <HoverMenu />
-                    </ul>
-                </li>
-                <li className={!props.isOpenSearchPannel ? `${style["menu-link"]}` : `${style["hidden"]}`}>
-                    <Link className={`${style["menu-link-inner"]}`} to="/catalog">Printers & Scanners</Link>
-                </li>
-                <li className={!props.isOpenSearchPannel ? `${style["menu-link"]}` : `${style["hidden"]}`}>
-                    <Link className={`${style["menu-link-inner"]}`} to="/catalog">PC Parts</Link>
-                </li>
-                <li className={!props.isOpenSearchPannel ? `${style["menu-link"]}` : `${style["hidden"]}`}>
-                    <Link className={`${style["menu-link-inner"]}`} to="/catalog">All Other Product</Link>
-                </li>
-                <li className={!props.isOpenSearchPannel ? `${style["menu-link"]}` : `${style["hidden"]}`}>
-                    <Link className={`${style["menu-link-inner"]}`} to="/catalog">Repairs</Link>
-                </li>
+                <TopMenuItem 
+                    isHidden={props.isOpenSearchPannel ? true : false}
+                    link="/catalog"
+                    text="Laptops"
+                    renderHoverMenu={<HoverMenu />}
+                />
+                <TopMenuItem 
+                    isHidden={props.isOpenSearchPannel ? true : false}
+                    link="/catalog"
+                    text="Desktop PCs"
+                    isHoverMenu={false}
+                />
+                <TopMenuItem 
+                    isHidden={props.isOpenSearchPannel ? true : false}
+                    link="/catalog"
+                    text="Networking Devices"
+                    isHoverMenu={true}
+                    renderHoverMenu={<HoverMenu />}
+                />
+                <TopMenuItem 
+                    isHidden={props.isOpenSearchPannel ? true : false}
+                    link="/catalog"
+                    text="Printers & Scanners"
+                    isHoverMenu={false}
+                />
+                <TopMenuItem 
+                    isHidden={props.isOpenSearchPannel ? true : false}
+                    link="/catalog"
+                    text="PC Parts"
+                    isHoverMenu={false}
+                />
+                <TopMenuItem 
+                    isHidden={props.isOpenSearchPannel ? true : false}
+                    link="/catalog"
+                    text="All Other Product"
+                    isHoverMenu={false}
+                />
+                <TopMenuItem 
+                    isHidden={props.isOpenSearchPannel ? true : false}
+                    link="/catalog"
+                    text="Repairs"
+                    isHoverMenu={true}
+                    renderHoverMenu={<HoverMenu />}
+                />
                 <li className={props.isOpenSearchPannel ? `${style["hidden"]}` : ''}>
                     <StoreButton
                         style="light-button"

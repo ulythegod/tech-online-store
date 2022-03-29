@@ -20,25 +20,3 @@
     color: colors.$black;
     padding: 10px 20px;
 }
-
-.menu-link .menu-link-inner:hover {
-    color: white;
-    background-color: colors.$darkBlue;
-    border-radius: 100px;
-    padding: 10px 20px;
-}
-
-.hover-menu-block {
-    display: none;
-}
-
-.menu-link:hover .hover-menu-block {
-    display: block;
-    position: absolute;
-    margin-top: 27px;
-    z-index: 1;
-}
-
-.hidden {
-    display: none;
-}

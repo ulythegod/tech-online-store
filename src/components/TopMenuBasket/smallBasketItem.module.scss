@@ -1,0 +1,29 @@
+@use '../../_colors.scss' as colors;
+
+.basket-list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid colors.$grey;
+    border-bottom: 1px solid colors.$grey;
+    padding: 5px 20px;
+}
+
+.item-link {
+    font-size: 13px;
+    font-weight: 400;
+    color: colors.$black;
+    text-decoration: none;
+    width: 57%;
+}
+
+.item-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-buttons button {
+    background-color: transparent;
+    border: none;
+}

@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import AddToCart from "components/AddToCartBlock/AddToCart";
 import ProductSection from "./ProductSection";
+import AddToCartMenu from "components/AddToCartBlock/AddToCartMenu";
+import AddToCartPrices from "components/AddToCartBlock/AddToCartPrices";
 
 function Product(props: any): any {
     const [activeInfoBlock, setActiveInfoBlock] = useState('ProductInfoBlock');
@@ -19,8 +21,13 @@ function Product(props: any): any {
     return (
         <>
             <AddToCart 
-                handleInfoBlockChange={handleInfoBlockChange}
-                activeInfoBlock={activeInfoBlock}
+                renderLeft={
+                    <AddToCartMenu  
+                        activeInfoBlock={activeInfoBlock}
+                        handleInfoBlockChange={handleInfoBlockChange}
+                    />
+                }
+                renderRight={<AddToCartPrices />}
             />
             <ProductSection 
                 activeInfoBlock={activeInfoBlock}

@@ -21,24 +21,28 @@
 }
 
 .appearing-basket-top {
+    display: none;
+}
+
+.basket-top:hover .appearing-basket-top {
+    display: block;
     position: absolute;
-    margin-left: -15.5%;
-    width: 15%;
+    margin-left: -12.5%;
+    margin-top: 1%;
+    width: 16%;
     z-index: 1;
     list-style: none;
     background-color: white;
-    padding: 20px;
     box-shadow: -1px 1px 13px 4px #02020314;
     display: flex;
     flex-direction: column;
-    padding: 20px;
 }
 
-.basket-top {
+.inner-basket-top {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10px;
+    padding: 10px 20px;
 }
 
 .basket-title {
@@ -57,4 +61,48 @@
 .basket-list {
     display: flex;
     flex-direction: column;
+}
+
+.basket-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 20px 10px;
+}
+
+.subtotal {
+    font-size: 14px;
+    color: colors.$grey;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.subtotal span {
+    font-size: 18px;
+    color: colors.$black;
+    font-weight: 600;
+}
+
+.basket-bottom button {
+    margin-top: 10px;
+    margin-top: 10px;
+}
+
+.basket-bottom:nth-child(2) {
+    padding: 10px 20px;
+}
+
+.appearing-basket-top::after {
+    content: '';
+    position: absolute;
+    background: white;
+    left: 230px;
+    top: -9px; 
+    bottom: 170px;
+    width: 20px; 
+    height: 20px;
+    box-shadow: -2px -6px 4px 0px #02020314; /* Добавляем тень для уголка */
+    z-index: -1; /* Прячем за основным блоком */
+    transform: rotate(45deg); /* Поворачиваем на 45º */
+    -webkit-transform: rotate(45deg);
 }
