@@ -16,25 +16,30 @@ import Header from 'components/Header/Header';
 import TopMenu from 'components/TopMenu/TopMenu';
 import Footer from 'components/Footer/Footer';
 
+import store from './store';
+import { Provider } from 'react-redux';
+
 ReactDOM.render(
   <>
-    <Router>
-        <Header />
-        <TopMenu />
-        <Routes>
-            <Route path="/" element={<Home />}/>
-            <Route path="/catalog" element={<CatalogPage />}/>
-            <Route path="/product" element={<ProductDetailed />}/>
-            <Route path="/contact-us" element={<ContactUs />}/>
-            <Route path="/register" element={<Register />}/>
-            <Route path="/shopping-card" element={<ShoppingCard />}/>
-            <Route path="/checkout" element={<Checkout />}/>
-            <Route path="/dashboard" element={<Dashboard />}/>
-            <Route path="/about-us" element={<AboutUs />}/>
-            <Route path="/faq" element={<FAQ />}/>
-        </Routes>
-        <Footer />
-    </Router>
+    <Provider store={store}>
+      <Router>
+          <Header />
+          <TopMenu />
+          <Routes>
+              <Route path="/" element={<Home />}/>
+              <Route path="/catalog" element={<CatalogPage />}/>
+              <Route path="/product" element={<ProductDetailed />}/>
+              <Route path="/contact-us" element={<ContactUs />}/>
+              <Route path="/register" element={<Register />}/>
+              <Route path="/shopping-card" element={<ShoppingCard />}/>
+              <Route path="/checkout" element={<Checkout />}/>
+              <Route path="/dashboard" element={<Dashboard />}/>
+              <Route path="/about-us" element={<AboutUs />}/>
+              <Route path="/faq" element={<FAQ />}/>
+          </Routes>
+          <Footer />
+      </Router>
+    </Provider>
   </>,
   document.getElementById('root')
 );

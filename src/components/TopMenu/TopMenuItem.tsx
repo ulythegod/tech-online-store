@@ -17,15 +17,12 @@ function TopMenuItem(props: any): any {
     }
 
     function handleOnMouseLeaveOnItem() {
-        if (!props.renderHoverMenu && !showHoverMenu && isItemHovered) {
+        if (isItemHovered) {
             setIsItemHovered(prevIsItemHovered => !prevIsItemHovered);
         }
-    }
 
-    function handleOnMouseLeaveOnMenu() {
-        if (props.renderHoverMenu && showHoverMenu && isItemHovered) {
+        if (props.renderHoverMenu && showHoverMenu) {
             setShowHoverMenu(prevShowHoverMenu => !prevShowHoverMenu);
-            setIsItemHovered(prevIsItemHovered => !prevIsItemHovered);
         }
     }
 
@@ -39,7 +36,6 @@ function TopMenuItem(props: any): any {
                 {props.text}
             </Link>            
             <ul 
-                onMouseLeave={() => handleOnMouseLeaveOnMenu()} 
                 className={(props.renderHoverMenu && showHoverMenu) ? `${styles["hover-menu-block"]}` : `${styles["hidden"]}`}
             >
                 {props.renderHoverMenu}

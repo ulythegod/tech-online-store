@@ -55,7 +55,22 @@ button {
     padding: 10px 114px;
 }
 
+.yellow-button-header {
+    @include buttons.yellow-button;
+    color: colors.$deepBlue;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+}
+
 .yellow-button-general svg {
+    padding-left: 2px;
+}
+
+.yellow-button-header svg {
     padding-left: 2px;
 }
 
