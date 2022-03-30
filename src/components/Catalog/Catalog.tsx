@@ -24,8 +24,9 @@ function Catalog(props: any): any {
     console.log(postStatus);
 
     useEffect(() => {
+        console.log('???');
         if (postStatus === "idle") {
-            dispatch(fetchProducts())
+            dispatch(fetchProducts());            
         }        
     }, [postStatus, dispatch]);
     

@@ -32,6 +32,7 @@ const productsSlice = createSlice({
         builder
             .addCase(fetchProducts.fulfilled, (state: any, action: any) => {                                      
                 state.products.push(action.payload);
+                state.products.products = "success";
             })
     }
 });
