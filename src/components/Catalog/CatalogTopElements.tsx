@@ -1,9 +1,6 @@
 import React from 'react';
 import styles from './catalogTopElements.module.scss';
-import StoreButton from 'components/Buttons/StoreButton';
 import CatalogSelect from './CatalogSelect';
-import { ReactComponent as TableView } from '../../images/table-view.svg';
-import { ReactComponent as LinesView } from '../../images/lines-view.svg';
 
 function CatalogTopElements(props: any): any {
     const positions: any[] = [
@@ -29,14 +26,8 @@ function CatalogTopElements(props: any): any {
                 options={perPage}
                 selectLabel="Show"
             />
-            <StoreButton 
-                style='icon-button'
-                content={<TableView />}
-            />
-            <StoreButton 
-                style='icon-button'
-                content={<LinesView />}
-            />
+            {props.tableButton}
+            {props.linesButton}
         </div>
     );
 }

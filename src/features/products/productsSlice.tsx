@@ -18,7 +18,7 @@ const initialState: ProductState = {
 export const fetchProducts = createAsyncThunk(
     'products/fetchProducts', 
     async () => {
-        let result = await fetch('https://teststrapitest.herokuapp.com/products?_limit=20');  
+        let result = await fetch('https://teststrapitest.herokuapp.com/products?_limit=35');  
 
         return result.json();
     }
@@ -32,7 +32,7 @@ const productsSlice = createSlice({
         builder
             .addCase(fetchProducts.fulfilled, (state: any, action: any) => {                                      
                 state.products.push(action.payload);
-                state.products.products = "success";
+                state.status = "success";
             })
     }
 });

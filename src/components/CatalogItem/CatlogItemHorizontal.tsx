@@ -46,18 +46,18 @@ function CatlogItemHorizontal(props: any): any {
                 <div className={`${styles["features"]}`}>
                     <table>
                         <tbody>
-                            <tr>
-                                <td>CPU</td>
-                                <td>N/A</td>
-                            </tr>
-                            <tr className={`${styles["dark"]}`}>
-                                <td>Featured</td>
-                                <td>N/A</td>
-                            </tr>
-                            <tr>
-                                <td>I/O Ports</td>
-                                <td>N/A</td>
-                            </tr>
+                            {
+                                props.specs.map((specsItem: any, id: number) => {
+                                    return (
+                                        <tr
+                                            className={(id % 2 === 0) ? `${styles["dark"]}` : ``}
+                                        >
+                                            <td>{specsItem.spec}</td>
+                                            <td>{specsItem.value}</td>
+                                        </tr>
+                                    )
+                                })
+                            }
                         </tbody>
                     </table>
                 </div>

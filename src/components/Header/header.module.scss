@@ -1,5 +1,7 @@
+@use '../../_colors.scss' as colors;
+
 .header {
-    background-color: #020202;
+    background-color: colors.$black;
     color: #ACACAC;
     display: flex;
     flex-direction: row;
@@ -18,4 +20,46 @@
 
 .header-contact a {
     border-bottom: 2px solid white;
+}
+
+@media (min-width: 1277px) {
+    .header-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 1276px) {
+    .header {
+        display: none;
+    }
+}
+
+@media (min-width: 1277px) and (max-width: 1280px) {
+    .header {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+
+@media (min-width: 1204px) and (max-width: 1276px) {
+    .header-mobile {
+        background-color: colors.$black;
+        color: #ACACAC;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 11px;
+        padding: 5px 10px 5px 100px;
+        justify-content: space-between;
+        font-weight: 600;
+    }
+
+    .header-mobile a {
+        color: white;
+        text-decoration: none;
+    }
+    
+    .header-contact-mobile a {
+        border-bottom: 2px solid white;
+    }
 }

@@ -26,46 +26,48 @@ function ProductsSection(props: any): any {
                             <a href="#">See All Products</a>
                         </div>
                     </div>
-                    <ProductItem 
-                        status='in-stock'
-                        productImage={prodImg}
-                        name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                        price={499.00}
-                        discount={499.00}
-                        reviewsCount={4}
-                    />
-                    <ProductItem 
-                        status='in-stock'
-                        productImage={prodImg}
-                        name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                        price={499.00}
-                        discount={499.00}
-                        reviewsCount={4}
-                    />
-                    <ProductItem 
-                        status='in-stock'
-                        productImage={prodImg}
-                        name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                        price={499.00}
-                        discount={499.00}
-                        reviewsCount={4}
-                    />
-                    <ProductItem 
-                        status='in-stock'
-                        productImage={prodImg}
-                        name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                        price={499.00}
-                        discount={499.00}
-                        reviewsCount={4}
-                    />
-                    <ProductItem 
-                        status='in-stock'
-                        productImage={prodImg}
-                        name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                        price={499.00}
-                        discount={499.00}
-                        reviewsCount={4}
-                    />
+                    <div className={`${styles["items"]}`}>
+                        <ProductItem 
+                            status='in-stock'
+                            productImage={prodImg}
+                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
+                            price={499.00}
+                            discount={499.00}
+                            reviewsCount={4}
+                        />
+                        <ProductItem 
+                            status='in-stock'
+                            productImage={prodImg}
+                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
+                            price={499.00}
+                            discount={499.00}
+                            reviewsCount={4}
+                        />
+                        <ProductItem 
+                            status='in-stock'
+                            productImage={prodImg}
+                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
+                            price={499.00}
+                            discount={499.00}
+                            reviewsCount={4}
+                        />
+                        <ProductItem 
+                            status='in-stock'
+                            productImage={prodImg}
+                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
+                            price={499.00}
+                            discount={499.00}
+                            reviewsCount={4}
+                        />
+                        <ProductItem 
+                            status='in-stock'
+                            productImage={prodImg}
+                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
+                            price={499.00}
+                            discount={499.00}
+                            reviewsCount={4}
+                        />
+                    </div>
                 </div>
             </div>
         </section>

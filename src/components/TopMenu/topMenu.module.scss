@@ -22,3 +22,28 @@
 .main-top-tools-open {
     width: 100%;
 }
+
+@media (min-width: 1277px) {
+    .header-navigation-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 1276px) {
+    .header-navigation {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1600px) {
+    .header-navigation {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+}
+
+@media (min-width: 1204px) and (max-width: 1276px) {
+    .header-navigation-mobile {
+        display: block;
+    }
+}

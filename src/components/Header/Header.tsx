@@ -14,6 +14,12 @@ function Header(props: any): any {
                 </p>
                 <HeaderContacts />
             </div>
+            <div className={`${styles["header-mobile"]}`}>
+                <HeaderTime />
+                <p className={`${styles["header-contact-mobile"]}`}>
+                    <Link to="/contact-us">Contact Us</Link>
+                </p>
+            </div>
         </header>
     );
 }

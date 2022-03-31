@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchProducts, selectAllProducts } from '../../features/products/productsSlice';
@@ -13,47 +13,98 @@ import CatalogFilter from 'components/CatalogFilter/CatalogFilter';
 import CatalogDescription from './CatalogDescription';
 import CatlogItemHorizontal from 'components/CatalogItem/CatlogItemHorizontal';
 import ProductItem from 'components/CatalogItem/ProductItem';
-import prodImgHorizontal from '../../images/catalog2.png';
+import StoreButton from 'components/Buttons/StoreButton';
+import { ReactComponent as TableView } from '../../images/table-view.svg';
+import { ReactComponent as LinesView } from '../../images/lines-view.svg';
 
 function Catalog(props: any): any {
-    const dispatch = useDispatch();
-    const products = useSelector(selectAllProducts);
+    const [view, setView] = useState('table');
+    function handleViewChage(event: any) {
+        event.preventDefault();
 
-    const postStatus = useSelector((state: RootState) => state.products.status); 
+        if (view === "table") {
+            setView("column");
+        } else if (view === "column") {
+            setView("table");
+        }        
+    }
 
-    console.log(postStatus);
+    const dispatch: any = useDispatch();
+    const products: any[] = useSelector(selectAllProducts);
+
+    const postStatus: string = useSelector((state: RootState) => state.products.status);
 
     useEffect(() => {
-        console.log('???');
-        if (postStatus === "idle") {
-            dispatch(fetchProducts());            
-        }        
+        if (postStatus === 'idle') {            
+           dispatch(fetchProducts()); 
+        }       
+                
     }, [postStatus, dispatch]);
     
-    console.log(products);
-    
-    const productsItems = products[0].map((product: any, id: number) => {
-        return (
-            <ProductItem 
-                name={product.name}
-                productImage={product.photo[0].url}
-                status='in-stock'
-                price={product.price}
-                discount={product.price}
-                model="SKU D5515AI"
-                reviewsCount={4}
-            />
-        )
-    });    
+    let productsItems: any [] = [];
+
+    if (products.length > 0 && products[0].length > 0) {
+        console.log(products);        
+
+        productsItems = products[0].map((product: any, id: number) => {
+            if (view === "table") {
+                return (
+                    <ProductItem
+                        key={id}
+                        name={product.name}
+                        productImage={product.photo[0].url}
+                        status='in-stock'
+                        price={product.price}
+                        discount={product.price}
+                        model="SKU D5515AI"
+                        reviewsCount={4}
+                    />
+                )
+            } else if (view === "column") {
+                return (
+                    <CatlogItemHorizontal
+                        key={id}
+                        name={product.name}
+                        productImage={product.photo[0].url}
+                        status='in-stock'
+                        price={product.price}
+                        discount={product.price}
+                        model="SKU D5515AI"
+                        reviewsCount={4}
+                        specs={product.specs}
+                    />
+                )
+            }            
+        });
+    }   
 
     return (
         <section className={`${styles["catalog-section"]}`}>
             <div className={`${styles["catalog-block"]}`}>
                 <CatalogFilter />
                 <div className={`${styles["catalog"]}`}>
-                    <CatalogTopElements />
+                    <CatalogTopElements 
+                        view={view}
+                        tableButton={
+                            <StoreButton 
+                                style={(view === "table") ? 'icon-button' : 'icon-button-disabled'}
+                                content={<TableView />}
+                                buttonAction={handleViewChage}
+                            />
+                        }
+                        linesButton={
+                            <StoreButton 
+                                style={(view === "column") ? 'icon-button' : 'icon-button-disabled'}
+                                content={<LinesView />}
+                                buttonAction={handleViewChage}
+                            />
+                        }
+                    />
                     <CatalogSelectedFilters />
-                    <div className={`${styles["catalog-table-view"]}`}>
+                    <div className={
+                        (view === "table") ? `${styles["catalog-table-view"]}` : 
+                        (view === "column") ? `${styles["catalog-column-view"]}` : ``
+                    }>
                         {productsItems}
                     </div>
                     <CatalogPagination />

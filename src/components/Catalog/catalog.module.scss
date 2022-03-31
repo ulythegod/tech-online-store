@@ -11,10 +11,6 @@
     justify-content: space-between;
 }
 
-.catalog {
-    width: 80%;
-}
-
 .catalog-table-view {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -27,4 +23,16 @@
     flex-direction: column;
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+@media (min-width: 1024px) and (max-width: 1600px) {
+    .catalog-table-view {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+    .catalog-section {
+        width: 80%;
+    }
 }

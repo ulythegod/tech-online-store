@@ -3,7 +3,12 @@ import styles from './storeButton.module.scss';
 
 function StoreButton(props: any): any {
     return (
-        <button className={`${styles[props.style]}`}>{props.content}</button>
+        <button 
+            className={`${styles[props.style]}`}
+            onClick={(event: any) => props.buttonAction(event)}
+        >
+                {props.content}
+        </button>
     );
 }
 
