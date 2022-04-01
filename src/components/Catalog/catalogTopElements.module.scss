@@ -12,3 +12,9 @@
     color: colors.$darkGrey;
     width: 57%;
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .catalog-top-elements {
+        padding: 10px 15px;
+    }
+}

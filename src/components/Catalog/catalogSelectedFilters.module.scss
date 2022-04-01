@@ -17,3 +17,9 @@
     width: 7em;
     cursor: pointer;
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .catalog-selected-filters {
+        display: none;
+    }
+}

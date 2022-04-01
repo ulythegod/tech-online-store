@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styles from './catalogItemHorizontal.module.scss';
 import RatingButton from './RatingButton';
 import StoreButton from 'components/Buttons/StoreButton';
 import RoundButton from 'components/Buttons/RoundButton';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { ReactComponent as InStock } from '../../images/in-stock.svg';
 import { ReactComponent as CheckAvailability } from '../../images/check-availability.svg';

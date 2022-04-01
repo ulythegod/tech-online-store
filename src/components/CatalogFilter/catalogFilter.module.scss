@@ -44,3 +44,9 @@
     list-style: none;
     width: 75%;
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .filter-title-link {
+        display: none;
+    }
+}

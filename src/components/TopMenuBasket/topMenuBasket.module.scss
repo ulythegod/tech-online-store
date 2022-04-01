@@ -28,7 +28,7 @@
     display: block;
     position: absolute;
     padding-top: 25px;
-    width: 16%;
+    width: 300px;
     margin-left: -12.5%;
     z-index: 1;
 }
@@ -102,4 +102,39 @@
     z-index: 1; /* Прячем за основным блоком */
     transform: rotate(45deg); /* Поворачиваем на 45º */
     -webkit-transform: rotate(45deg);
+}
+
+.basket-icon-mobile {
+    display: none;
+}
+
+@media (max-width: 1276px) {
+    .basket-icon-desktop {
+        display: none;
+    }
+
+    .basket-icon-mobile {
+        display: block;
+        margin-right: 50px;
+    }
+
+    .basket-logo-mobile {
+        position: relative;
+        margin-right: -5px;
+    }
+
+    .basket-amount-mobile {
+        color: colors.$darkBlue;
+        background-color: white;
+        font-size: 10px;
+        font-weight: 700;
+        display: inline-block;
+        border-radius: 50%;
+        width: 1.5em;
+        height: 1.5em;
+        text-align: center;
+        line-height: 1.5em;
+        position: absolute;
+        top: 65px;
+    }
 }

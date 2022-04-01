@@ -1,0 +1,68 @@
+@use '../../_colors.scss' as colors;
+@use '../../_arrows.scss' as arrows;
+
+.open-menu-button {
+   display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 1276px) {
+    .open-menu-button {
+        display: block;
+        background-color: transparent;
+        border: none;
+    }
+
+    .mobile-menu {
+        background-color: white;
+        position: absolute;
+        top: 0;
+        z-index: 2;
+        padding: 20px;
+        width: 50%;
+        min-height: 100%;
+    }
+
+    .close-menu-button {
+        border: none;
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .menu-logo {
+        padding: 10px 10px;
+        border-bottom: 1px solid colors.$grey;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .items-list {
+        display: flex;
+        font-size: 13px;
+        font-weight: 400;
+        list-style: none;
+        flex-direction: column;
+    }
+
+    .menu-link-inner {
+        padding: 10px 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-link-inner a {
+        text-decoration: none;
+        color: colors.$black;
+    }
+
+    .link-arrow {
+        @include arrows.arrow-right-black;
+    }
+}

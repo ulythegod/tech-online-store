@@ -1,3 +1,18 @@
 .account-block {
     cursor: pointer;
 }
+
+.user-icon-mobile {
+    display: none;
+}
+
+@media (max-width: 1276px) {
+    .account-block {
+        display: none;
+    }
+
+    .user-icon-mobile {
+        display: block;
+        margin-right: 10px;
+    }
+}

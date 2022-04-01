@@ -4,9 +4,10 @@ import TopMenuSearch from './TopMenuSearch';
 import TopMenuBasket from '../TopMenuBasket/TopMenuBasket';
 import TopMenuNavigation from './TopMenuNavigation';
 import AccountTopMenu from '../AccountTopMenu/AccountTopMenu';
+import MobileMenu from './MobileMenu';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { ReactComponent as LogoWhite } from '../../images/logo-white.svg';
-import { ReactComponent as OpenMenuMobile } from '../../images/open-menu-mobile.svg';
 import { ReactComponent as SearchImageMobile } from '../../images/search-image-mobile.svg';
 
 function TopMenu(props: any): any {
@@ -33,17 +34,20 @@ function TopMenu(props: any): any {
             </nav>
             <nav className={`${styles["header-navigation-mobile"]}`}>
                 <div className={`${styles["mobile-logo"]}`}>
-                    <LogoWhite />
+                    <Link to="/">
+                        <LogoWhite />
+                    </Link>
                 </div>
-                <div>
-                    <button>
-                        <OpenMenuMobile />
-                    </button>
-                    <div>
-                        <SearchImageMobile />
-                        <input type="text" />
+                <div className={`${styles["mobile-menu"]}`}>
+                    <MobileMenu />
+                    <div className={`${styles["search-field-with-button"]}`}>
+                        <button className={`${styles["icon-in-field"]}`}>
+                            <SearchImageMobile />
+                        </button> 
+                        <input className={`${styles["search-field"]}`} type="text" placeholder='Search here' />
                     </div>
-                    
+                    <TopMenuBasket />
+                    <AccountTopMenu />
                 </div>
             </nav>
         </div>

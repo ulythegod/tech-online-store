@@ -5,6 +5,7 @@ import { ReactComponent as BasketLogo } from '../../images/basket.svg';
 import { ReactComponent as PayPal } from '../../images/paypal.svg';
 import StoreButton from 'components/Buttons/StoreButton';
 import imgPath from '../../images/small-card.png';
+import { ReactComponent as BasketMobile } from '../../images/basket-mobile.svg';
 
 function TopMenuBasket(props: any): any {
     const [isOpenBasket, setIsOpenBasket] = useState(false);
@@ -26,7 +27,13 @@ function TopMenuBasket(props: any): any {
             onMouseEnter={() => handleOnMouseEnter()}
             onMouseLeave={() => handleOnMouseLeave()}
         >
-            <a href="#">
+            <div className={`${styles["basket-icon-mobile"]}`}>
+                <a href="#">
+                    <BasketMobile className={`${styles["basket-logo-mobile"]}`} />
+                    <span className={`${styles["basket-amount-mobile"]}`}>2</span>
+                </a>                        
+            </div>
+            <a className={`${styles["basket-icon-desktop"]}`} href="#">
                 <BasketLogo className={`${styles["basket-logo"]}`} />
                 <span className={`${styles["basket-amount"]}`}>2</span>
             </a>

@@ -34,3 +34,9 @@
     margin-left: 9px;
     margin-right: 9px;
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .breadcrumbs-navigation {
+        @include sections.mobile-section-margins;
+    }
+}

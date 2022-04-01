@@ -11,7 +11,7 @@ function TopMenuSearch(props: any): any {
             {props.isOpenSearchPannel && 
                 <div className={`${styles["search-field-block"]}`}>
                     <div className={`${styles["search-field-with-button"]}`}>
-                       <input className={`${styles["search-field"]}`} type="text" placeholder='Search entiere store here...'/>
+                        <input className={`${styles["search-field"]}`} type="text" placeholder='Search entiere store here...'/>
                         <button className={`${classNames(styles["search-icon"], styles["icon-in-field"])}`}>
                             <SearchOpenIcon />
                         </button> 

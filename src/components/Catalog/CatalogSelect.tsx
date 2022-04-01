@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './catalogSelect.module.scss';
+import classNames from 'classnames';
 import Select, { components, ControlProps } from 'react-select';
 
 function CatalogSelect(props: any): any {
@@ -13,7 +14,10 @@ function CatalogSelect(props: any): any {
     return (
         <>
             <Select
-                className={`${styles["catalog-select"]}`}
+                className={
+                    (selectLabel === "Show") ? `${classNames(styles["catalog-select"], styles["hidden-mobile"])}` 
+                    : `${styles["catalog-select"]}`
+                }
                 defaultValue={[props.options[0]]}
                 options={props.options}
                 components={{ Control }}

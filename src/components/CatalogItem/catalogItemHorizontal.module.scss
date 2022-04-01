@@ -111,3 +111,17 @@
 .product-button {
     width: 49%;
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .features {
+        display: none;
+    }
+
+    .product-info {
+        justify-content: flex-start;
+    }
+
+    .about-product {
+        margin-left: 20px;
+    }
+}
