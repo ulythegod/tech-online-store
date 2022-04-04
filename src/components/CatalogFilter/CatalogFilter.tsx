@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './catalogFilter.module.scss';
 import FilterItem from './FilterItem';
 import FilterBrands from './FilterBrands';
@@ -12,6 +12,12 @@ import CompareProducts from 'components/CompareProducts/CompareProducts';
 import CatalogSelect from 'components/Catalog/CatalogSelect';
 
 function CatalogFilter(props: any): any {
+    const [isOpenFilter, setIsOpenFilter] = useState(false);
+
+    function handleFilterOpen() {
+        setIsOpenFilter(prevIsOpenFilter => !prevIsOpenFilter);
+    }
+
     const positions: any[] = [
         { value: 'position', label: 'Position' },
         { value: 'position2', label: 'Position2' },
@@ -22,7 +28,9 @@ function CatalogFilter(props: any): any {
         <>
             <div className={`${styles["filter-buttons-mobile"]}`}>
                 <div className={`${styles["filter-btn-mobile"]}`}>
-                    <button>
+                    <button
+                        onClick={handleFilterOpen}
+                    >
                         Filter
                     </button>
                 </div>
@@ -31,7 +39,7 @@ function CatalogFilter(props: any): any {
                     selectLabel="Sort by"
                 />
             </div>
-            <div className={`${styles["catalog-filter-block"]}`}>
+            <div className={isOpenFilter ? `${styles["catalog-filter-block-mobile"]}` : `${styles["catalog-filter-block"]}`}>
                 <a className={`${styles["filter-title-link"]}`} href="#">Back</a>
                 <div className={`${styles["filters"]}`}>
                     <span>Filters</span>

@@ -53,6 +53,10 @@
     display: none;
 }
 
+.catalog-filter-block-mobile {
+    display: none;
+}
+
 @media (min-width: 768px) and (max-width: 1024px) {
     .filter-title-link {
         display: none;
@@ -90,5 +94,10 @@
 
     .filters-rest {
         display: none;
+    }
+
+    .catalog-filter-block-mobile {
+        display: block;
+        background-color: white;
     }
 }
