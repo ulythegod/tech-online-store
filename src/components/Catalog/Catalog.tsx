@@ -14,8 +14,12 @@ import CatalogDescription from './CatalogDescription';
 import CatlogItemHorizontal from 'components/CatalogItem/CatlogItemHorizontal';
 import ProductItem from 'components/CatalogItem/ProductItem';
 import StoreButton from 'components/Buttons/StoreButton';
+import CompareProducts from 'components/CompareProducts/CompareProducts';
+import WishList from 'components/WishList/WishList';
+import CatalogFilterBanner from 'components/CatalogFilter/CatalogFilterBanner';
 import { ReactComponent as TableView } from '../../images/table-view.svg';
 import { ReactComponent as LinesView } from '../../images/lines-view.svg';
+import banner from '../../images/filters-banner.png';
 
 function Catalog(props: any): any {
     const [view, setView] = useState('table');
@@ -44,8 +48,6 @@ function Catalog(props: any): any {
     let productsItems: any [] = [];
 
     if (products.length > 0 && products[0].length > 0) {
-        console.log(products);        
-
         productsItems = products[0].map((product: any, id: number) => {
             if (view === "table") {
                 return (
@@ -90,6 +92,7 @@ function Catalog(props: any): any {
                                 style={(view === "table") ? 'icon-button' : 'icon-button-disabled'}
                                 content={<TableView />}
                                 buttonAction={handleViewChage}
+                                showOnMobile={false}
                             />
                         }
                         linesButton={
@@ -97,6 +100,7 @@ function Catalog(props: any): any {
                                 style={(view === "column") ? 'icon-button' : 'icon-button-disabled'}
                                 content={<LinesView />}
                                 buttonAction={handleViewChage}
+                                showOnMobile={false}
                             />
                         }
                     />
@@ -108,6 +112,14 @@ function Catalog(props: any): any {
                         {productsItems}
                     </div>
                     <CatalogPagination />
+                    <div className={`${styles["filters-rest"]}`}>
+                        <CompareProducts />
+                        <WishList />
+                        <CatalogFilterBanner 
+                            image={banner}
+                            link='#'
+                        />
+                    </div>
                     <CatalogDescription />
                 </div>
             </div>

@@ -1,5 +1,3 @@
-@use '../../_sections.scss' as sections;
-
 .banner-section {
     display: flex;
     margin-left: auto;
@@ -8,18 +6,24 @@
     align-items: center;
 }
 
-.banner-section img {
-    height: 104px;
+.catalog-banner {
+    width: 80%;
 }
 
-@media (min-width: 1280px) and (max-width: 1600px) {
-    .banner-section img {
-        height: 98px;
+.catalog-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 1280px) {
+    .catalog-banner {
+        width: 100%;
     }
 }
 
-@media (min-width: 1024px) and (max-width: 1280px) {
-    .banner-section img {
-        height: 76px;
+@media (max-width: 768px) {
+    .banner-section {
+        display: none;
     }
 }

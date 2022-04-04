@@ -27,6 +27,10 @@
     margin-bottom: 30px;
 }
 
+.filters-rest {
+    display: none;
+}
+
 @media (min-width: 1024px) and (max-width: 1280px) {
     .catalog-section {
         width: 80%;
@@ -42,5 +46,36 @@
 @media (min-width: 768px) and (max-width: 1024px) {
     .catalog-section {
         @include sections.mobile-section-margins;
+    }
+}
+
+@media (max-width: 896px) {
+    .catalog-table-view {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .catalog-section {
+        width: 100%;
+    }
+
+    .catalog-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .filters-rest {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .filters-rest a {
+        margin-left: auto;
+        margin-right: auto;
     }
 }

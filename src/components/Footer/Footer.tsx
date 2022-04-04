@@ -14,7 +14,7 @@ function Footer(props: any): any {
             <div className={`${styles["footer-bottom-section"]}`}>
                 <FooterSocials />
                 <FooterCards />
-                <span>Copyright © 2020 Shop Pty. Ltd.</span>
+                <span className={`${styles["footer-copyright"]}`}>Copyright © 2020 Shop Pty. Ltd.</span>
             </div>
             <FooterChatButton />
         </footer>

@@ -104,3 +104,9 @@ button {
     border: none;
     opacity: .5;
 }
+
+@media (max-width: 768px) {
+    .hidden {
+        display: none;
+    }
+}

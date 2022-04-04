@@ -11,13 +11,22 @@ function CatalogSelect(props: any): any {
         </components.Control>
     );
 
+    let itemClasses: any = {};
+
+    if (props.showOnMobile === false) {
+        itemClasses = `${styles["hidden"]}`;
+    } else {
+        if (selectLabel === "Show") {
+            itemClasses = `${classNames(styles["catalog-select"], styles["hidden-mobile"])}`; 
+        } else {
+            itemClasses = `${styles["catalog-select"]}`;
+        }
+    }
+
     return (
         <>
             <Select
-                className={
-                    (selectLabel === "Show") ? `${classNames(styles["catalog-select"], styles["hidden-mobile"])}` 
-                    : `${styles["catalog-select"]}`
-                }
+                className={itemClasses}
                 defaultValue={[props.options[0]]}
                 options={props.options}
                 components={{ Control }}

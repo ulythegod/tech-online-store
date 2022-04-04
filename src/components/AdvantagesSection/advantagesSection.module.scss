@@ -18,3 +18,9 @@
     margin-bottom: 40px;
     margin-top: 40px;
 }
+
+@media (max-width: 768px) {
+    .advantages-list {
+        flex-direction: column;
+    }
+}

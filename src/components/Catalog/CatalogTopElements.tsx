@@ -21,10 +21,12 @@ function CatalogTopElements(props: any): any {
             <CatalogSelect 
                 options={positions}
                 selectLabel="Sort by"
+                showOnMobile={false}
             />
             <CatalogSelect 
                 options={perPage}
                 selectLabel="Show"
+                showOnMobile={false}
             />
             {props.tableButton}
             {props.linesButton}

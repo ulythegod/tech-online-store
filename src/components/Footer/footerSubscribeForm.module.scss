@@ -41,3 +41,28 @@
     padding: 10px 150px 10px 5px;
     margin-right: 10px;
 }
+
+@media (max-width: 1280px) {
+    .form-description .form-title {
+        font-size: 18px;
+    }
+
+    .form-description .form-undertitle {
+        font-size: 12px;
+    }
+
+    .subscribe-form input {
+        padding: 10px 65px 10px 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .subscribe-form-footer {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .subscribe-form input {
+        padding: 10px 30px 10px 5px;
+    }
+}

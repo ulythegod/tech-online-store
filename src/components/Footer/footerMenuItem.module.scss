@@ -1,0 +1,65 @@
+@use '../../_colors.scss' as colors;
+@use '../../_sections.scss' as sections;
+@use  '../../_arrows.scss' as arrows;
+
+.menu-title {
+    font-size: 14px;
+    font-weight: 600;
+    opacity: .5;
+    display: block;
+    padding-bottom: 20px;
+}
+
+.arrow-sign {
+    display: none;
+}
+
+.inner-items {
+    font-size: 13px;
+    font-weight: 400;
+    opacity: 1;
+    padding: 0px;
+}
+
+.inner-items a {
+    text-decoration: none;
+    color: white;
+}
+
+.inner-items-contacts a {
+    text-decoration: none;
+    color: colors.$blue;
+}
+
+@media (max-width: 1024px) {
+    .menu-title {
+        opacity: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px solid white;
+        padding: 10px;
+    }
+
+    .arrow-sign {
+        @include arrows.arrow-down-black;
+        border-top: 2px solid white;
+        border-right: 2px solid white;
+    }
+
+    .arrow-sign-open {
+        @include arrows.arrow-up-black;
+        border-top: 2px solid white;
+        border-right: 2px solid white;
+    }
+
+    .inner-items li {
+        font-size: 12px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .inner-items-closed {
+        display: none;
+    }
+}

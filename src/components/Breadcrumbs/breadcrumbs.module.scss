@@ -40,3 +40,10 @@
         @include sections.mobile-section-margins;
     }
 }
+
+@media (max-width: 768px) {
+    .breadcrumbs-navigation {
+        margin-left: 15px;
+        width: 100%;
+    }
+}

@@ -4,3 +4,9 @@
     justify-content: space-between;
     width: 15%;
 }
+
+@media (max-width: 768px) {
+    .footer-cards {
+        padding-top: 25px;
+    }
+}
