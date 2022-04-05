@@ -43,9 +43,9 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
     .catalog-section {
-        @include sections.mobile-section-margins;
+        @include sections.mobile-section-paddings;
     }
 }
 
@@ -56,15 +56,10 @@
 }
 
 @media (max-width: 768px) {
-    .catalog-section {
-        width: 100%;
-    }
-
     .catalog-block {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 10px;
     }
 
     .filters-rest {
@@ -77,5 +72,15 @@
     .filters-rest a {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .catalog {
+        width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    .catalog-section {
+        padding: 0px;
     }
 }

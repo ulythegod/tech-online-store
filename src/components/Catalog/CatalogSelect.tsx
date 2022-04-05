@@ -14,7 +14,11 @@ function CatalogSelect(props: any): any {
     let itemClasses: any = {};
 
     if (props.showOnMobile === false) {
-        itemClasses = `${styles["hidden"]}`;
+        if (selectLabel === "Show") {
+            itemClasses = `${classNames(styles["catalog-select"], styles["hidden"], styles["hidden-mobile"])}`; 
+        } else {
+            itemClasses = `${classNames(styles["hidden"], styles["catalog-select"])}`;
+        }
     } else {
         if (selectLabel === "Show") {
             itemClasses = `${classNames(styles["catalog-select"], styles["hidden-mobile"])}`; 

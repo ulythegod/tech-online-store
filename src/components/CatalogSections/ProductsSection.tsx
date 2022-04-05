@@ -1,10 +1,27 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './productsSection.module.scss';
 import ProductItem from 'components/CatalogItem/ProductItem';
 import prodImg from '../../images/new-prod-img1.png';
-import sectionBanner from '../../images/msi-laptops.png';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchCategories, selectAllCategories, selectCategoryById } from '../../features/categories/categoriesSlice';
+import { RootState } from '../../store';
 
 function ProductsSection(props: any): any {
+    const dispatch: any = useDispatch();    
+    const categories: any[] = useSelector(selectAllCategories);
+    const postStatus: string = useSelector((state: RootState) => state.promotedCategories.status);
+
+    useEffect(() => {
+        if (postStatus === 'idle') {
+            dispatch(fetchCategories());
+        }
+    }, [postStatus, dispatch]);
+
+    const categoryItem: any = useSelector((state: RootState) => selectCategoryById(state, props.id));
+
+    console.log(categoryItem);      
+
     return (
         <section className={`${styles["main-products-list-section"]}`}>
             <div className={`${styles["products-list"]}`}>
@@ -20,7 +37,7 @@ function ProductsSection(props: any): any {
                 }
                 <div className={`${styles["products"]}`}>
                     <div className={`${styles["products-list-common"]}`}>
-                        <img className={`${styles["section-image"]}`} src={sectionBanner} alt="custom-builds" />
+                        <img className={`${styles["section-image"]}`} src={props.banner} alt="custom-builds" />
                         <div className={`${styles["section-title"]}`}>
                             <span>{props.name}</span>
                             <a href="#">See All Products</a>

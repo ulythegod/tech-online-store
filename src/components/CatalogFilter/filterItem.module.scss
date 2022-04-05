@@ -71,3 +71,15 @@
 .item-with-icons ul span img {
     border: 4px double black;
 }
+
+@media (max-width: 768px) {
+    .item-options {
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .item a {
+        width: 66%;
+    }
+}

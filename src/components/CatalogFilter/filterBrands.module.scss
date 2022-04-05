@@ -25,3 +25,9 @@
 .brands ul li {
     height: 76px;
 }
+
+@media (max-width: 768px) {
+    .brands {
+        display: none;
+    }
+}

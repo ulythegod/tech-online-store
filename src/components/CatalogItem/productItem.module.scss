@@ -94,3 +94,9 @@
     margin-right: -10px;
     box-shadow: -1px 17px 17px 2px #cccccc70;
 }
+
+@media (max-width: 768px) {
+    .product-preview {
+        width: 167px;
+    }
+}

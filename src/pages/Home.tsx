@@ -2,7 +2,7 @@ import React from 'react';
 import NewProductsSection from 'components/CatalogSections/NewProductsSection'
 import BannersSlider from 'components/Banners/BannersSlider';
 import LogoBanner from 'components/Banners/logoBanner';
-import ProductsSection from 'components/CatalogSections/ProductsSection';
+import PromotedCategories from 'components/PromotedCategories/PromotedCategories';
 import CompaniesSection from 'components/CompaniesSection/CompaniesSection';
 import NewsSection from 'components/NewsSection/NewsSection';
 import ReviewsSection from 'components/ReviewsSection/ReviewsSection';
@@ -16,22 +16,7 @@ function Home(props: any): any {
                 name='New Products'
             />
             <LogoBanner />
-            <ProductsSection 
-                name='MSI Laptops'
-                sections={false}
-            />
-            <ProductsSection 
-                name='MSI Laptops'
-                sections={true}
-            />
-            <ProductsSection 
-                name='MSI Laptops'
-                sections={true}
-            />
-            <ProductsSection 
-                name='MSI Laptops'
-                sections={true}
-            />
+            <PromotedCategories />
             <CompaniesSection />
             <NewsSection />
             <ReviewsSection />

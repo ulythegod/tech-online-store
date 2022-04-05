@@ -35,15 +35,14 @@
     margin-right: 9px;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
     .breadcrumbs-navigation {
-        @include sections.mobile-section-margins;
+        @include sections.mobile-section-paddings;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 420px) {
     .breadcrumbs-navigation {
-        margin-left: 15px;
-        width: 100%;
+        padding-left: 5px;
     }
 }

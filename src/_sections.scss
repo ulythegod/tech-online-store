@@ -11,8 +11,9 @@
     margin-right: auto;
 }
 
-@mixin mobile-section-margins {
-    width: 100%;
-    margin-left: 10px;
-    margin-right: 10px;
+@mixin mobile-section-paddings {
+    width: 98%;
+    padding-left: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
 }

@@ -57,6 +57,10 @@
     display: none;
 }
 
+.mobile-title {
+    display: none;
+}
+
 @media (min-width: 768px) and (max-width: 1024px) {
     .filter-title-link {
         display: none;
@@ -98,6 +102,50 @@
 
     .catalog-filter-block-mobile {
         display: block;
+        width: 100%;
+        height: 200vh;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        margin-left: -10px;
+    }
+
+    .filter-title-link {
+        display: none;
+    }
+
+    .desktop-title {
+        display: none;
+    }
+
+    .filters {
         background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 200vh;
+    }
+
+    .mobile-title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        font-size: 18px;
+        font-weight: 600;
+        border-bottom: 1px solid colors.$grey;
+        padding: 10px;
+    }
+
+    .filter-items {
+        width: 90%;
+        margin: 0px;
+    }
+}
+
+@media (max-width: 420px) {
+    .catalog-filter-block-mobile {
+        margin-left: 8px;
     }
 }

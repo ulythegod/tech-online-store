@@ -10,6 +10,7 @@ import color2 from '../../images/color2.png';
 import WishList from 'components/WishList/WishList';
 import CompareProducts from 'components/CompareProducts/CompareProducts';
 import CatalogSelect from 'components/Catalog/CatalogSelect';
+import { ReactComponent as CloseMenu } from '../../images/close-menu.svg';
 
 function CatalogFilter(props: any): any {
     const [isOpenFilter, setIsOpenFilter] = useState(false);
@@ -42,10 +43,15 @@ function CatalogFilter(props: any): any {
             <div className={isOpenFilter ? `${styles["catalog-filter-block-mobile"]}` : `${styles["catalog-filter-block"]}`}>
                 <a className={`${styles["filter-title-link"]}`} href="#">Back</a>
                 <div className={`${styles["filters"]}`}>
-                    <span>Filters</span>
+                    <span className={`${styles["desktop-title"]}`}>Filters</span>
+                    <div className={`${styles["mobile-title"]}`}>
+                        Filter by
+                        <a onClick={handleFilterOpen} href="#"><CloseMenu /></a>
+                    </div>
                     <StoreButton
                         style='grey-button'
                         content={"Clear Filter"}
+                        showOnMobile={false}
                     />
                     <ul className={`${styles["filter-items"]}`}>
                         <FilterItem 
@@ -123,6 +129,25 @@ function CatalogFilter(props: any): any {
                         <FilterItem 
                             name='Filter Name'
                             items={false}
+                        />
+                        <FilterItem 
+                            name='Brands'
+                            items={
+                                <ul>
+                                    <li>
+                                        <a href="#">CUSTOM PCS</a>
+                                        <span>15</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">MSI ALL-IN-ONE PCS</a>
+                                        <span>45</span>
+                                    </li>
+                                    <li>
+                                        <a href="#">HP/COMPAQ PCS</a>
+                                        <span>1</span>
+                                    </li>
+                                </ul>
+                            }
                         />
                     </ul>
                     <StoreButton
