@@ -8,21 +8,21 @@ import ProductInfoBlock from './ProductInfoBlock';
 import ProductDetailes from './ProductDetailes';
 import ProductSpecs from './ProductSpecs';
 
-function ProductSection(props: any): any {
+function ProductSection(props: any): any {   
     return (
         <section className={`${styles["product-section"]}`}>
             <div className={`${styles["product-block"]}`}>
                 <div className={`${styles["product-info-block"]}`}>
                     <Breadcrumbs />
                     <PageTitle
-                        title="MSI MPG Trident 3"
+                        title={props.product.name}
                         isProductPage={true}
                     />
                     <a className={`${styles["review-link"]}`} href="#">Be the first to review this product</a>
                     {
                         (props.activeInfoBlock === 'ProductInfoBlock') ? <ProductInfoBlock /> :
-                        (props.activeInfoBlock === 'ProductDetailes') ? <ProductDetailes /> :
-                        (props.activeInfoBlock === 'ProductSpecs') ? <ProductSpecs /> : ''
+                        (props.activeInfoBlock === 'ProductDetailes') ? <ProductDetailes details={props.product.details} /> :
+                        (props.activeInfoBlock === 'ProductSpecs') ? <ProductSpecs details={props.product.specs} /> : ''
                     }                     
                     <div className={`${styles["product-rest"]}`}>
                         <p className={`${styles["product-have-questions"]}`}>
@@ -34,8 +34,8 @@ function ProductSection(props: any): any {
                     <a className={`${styles["more-info-link"]}`} href="#">+ More information</a>
                  </div>
                 <ProductImageBlock 
-                    image={productImage}
-                    name="MSI MPG Trident 3"
+                    image={props.product.photo[0].url}
+                    name={props.product.name}
                 />
             </div>
         </section>

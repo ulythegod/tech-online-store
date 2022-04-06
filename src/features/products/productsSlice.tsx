@@ -18,7 +18,7 @@ const initialState: ProductState = {
 export const fetchProducts = createAsyncThunk(
     'products/fetchProducts', 
     async () => {
-        let result = await fetch('https://teststrapitest.herokuapp.com/products?_limit=35');  
+        let result = await fetch('https://teststrapitest.herokuapp.com/products');  
 
         return result.json();
     }
@@ -40,3 +40,18 @@ const productsSlice = createSlice({
 export default productsSlice.reducer;
 
 export const selectAllProducts = (state: RootState) => state.products.products;
+
+export const selectProductsByCategoryId = (state: RootState, categoryId: number) => {
+    let products: any[] = [];
+
+    if (state.products.products[0]) {
+        state.products.products[0].forEach((product: any) => {
+            if (product.category.id === categoryId) {
+                products.push(product);
+            }
+        });
+    }
+       
+
+    return products;
+}

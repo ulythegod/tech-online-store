@@ -1,13 +1,26 @@
 import React from 'react';
 import styles from './breadcrumbs.module.scss';
+import { Link } from 'react-router-dom';
 
-function Breadcrumbs(props: any): any {
+function Breadcrumbs(props: any): any { 
     return (
         <nav className={`${styles["breadcrumbs-navigation"]}`}>
             <ul className={`${styles["breadcrumbs"]}`}>
                 <li><a href="/">Home</a></li>
-                <li><a href="/catalog">Laptops</a></li>
-                <li className={`${styles["active"]}`}>MSI WS Series</li>
+                {
+                    (props.category) ?
+                        (props.category.parent) ? 
+                        <>
+                            <li><Link to={`/catalog/${props.category.parent.id}`}>{props.category.parent.name}</Link></li>
+                        </> : ""
+                    : ""
+                }
+                {
+                    (props.category) ? 
+                    <>
+                        <li><Link to={`/catalog/${props.category.id}`}>{props.category.name}</Link></li>
+                    </> : ""
+                }
             </ul>
         </nav>
     );

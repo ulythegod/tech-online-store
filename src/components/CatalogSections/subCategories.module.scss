@@ -1,0 +1,21 @@
+@use '../../_lists.scss' as lists;
+
+.products-list-menu {
+    @include lists.list-style;
+    justify-content: flex-start;
+    width: 35%;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.products-list-menu li {
+    margin-right: 20px;
+}
+
+.products-list-menu a {
+    @include lists.list-item;
+}
+
+.products-list-menu .active {
+    @include lists.active-list-item;
+}

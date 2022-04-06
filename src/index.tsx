@@ -18,6 +18,11 @@ import Footer from 'components/Footer/Footer';
 
 import store from './store';
 import { Provider } from 'react-redux';
+import { fetchCategories } from './features/categories/categoriesSlice';
+import { fetchProducts } from './features/products/productsSlice';
+
+store.dispatch(fetchCategories());
+store.dispatch(fetchProducts());
 
 ReactDOM.render(
   <>
@@ -27,8 +32,8 @@ ReactDOM.render(
           <TopMenu />
           <Routes>
               <Route path="/" element={<Home />}/>
-              <Route path="/catalog" element={<CatalogPage />}/>
-              <Route path="/product" element={<ProductDetailed />}/>
+              <Route path="/catalog/:categoryId" element={<CatalogPage />}/>
+              <Route path="/product/:productId" element={<ProductDetailed />}/>
               <Route path="/contact-us" element={<ContactUs />}/>
               <Route path="/register" element={<Register />}/>
               <Route path="/shopping-card" element={<ShoppingCard />}/>

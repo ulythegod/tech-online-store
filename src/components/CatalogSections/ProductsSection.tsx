@@ -1,89 +1,64 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './productsSection.module.scss';
 import ProductItem from 'components/CatalogItem/ProductItem';
-import prodImg from '../../images/new-prod-img1.png';
+import SubCategories from './SubCategories';
+import { Link } from 'react-router-dom';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchCategories, selectAllCategories, selectCategoryById } from '../../features/categories/categoriesSlice';
+import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
+import { selectProductsByCategoryId } from 'features/products/productsSlice';
+import { selectCategoryById } from 'features/categories/categoriesSlice';
 
 function ProductsSection(props: any): any {
-    const dispatch: any = useDispatch();    
-    const categories: any[] = useSelector(selectAllCategories);
-    const postStatus: string = useSelector((state: RootState) => state.promotedCategories.status);
+    const [activeSubCategory, setActiveSubCategory] = useState(0);
+    function handleSubcategoryChange(event: any, categoryIdInArray: number) {
+        event.preventDefault();
 
-    useEffect(() => {
-        if (postStatus === 'idle') {
-            dispatch(fetchCategories());
+        setActiveSubCategory(categoryIdInArray);
+    }
+
+    const category = useSelector((state: RootState) => selectCategoryById(state, props.id));  
+
+    let subCategoriesList: any = '';
+    if (category.id) {       
+        if (category.subCategories.length > 0) {
+            subCategoriesList = <SubCategories 
+                subCategories={category.subCategories}
+                activeSubCategory={activeSubCategory}
+                handleSubcategoryChange={handleSubcategoryChange}
+            />;
         }
-    }, [postStatus, dispatch]);
-
-    const categoryItem: any = useSelector((state: RootState) => selectCategoryById(state, props.id));
-
-    console.log(categoryItem);      
+    }
+    
+    const products = useSelector((state: RootState) => selectProductsByCategoryId(state, activeSubCategory));
+    let productsItems = products.map((product: any, id: number) => {
+        return (
+            <ProductItem
+                key={product.id}
+                status='in-stock'
+                productImage={product.photo[0].url}
+                name={product.name}
+                price={product.price}
+                discount={product.price}
+                reviewsCount={4}
+            />
+        )
+    })
 
     return (
         <section className={`${styles["main-products-list-section"]}`}>
             <div className={`${styles["products-list"]}`}>
-                {
-                    props.sections ? 
-                        <ul className={`${styles["products-list-menu"]}`}>
-                            <li><a className={`${styles["active"]}`} href="#">MSI GS Series</a></li>
-                            <li><a href="#">MSI GT Series</a></li>
-                            <li><a href="#">MSI GL Series</a></li>
-                            <li><a href="#">MSI GE Series</a></li>
-                        </ul> : 
-                        ''
-                }
+                {subCategoriesList}
                 <div className={`${styles["products"]}`}>
                     <div className={`${styles["products-list-common"]}`}>
                         <img className={`${styles["section-image"]}`} src={props.banner} alt="custom-builds" />
                         <div className={`${styles["section-title"]}`}>
                             <span>{props.name}</span>
-                            <a href="#">See All Products</a>
+                            <Link to={`/catalog/${props.id}`}>See All Products</Link>
                         </div>
                     </div>
                     <div className={`${styles["items"]}`}>
-                        <ProductItem 
-                            status='in-stock'
-                            productImage={prodImg}
-                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                            price={499.00}
-                            discount={499.00}
-                            reviewsCount={4}
-                        />
-                        <ProductItem 
-                            status='in-stock'
-                            productImage={prodImg}
-                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                            price={499.00}
-                            discount={499.00}
-                            reviewsCount={4}
-                        />
-                        <ProductItem 
-                            status='in-stock'
-                            productImage={prodImg}
-                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                            price={499.00}
-                            discount={499.00}
-                            reviewsCount={4}
-                        />
-                        <ProductItem 
-                            status='in-stock'
-                            productImage={prodImg}
-                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                            price={499.00}
-                            discount={499.00}
-                            reviewsCount={4}
-                        />
-                        <ProductItem 
-                            status='in-stock'
-                            productImage={prodImg}
-                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                            price={499.00}
-                            discount={499.00}
-                            reviewsCount={4}
-                        />
+                        {productsItems}
                     </div>
                 </div>
             </div>

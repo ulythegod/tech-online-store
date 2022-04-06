@@ -57,6 +57,7 @@
 
 .product-title {
     @include commonStyles.product-title;
+    min-height: 60px
 }
 
 .product-price {

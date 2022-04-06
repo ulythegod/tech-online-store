@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchProducts, selectAllProducts } from '../../features/products/productsSlice';
+import { selectCategoryById } from 'features/categories/categoriesSlice';
+import { selectProductsByCategoryId } from '../../features/products/productsSlice';
 import { RootState }  from '../../store';
 
 import styles from './catalog.module.scss';
 
+import Breadcrumbs from 'components/Breadcrumbs/Breadcrumbs';
+import PageTitle from 'components/PageTitle/PageTitle';
 import CatalogTopElements from './CatalogTopElements';
 import CatalogSelectedFilters from './CatalogSelectedFilters';
 import CatalogPagination from './CatalogPagination';
@@ -22,6 +26,8 @@ import { ReactComponent as LinesView } from '../../images/lines-view.svg';
 import banner from '../../images/filters-banner.png';
 
 function Catalog(props: any): any {
+    const {categoryId} = useParams();
+
     const [view, setView] = useState('table');
     function handleViewChage(event: any) {
         event.preventDefault();
@@ -33,26 +39,19 @@ function Catalog(props: any): any {
         }        
     }
 
-    const dispatch: any = useDispatch();
-    const products: any[] = useSelector(selectAllProducts);
+    const category: any = useSelector((state: RootState) => selectCategoryById(state, Number(categoryId)))
 
-    const postStatus: string = useSelector((state: RootState) => state.products.status);
-
-    useEffect(() => {
-        if (postStatus === 'idle') {            
-           dispatch(fetchProducts()); 
-        }       
-                
-    }, [postStatus, dispatch]);
+    const products: any[] = useSelector((state: RootState) => selectProductsByCategoryId(state, Number(categoryId)));        
     
     let productsItems: any [] = [];
 
-    if (products.length > 0 && products[0].length > 0) {
-        productsItems = products[0].map((product: any, id: number) => {
+    if (products.length > 0) {
+        productsItems = products.map((product: any, id: number) => {
             if (view === "table") {
                 return (
                     <ProductItem
                         key={id}
+                        id={product.id}
                         name={product.name}
                         productImage={product.photo[0].url}
                         status='in-stock'
@@ -66,6 +65,7 @@ function Catalog(props: any): any {
                 return (
                     <CatlogItemHorizontal
                         key={id}
+                        id={product.id}
                         name={product.name}
                         productImage={product.photo[0].url}
                         status='in-stock'
@@ -81,7 +81,15 @@ function Catalog(props: any): any {
     }   
 
     return (
-        <section className={`${styles["catalog-section"]}`}>
+        <>
+            <Breadcrumbs 
+                category={category}
+            />
+            <PageTitle
+                title={category.name}
+                isCatalogPage={true}
+            />
+            <section className={`${styles["catalog-section"]}`}>
             <div className={`${styles["catalog-block"]}`}>
                 <CatalogFilter />
                 <div className={`${styles["catalog"]}`}>
@@ -123,7 +131,8 @@ function Catalog(props: any): any {
                     <CatalogDescription />
                 </div>
             </div>
-        </section>
+            </section>
+        </>
     );
 }
 

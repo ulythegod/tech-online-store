@@ -22,21 +22,6 @@
     flex-direction: row;  
 }
 
-.products-list-menu {
-    @include lists.list-style;
-    width: 35%;
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.products-list-menu a {
-    @include lists.list-item;
-}
-
-.products-list-menu .active {
-    @include lists.active-list-item;
-}
-
 .products-list-common {
     display: flex;
     flex-direction: column;

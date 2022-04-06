@@ -60,7 +60,7 @@ function ProductItem(props: any): any {
                 </div>
                 <a className={`${styles["reviews-link"]}`} href='#'>Reviews ({props.reviewsCount})</a>
             </div>
-            <Link to="/product" className={`${styles["product-title"]}`}>{props.name}</Link>
+            <Link to={`/product/${props.id}`} className={`${styles["product-title"]}`}>{props.name}</Link>
             <span className={`${styles["product-price"]}`}>${props.price}</span>
             <span className={`${styles["product-discount"]}`}>${props.discount}</span>
             <div className={`${styles["add-to-card-btn"]}`}>

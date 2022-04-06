@@ -19,7 +19,7 @@ function PromotedCategories(props: any): any {
 
     let categoriesSections: any[] = [];
     if (categories.length > 0 && categories[0].categories.length > 0) {
-        categoriesSections = categories[0].categories.map((category: any, id: number) => {            
+        categoriesSections = categories[0].categories.map((category: any, id: number) => {                
             return (
                 <ProductsSection
                     key={category.id}
