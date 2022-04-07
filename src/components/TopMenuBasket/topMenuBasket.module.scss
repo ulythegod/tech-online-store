@@ -27,9 +27,8 @@
 .appearing-block {
     display: block;
     position: absolute;
-    padding-top: 25px;
-    width: 300px;
-    margin-left: -12.5%;
+    padding-top: 20px;
+    width: 310px;
     z-index: 1;
 }
 
@@ -89,58 +88,39 @@
     margin-top: 10px;
 }
 
-.appearing-basket-top::after {
-    content: '';
-    position: absolute;
-    background: white;
-    left: 230px;
-    top: 15px;
-    bottom: 170px;
-    width: 20px; 
-    height: 20px;
-    box-shadow: -2px -6px 4px 0px #02020314; /* Добавляем тень для уголка */
-    z-index: 1; /* Прячем за основным блоком */
-    transform: rotate(45deg); /* Поворачиваем на 45º */
-    -webkit-transform: rotate(45deg);
-}
-
 .basket-icon-mobile {
     display: none;
 }
 
-@media (max-width: 1276px) {
-    .basket-icon-desktop {
-        display: none;
-    }
-
-    .basket-icon-mobile {
-        display: block;
-        margin-right: 50px;
-    }
-
-    .basket-logo-mobile {
-        position: relative;
-        margin-right: -5px;
-    }
-
-    .basket-amount-mobile {
-        color: colors.$darkBlue;
-        background-color: white;
-        font-size: 10px;
-        font-weight: 700;
-        display: inline-block;
-        border-radius: 50%;
-        width: 1.5em;
-        height: 1.5em;
-        text-align: center;
-        line-height: 1.5em;
-        position: absolute;
-        top: 65px;
-    }
+.arrow {
+    position: absolute;
+    width: 10px;
+    height: 10px;
 }
 
-@media (max-width: 768px) {
-    .basket-icon-mobile {
+.arrow::after {
+    content: '';
+    background-color: white;
+    box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 0px;
+    left: 238px;
+    transform: rotate(45deg);
+    width: 17px;
+    height: 17px;
+}
+
+@media (max-width: 1276px) {
+    .basket-icon {
         margin-right: 20px;
+    }
+
+    .basket-icon .basket-amount {
+        color: colors.$darkBlue;
+        background-color: white;
+    }
+
+    .basket-logo path {
+        fill: white;
     }
 }

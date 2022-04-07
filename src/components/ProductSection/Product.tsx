@@ -33,7 +33,7 @@ function Product(props: any): any {
         }
  
         setActiveInfoBlock(infoBlockCode);
-    }
+    } 
 
     return (
         <>
@@ -50,10 +50,14 @@ function Product(props: any): any {
                     />
                 }
             />
-            <ProductSection 
-                activeInfoBlock={activeInfoBlock}
-                product={product}
-            />
+            {
+                Object.keys(product).length > 0 &&
+                <ProductSection 
+                    activeInfoBlock={activeInfoBlock}
+                    product={product}
+                />
+            }
+            
         </>
     )
 }

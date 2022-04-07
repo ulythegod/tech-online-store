@@ -17,7 +17,7 @@ function AddToCartPrices(props: any): any {
     }
 
     function handleAmountChange(event: any) {
-        setAmount(event.target.value);        
+        setAmount(Number(event.target.value));        
     }
 
     return (

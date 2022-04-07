@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './productSection.module.scss';
 import ProductImageBlock from './ProductImageBlock';
-import productImage from '../../images/detailed-product.png';
 import Breadcrumbs from 'components/Breadcrumbs/Breadcrumbs';
 import PageTitle from 'components/PageTitle/PageTitle';
 import ProductInfoBlock from './ProductInfoBlock';
 import ProductDetailes from './ProductDetailes';
 import ProductSpecs from './ProductSpecs';
+import {Link} from 'react-router-dom';
 
 function ProductSection(props: any): any {   
     return (
@@ -27,7 +27,7 @@ function ProductSection(props: any): any {
                     <div className={`${styles["product-rest"]}`}>
                         <p className={`${styles["product-have-questions"]}`}>
                             <span>Have a Question?</span>
-                            <span><a href="#">Contact Us</a></span>
+                            <span><Link to="/contact-us">Contact Us</Link></span>
                         </p>
                         <span>SKU D5515AI</span>
                     </div>

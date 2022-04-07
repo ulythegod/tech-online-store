@@ -19,44 +19,49 @@ function TopMenuNavagation(props: any): any {
                     link="/catalog"
                     text="Laptops"
                     renderHoverMenu={<HoverMenu />}
+                    id={0}
                 />
                 <TopMenuItem 
                     isHidden={props.isOpenSearchPannel ? true : false}
                     link="/catalog"
                     text="Desktop PCs"
-                    isHoverMenu={false}
+                    renderHoverMenu={<HoverMenu />}
+                    id={1}
                 />
                 <TopMenuItem 
                     isHidden={props.isOpenSearchPannel ? true : false}
                     link="/catalog"
                     text="Networking Devices"
-                    isHoverMenu={true}
                     renderHoverMenu={<HoverMenu />}
+                    id={2}
                 />
                 <TopMenuItem 
                     isHidden={props.isOpenSearchPannel ? true : false}
                     link="/catalog"
                     text="Printers & Scanners"
-                    isHoverMenu={false}
+                    renderHoverMenu={<HoverMenu />}
+                    id={3}
                 />
                 <TopMenuItem 
                     isHidden={props.isOpenSearchPannel ? true : false}
                     link="/catalog"
                     text="PC Parts"
-                    isHoverMenu={false}
+                    renderHoverMenu={<HoverMenu />}
+                    id={4}
                 />
                 <TopMenuItem 
                     isHidden={props.isOpenSearchPannel ? true : false}
                     link="/catalog"
                     text="All Other Product"
-                    isHoverMenu={false}
+                    renderHoverMenu={<HoverMenu />}
+                    id={5}
                 />
                 <TopMenuItem 
                     isHidden={props.isOpenSearchPannel ? true : false}
                     link="/catalog"
                     text="Repairs"
-                    isHoverMenu={true}
                     renderHoverMenu={<HoverMenu />}
+                    id={6}
                 />
                 <li className={props.isOpenSearchPannel ? `${style["hidden"]}` : ''}>
                     <StoreButton

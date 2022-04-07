@@ -15,3 +15,25 @@
 .arrow-down {
     transform: rotate(180deg);
 }
+
+.shop-info-block {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    background-color: white;
+    box-shadow: -1px 1px 13px 4px #02020314;
+    top: 40px;
+    width: 240px;
+}
+
+.arrow::after {
+    content: '';
+    background-color: white;
+    box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: -9px;
+    left: 10px;
+    transform: rotate(45deg);
+    width: 17px;
+    height: 17px;
+}

@@ -1,18 +1,23 @@
 .account-block {
     cursor: pointer;
+    background-color: transparent;
+    border: none;
 }
 
-.user-icon-mobile {
-    display: none;
+.arrow {
+    position: absolute;
+    width: 10px;
+    height: 10px;
 }
 
-@media (max-width: 1276px) {
-    .account-block {
-        display: none;
-    }
-
-    .user-icon-mobile {
-        display: block;
-        margin-right: 10px;
-    }
+.arrow::after {
+    content: '';
+    background-color: white;
+    box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: -15px;
+    left: 185px;
+    transform: rotate(45deg);
+    width: 17px;
+    height: 17px;
 }

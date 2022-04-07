@@ -17,8 +17,7 @@ function ProductsSection(props: any): any {
         setActiveSubCategory(categoryIdInArray);
     }
 
-    const category = useSelector((state: RootState) => selectCategoryById(state, props.id));  
-
+    const category = useSelector((state: RootState) => selectCategoryById(state, props.id));
     let subCategoriesList: any = '';
     if (category.id) {       
         if (category.subCategories.length > 0) {
@@ -30,7 +29,11 @@ function ProductsSection(props: any): any {
         }
     }
     
-    const products = useSelector((state: RootState) => selectProductsByCategoryId(state, activeSubCategory));
+    let categorySearchingId = (category.subCategories.length > 0) ? category.subCategories[activeSubCategory].id : category.id;    
+    let products = useSelector((state: RootState) => selectProductsByCategoryId(state, categorySearchingId));
+    if (products.length > 5) {
+        products = products.slice(0, 5);
+    } 
     let productsItems = products.map((product: any, id: number) => {
         return (
             <ProductItem

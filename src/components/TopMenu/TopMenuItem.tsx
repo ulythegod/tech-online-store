@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import styles from './topMenuItem.module.scss';
+import stylesModule from './topMenuItem.module.scss';
 import { Link } from 'react-router-dom';
+import { usePopper } from 'react-popper';
+import { Placement } from "@popperjs/core";
 
 function TopMenuItem(props: any): any {
     const [showHoverMenu, setShowHoverMenu] = useState(false);
     const [isItemHovered, setIsItemHovered] = useState(false);
     
-    function handleOnMouseEnter() {       
+    function handleOpenHoveredMenu() {       
         if (!isItemHovered) {
             setIsItemHovered(prevIsItemHovered => !prevIsItemHovered);
         }
@@ -16,7 +18,7 @@ function TopMenuItem(props: any): any {
         }
     }
 
-    function handleOnMouseLeaveOnItem() {
+    function handleCloseHoveredMenu() {
         if (isItemHovered) {
             setIsItemHovered(prevIsItemHovered => !prevIsItemHovered);
         }
@@ -26,17 +28,49 @@ function TopMenuItem(props: any): any {
         }
     }
 
+    const [referenceElement, setReferenceElement] = useState<HTMLLIElement | null>(null);
+    const [popperElement, setPopperElement] = useState<HTMLUListElement | null>(null);
+    
+    let placementValue: Placement = "bottom";
+    if (props.id < 3) {
+        placementValue = "bottom-start";
+    } else if (props.id > 3) {
+        placementValue = "bottom-end";
+    }
+
+    const { styles, attributes } = usePopper(
+        referenceElement,
+        popperElement,
+        {
+            placement: placementValue,
+            modifiers: [
+                {
+                    name: 'offset',
+                    options: {
+                      offset: (props.id <= 3) ? [-150, 0] :
+                            (props.id > 3) ? [600, 0] : [0, 0],
+                    },
+                },
+            ],
+        }
+    );    
+
     return (
         <li 
-            className={!props.isHidden ? `${styles["menu-link"]}` : `${styles["hidden"]}`}
-            onMouseEnter={() => handleOnMouseEnter()}
-            onMouseLeave={() => handleOnMouseLeaveOnItem()}
+            className={!props.isHidden ? `${stylesModule["menu-link"]}` : `${stylesModule["hidden"]}`}
+            onMouseEnter={() => handleOpenHoveredMenu()}
+            onMouseLeave={() => handleCloseHoveredMenu()}
+            onFocus={() => handleOpenHoveredMenu()}
+            onBlur={() => handleCloseHoveredMenu()}
+            ref={setReferenceElement}
         >
-            <Link className={isItemHovered ? `${styles["menu-link-inner-hover"]}` : `${styles["menu-link-inner"]}`} to={props.link}>
+            <Link className={isItemHovered ? `${stylesModule["menu-link-inner-hover"]}` : `${stylesModule["menu-link-inner"]}`} to={props.link}>
                 {props.text}
             </Link>            
             <ul 
-                className={(props.renderHoverMenu && showHoverMenu) ? `${styles["hover-menu-block"]}` : `${styles["hidden"]}`}
+                className={(props.renderHoverMenu && showHoverMenu) ? `${stylesModule["hover-menu-block"]}` : `${stylesModule["hidden"]}`}
+                ref={setPopperElement}
+                style={styles.popper} {...attributes.popper}
             >
                 {props.renderHoverMenu}
             </ul>            

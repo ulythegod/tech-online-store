@@ -1,37 +1,11 @@
 @use '../../_colors.scss' as colors;
 
-.account-menu {
-    display: block;
-    position: absolute;
-    margin-left: -7.5%;
-    z-index: 1;
-}
-
 .menu-list {
     list-style: none;
     background-color: white;
     width: 173px;
     padding: 20px;
     box-shadow: -1px 1px 13px 4px #02020314;
-}
-
-.menu-list::after, .menu-list::before {
-    content: '';
-    position: absolute;
-    background: white;
-    left: 150px; 
-    bottom: 170px;
-    width: 20px; 
-    height: 20px;
-    box-shadow: 0 0 7px #02020314; /* Добавляем тень для уголка */
-    z-index: -1; /* Прячем за основным блоком */
-    transform: rotate(45deg); /* Поворачиваем на 45º */
-    -webkit-transform: rotate(45deg);
-}
-
-.menu-list::before {
-    z-index: 1; /* Накладываем поверх, чтобы скрыть следы тени */
-    box-shadow: none; /* Прячем тень */
 }
 
 .list-item a {
