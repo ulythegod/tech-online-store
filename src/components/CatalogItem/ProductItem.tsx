@@ -17,7 +17,7 @@ function ProductItem(props: any): any {
         statusText = "in-stock";
     } else if (props.status == "check-availability") {
         statusText = "check-availability";
-    }
+    }   
 
     return (
         <div className={`${styles["product-preview"]}`}>
@@ -39,7 +39,9 @@ function ProductItem(props: any): any {
                     content={<AddToRating />}
                 />
             </div>
-            <Link className={`${styles["product-image-link"]}`} to="/product"><img className={`${styles["product-image"]}`} src={props.productImage} alt="Product" /></Link>
+            <Link className={`${styles["product-image-link"]}`} to={`/product/${props.id}`}>
+                <img className={`${styles["product-image"]}`} src={props.productImage} alt="Product" />
+            </Link>
             <div className={`${styles["product-rating"]}`}>
                 <div className={`${styles["rating-buttons"]}`}>
                     <RatingButton 

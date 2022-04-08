@@ -19,7 +19,7 @@ function HeaderTime(props: any): any {
         referenceElement,
         popperElement,
         {
-            placement: 'bottom-start',
+            placement: 'bottom',
             modifiers: [
                 {
                     name: 'arrow',
@@ -30,14 +30,12 @@ function HeaderTime(props: any): any {
                 {
                     name: 'offset',
                     options: {
-                        offset: [-15, 12],
+                        offset: [0, 12],
                     },
                 },
             ],
         }
-    );
-
-    console.log(styles.popper);    
+    ); 
     
     return (
         <div className={`${stylesModule["header-time"]}`}>

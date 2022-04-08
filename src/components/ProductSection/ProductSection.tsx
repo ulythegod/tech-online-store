@@ -8,12 +8,20 @@ import ProductDetailes from './ProductDetailes';
 import ProductSpecs from './ProductSpecs';
 import {Link} from 'react-router-dom';
 
-function ProductSection(props: any): any {   
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store';
+import { selectCategoryById } from '../../features/categories/categoriesSlice';
+
+function ProductSection(props: any): any {    
+    const productCategory: any = useSelector((state: RootState) => selectCategoryById(state, props.product.category.id));    
+    
     return (
         <section className={`${styles["product-section"]}`}>
             <div className={`${styles["product-block"]}`}>
                 <div className={`${styles["product-info-block"]}`}>
-                    <Breadcrumbs />
+                    <Breadcrumbs 
+                        category={productCategory}
+                    />
                     <PageTitle
                         title={props.product.name}
                         isProductPage={true}
@@ -33,10 +41,14 @@ function ProductSection(props: any): any {
                     </div>
                     <a className={`${styles["more-info-link"]}`} href="#">+ More information</a>
                  </div>
-                <ProductImageBlock 
-                    image={props.product.photo[0].url}
-                    name={props.product.name}
-                />
+                {
+                    (props.product.photo) &&
+                    <ProductImageBlock 
+                        image={props.product.photo[0].url}
+                        name={props.product.name}
+                    />
+                }
+                
             </div>
         </section>
     );

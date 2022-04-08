@@ -22,7 +22,7 @@ const initialState: CategoriesState = {
 export const fetchCategories = createAsyncThunk(
     'categories/fetchCategories',
     async () => {
-        let result = await fetch('https://teststrapitest.herokuapp.com/categories');  
+        let result = await fetch('https://teststrapitest.herokuapp.com/categories?_sort=id');  
 
         return result.json();
     }
@@ -45,8 +45,24 @@ export default categoriesSlice.reducer;
 
 export const selectAllCategories = (state: RootState) => state.categories.categories;
 
-export const selectCategoryById = (state: RootState, categoryId: number) => {
-    return state.categories.categories[0].find(
-        (category: any) => category.id === categoryId
-    )
+export const selectCategoryById = (state: RootState, categoryId: number) => {    
+    if (state.categories.categories.length > 0) {
+        return state.categories.categories[0].find(
+            (category: any) => category.id === categoryId
+        )
+    }    
+}
+
+export const selectParentCategories = (state: RootState) => {
+    let categories: any[] = [];    
+
+    if (state.categories.categories.length > 0) {        
+        state.categories.categories[0].forEach((category: any) => {
+            if (category.subCategories.length > 0 && category.parent === null) {
+                categories.push(category);
+            }
+        });
+    }
+
+    return categories;
 }

@@ -19,22 +19,27 @@ function ProductsSection(props: any): any {
 
     const category = useSelector((state: RootState) => selectCategoryById(state, props.id));
     let subCategoriesList: any = '';
-    if (category.id) {       
-        if (category.subCategories.length > 0) {
-            subCategoriesList = <SubCategories 
-                subCategories={category.subCategories}
-                activeSubCategory={activeSubCategory}
-                handleSubcategoryChange={handleSubcategoryChange}
-            />;
+    let categorySearchingId: number = 0;
+
+    if (category) {
+        if (Object.keys(category).length > 0) {       
+            if (category.subCategories.length > 0) {
+                subCategoriesList = <SubCategories 
+                    subCategories={category.subCategories}
+                    activeSubCategory={activeSubCategory}
+                    handleSubcategoryChange={handleSubcategoryChange}
+                />;
+            }
         }
+
+        categorySearchingId = (category.subCategories.length > 0) ? category.subCategories[activeSubCategory].id : category.id;  
     }
-    
-    let categorySearchingId = (category.subCategories.length > 0) ? category.subCategories[activeSubCategory].id : category.id;    
+       
     let products = useSelector((state: RootState) => selectProductsByCategoryId(state, categorySearchingId));
     if (products.length > 5) {
         products = products.slice(0, 5);
     } 
-    let productsItems = products.map((product: any, id: number) => {
+    let productsItems = products.map((product: any, id: number) => {        
         return (
             <ProductItem
                 key={product.id}
@@ -44,6 +49,7 @@ function ProductsSection(props: any): any {
                 price={product.price}
                 discount={product.price}
                 reviewsCount={4}
+                id={product.id}
             />
         )
     })

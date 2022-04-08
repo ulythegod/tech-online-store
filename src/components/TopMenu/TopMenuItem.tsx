@@ -32,9 +32,9 @@ function TopMenuItem(props: any): any {
     const [popperElement, setPopperElement] = useState<HTMLUListElement | null>(null);
     
     let placementValue: Placement = "bottom";
-    if (props.id < 3) {
+    if (props.id < 2) {
         placementValue = "bottom-start";
-    } else if (props.id > 3) {
+    } else if (props.id > 2) {
         placementValue = "bottom-end";
     }
 
@@ -47,8 +47,8 @@ function TopMenuItem(props: any): any {
                 {
                     name: 'offset',
                     options: {
-                      offset: (props.id <= 3) ? [-150, 0] :
-                            (props.id > 3) ? [600, 0] : [0, 0],
+                      offset: (props.id <= 2) ? [-150, 0] :
+                            (props.id > 2) ? [650, 0] : [0, 0],
                     },
                 },
             ],

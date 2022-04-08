@@ -1,23 +1,6 @@
 @use '../../_colors.scss' as colors;
 @use '../../_arrows.scss' as arrows;
 
-.menu-main-list {
-    border: 1px solid colors.$grey;
-    width: 23%;
-    list-style: none;
-    padding: 0px;
-    height: 350px;
-}
-
-.menu-link-inner {
-    text-decoration: none;
-    color: colors.$black;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 14px;
-    font-weight: 600;
-}
-
 .main-list-item {
     padding: 10px;
 }
@@ -31,14 +14,6 @@
 
 .item-with-level:hover {
     background-color: colors.$grey;
-}
-
-.arrow-next-level {
-    @include arrows.arrow-right-black;
-}
-
-.second-level-list {
-    display: none;
 }
 
 .item-with-level:hover .second-level-list {
@@ -55,15 +30,27 @@
     width: 18%;
 }
 
-.item-with-third-level {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+.menu-link-inner {
+    text-decoration: none;
+    color: colors.$black;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
-.item-with-third-level:hover {
-    background-color: colors.$grey;
+.arrow-next-level {
+    @include arrows.arrow-right-black;
+}
+
+.amount {
+    font-size: 12px;
+    font-weight: 400;
+    color: colors.$grey;
+}
+
+.second-level-list {
+    display: none;
 }
 
 .third-level-list {
@@ -85,8 +72,13 @@
     width: 100%;    
 }
 
-.amount {
-    font-size: 12px;
-    font-weight: 400;
-    color: colors.$grey;
+.item-with-third-level {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-with-third-level:hover {
+    background-color: colors.$grey;
 }

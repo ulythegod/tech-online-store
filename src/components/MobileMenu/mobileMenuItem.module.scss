@@ -1,0 +1,51 @@
+@use '../../_colors.scss' as colors;
+@use '../../_arrows.scss' as arrows;
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 1276px) {
+    .menu-link-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .main-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .main-item-opened {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: colors.$grey;
+    }
+
+    .menu-link-inner a {
+        padding: 10px 20px;
+    }
+
+    .item-link {
+        text-decoration: none;
+        color: colors.$black;
+        font-size: 13px;
+    }
+
+    .link-arrow {
+        @include arrows.arrow-right-black;
+    }
+
+    .link-arrow-left {
+        @include arrows.arrow-left-black;
+    }
+
+    .second-level {
+        padding: 0px;
+        width: 100%;
+    }
+}

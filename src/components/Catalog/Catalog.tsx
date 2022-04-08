@@ -81,17 +81,24 @@ function Catalog(props: any): any {
     }   
 
     return (
+        
         <>
             <Breadcrumbs 
                 category={category}
             />
-            <PageTitle
-                title={category.name}
-                isCatalogPage={true}
-            />
+            {
+                category &&
+                <PageTitle
+                    title={category.name}
+                    isCatalogPage={true}
+                />
+            }
+           
             <section className={`${styles["catalog-section"]}`}>
             <div className={`${styles["catalog-block"]}`}>
-                <CatalogFilter />
+                <CatalogFilter 
+                    currentCategory={category}
+                />
                 <div className={`${styles["catalog"]}`}>
                     <CatalogTopElements 
                         view={view}

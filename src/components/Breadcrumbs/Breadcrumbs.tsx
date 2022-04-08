@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './breadcrumbs.module.scss';
 import { Link } from 'react-router-dom';
 
-function Breadcrumbs(props: any): any { 
+function Breadcrumbs(props: any): any {    
     return (
         <nav className={`${styles["breadcrumbs-navigation"]}`}>
             <ul className={`${styles["breadcrumbs"]}`}>

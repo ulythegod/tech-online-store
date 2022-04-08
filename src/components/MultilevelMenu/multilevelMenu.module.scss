@@ -1,0 +1,11 @@
+@use '../../_colors.scss' as colors;
+@use '../../_arrows.scss' as arrows;
+
+.menu-main-list {
+    border: 1px solid colors.$grey;
+    width: 23%;
+    list-style: none;
+    padding: 0px;
+    height: 350px;
+}
+

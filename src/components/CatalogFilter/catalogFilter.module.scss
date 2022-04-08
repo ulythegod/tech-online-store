@@ -103,8 +103,8 @@
     .catalog-filter-block-mobile {
         display: block;
         width: 100%;
-        height: 200vh;
-        position: absolute;
+        height: 100vh;
+        position: fixed;
         z-index: 2;
         top: 0;
         margin-left: -10px;

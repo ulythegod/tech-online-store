@@ -5,12 +5,13 @@ import FilterBrands from './FilterBrands';
 import CatalogFilterBanner from './CatalogFilterBanner';
 import StoreButton from '../Buttons/StoreButton';
 import banner from '../../images/filters-banner.png';
-import color1 from '../../images/color1.png';
-import color2 from '../../images/color2.png';
 import WishList from 'components/WishList/WishList';
 import CompareProducts from 'components/CompareProducts/CompareProducts';
 import CatalogSelect from 'components/Catalog/CatalogSelect';
+import { Link } from 'react-router-dom';
 import { ReactComponent as CloseMenu } from '../../images/close-menu.svg';
+import color1 from '../../images/color1.png';
+import color2 from '../../images/color2.png';
 
 function CatalogFilter(props: any): any {
     const [isOpenFilter, setIsOpenFilter] = useState(false);
@@ -24,6 +25,15 @@ function CatalogFilter(props: any): any {
         { value: 'position2', label: 'Position2' },
         { value: 'position3', label: 'Position3' }
     ];
+
+    let backLink: string = "/";
+    if (props.currentCategory) {
+        if (props.currentCategory.parent) {
+            if (props.currentCategory.parent.id) {
+                backLink = `/catalog/${props.currentCategory.parent.id}`;
+            }
+        }                
+    }
     
     return (
         <>
@@ -41,7 +51,7 @@ function CatalogFilter(props: any): any {
                 />
             </div>
             <div className={isOpenFilter ? `${styles["catalog-filter-block-mobile"]}` : `${styles["catalog-filter-block"]}`}>
-                <a className={`${styles["filter-title-link"]}`} href="#">Back</a>
+                <Link className={`${styles["filter-title-link"]}`} to={backLink}>Back</Link>
                 <div className={`${styles["filters"]}`}>
                     <span className={`${styles["desktop-title"]}`}>Filters</span>
                     <div className={`${styles["mobile-title"]}`}>

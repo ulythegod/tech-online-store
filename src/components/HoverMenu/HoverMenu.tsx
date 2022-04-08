@@ -2,7 +2,7 @@ import React from "react";
 import styles from './hoverMenu.module.scss';
 import CompaniesSection from "components/CompaniesSection/CompaniesSection";
 import ProductItem from "components/CatalogItem/ProductItem";
-import MultilevelMenu from "./MultilevelMenu";
+import MultilevelMenu from "../MultilevelMenu/MultilevelMenu";
 import prodImg1 from '../../images/new-prod-img1.png';
 import prodImg2 from '../../images/new-prod-img2.png';
 import prodImg3 from '../../images/new-prod-img3.png';
@@ -12,7 +12,7 @@ function HoverMenu(props: any): any {
     return (
         <div className={`${styles["hover-menu"]}`}>
             <div className={`${styles["menu-top-block"]}`}>
-                <MultilevelMenu />
+                <MultilevelMenu subCategories={props.subCategories} />
                 <div className={`${styles["menu-products-list"]}`}>
                     <ProductItem 
                         status='in-stock'
