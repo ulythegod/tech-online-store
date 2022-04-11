@@ -9,6 +9,12 @@ import WishList from 'components/WishList/WishList';
 import CompareProducts from 'components/CompareProducts/CompareProducts';
 import CatalogSelect from 'components/Catalog/CatalogSelect';
 import { Link } from 'react-router-dom';
+
+import { useSelector } from 'react-redux';
+import { RootState } from 'store';
+import { selectAllCategories, selectCategoriesProductsAmount } from 'features/categories/categoriesSlice';
+import { selectAllProducts } from 'features/products/productsSlice';
+
 import { ReactComponent as CloseMenu } from '../../images/close-menu.svg';
 import color1 from '../../images/color1.png';
 import color2 from '../../images/color2.png';
@@ -34,6 +40,32 @@ function CatalogFilter(props: any): any {
             }
         }                
     }
+
+    let subCategoriesIds: number[] = [];
+    if (props.subCategories.length > 0) {
+        props.subCategories.forEach((subCategory: any, id: number) => {
+            subCategoriesIds.push(subCategory.id)            
+        });
+    }
+
+    let categoriesForFilter: any[] = useSelector((state: RootState) => selectCategoriesProductsAmount(state, subCategoriesIds));
+    let categoriesFilter: any[] = [];  
+
+    if (props.subCategories.length > 0 && categoriesForFilter.length > 0) {
+        categoriesFilter = props.subCategories.map((category: any, id: number) => {
+            return (                
+                <li key={category.id}>
+                    <Link 
+                        to={`/catalog/${category.id}`}
+                        onClick={(event: any) => props.handleCategorySelect(event, category.id)}                        
+                    >
+                        {category.name}
+                    </Link>
+                    <span>{categoriesForFilter[category.id].productsAmount}</span>
+                </li>            
+            )
+        })
+    }    
     
     return (
         <>
@@ -62,27 +94,20 @@ function CatalogFilter(props: any): any {
                         style='grey-button'
                         content={"Clear Filter"}
                         showOnMobile={false}
+                        buttonAction={props.handleClearFilters}
                     />
                     <ul className={`${styles["filter-items"]}`}>
-                        <FilterItem 
-                            name='Category'
-                            items={
-                                <ul>
-                                    <li>
-                                        <a href="#">CUSTOM PCS</a>
-                                        <span>15</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">MSI ALL-IN-ONE PCS</a>
-                                        <span>45</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">HP/COMPAQ PCS</a>
-                                        <span>1</span>
-                                    </li>
-                                </ul>
-                            }
-                        />
+                        {
+                            (categoriesFilter.length > 0) &&
+                            <FilterItem 
+                                name='Category'
+                                items={
+                                    <ul>
+                                        {categoriesFilter}
+                                    </ul>
+                                }
+                            />
+                        }                        
                         <FilterItem 
                             name='Price'
                             items={
@@ -162,7 +187,8 @@ function CatalogFilter(props: any): any {
                     </ul>
                     <StoreButton
                         style='blue-button'
-                        content={"Apply Filters (2)"}
+                        content={`Apply Filters (${props.selectedFiltersCount})`}
+                        buttonAction={props.handleApplyFilters}
                     />
                 </div>
                 <FilterBrands />

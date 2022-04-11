@@ -35,7 +35,7 @@ function ProductsSection(props: any): any {
         categorySearchingId = (category.subCategories.length > 0) ? category.subCategories[activeSubCategory].id : category.id;  
     }
        
-    let products = useSelector((state: RootState) => selectProductsByCategoryId(state, categorySearchingId));
+    let products = useSelector((state: RootState) => selectProductsByCategoryId(state, [categorySearchingId]));
     if (products.length > 5) {
         products = products.slice(0, 5);
     } 

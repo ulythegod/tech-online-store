@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { selectCategoryById } from 'features/categories/categoriesSlice';
+import { selectCategoryById, selectCategoriesIds} from 'features/categories/categoriesSlice';
 import { selectProductsByCategoryId } from '../../features/products/productsSlice';
 import { RootState }  from '../../store';
+import { Product } from '../../features/products/productsSlice';
 
 import styles from './catalog.module.scss';
 
@@ -21,12 +22,66 @@ import StoreButton from 'components/Buttons/StoreButton';
 import CompareProducts from 'components/CompareProducts/CompareProducts';
 import WishList from 'components/WishList/WishList';
 import CatalogFilterBanner from 'components/CatalogFilter/CatalogFilterBanner';
+import SelectedFilter from './SelectedFilter';
+
 import { ReactComponent as TableView } from '../../images/table-view.svg';
 import { ReactComponent as LinesView } from '../../images/lines-view.svg';
 import banner from '../../images/filters-banner.png';
 
-function Catalog(props: any): any {
-    const {categoryId} = useParams();
+type FillersInterface = {
+    categoriesIds: number[],
+    defaultCategoriesIds: number[],
+    prices: any[],
+    name: ""
+}
+
+function Catalog() {
+    const { categoryId } = useParams();
+    const category = useSelector((state: RootState) => selectCategoryById(state, Number(categoryId)));
+    const categoriesIds = useSelector((state: RootState) => selectCategoriesIds(state, Number(categoryId)));  
+
+    const [filters, setFilters] = useState<FillersInterface>({
+        categoriesIds: [],
+        defaultCategoriesIds: categoriesIds,
+        prices: [],
+        name: ""
+    });
+
+    const [appliedFilters, setAppliedFilters] = useState<FillersInterface>({
+        categoriesIds: [],
+        defaultCategoriesIds: categoriesIds,
+        prices: [],
+        name: ""
+    });
+    
+    function handleCategorySelect(event: any, categoryId: number) {
+        event.preventDefault();        
+
+        setFilters({
+            ...filters,
+            categoriesIds: (
+                filters.categoriesIds.includes(categoryId) ? 
+                    filters.categoriesIds.filter((id) => id !== categoryId) : 
+                    [...filters.categoriesIds, categoryId]
+                )
+        })
+    }
+
+    function handleApplyFilters(event: any) {
+        event.preventDefault();
+
+        setAppliedFilters(filters);
+    }
+
+    function handleClearFilters(event: any) {
+        event.preventDefault();
+    }
+
+    function handleClearFilter(event: any, filterType: string) {
+        event.preventDefault();
+    }
+
+    let filtersItems: any = {};  
 
     const [view, setView] = useState('table');
     function handleViewChage(event: any) {
@@ -38,10 +93,9 @@ function Catalog(props: any): any {
             setView("table");
         }        
     }
-
-    const category: any = useSelector((state: RootState) => selectCategoryById(state, Number(categoryId)))
-
-    const products: any[] = useSelector((state: RootState) => selectProductsByCategoryId(state, Number(categoryId)));        
+    
+    const appliedCategories = appliedFilters.categoriesIds.length > 0 ? appliedFilters.categoriesIds : categoriesIds;
+    const products = useSelector((state: RootState) => selectProductsByCategoryId(state, appliedCategories));
     
     let productsItems: any [] = [];
 
@@ -78,10 +132,16 @@ function Catalog(props: any): any {
                 )
             }            
         });
-    }   
+    }
+    
+    let subCategories: any[] = [];
+    if (category) {
+        if (category.subCategories) {
+            subCategories = category.subCategories;
+        }
+    }
 
-    return (
-        
+    return (        
         <>
             <Breadcrumbs 
                 category={category}
@@ -98,6 +158,10 @@ function Catalog(props: any): any {
             <div className={`${styles["catalog-block"]}`}>
                 <CatalogFilter 
                     currentCategory={category}
+                    subCategories={subCategories}
+                    handleCategorySelect={handleCategorySelect}
+                    handleApplyFilters={handleApplyFilters}
+                    handleClearFilters={handleClearFilters}
                 />
                 <div className={`${styles["catalog"]}`}>
                     <CatalogTopElements 
@@ -119,7 +183,15 @@ function Catalog(props: any): any {
                             />
                         }
                     />
-                    <CatalogSelectedFilters />
+                    <CatalogSelectedFilters 
+                        filtersItems={
+                            filtersItems ?
+                            <>
+                                {filtersItems["category"]}
+                            </> :
+                            <></>
+                        }
+                    />
                     <div className={
                         (view === "table") ? `${styles["catalog-table-view"]}` : 
                         (view === "column") ? `${styles["catalog-column-view"]}` : ``

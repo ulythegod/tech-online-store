@@ -14,7 +14,7 @@ function TopMenuNavagation(props: any): any {
                 isHidden={props.isOpenSearchPannel ? true : false}
                 link={`/catalog/${category.id}`}
                 text={category.name}
-                renderHoverMenu={<HoverMenu subCategories={category.subCategories} />}
+                renderHoverMenu={<HoverMenu subCategories={category.subCategories} categoryId={category.id} />}
                 id={id}
                 key={category.id}
             />
