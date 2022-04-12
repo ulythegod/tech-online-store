@@ -1,7 +1,14 @@
 import React from 'react';
 import styles from './summaryItem.module.scss';
 
-function SummaryItem(props: any): any {
+type Props = {
+    image: string,
+    name: string,
+    amount: number,
+    price: number
+}
+
+function SummaryItem(props: Props) {
     return (
         <div className={`${styles["summary-item"]}`}>
             <a href="#"><img src={props.image} alt=""/></a>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 import styles from './catalogFilter.module.scss';
 import FilterItem from './FilterItem';
 import FilterBrands from './FilterBrands';
@@ -13,13 +13,28 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store';
 import { selectAllCategories, selectCategoriesProductsAmount } from 'features/categories/categoriesSlice';
-import { selectAllProducts } from 'features/products/productsSlice';
+import { selectProductsAmountForPrices } from 'features/products/productsSlice';
+import { Category, FillersInterface, Price } from '../../CustomTypes';
 
 import { ReactComponent as CloseMenu } from '../../images/close-menu.svg';
 import color1 from '../../images/color1.png';
 import color2 from '../../images/color2.png';
 
-function CatalogFilter(props: any): any {
+type Props = {
+    currentCategory: Category | undefined,
+    subCategories: Category[],
+    handleCategorySelect: Function,
+    handleClearFilters: Function,
+    handleApplyFilters: Function,
+    handlePriceSelect: Function,
+    handleNameInput: Function,
+    appliedFilters: FillersInterface,
+    filters: FillersInterface,
+    filtersAmount: number,
+    prices: Price[]
+}
+
+function CatalogFilter(props: Props) {
     const [isOpenFilter, setIsOpenFilter] = useState(false);
 
     function handleFilterOpen() {
@@ -57,7 +72,10 @@ function CatalogFilter(props: any): any {
                 <li key={category.id}>
                     <Link 
                         to={`/catalog/${category.id}`}
-                        onClick={(event: any) => props.handleCategorySelect(event, category.id)}                        
+                        onClick={(event: any) => props.handleCategorySelect(event, category.id)}
+                        className={
+                            props.appliedFilters.categoriesIds.includes(category.id) ? `${styles["active"]}` : ``
+                        }                   
                     >
                         {category.name}
                     </Link>
@@ -65,7 +83,46 @@ function CatalogFilter(props: any): any {
                 </li>            
             )
         })
-    }    
+    }
+
+    let categoriasIds = [...subCategoriesIds];
+    if (props.currentCategory) {
+        if (props.currentCategory.parent) {
+            if (props.currentCategory.parent.id) {
+                categoriasIds.push(props.currentCategory.parent.id);
+            }
+        }                
+    }
+
+    let productsAmountsForPrices: any[] = useSelector((state: RootState) => selectProductsAmountForPrices(state, categoriasIds));    
+    
+    let pricesForFilter: any[] = props.prices.map((price: Price, id: number) => {
+        let amount = productsAmountsForPrices[price.id] ? productsAmountsForPrices[price.id] : 0;
+        return (
+            <li key={id}>
+                <a 
+                    href="#"
+                    onClick={(event: any) => props.handlePriceSelect(event, price)}
+                    className={
+                        props.appliedFilters.prices.includes(price) ? `${styles["active"]}` : ``
+                    } 
+                >
+                    {price.name}
+                </a>
+                <span>{amount}</span>
+            </li>
+        )
+    });   
+
+    let nameFilter: ReactElement<any, any> = (
+        <>
+            <input 
+                type={"text"} 
+                onChange={(event: any) => props.handleNameInput(event)}
+                value={props.filters.name}
+            />
+        </>
+    )
     
     return (
         <>
@@ -112,38 +169,7 @@ function CatalogFilter(props: any): any {
                             name='Price'
                             items={
                                 <ul>
-                                    <li>
-                                        <a href="#">$0.00 - $1,000.00</a>
-                                        <span>19</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">$1,000.00 - $2,000.00</a>
-                                        <span>21</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">$2,000.00 - $3,000.00</a>
-                                        <span>9</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">$3,000.00 - $4,000.00</a>
-                                        <span>6</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">$4,000.00 - $5,000.00</a>
-                                        <span>3</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">$5,000.00 - $6,000.00</a>
-                                        <span>1</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">$6,000.00 - $7,000.00</a>
-                                        <span>1</span>
-                                    </li>
-                                    <li>
-                                        <a href="#">$7,000.00 And Above</a>
-                                        <span>1</span>
-                                    </li>
+                                    {pricesForFilter}
                                 </ul>
                             }
                         />
@@ -163,7 +189,7 @@ function CatalogFilter(props: any): any {
                         />
                         <FilterItem 
                             name='Filter Name'
-                            items={false}
+                            items={nameFilter}
                         />
                         <FilterItem 
                             name='Brands'
@@ -187,7 +213,7 @@ function CatalogFilter(props: any): any {
                     </ul>
                     <StoreButton
                         style='blue-button'
-                        content={`Apply Filters (${props.selectedFiltersCount})`}
+                        content={`Apply Filters (${props.filtersAmount})`}
                         buttonAction={props.handleApplyFilters}
                     />
                 </div>

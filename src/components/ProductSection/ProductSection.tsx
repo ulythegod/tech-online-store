@@ -11,9 +11,17 @@ import {Link} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { selectCategoryById } from '../../features/categories/categoriesSlice';
+import { Product } from '../../CustomTypes';
 
-function ProductSection(props: any): any {    
-    const productCategory: any = useSelector((state: RootState) => selectCategoryById(state, props.product.category.id));    
+type Props = {
+    product: Product,
+    activeInfoBlock: string
+}
+
+function ProductSection(props: Props) {    
+    const productCategory: any = useSelector((state: RootState) => selectCategoryById(state, props.product.category.id));
+
+    console.log(props.product);    
     
     return (
         <section className={`${styles["product-section"]}`}>
@@ -30,7 +38,7 @@ function ProductSection(props: any): any {
                     {
                         (props.activeInfoBlock === 'ProductInfoBlock') ? <ProductInfoBlock /> :
                         (props.activeInfoBlock === 'ProductDetailes') ? <ProductDetailes details={props.product.details} /> :
-                        (props.activeInfoBlock === 'ProductSpecs') ? <ProductSpecs details={props.product.specs} /> : ''
+                        (props.activeInfoBlock === 'ProductSpecs') ? <ProductSpecs specs={props.product.specs} /> : ''
                     }                     
                     <div className={`${styles["product-rest"]}`}>
                         <p className={`${styles["product-have-questions"]}`}>

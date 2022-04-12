@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './footerSocials.module.scss';
 import SocialsLinks from 'components/Buttons/SocialsLinks';
 
-function FooterSocials(props: any): any {
+function FooterSocials() {
     return (
         <div className={`${styles["footer-socials"]}`}>
             <SocialsLinks />

@@ -7,7 +7,12 @@ import { ReactComponent as ProductMail } from '../../images/product-mail.svg';
 import { ReactComponent as ProductRating } from '../../images/product-rating.svg';
 import { ReactComponent as ProductFav } from '../../images/product-fav.svg';
 
-function ProductImageBlock(props: any): any {
+type Props = {
+    image: string,
+    name: string
+}
+
+function ProductImageBlock(props: Props) {
     return (
         <div className={`${styles["product-image-block"]}`}>
             <div className={`${styles["product-buttons"]}`}>

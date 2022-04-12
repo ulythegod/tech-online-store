@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import styles from './cardItem.module.scss';
 import { Link } from 'react-router-dom';
 import RoundButton from 'components/Buttons/RoundButton';
 import { ReactComponent as DeleteItem } from '../../images/card-delete-item.svg';
 import { ReactComponent as EditItem } from '../../images/card-edit-item.svg';
 
-function CardItem(props: any): any {
+type Props = {
+    description: string,
+    price: string,
+    quantity: number,
+    image: string,
+    subtotal: string
+}
+
+function CardItem(props: Props) {
     return (
         <tr className={`${styles["card-item"]}`}>
             <td className={`${styles["item-info"]}`}>

@@ -4,7 +4,7 @@ import LoginInfo from './LoginInfo';
 import StoreButton from 'components/Buttons/StoreButton';
 import InputMask from "react-input-mask";
 
-function LoginForm(props: any): any {
+function LoginForm() {
     const emailMask = "/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/";
 
     return (
@@ -30,7 +30,6 @@ function LoginForm(props: any): any {
                             <StoreButton 
                                 style="blue-button-narrow"
                                 content={"Sign In"}
-                                type="submit"
                             />
                             <a className={`${styles["forget-password-link"]}`} href="#">Forgot Your Password?</a>
                         </div>

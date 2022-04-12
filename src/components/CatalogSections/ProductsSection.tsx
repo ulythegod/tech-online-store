@@ -9,7 +9,13 @@ import { RootState } from '../../store';
 import { selectProductsByCategoryId } from 'features/products/productsSlice';
 import { selectCategoryById } from 'features/categories/categoriesSlice';
 
-function ProductsSection(props: any): any {
+type Props = {
+    id: number,
+    banner: string,
+    name: string
+}
+
+function ProductsSection(props: Props) {
     const [activeSubCategory, setActiveSubCategory] = useState(0);
     function handleSubcategoryChange(event: any, categoryIdInArray: number) {
         event.preventDefault();

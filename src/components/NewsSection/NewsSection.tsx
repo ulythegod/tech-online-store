@@ -10,7 +10,7 @@ import newsImg6 from '../../images/news6.png';
 import newsImg7 from '../../images/news7.png';
 import newsImg8 from '../../images/news8.png';
 
-function NewsSection(props: any): any {
+function NewsSection() {
     return (
         <section className={`${styles["main-news-section"]}`}>
             <div className={`${styles["main-news-block"]}`}>

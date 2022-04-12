@@ -5,8 +5,16 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { selectCategoryById } from '../../features/categories/categoriesSlice';
+import { Category } from '../../CustomTypes';
 
-function MobileMenuItem(props: any) {
+type Props = {
+    subCategories?: Category[],
+    id: number,
+    name: string,
+    handleOpenSubcategories?: Function
+}
+
+function MobileMenuItem(props: Props) {
     const [openSubcategories, setOpenSubcategories] = useState(false);
 
     function handleOpenSubcategories(event: any) {
@@ -36,7 +44,7 @@ function MobileMenuItem(props: any) {
                         handleOpenSubcategories={handleOpenSubcategories}
                         id={category.id}
                         key={category.id}
-                        name={category.name}
+                        name={category.name}                    
                     />
                 )
             })

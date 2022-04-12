@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 import styles from './productInfoBlock.module.scss';
 import color1 from '../../images/prod-color1.png';
 import color2 from '../../images/prod-color2.png';
 import color3 from '../../images/prod-color3.png';
 
-function ProductInfoBlock(props: any): any {
+type Props = {
+    description?: ReactElement<any, any>
+}
+
+function ProductInfoBlock(props: Props) {
     const [activeColor, setActiveColor] = useState("black");
 
     function handleActiveColorChange(event: any) {

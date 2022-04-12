@@ -4,7 +4,7 @@ import HoverShopInfo from 'components/HoverShopInfo/HoverShopInfo';
 import { usePopper } from 'react-popper';
 import { ReactComponent as ArrowDown } from '../../images/arrow-down.svg';
 
-function HeaderTime(props: any): any {
+function HeaderTime() {
     const [isOpenShopInfo, setIsOpenShopInfo] = useState(false);
 
     function handleOpenShopInfo() {

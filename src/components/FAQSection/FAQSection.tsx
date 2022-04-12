@@ -3,7 +3,7 @@ import styles from './faqSection.module.scss';
 import FAQItem from './FAQItem';
 import FAQNav from './FAQNav';
 
-function FAQSection(props: any): any {
+function FAQSection() {
     return (
         <section className={`${styles["faq-section"]}`}>
             <div className={`${styles["faq-questions"]}`}>

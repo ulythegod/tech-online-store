@@ -14,7 +14,7 @@ import { selectParentCategories } from '../../features/categories/categoriesSlic
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 
-function TopMenu(props: any): any {
+function TopMenu() {
     const [isOpenSearchPannel, setIsOpenSearchPannel] = useState(false);
 
     function handleOpenSearchPannel() {

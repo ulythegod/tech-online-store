@@ -4,7 +4,7 @@ import HeaderTime from './HeaderTime';
 import HeaderContacts from './HeaderContacts';
 import { Link } from 'react-router-dom';
 
-function Header(props: any): any {
+function Header() {
     return (
         <header>
             <div className={`${styles["header"]}`}>

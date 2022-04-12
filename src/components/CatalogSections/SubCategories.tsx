@@ -1,7 +1,14 @@
 import React from "react";
 import styles from './subCategories.module.scss';
+import { Category } from '../../CustomTypes';
 
-function SubCategories(props: any): any {
+type Props = {
+    subCategories: Category[],
+    activeSubCategory: number,
+    handleSubcategoryChange: Function
+}
+
+function SubCategories(props: Props) {
     let categoriesItems = props.subCategories.map((category: any, id: number) => {        
         return (
             <li 

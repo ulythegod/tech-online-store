@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './faqNav.module.scss';
 
-function FAQNav(props: any): any {
+function FAQNav() {
     return (
         <div className={`${styles["faq-navigation"]}`}>
             <ul>

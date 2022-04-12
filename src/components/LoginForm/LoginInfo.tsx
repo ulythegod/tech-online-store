@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './loginInfo.module.scss';
 import StoreButton from 'components/Buttons/StoreButton';
 
-function LoginInfo(props: any): any {
+function LoginInfo() {
     return (
         <div className={`${styles["customer-login-info"]}`}>
             <div className={`${styles["block-inner"]}`}>

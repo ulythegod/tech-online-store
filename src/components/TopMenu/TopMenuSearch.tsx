@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { MouseEventHandler, useState } from 'react';
 import styles from './topMenuSearch.module.scss'
 import { ReactComponent as SearchIcon } from '../../images/search.svg';
 import { ReactComponent as SearchOpenIcon } from '../../images/search-open.svg';
 import { ReactComponent as SearchCloseIcon } from '../../images/search-close.svg';
 import classNames from 'classnames';
 
-function TopMenuSearch(props: any): any {
+type Props = {
+    isOpenSearchPannel: boolean,
+    handleOpenSearchPannel: MouseEventHandler<HTMLButtonElement>
+}
+
+function TopMenuSearch(props: Props) {
     return (
         <>
             {props.isOpenSearchPannel && 

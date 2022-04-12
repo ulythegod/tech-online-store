@@ -1,5 +1,11 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import styles from './faqItem.module.scss';
+
+type Props = {
+    id: number,
+    name: string,
+    description: ReactElement<any, any>
+}
 
 function FAQItem(props: any): any {
     return (

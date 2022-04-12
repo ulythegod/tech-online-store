@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import styles from './rightPictureBanner.module.scss';
 
-function AboutUsRight(props: any): any {
+type Props = {
+    icon?: string,
+    title: string,
+    description: ReactElement<any, any>,
+    image: string
+}
+
+function AboutUsRight(props: Props) {
     return (
         <section className={`${styles["about-us-right"]}`}>
             <div className={`${styles["description"]}`}>

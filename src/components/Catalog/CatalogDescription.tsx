@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './catalogDescription.module.scss';
 import StoreButton from 'components/Buttons/StoreButton';
 
-function CatalogDescription(props: any): any {
+function CatalogDescription() {
     return (
         <div className={`${styles["catalog-description"]}`}>
             <p className={`${styles["description-text"]}`}>

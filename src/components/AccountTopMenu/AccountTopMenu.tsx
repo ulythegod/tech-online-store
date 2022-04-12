@@ -4,7 +4,7 @@ import { usePopper } from 'react-popper';
 import MenuList from './MenuList';
 import avatar from '../../images/avatar.png';
 
-function AccountTopMenu(props: any): any {
+function AccountTopMenu() {
     const [isDisplayMenu, setIsDisplayMenu] = useState(false);
     const displayMenu = () => {
         setIsDisplayMenu(prevIsDisplayMenu => !prevIsDisplayMenu);

@@ -9,7 +9,7 @@ import { RootState } from '../../store';
 import { fetchProductById, selectProduct } from '../../features/product/productSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
-function Product(props: any): any {
+function Product() {
     const {productId} = useParams();
 
     const dispatch = useDispatch();
@@ -46,7 +46,7 @@ function Product(props: any): any {
                 }
                 renderRight={
                     <AddToCartPrices 
-                        productPrice={product.price}
+                        productPrice={Number(product.price)}
                     />
                 }
             />

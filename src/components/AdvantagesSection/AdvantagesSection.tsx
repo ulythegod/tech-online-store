@@ -6,7 +6,11 @@ import Support from '../../images/Support.png';
 import Account from '../../images/Account.png';
 import Saving from '../../images/Saving.png';
 
-function AdvantagesSection(props: any): any {
+type Props = {
+    isBackground: boolean
+}
+
+function AdvantagesSection(props: Props) {
     let backgroundClass = "";
 
     if (props.isBackground) {

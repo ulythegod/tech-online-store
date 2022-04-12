@@ -1,7 +1,13 @@
 import React from 'react';
 import styles from './newsItem.module.scss';
 
-function NewsItem(props: any): any {
+type Props = {
+    image: string,
+    name: string,
+    date: string
+}
+
+function NewsItem(props: Props) {
     return (
         <div className={`${styles["news-item"]}`}>
             <img src={props.image} alt="news1" />

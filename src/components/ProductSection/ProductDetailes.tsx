@@ -1,7 +1,12 @@
 import React from 'react';
 import styles from './productDetailes.module.scss';
+import { Detail } from '../../CustomTypes';
 
-function ProductDetailes(props: any): any {   
+type Props = {
+    details: Detail[]
+}
+
+function ProductDetailes(props: Props) {   
     let details = props.details.map((detail: any, id: number) => {        
         return <li key={id}>{detail.detail}</li>;
     });    

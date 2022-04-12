@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './logoBanner.module.scss';
 import { ReactComponent as ZipLogo } from '../../images/zip-logo.svg';
 
-function LogoBanner(props: any): any {
+function LogoBanner() {
     return (
         <section className={`${styles["main-banner-section"]}`}>
             <p className={`${styles["main-banner"]}`}>

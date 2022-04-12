@@ -3,7 +3,7 @@ import styles from './hoverShopInfo.module.scss';
 import { ReactComponent as ContactsAdress } from '../../images/contacts-adress.svg';
 import { ReactComponent as ContactsTime } from '../../images/contacts-time.svg';
 
-function HoverShopInfo(props: any): any {
+function HoverShopInfo() {
     return (
         <>
             <div className={`${styles["contacts-time"]}`}>

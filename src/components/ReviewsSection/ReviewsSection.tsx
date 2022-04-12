@@ -4,7 +4,7 @@ import StoreButton from 'components/Buttons/StoreButton';
 import ReviewItem from './ReviewItem';
 import { ReactComponent as PaginationButton } from '../../images/pagiantion-button.svg';
 
-function ReviewsSection(props: any): any {
+function ReviewsSection() {
     return (
         <section className={`${styles["main-reviews-section"]}`}>
             <div className={`${styles["reviews-list"]}`}>

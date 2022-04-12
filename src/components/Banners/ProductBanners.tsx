@@ -4,7 +4,7 @@ import { ReactComponent as PaginationButton } from '../../images/pagiantion-butt
 import banner from '../../images/product-banner.png';
 import ProductBannerItem from './ProductBannerItem';
 
-function ProductBanners(props: any): any {
+function ProductBanners() {
     return (
         <section className={`${styles["product-advantages-banners-section"]}`}>
             <div className={`${styles["product-advantages-banners"]}`}>

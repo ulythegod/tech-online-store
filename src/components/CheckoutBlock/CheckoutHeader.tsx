@@ -4,7 +4,7 @@ import PageTitle from "components/PageTitle/PageTitle";
 import StoreButton from "components/Buttons/StoreButton";
 import Steps from "./Steps";
 
-function CheckoutHeader(props: any): any {
+function CheckoutHeader() {
     return (
         <div className={`${styles["section-header"]}`}>
             <div className={`${styles["title-part"]}`}>

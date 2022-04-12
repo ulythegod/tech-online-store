@@ -6,7 +6,12 @@ import RTXLogo from '../../images/rtx-logo.png';
 import SSDLogo from '../../images/ssd-logo.png';
 import DDRLogo from '../../images/ddr-logo4.png';
 
-function Features(props: any): any {
+type Props = {
+    sectionName: string,
+    sectionDescription: string
+}
+
+function Features(props: Props) {
     return(
         <section className={`${styles["features-section"]}`}>
             <span className={`${styles["features-title"]}`}>{props.sectionName}</span>

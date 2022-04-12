@@ -1,8 +1,13 @@
 import React from "react";
 import styles from './multilevelMenu.module.scss';
 import MultilevelMenuItem from "./MultilevelMenuItem";
+import { Category } from '../../CustomTypes';
 
-function MultilevelMenu(props: any): any {
+type Props = {
+    subCategories: Category[]
+}
+
+function MultilevelMenu(props: Props) {
     const menuItems: any[] = props.subCategories.map((category: any, id: number) => {      
         return (
             <MultilevelMenuItem 

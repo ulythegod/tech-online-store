@@ -7,7 +7,7 @@ import { ReactComponent as BasketLogo } from '../../images/basket.svg';
 import { ReactComponent as PayPal } from '../../images/paypal.svg';
 import imgPath from '../../images/small-card.png';
 
-function TopMenuBasket(props: any): any {
+function TopMenuBasket() {
     const [referenceElement, setReferenceElement] = useState<HTMLDivElement | null>(null);
     const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(null);
     const [arrowRef, setArrowRef] = useState<HTMLDivElement | null>(null);

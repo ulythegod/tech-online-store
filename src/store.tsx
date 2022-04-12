@@ -4,6 +4,7 @@ import promotedCategoriesReducer from './features/promoted-categories/promotedCa
 import categoriesReducer from './features/categories/categoriesSlice';
 import categoryReducer from "features/category/categorySlice";
 import productReduser from "features/product/productSlice";
+import pricesReducer from 'features/prices/pricesSlice';
 
 const store = configureStore({
     reducer: {
@@ -11,7 +12,8 @@ const store = configureStore({
         promotedCategories: promotedCategoriesReducer,
         categories: categoriesReducer,
         category: categoryReducer,
-        product: productReduser
+        product: productReduser,
+        prices: pricesReducer
     }
 });
 

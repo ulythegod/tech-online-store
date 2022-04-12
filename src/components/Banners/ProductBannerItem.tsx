@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import styles from './productBannerItem.module.scss';
 
-function ProductBannerItem(props: any): any {
+type Props = {
+    image: string,
+    name: string,
+    description: ReactElement<any, any>
+}
+
+function ProductBannerItem(props: Props) {
     const imageStyles = {
         background: `url(${props.image})`,
     }

@@ -6,8 +6,14 @@ import StoreButton from 'components/Buttons/StoreButton';
 import TopMenuItem from './TopMenuItem';
 import HoverMenu from '../HoverMenu/HoverMenu';
 import classNames from 'classnames';
+import { Category } from '../../CustomTypes';
 
-function TopMenuNavagation(props: any): any {
+type Props = {
+    categories: Category[],
+    isOpenSearchPannel: boolean,
+}
+
+function TopMenuNavagation(props: Props) {
     const menuItems: any[] = props.categories.map((category: any, id: number) => {
         return (
             <TopMenuItem 

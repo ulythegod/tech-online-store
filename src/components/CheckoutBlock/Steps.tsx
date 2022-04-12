@@ -3,7 +3,7 @@ import styles from './steps.module.scss';
 import classNames from 'classnames';
 import { ReactComponent as ActiveStep } from '../../images/active-step.svg';
 
-function Steps(props: any): any {
+function Steps() {
     return (
         <div className={`${styles["steps"]}`}>
             <div className={`${styles["step-item"]}`}>

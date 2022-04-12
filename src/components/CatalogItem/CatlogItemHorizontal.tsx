@@ -5,6 +5,7 @@ import StoreButton from 'components/Buttons/StoreButton';
 import RoundButton from 'components/Buttons/RoundButton';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
+import { Spec } from '../../CustomTypes';
 import { ReactComponent as InStock } from '../../images/in-stock.svg';
 import { ReactComponent as CheckAvailability } from '../../images/check-availability.svg';
 import { ReactComponent as ProductMail } from '../../images/product-mail.svg';
@@ -12,7 +13,19 @@ import { ReactComponent as ProductRating } from '../../images/product-rating.svg
 import { ReactComponent as ProductFav } from '../../images/product-fav.svg';
 import { ReactComponent as AddToCart } from '../../images/add-to-card-prod.svg';
 
-function CatlogItemHorizontal(props: any): any {
+type Props = {
+    status: string,
+    productImage: string,
+    model: string,
+    name: string,
+    price: number,
+    discount: number,
+    specs: Spec[],
+    reviewsCount: number,
+    id: number
+}
+
+function CatlogItemHorizontal(props: Props) {
     let statusText: string = '';
         
     if (props.status == "in-stock") {
@@ -32,7 +45,7 @@ function CatlogItemHorizontal(props: any): any {
                 <span className={`${styles["status-text"]}`}>{statusText}</span>
             </p>
             <div className={`${styles["product-info"]}`}>
-                <Link className={`${styles["product-image"]}`} to="/product"><img src={props.productImage} alt="Product" /></Link>
+                <Link className={`${styles["product-image"]}`} to={`/product/${props.id}`}><img src={props.productImage} alt="Product" /></Link>
                 <div className={`${styles["about-product"]}`}>
                     <span className={`${styles["product-model"]}`}>{props.model}</span>
                     <a className={`${styles["product-title"]}`}>
@@ -51,6 +64,7 @@ function CatlogItemHorizontal(props: any): any {
                                     return (
                                         <tr
                                             className={(id % 2 === 0) ? `${styles["dark"]}` : ``}
+                                            key={id}
                                         >
                                             <td>{specsItem.spec}</td>
                                             <td>{specsItem.value}</td>

@@ -3,7 +3,13 @@ import styles from './catalogSelect.module.scss';
 import classNames from 'classnames';
 import Select, { components, ControlProps } from 'react-select';
 
-function CatalogSelect(props: any): any {
+type Props = {
+    selectLabel: string,
+    showOnMobile?: boolean,
+    options: any[]
+}
+
+function CatalogSelect(props: Props) {
     let selectLabel: string = props.selectLabel;
     const Control = ({ children, ...props }: ControlProps<any[], false>) => (
         <components.Control {...props}>

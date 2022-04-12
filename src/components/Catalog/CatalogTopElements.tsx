@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import styles from './catalogTopElements.module.scss';
 import CatalogSelect from './CatalogSelect';
 
-function CatalogTopElements(props: any): any {
+type Props = {
+    tableButton: ReactElement<any, any>,
+    linesButton: ReactElement<any, any>,
+}
+
+function CatalogTopElements(props: Props) {
     const positions: any[] = [
         { value: 'position', label: 'Position' },
         { value: 'position2', label: 'Position2' },

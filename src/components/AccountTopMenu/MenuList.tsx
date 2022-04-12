@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './menuList.module.scss';
 
-function MenuList(props: any): any {
+function MenuList() {
     return (
         <ul className={`${styles["menu-list"]}`}>
             <li className={`${styles["list-item"]}`}><a href="#">My  Account</a></li>

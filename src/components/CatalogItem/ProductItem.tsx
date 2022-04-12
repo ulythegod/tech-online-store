@@ -10,7 +10,17 @@ import { ReactComponent as AddToFav } from '../../images/prod-add-fav.svg';
 import { ReactComponent as AddToRating } from '../../images/prod-add-rating.svg';
 import { ReactComponent as AddToCart } from '../../images/add-to-card-prod.svg';
 
-function ProductItem(props: any): any {
+type Props = {
+    status: string,
+    id: number,
+    productImage: string,
+    reviewsCount: number,
+    name: string,
+    price: number,
+    discount: number
+}
+
+function ProductItem(props: Props) {
     let statusText: string = '';
         
     if (props.status == "in-stock") {

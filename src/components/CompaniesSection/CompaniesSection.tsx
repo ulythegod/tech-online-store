@@ -9,7 +9,11 @@ import CompanyLogo5 from '../../images/companies5.png';
 import CompanyLogo6 from '../../images/companies6.png';
 import CompanyLogo7 from '../../images/companies7.png';
 
-function CompaniesSection(props: any): any {
+type Props = {
+    isInMenu?: boolean
+}
+
+function CompaniesSection(props: Props) {
     let sectionClass = ""; 
 
     if (props.isInMenu) {

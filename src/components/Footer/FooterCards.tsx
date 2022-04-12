@@ -6,7 +6,7 @@ import maestro from '../../images/maestro.png';
 import discover from '../../images/discover.png';
 import americanExpress from '../../images/american-express.png';
 
-function FooterCards(props: any): any {
+function FooterCards() {
     return (
         <div className={`${styles["footer-cards"]}`}>
             <a href="#"><img src={payPal} alt="paypal" /></a>

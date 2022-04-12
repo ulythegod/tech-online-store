@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCategoryById, selectCategoriesIds} from 'features/categories/categoriesSlice';
 import { selectProductsByCategoryId } from '../../features/products/productsSlice';
 import { RootState }  from '../../store';
-import { Product } from '../../features/products/productsSlice';
+import { filteredProductsSelector } from '../../features/products/productsSlice';
+import { selectAllPrices, selectAllPricesId } from 'features/prices/pricesSlice';
+
+import { FillersInterface, Product, Price } from '../../CustomTypes';
 
 import styles from './catalog.module.scss';
 
@@ -28,29 +31,26 @@ import { ReactComponent as TableView } from '../../images/table-view.svg';
 import { ReactComponent as LinesView } from '../../images/lines-view.svg';
 import banner from '../../images/filters-banner.png';
 
-type FillersInterface = {
-    categoriesIds: number[],
-    defaultCategoriesIds: number[],
-    prices: any[],
-    name: ""
-}
-
 function Catalog() {
     const { categoryId } = useParams();
     const category = useSelector((state: RootState) => selectCategoryById(state, Number(categoryId)));
-    const categoriesIds = useSelector((state: RootState) => selectCategoriesIds(state, Number(categoryId)));  
+    const categoriesIds = useSelector((state: RootState) => selectCategoriesIds(state, Number(categoryId)));
+    const prices = useSelector((state: RootState) => selectAllPrices(state));
+    const [filtersAmount, setFiltersAmount] = useState(0);  
 
     const [filters, setFilters] = useState<FillersInterface>({
         categoriesIds: [],
-        defaultCategoriesIds: categoriesIds,
+        defaultCategoriesIds: [Number(categoryId)],
         prices: [],
+        defaultPrices: prices,
         name: ""
     });
 
     const [appliedFilters, setAppliedFilters] = useState<FillersInterface>({
         categoriesIds: [],
-        defaultCategoriesIds: categoriesIds,
+        defaultCategoriesIds: [Number(categoryId)],
         prices: [],
+        defaultPrices: prices,
         name: ""
     });
     
@@ -67,21 +67,103 @@ function Catalog() {
         })
     }
 
+    function handlePriceSelect(event: any, priceInput: Price) {
+        event.preventDefault(); 
+
+        setFilters({
+            ...filters,
+            prices: (
+                filters.prices.includes(priceInput) ?
+                    filters.prices.filter((price) => price !== priceInput) :
+                    [...filters.prices, priceInput]
+            )
+        })
+    }
+
+    function handleNameInput(event: any) {
+        event.preventDefault();       
+
+        setFilters({
+            ...filters,
+            name: event.target.value
+        })
+    }
+
     function handleApplyFilters(event: any) {
         event.preventDefault();
 
+        let filtersAmount: number = 0;
+        if (filters.categoriesIds) {
+            filtersAmount += filters.categoriesIds.length;
+        }
+
+        if (filters.prices) {
+            filtersAmount += filters.prices.length;
+        }
+
+        if (filters.name) {
+            filtersAmount += 1;
+        }
+
         setAppliedFilters(filters);
+        setFiltersAmount(filtersAmount);
     }
 
     function handleClearFilters(event: any) {
         event.preventDefault();
+
+        setFilters({
+            ...filters,
+            categoriesIds: [],
+            prices: [],
+            name: ""
+        });
+
+        setAppliedFilters({
+            ...appliedFilters,
+            categoriesIds: [],
+            prices: [],
+            name: ""
+        });
+
+        setFiltersAmount(0);
     }
 
-    function handleClearFilter(event: any, filterType: string) {
+    function handleClearFilter(event: any, filterType: string, itemDelete: Price) {
         event.preventDefault();
-    }
 
-    let filtersItems: any = {};  
+        if (filterType === "price") {
+            setFilters({
+                ...filters,
+                prices: (
+                    filters.prices.includes(itemDelete) ?
+                        filters.prices.filter((price) => price !== itemDelete) :
+                        [...filters.prices]
+                )
+            })
+
+            setAppliedFilters({
+                ...appliedFilters,
+                prices: (
+                    appliedFilters.prices.includes(itemDelete) ?
+                        appliedFilters.prices.filter((price) => price !== itemDelete) :
+                        [...appliedFilters.prices]
+                )
+            })
+        }
+        
+        if (filterType === "name") {
+            setFilters({
+                ...filters,
+                name: ""
+            });
+    
+            setAppliedFilters({
+                ...appliedFilters,
+                name: ""
+            });
+        }
+    }
 
     const [view, setView] = useState('table');
     function handleViewChage(event: any) {
@@ -92,12 +174,11 @@ function Catalog() {
         } else if (view === "column") {
             setView("table");
         }        
-    }
+    }    
     
-    const appliedCategories = appliedFilters.categoriesIds.length > 0 ? appliedFilters.categoriesIds : categoriesIds;
-    const products = useSelector((state: RootState) => selectProductsByCategoryId(state, appliedCategories));
-    
-    let productsItems: any [] = [];
+    const products = useSelector((state: RootState) => filteredProductsSelector(state, appliedFilters));
+
+    let productsItems: any [] = [];    
 
     if (products.length > 0) {
         productsItems = products.map((product: any, id: number) => {
@@ -111,7 +192,6 @@ function Catalog() {
                         status='in-stock'
                         price={product.price}
                         discount={product.price}
-                        model="SKU D5515AI"
                         reviewsCount={4}
                     />
                 )
@@ -141,6 +221,58 @@ function Catalog() {
         }
     }
 
+    let activePricesFilteres: ReactElement<any, any>[] = [];    
+    if (appliedFilters.prices) {
+        appliedFilters.prices.forEach((price: Price) => {
+            let element: ReactElement<any, any> = (
+                <SelectedFilter
+                    key={price.id}
+                    name={price.name}
+                    amount={products.length}
+                    link='#'
+                    filterType='price'
+                    deleted={price}
+                    handleClearFilter={handleClearFilter}
+                />
+            )
+
+            activePricesFilteres.push(element);
+        });
+    }
+
+    let activeNameFilter: ReactElement<any, any> = <></>; 
+    if (appliedFilters.name) {
+        activeNameFilter = (
+            <SelectedFilter
+                    key={"delete_name"}
+                    name={appliedFilters.name}
+                    amount={products.length}
+                    link='#'
+                    filterType='name'
+                    deleted={"name"}
+                    handleClearFilter={handleClearFilter}
+            />
+        )
+    }
+
+    let activeCategoryFilters: ReactElement<any, any>[] = [];
+    if (appliedFilters.categoriesIds) {
+        appliedFilters.categoriesIds.forEach((id: number) => {
+            let element: ReactElement<any, any> = (
+                <SelectedFilter
+                    key={id}
+                    amount={products.length}
+                    link='#'
+                    filterType='category'
+                    deleted={id}
+                    handleClearFilter={handleClearFilter}
+                />
+            )
+
+            activePricesFilteres.push(element);
+        });
+    }
+
     return (        
         <>
             <Breadcrumbs 
@@ -152,20 +284,24 @@ function Catalog() {
                     title={category.name}
                     isCatalogPage={true}
                 />
-            }
-           
+            }           
             <section className={`${styles["catalog-section"]}`}>
             <div className={`${styles["catalog-block"]}`}>
                 <CatalogFilter 
                     currentCategory={category}
                     subCategories={subCategories}
+                    prices={prices}
                     handleCategorySelect={handleCategorySelect}
+                    handlePriceSelect={handlePriceSelect}
                     handleApplyFilters={handleApplyFilters}
                     handleClearFilters={handleClearFilters}
+                    handleNameInput={handleNameInput}
+                    appliedFilters={appliedFilters}
+                    filtersAmount={filtersAmount}
+                    filters={filters}
                 />
                 <div className={`${styles["catalog"]}`}>
                     <CatalogTopElements 
-                        view={view}
                         tableButton={
                             <StoreButton 
                                 style={(view === "table") ? 'icon-button' : 'icon-button-disabled'}
@@ -185,12 +321,12 @@ function Catalog() {
                     />
                     <CatalogSelectedFilters 
                         filtersItems={
-                            filtersItems ?
                             <>
-                                {filtersItems["category"]}
-                            </> :
-                            <></>
+                                {activePricesFilteres}
+                                {activeNameFilter}
+                            </>
                         }
+                        handleClearFilters={handleClearFilters}
                     />
                     <div className={
                         (view === "table") ? `${styles["catalog-table-view"]}` : 

@@ -7,8 +7,14 @@ import MultilevelMenu from "../MultilevelMenu/MultilevelMenu";
 import { useSelector } from "react-redux";
 import { RootState } from "store";
 import { selectProductsByCategoryId } from "features/products/productsSlice";
+import { Category } from '../../CustomTypes';
 
-function HoverMenu(props: any): any {
+type Props = {
+    categoryId: number,
+    subCategories: Category[]
+}
+
+function HoverMenu(props: Props) {
     let categoriesIds: number[] = [props.categoryId];
 
     props.subCategories.forEach((category: any) => {

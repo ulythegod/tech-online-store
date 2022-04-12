@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './footerSubscribeForm.module.scss';
 import StoreButton from 'components/Buttons/StoreButton';
 
-function FooterSubscribeForm(props: any): any {
+function FooterSubscribeForm() {
     return (
         <div className={`${styles["subscribe-form-footer"]}`}>
             <div className={`${styles["form-description"]}`}>

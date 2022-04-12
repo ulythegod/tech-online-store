@@ -5,7 +5,7 @@ import DashboardInfo from "./DashboardInfo";
 import WishList from "components/WishList/WishList";
 import CompareProducts from "components/CompareProducts/CompareProducts";
 
-function DashboardBlock(props: any): any {
+function DashboardBlock() {
     return (
         <div className={`${styles["dashboard-block"]}`}>
             <div className={`${styles["dashboard-sidebar"]}`}>

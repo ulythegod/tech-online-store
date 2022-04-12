@@ -1,7 +1,12 @@
 import React from 'react';
 import styles from './addToCartMenu.module.scss';
 
-function AddToCartMenu(props: any): any {
+type Props = {
+    activeInfoBlock: string,
+    handleInfoBlockChange: Function
+}
+
+function AddToCartMenu(props: Props) {
     return (
         <nav className={`${styles["navigation-block"]}`}>
             <div className={`${styles["product-menu"]}`}>

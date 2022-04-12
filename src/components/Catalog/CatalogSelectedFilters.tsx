@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import styles from './catalogSelectedFilters.module.scss';
-import SelectedFilter from './SelectedFilter';
 
-function CatalogSelectedFilters(props: any): any {
+type Props = {
+    filtersItems: ReactElement<any, any>,
+    handleClearFilters: Function
+}
+
+function CatalogSelectedFilters(props: Props) {
     return (
         <div className={`${styles["catalog-selected-filters"]}`}>
             {props.filtersItems}
             {
                 props.filtersItems &&
-                <button className={`${styles["clear-all-btn"]}`}>
+                <button 
+                    className={`${styles["clear-all-btn"]}`}
+                    onClick={(event: any) => props.handleClearFilters(event)}
+                >
                     Clear All
                 </button>
-            }
-            
+            }            
         </div>
     );
 }

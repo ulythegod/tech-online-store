@@ -6,7 +6,7 @@ import FooterSubscribeForm from './FooterSubscribeForm';
 import FooterCards from './FooterCards';
 import FooterChatButton from './FooterChatButton';
 
-function Footer(props: any): any {
+function Footer() {
     return (
         <footer className={`${styles["footer"]}`}>
             <FooterSubscribeForm />

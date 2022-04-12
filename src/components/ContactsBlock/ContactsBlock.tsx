@@ -5,7 +5,7 @@ import { ReactComponent as ContactsPhone } from '../../images/contacts-phone.svg
 import { ReactComponent as ContactsTime } from '../../images/contacts-time.svg';
 import { ReactComponent as ContactsMail } from '../../images/contacts-mail.svg';
 
-function ContactsBlock(props: any): any {
+function ContactsBlock() {
     return (
         <div className={`${styles["contacts-block"]}`}>
             <div className={`${styles["contact-item"]}`}>

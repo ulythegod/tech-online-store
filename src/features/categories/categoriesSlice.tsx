@@ -1,33 +1,10 @@
 import { 
     createSlice, 
-    createAsyncThunk,
-    createEntityAdapter 
+    createAsyncThunk, 
 } from "@reduxjs/toolkit";
-import { Product } from '../products/productsSlice';
+import { Product, CategoriesState, Image, Category, FillersInterface } from '../../CustomTypes';
 import { createSelector } from 'reselect';
 import { RootState } from "store";
-
-interface CategoriesState {
-    categories: Category[],
-    code: number,
-    message: string,
-    status: string
-}
-
-interface Image {
-    id: number,
-    url: string
-}
-
-export interface Category {
-    id: number,
-    subCategories: Category[],
-    parent: Category | null,
-    name: string,
-    created_at: string,
-    updated_at: string,
-    image: Image
-}
 
 const initialState: CategoriesState = {
     categories: [],
@@ -110,6 +87,39 @@ export const selectCategoriesProductsAmount = (state: RootState, categoriesIds: 
 
     return categories;
 }
+
+export const allChildCategoriesSelector = createSelector(
+    (state: RootState, filter: FillersInterface) => {
+        if (state.categories.categories.length > 0) {
+            let categoriesIds: number[] = [];
+            let category: Category | undefined = undefined;
+
+            if (filter.categoriesIds.length === 1) {
+                category = state.categories.categories.find(
+                    (category) => category.id === filter.categoriesIds[0]
+                );
+            } else if (filter.defaultCategoriesIds.length === 1) {
+                category = state.categories.categories.find(
+                    (category) => category.id === filter.defaultCategoriesIds[0]
+                );
+            }
+
+            if (category) {
+                categoriesIds = [category.id];
+                category.subCategories.forEach((subcategory) => {
+                    categoriesIds.push(Number(subcategory.id));
+                })
+            }
+
+            return categoriesIds
+        }
+
+        return filter.categoriesIds
+    },
+    (categoriesIds: number[]): number[] => {        
+        return categoriesIds
+    }
+)
 
 export const selectCategoriesIds = createSelector(
     selectCategoryById,

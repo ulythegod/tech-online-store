@@ -3,7 +3,11 @@ import styles from './addToCartPrices.module.scss';
 import StoreButton from "components/Buttons/StoreButton";
 import { ReactComponent as PayPal } from '../../images/paypal.svg';
 
-function AddToCartPrices(props: any): any {
+type Props = {
+    productPrice: number
+}
+
+function AddToCartPrices(props: Props) {
     const [amount, setAmount] = useState(1);
 
     function handleAmountIncrease() {        

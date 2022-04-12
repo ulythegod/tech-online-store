@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import styles from './featureItem.module.scss';
 
-function FeatureItem(props: any): any {
+type Props = {
+    image: string,
+    description: ReactElement<any, any>
+}
+
+function FeatureItem(props: Props) {
     return (
         <div className={`${styles["feature-item"]}`}>
             <div className={`${styles["item-icon"]}`}>

@@ -4,7 +4,7 @@ import ContactsBlock from 'components/ContactsBlock/ContactsBlock';
 import StoreButton from 'components/Buttons/StoreButton';
 import InputMask from "react-input-mask";
 
-function ContactUsForm(props: any): any {
+function ContactUsForm() {
     const emailMask = "/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/";
 
     return (

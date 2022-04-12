@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './dashboardMenu.module.scss';
 
-function DashboardMenu(props: any): any {
+function DashboardMenu() {
     return (
         <ul className={`${styles["menu"]}`}>
             <li className={`${styles["menu-block"]}`}>

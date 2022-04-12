@@ -1,8 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { RootState }  from '../../store';
+import { Category } from '../../CustomTypes';
 
 interface PromotedCategoryState {
-    promotedCategories: any[],
+    promotedCategories: Category[],
     code: number,
     message: string,
     status: string
@@ -31,7 +32,7 @@ const promotedCategoriesSlice = createSlice({
     extraReducers(builder) {
         builder
             .addCase(fetchPromotedCategories.fulfilled, (state: any, action: any) => {
-                state.promotedCategories.push(action.payload);
+                state.promotedCategories = [...action.payload.categories];
                 state.status = "success";
             });
     }

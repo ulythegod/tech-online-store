@@ -9,7 +9,7 @@ import img4 from '../../images/brand4.png';
 import img5 from '../../images/brand5.png';
 import img6 from '../../images/brand6.png';
 
-function FilterBrands(props: any): any {
+function FilterBrands() {
     return (
         <div className={`${styles["brands"]}`}>
             <span>Brands</span>

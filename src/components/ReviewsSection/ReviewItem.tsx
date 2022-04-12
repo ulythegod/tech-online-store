@@ -1,7 +1,12 @@
 import React from 'react';
 import styles from './reviewItem.module.scss';
 
-function ReviewItem(props: any): any {
+type Props = {
+    text: string,
+    author: string
+}
+
+function ReviewItem(props: Props) {
     return (
         <div className={`${styles["reviews-item"]}`}>
             <div className={`${styles["reviews-quotes-sign"]}`}>‘’</div>

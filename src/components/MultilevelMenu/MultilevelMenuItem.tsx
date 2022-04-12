@@ -7,7 +7,13 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { selectCategoryById } from '../../features/categories/categoriesSlice';
 
-function MultilevelMenuItem(props: any) {
+type Props = {
+    level: number,
+    id: number,
+    name: string
+}
+
+function MultilevelMenuItem(props: Props) {
     let categoryWithSubcategories: any = useSelector((state: RootState) => selectCategoryById(state, props.id));
     let notEmptySubcategories: boolean = false;
 

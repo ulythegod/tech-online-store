@@ -20,6 +20,7 @@ function ProductSection(props: any): any {
                 <div className={`${styles["new-products-list"]}`}>
                     <div className={`${styles["items"]}`}>           
                         <ProductItem 
+                            id={1}
                             status='in-stock'
                             productImage={prodImg1}
                             name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
@@ -28,6 +29,7 @@ function ProductSection(props: any): any {
                             reviewsCount={4}
                         />
                         <ProductItem 
+                            id={2}
                             status='check-availability'
                             productImage={prodImg2}
                             name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
@@ -36,6 +38,7 @@ function ProductSection(props: any): any {
                             reviewsCount={4}
                         />
                         <ProductItem 
+                            id={3}
                             status='in-stock'
                             productImage={prodImg3}
                             name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
@@ -44,6 +47,7 @@ function ProductSection(props: any): any {
                             reviewsCount={4}
                         />
                         <ProductItem 
+                            id={4}
                             status='in-stock'
                             productImage={prodImg4}
                             name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
@@ -52,6 +56,7 @@ function ProductSection(props: any): any {
                             reviewsCount={4}
                         />
                         <ProductItem 
+                            id={5}
                             status='in-stock'
                             productImage={prodImg5}
                             name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
@@ -60,6 +65,7 @@ function ProductSection(props: any): any {
                             reviewsCount={4}
                         />
                         <ProductItem 
+                            id={6}
                             status='in-stock'
                             productImage={prodImg6}
                             name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'

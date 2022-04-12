@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './compareProducts.module.scss';
 
-function CompareProducts(props: any): any {
+function CompareProducts() {
     return (
         <div className={`${styles["compare-products"]}`}>
             <span>Compare Products</span>

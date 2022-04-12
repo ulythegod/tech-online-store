@@ -1,23 +1,27 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import styles from './productSpecs.module.scss';
+import { Spec } from '../../CustomTypes';
 
-function ProductSpecs(props: any): any {
+type Props = {
+    specs: Spec[]
+}
+
+function ProductSpecs(props: Props) {
+    console.log(props);
+    const specsItems: ReactElement<any, any>[] = props.specs.map((spec: any, id: number) => {
+        return (
+            <tr key={id} className={(id % 2) ? `${styles["dark"]}` : ``}>
+                <td>{spec.spec}</td>
+                <td>{spec.value}</td>
+            </tr>
+        )
+    });   
+
     return (
         <div className={`${styles["features"]}`}>
             <table>
                 <tbody>
-                    <tr>
-                        <td>CPU</td>
-                        <td>N/A</td>
-                    </tr>
-                    <tr className={`${styles["dark"]}`}>
-                        <td>Featured</td>
-                        <td>N/A</td>
-                    </tr>
-                    <tr>
-                        <td>I/O Ports</td>
-                        <td>N/A</td>
-                    </tr>
+                    {specsItems}
                 </tbody>
             </table>
         </div>

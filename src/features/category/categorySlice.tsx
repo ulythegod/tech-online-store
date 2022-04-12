@@ -3,16 +3,28 @@ import {
     createAsyncThunk
 } from "@reduxjs/toolkit";
 import { RootState } from "store";
+import { Category } from '../../CustomTypes';
 
 interface CategoryState {
-    category: any,
+    category: Category,
     code: number,
     message: string,
     status: string
 }
 
 const initialState: CategoryState = {
-    category: {},
+    category: {
+        id: 0,
+        subCategories: [],
+        parent: null,
+        name: "",
+        created_at: "",
+        updated_at: "",
+        image: {
+            id: 0,
+            url: ""
+        }
+    },
     code: 0,
     message: "",
     status: "idle"

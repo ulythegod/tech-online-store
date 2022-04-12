@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 import styles from './filterItem.module.scss';
 import classNames from 'classnames';
 
-function FilterItem(props: any): any {
+type Props = {
+    isIcons?: boolean,
+    name: string,
+    items: ReactElement<any, any>
+}
+
+function FilterItem(props: Props) {
     const [isOpened, setIsOpened] = useState(false);
 
     let itemType = isOpened ? "item-opened" : "item-closed";

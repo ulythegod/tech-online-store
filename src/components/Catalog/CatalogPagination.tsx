@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './catalogPagination.module.scss';
 import classNames from 'classnames';
 
-function CatalogPagination(props: any): any {
+function CatalogPagination() {
     return (
         <div className={`${styles["catalog-pagination"]}`}>
             <a className={`${styles["pagination-element"]}`} href="#">

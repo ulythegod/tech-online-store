@@ -1,7 +1,14 @@
 import React from 'react';
 import styles from './pageTitle.module.scss';
 
-function PageTitle(props: any): any {
+type Props = {
+    isCatalogPage?: boolean,
+    isProductPage?: boolean,
+    isCheckoutPage?: boolean,
+    title: string
+}
+
+function PageTitle(props: Props) {
     let className = "";
 
     if (props.isCatalogPage && !props.isProductPage && !props.isCheckoutPage) {

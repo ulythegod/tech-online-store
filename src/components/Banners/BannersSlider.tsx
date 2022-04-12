@@ -3,7 +3,7 @@ import styles from './bannersSlider.module.scss';
 import TurnOverButton from 'components/Buttons/TurnOverButton';
 import banner from '../../images/banner.png';
 
-function BannersSlider(props: any): any {
+function BannersSlider() {
     return (
         <section className="main-banners-section">
             <div className={`${styles["main-banners"]}`}>

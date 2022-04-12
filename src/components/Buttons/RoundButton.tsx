@@ -1,7 +1,11 @@
 import React from 'react';
 import styles from './roundButton.module.scss';
 
-function RoundButton(props: any): any {
+type Props = {
+    content: object
+}
+
+function RoundButton(props: Props) {
     return (
         <button className={`${styles["round-button"]}`}>
             {props.content}

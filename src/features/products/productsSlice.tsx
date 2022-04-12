@@ -1,42 +1,17 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit';
 import { RootState }  from '../../store';
-import { Category } from '../categories/categoriesSlice';
-
-interface ProductState {
-    products: Product[],
-    code: number,
-    message: string,
-    status: string
-}
-
-interface Photo {
-    id: number,
-    url: string
-}
-
-interface Detail {
-    id: number,
-    name: string
-}
-
-interface Spec {
-    id: number,
-    spec: string,
-    value: string
-}
-
-export interface Product {
-    id: number,
-    published_at: string,
-    created_at: string,
-    updated_at: string,
-    category: Category,
-    name: string,
-    price: string,
-    photo: Photo,
-    details: Detail[],
-    specs: Spec[]
-}
+import { allChildCategoriesSelector } from '../categories/categoriesSlice';
+import { selectAllPrices } from 'features/prices/pricesSlice';
+import { 
+    ProductState, 
+    Photo, 
+    Detail, 
+    Spec, 
+    Product, 
+    Category, 
+    FillersInterface, 
+    Price 
+} from '../../CustomTypes';
 
 const initialState: ProductState = {
     products: [],
@@ -74,7 +49,7 @@ export const selectAllProducts = (state: RootState) => state.products.products;
 export const selectProductsByCategoryId = (state: RootState, categoriesIds: number[]) => {
     let products: Product[] = [];
 
-    if (state.products.products[0]) {
+    if (state.products.products) {
         state.products.products.forEach((product: Product) => {
             if (categoriesIds.includes(product.category.id)) {
                 products.push(product);
@@ -84,3 +59,73 @@ export const selectProductsByCategoryId = (state: RootState, categoriesIds: numb
 
     return products;
 }
+
+export const selectProductsAmountForPrices = createSelector(
+    selectProductsByCategoryId,
+    selectAllPrices,
+    (products: Product[], prices: Price[]) => {
+        let amounts: any[] = [];       
+        
+        if (prices) {
+            prices.forEach((price: Price) => {
+                let productForPrice: Product[] = [];
+                if (products) {
+                    products.forEach((product: Product) => {
+                        if (Number(product.price) >= price.segmentValues[0] && Number(product.price) < price.segmentValues[1]) {
+                            productForPrice.push(product);
+                        }
+                    });
+                }
+                
+                amounts[price.id] = productForPrice.length;
+            });
+        }
+
+        return amounts;
+    }
+);
+
+export const filteredProductsSelector = createSelector(
+    (state: RootState) => state.products.products,
+    allChildCategoriesSelector,
+    (state: RootState, appliedFilters: FillersInterface) => appliedFilters,
+    (products: Product[], categoriesIds: number[], filter: FillersInterface) => {        
+        let result: Product[] = [];
+
+        let productsPricesFind: Product[] = [];
+        products.forEach((product: Product, id: number) => {
+            if (categoriesIds.includes(product.category.id)) {
+                if (filter.prices.length) {
+                    filter.prices.forEach((price: Price, id: number) => {
+                        if (Number(product.price) > price.segmentValues[0] && Number(product.price) <= price.segmentValues[1]) {
+                            productsPricesFind.push(product);
+                        }
+                    })                  
+                } else if (filter.defaultPrices.length) {
+                    filter.defaultPrices.forEach((price: Price, id: number) => {
+                        if (Number(product.price) > price.segmentValues[0] && Number(product.price) <= price.segmentValues[1]) {
+                            productsPricesFind.push(product);
+                        }
+                    })
+                }
+            }
+        });
+
+        if (filter.name) {
+            productsPricesFind.forEach((product: Product, id: number) => {
+                let lowercaseName = product.name.toLowerCase();
+                let lowercaseInput = filter.name.toLowerCase();               
+
+                if (lowercaseName === lowercaseInput || lowercaseName.indexOf(lowercaseInput) !== -1) {
+                    result.push(product);
+                }
+            });
+        } else {
+            result = productsPricesFind
+        }
+
+        console.log(result);                
+
+        return result;
+    }
+);

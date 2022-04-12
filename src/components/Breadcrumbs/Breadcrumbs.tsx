@@ -1,8 +1,13 @@
 import React from 'react';
 import styles from './breadcrumbs.module.scss';
 import { Link } from 'react-router-dom';
+import { Category } from '../../CustomTypes';
 
-function Breadcrumbs(props: any): any {    
+type Props = {
+    category?: Category | undefined
+}
+
+function Breadcrumbs(props: Props) {    
     return (
         <nav className={`${styles["breadcrumbs-navigation"]}`}>
             <ul className={`${styles["breadcrumbs"]}`}>

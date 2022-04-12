@@ -3,7 +3,7 @@ import styles from './checkoutBlock.module.scss';
 import CheckoutForm from './CheckoutForm';
 import OrderSummary from './OrderSummary';
 
-function CheckoutBlock(props: any): any {
+function CheckoutBlock() {
     return (
         <div className={`${styles["checkout-block"]}`}>
             <CheckoutForm />

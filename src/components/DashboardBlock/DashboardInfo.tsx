@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import styles from './dashboardAccountInfo.module.scss';
 
-function DashboardInfo(props: any): any {
+type Props = {
+    title: ReactElement<any, any> | string
+}
+
+function DashboardInfo(props: Props) {
     return (
         <div className={`${styles["information-item"]}`}>
             <span className={`${styles["item-title"]}`}>{props.title}</span>

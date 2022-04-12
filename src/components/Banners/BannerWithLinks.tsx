@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './bannerWithLinks.module.scss';
 import banner from '../../images/product-links.png';
 
-function ProductLinks(props: any): any {
+function ProductLinks() {
     const imageStyles = {
         background: `url(${banner}), #F5F7FF`,
     }

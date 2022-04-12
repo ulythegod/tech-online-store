@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import { ReactComponent as ZipLogo } from '../../images/zip-logo.svg';
 import { ReactComponent as PayPal } from '../../images/paypal.svg';
 
-function CardSummaryForm(props: any): any {
+function CardSummaryForm() {
     const [isOpenEstimateShippingAndTax, setIsOpenEstimateShippingAndTax] = useState(false);
     const [isOpenApplyDiscountCode, setIsOpenApplyDiscountCode] = useState(false);
 

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './footerMenu.module.scss';
 import FooterMenuItem from './FooterMenuItem';
 
-function FooterMenu(props: any): any {
+function FooterMenu() {
     return (
         <nav className={`${styles["footer-menu"]}`}>
             <ul className={`${styles["menu-outer-part"]}`}>

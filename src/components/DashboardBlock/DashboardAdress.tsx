@@ -1,6 +1,6 @@
 import React from 'react';
 
-function DashboardAdress(props: any): any {
+function DashboardAdress() {
     return (
         <div className="information-item">
             <span>
