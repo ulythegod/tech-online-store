@@ -6,7 +6,9 @@ import Select, { components, ControlProps } from 'react-select';
 type Props = {
     selectLabel: string,
     showOnMobile?: boolean,
-    options: any[]
+    options: any[],
+    handleSortSelect?: Function
+    handlePerPageSelect?: Function
 }
 
 function CatalogSelect(props: Props) {
@@ -40,6 +42,13 @@ function CatalogSelect(props: Props) {
                 defaultValue={[props.options[0]]}
                 options={props.options}
                 components={{ Control }}
+                onChange={
+                    props.handleSortSelect ? 
+                    (element: any) => props.handleSortSelect?.(element) :
+                    props.handlePerPageSelect ?
+                    (element: any) => props.handlePerPageSelect?.(element) :
+                    () => {}
+                }
             />
         </>
     );

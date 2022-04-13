@@ -6,7 +6,11 @@ import classNames from 'classnames';
 import { ReactComponent as ZipLogo } from '../../images/zip-logo.svg';
 import { ReactComponent as PayPal } from '../../images/paypal.svg';
 
-function CardSummaryForm() {
+type Props = {
+    subtotal: number
+}
+
+function CardSummaryForm(props: Props) {
     const [isOpenEstimateShippingAndTax, setIsOpenEstimateShippingAndTax] = useState(false);
     const [isOpenApplyDiscountCode, setIsOpenApplyDiscountCode] = useState(false);
 
@@ -90,7 +94,7 @@ function CardSummaryForm() {
                 <div className={`${styles["summary-info"]}`}>
                     <div className={`${styles["summary-item"]}`}>
                         <div>Subtotal</div>
-                        <span>$13,047.00</span>
+                        <span>${props.subtotal}</span>
                     </div>
                     <div className={`${styles["summary-item"]}`}>
                         <div>

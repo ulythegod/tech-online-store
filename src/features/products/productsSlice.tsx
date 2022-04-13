@@ -10,7 +10,8 @@ import {
     Product, 
     Category, 
     FillersInterface, 
-    Price 
+    Price,
+    CatalogProductsResult
 } from '../../CustomTypes';
 
 const initialState: ProductState = {
@@ -122,10 +123,89 @@ export const filteredProductsSelector = createSelector(
             });
         } else {
             result = productsPricesFind
-        }
-
-        console.log(result);                
+        }          
 
         return result;
     }
 );
+
+function byField(field: string) {
+    if (field === "price") {
+       return (a: Product, b: Product) => Number(a[field as keyof Product]) > Number(b[field as keyof Product]) ? 1 : -1; 
+    }
+    
+    return (a: Product, b: Product) =>a[field as keyof Product] > b[field as keyof Product] ? 1 : -1; 
+}
+
+export const sortedAndFilteredProductsSelector = createSelector(
+    filteredProductsSelector,
+    (state: RootState, appliedFilters: FillersInterface) => appliedFilters.sortField,
+    (products: Product[], sorting: string) => {
+        let result: Product[] = [];       
+        
+        if (sorting) {
+            result = products.sort(byField(sorting));
+        } else {
+            result = products.sort(byField("name"));
+        }
+
+        return result;
+    }
+);
+
+export const perPageProductsSelector = createSelector(
+    sortedAndFilteredProductsSelector,
+    (state: RootState, appliedFilters: FillersInterface) => appliedFilters.currentPage,
+    (state: RootState, appliedFilters: FillersInterface) => appliedFilters.perPageItems,
+    (products: Product[], currentPage: number, perPageItems: number) => {
+        let result: CatalogProductsResult = {
+            products: [],
+            startIndex: 0,
+            endIndex: 0,
+            overallAmount: 0
+        };
+
+        let lastIndex: number = products.length - 1;
+        if (currentPage && perPageItems) {
+            let startIndex: number = Number((currentPage - 1)) * perPageItems;
+            let endIndex: number = Number(startIndex) + Number(perPageItems);
+
+            if (endIndex > lastIndex) {
+                endIndex = lastIndex;
+            }           
+
+            result.overallAmount = products.length;
+            if (endIndex === lastIndex) {                
+                result.products = products.slice(startIndex);
+            } else {
+                result.products = products.slice(startIndex, endIndex);
+            }
+
+            result.startIndex = startIndex;
+
+            if (endIndex === lastIndex) {
+                result.endIndex = result.overallAmount;
+            } else {
+                result.endIndex = endIndex;
+            }            
+        }        
+
+        return result;
+    }
+);
+
+export const selectProductsByIds = (state: RootState, productsIds: number[]) => {
+    let products: Product[] = [];
+
+    if (state.products.products && productsIds.length) {
+        if (state.products.products.length > 0) {
+            state.products.products.forEach((product: Product) => {
+                if (productsIds.includes(product.id)) {
+                    products.push(product);
+                }                
+            });
+        }
+    }
+
+    return products;
+}

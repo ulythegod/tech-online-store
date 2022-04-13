@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import styles from './catalogSelectedFilters.module.scss';
 
 type Props = {
-    filtersItems: ReactElement<any, any>,
+    filtersItems: ReactElement<any, any>[],
     handleClearFilters: Function
 }
 
@@ -11,7 +11,7 @@ function CatalogSelectedFilters(props: Props) {
         <div className={`${styles["catalog-selected-filters"]}`}>
             {props.filtersItems}
             {
-                props.filtersItems &&
+                props.filtersItems.length > 0 &&
                 <button 
                     className={`${styles["clear-all-btn"]}`}
                     onClick={(event: any) => props.handleClearFilters(event)}

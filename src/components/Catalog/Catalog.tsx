@@ -3,12 +3,17 @@ import { useParams } from 'react-router';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCategoryById, selectCategoriesIds} from 'features/categories/categoriesSlice';
-import { selectProductsByCategoryId } from '../../features/products/productsSlice';
+import { perPageProductsSelector } from '../../features/products/productsSlice';
 import { RootState }  from '../../store';
-import { filteredProductsSelector } from '../../features/products/productsSlice';
+import { sortedAndFilteredProductsSelector } from '../../features/products/productsSlice';
 import { selectAllPrices, selectAllPricesId } from 'features/prices/pricesSlice';
 
-import { FillersInterface, Product, Price } from '../../CustomTypes';
+import { 
+    FillersInterface, 
+    Product, 
+    Price,
+    CatalogProductsResult 
+} from '../../CustomTypes';
 
 import styles from './catalog.module.scss';
 
@@ -26,6 +31,7 @@ import CompareProducts from 'components/CompareProducts/CompareProducts';
 import WishList from 'components/WishList/WishList';
 import CatalogFilterBanner from 'components/CatalogFilter/CatalogFilterBanner';
 import SelectedFilter from './SelectedFilter';
+import CatalogSelect from './CatalogSelect';
 
 import { ReactComponent as TableView } from '../../images/table-view.svg';
 import { ReactComponent as LinesView } from '../../images/lines-view.svg';
@@ -43,7 +49,10 @@ function Catalog() {
         defaultCategoriesIds: [Number(categoryId)],
         prices: [],
         defaultPrices: prices,
-        name: ""
+        name: "",
+        sortField: "",
+        currentPage: 1,
+        perPageItems: 5
     });
 
     const [appliedFilters, setAppliedFilters] = useState<FillersInterface>({
@@ -51,7 +60,10 @@ function Catalog() {
         defaultCategoriesIds: [Number(categoryId)],
         prices: [],
         defaultPrices: prices,
-        name: ""
+        name: "",
+        sortField: "",
+        currentPage: 1,
+        perPageItems: 5
     });
     
     function handleCategorySelect(event: any, categoryId: number) {
@@ -129,40 +141,104 @@ function Catalog() {
         setFiltersAmount(0);
     }
 
-    function handleClearFilter(event: any, filterType: string, itemDelete: Price) {
+    function handleClearFilter(event: any, filterType: string, itemDelete: any) {
         event.preventDefault();
 
-        if (filterType === "price") {
+        switch (filterType) {
+            case "price":
+                setFilters({
+                    ...filters,
+                    prices: (
+                        filters.prices.includes(itemDelete) ?
+                            filters.prices.filter((price) => price !== itemDelete) :
+                            [...filters.prices]
+                    )
+                })
+    
+                setAppliedFilters({
+                    ...appliedFilters,
+                    prices: (
+                        appliedFilters.prices.includes(itemDelete) ?
+                            appliedFilters.prices.filter((price) => price !== itemDelete) :
+                            [...appliedFilters.prices]
+                    )
+                })
+                break;
+            case "name":
+                setFilters({
+                    ...filters,
+                    name: ""
+                });
+            
+                setAppliedFilters({
+                    ...appliedFilters,
+                    name: ""
+                });
+                break;
+            case "category":
+                setFilters({
+                    ...filters,
+                    categoriesIds: (
+                        filters.categoriesIds.includes(itemDelete) ? 
+                            filters.categoriesIds.filter((id) => id !== itemDelete) : 
+                            [...filters.categoriesIds]
+                        )
+                })
+
+                setAppliedFilters({
+                    ...appliedFilters,
+                    categoriesIds: (
+                        appliedFilters.categoriesIds.includes(itemDelete) ?
+                            appliedFilters.categoriesIds.filter((id) => id !== itemDelete) :
+                            [...appliedFilters.categoriesIds]
+                    )
+                })
+                break;
+        }
+    }
+
+    function handleSortSelect(element: any) {
+        if (element.value) {
             setFilters({
                 ...filters,
-                prices: (
-                    filters.prices.includes(itemDelete) ?
-                        filters.prices.filter((price) => price !== itemDelete) :
-                        [...filters.prices]
-                )
+                sortField: element.value
             })
 
             setAppliedFilters({
                 ...appliedFilters,
-                prices: (
-                    appliedFilters.prices.includes(itemDelete) ?
-                        appliedFilters.prices.filter((price) => price !== itemDelete) :
-                        [...appliedFilters.prices]
-                )
+                sortField: element.value
             })
-        }
-        
-        if (filterType === "name") {
+        }        
+    }
+
+    function handlePerPageSelect(element: any) {
+        if (element.value) {
             setFilters({
                 ...filters,
-                name: ""
-            });
-    
+                perPageItems: element.value
+            })
+
             setAppliedFilters({
                 ...appliedFilters,
-                name: ""
-            });
-        }
+                perPageItems: element.value
+            })
+        } 
+    }
+
+    function handlePagination(event: any, pageNumber: number) {
+        event.preventDefault();
+
+        if (pageNumber) {
+            setFilters({
+                ...filters,
+                currentPage: pageNumber
+            })
+
+            setAppliedFilters({
+                ...appliedFilters,
+                currentPage: pageNumber
+            })
+        }       
     }
 
     const [view, setView] = useState('table');
@@ -176,7 +252,8 @@ function Catalog() {
         }        
     }    
     
-    const products = useSelector((state: RootState) => filteredProductsSelector(state, appliedFilters));
+    const productsResult = useSelector((state: RootState) => perPageProductsSelector(state, appliedFilters));
+    const products = productsResult.products;
 
     let productsItems: any [] = [];    
 
@@ -221,7 +298,7 @@ function Catalog() {
         }
     }
 
-    let activePricesFilteres: ReactElement<any, any>[] = [];    
+    let activeFilteres: ReactElement<any, any>[] = [];    
     if (appliedFilters.prices) {
         appliedFilters.prices.forEach((price: Price) => {
             let element: ReactElement<any, any> = (
@@ -236,13 +313,12 @@ function Catalog() {
                 />
             )
 
-            activePricesFilteres.push(element);
+            activeFilteres.push(element);
         });
     }
 
-    let activeNameFilter: ReactElement<any, any> = <></>; 
     if (appliedFilters.name) {
-        activeNameFilter = (
+        activeFilteres.push(
             <SelectedFilter
                     key={"delete_name"}
                     name={appliedFilters.name}
@@ -255,7 +331,6 @@ function Catalog() {
         )
     }
 
-    let activeCategoryFilters: ReactElement<any, any>[] = [];
     if (appliedFilters.categoriesIds) {
         appliedFilters.categoriesIds.forEach((id: number) => {
             let element: ReactElement<any, any> = (
@@ -266,12 +341,25 @@ function Catalog() {
                     filterType='category'
                     deleted={id}
                     handleClearFilter={handleClearFilter}
+                    categoryId={id}
                 />
             )
 
-            activePricesFilteres.push(element);
+            activeFilteres.push(element);
         });
     }
+
+    const positions: any[] = [
+        { value: 'name', label: 'Name' },
+        { value: 'price', label: 'Price' },
+    ];
+
+    const perPage: any[] = [
+        {value: '5', label: '5 per page'},
+        {value: '10', label: '10 per page'},
+        {value: '20', label: '20 per page'},
+        {value: '30', label: '30 per page'}
+    ];
 
     return (        
         <>
@@ -299,9 +387,35 @@ function Catalog() {
                     appliedFilters={appliedFilters}
                     filtersAmount={filtersAmount}
                     filters={filters}
+                    sortPosition={
+                        <CatalogSelect 
+                            options={positions}
+                            selectLabel="Sort by"
+                            handleSortSelect={handleSortSelect}
+                        />
+                    }
                 />
                 <div className={`${styles["catalog"]}`}>
-                    <CatalogTopElements 
+                    <CatalogTopElements
+                        startIndex={productsResult.startIndex}
+                        endIndex={productsResult.endIndex}
+                        overallAmount={productsResult.overallAmount}
+                        sortPosition={
+                            <CatalogSelect 
+                                options={positions}
+                                selectLabel="Sort by"
+                                showOnMobile={false}
+                                handleSortSelect={handleSortSelect}
+                            />
+                        }
+                        perPage={
+                            <CatalogSelect 
+                                options={perPage}
+                                selectLabel="Show"
+                                showOnMobile={false}
+                                handlePerPageSelect={handlePerPageSelect}
+                            />
+                        }
                         tableButton={
                             <StoreButton 
                                 style={(view === "table") ? 'icon-button' : 'icon-button-disabled'}
@@ -320,12 +434,7 @@ function Catalog() {
                         }
                     />
                     <CatalogSelectedFilters 
-                        filtersItems={
-                            <>
-                                {activePricesFilteres}
-                                {activeNameFilter}
-                            </>
-                        }
+                        filtersItems={activeFilteres}
                         handleClearFilters={handleClearFilters}
                     />
                     <div className={
@@ -334,7 +443,14 @@ function Catalog() {
                     }>
                         {productsItems}
                     </div>
-                    <CatalogPagination />
+                    <CatalogPagination 
+                        startIndex={productsResult.startIndex}
+                        endIndex={productsResult.endIndex}
+                        perPageAmount={appliedFilters.perPageItems}
+                        overallAmount={productsResult.overallAmount}
+                        currentPage={appliedFilters.currentPage}
+                        handlePagination={handlePagination}
+                    />
                     <div className={`${styles["filters-rest"]}`}>
                         <CompareProducts />
                         <WishList />

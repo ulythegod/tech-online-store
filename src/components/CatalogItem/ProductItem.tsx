@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './productItem.module.scss';
 import { Link } from 'react-router-dom';
 import RatingButton from './RatingButton';
 import StoreButton from 'components/Buttons/StoreButton';
 import classNames from 'classnames';
+
+import { useDispatch } from 'react-redux';
+import { productAdded } from 'features/product-card/productCardSlice';
+
 import { ReactComponent as InStock } from '../../images/in-stock.svg';
 import { ReactComponent as CheckAvailability } from '../../images/check-availability.svg';
 import { ReactComponent as AddToFav } from '../../images/prod-add-fav.svg';
@@ -21,13 +25,19 @@ type Props = {
 }
 
 function ProductItem(props: Props) {
+    const dispatch = useDispatch();
+
     let statusText: string = '';
         
     if (props.status == "in-stock") {
         statusText = "in-stock";
     } else if (props.status == "check-availability") {
         statusText = "check-availability";
-    }   
+    }
+
+    function handleAddToCard(event: any) {
+        dispatch(productAdded(props.id))
+    }
 
     return (
         <div className={`${styles["product-preview"]}`}>
@@ -84,6 +94,7 @@ function ProductItem(props: Props) {
                             <span>Add To Cart</span>
                         </>
                     }
+                    buttonAction={handleAddToCard}
                 />
             </div>
         </div>

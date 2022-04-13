@@ -31,7 +31,8 @@ type Props = {
     appliedFilters: FillersInterface,
     filters: FillersInterface,
     filtersAmount: number,
-    prices: Price[]
+    prices: Price[],
+    sortPosition: ReactElement<any, any>
 }
 
 function CatalogFilter(props: Props) {
@@ -40,12 +41,6 @@ function CatalogFilter(props: Props) {
     function handleFilterOpen() {
         setIsOpenFilter(prevIsOpenFilter => !prevIsOpenFilter);
     }
-
-    const positions: any[] = [
-        { value: 'position', label: 'Position' },
-        { value: 'position2', label: 'Position2' },
-        { value: 'position3', label: 'Position3' }
-    ];
 
     let backLink: string = "/";
     if (props.currentCategory) {
@@ -134,10 +129,7 @@ function CatalogFilter(props: Props) {
                         Filter
                     </button>
                 </div>
-                <CatalogSelect 
-                    options={positions}
-                    selectLabel="Sort by"
-                />
+                {props.sortPosition}
             </div>
             <div className={isOpenFilter ? `${styles["catalog-filter-block-mobile"]}` : `${styles["catalog-filter-block"]}`}>
                 <Link className={`${styles["filter-title-link"]}`} to={backLink}>Back</Link>

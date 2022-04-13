@@ -2,7 +2,8 @@ import React from 'react';
 import styles from './selectedFilter.module.scss';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store';
-import { selectCategoriesProductsAmount } from 'features/categories/categoriesSlice';
+import { selectCategoryById } from 'features/categories/categoriesSlice';
+import { Category } from 'CustomTypes';
 import { ReactComponent as DeleteFilter } from '../../images/delete-filter.svg';
 
 type Props = {
@@ -16,11 +17,16 @@ type Props = {
 }
 
 function SelectedFilter(props: Props) {
-    //let categoriesForFilter: any[] = useSelector((state: RootState) => selectCategoriesProductsAmount(state, [props.categoryId]));
+    let categoryId: number = Number(props.categoryId);
+    let category: Category | undefined = useSelector((state: RootState) => selectCategoryById(state, categoryId));
+    let categoryName = category?.name;    
 
     return (
         <button className={`${styles["selected-filter"]}`}>
-            <span>{props.name} <span className={`${styles["selected-number"]}`}>({props.amount})</span></span>
+            <span>
+                {categoryName ? categoryName : props.name} 
+                <span className={`${styles["selected-number"]}`}>({props.amount})</span>
+            </span>
             <a href={props.link} onClick={(event: any) => props.handleClearFilter(event, props.filterType, props.deleted)}><DeleteFilter /></a>
         </button>
     );

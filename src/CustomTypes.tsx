@@ -3,7 +3,17 @@ export type FillersInterface = {
     defaultCategoriesIds: number[],
     prices: Price[],
     defaultPrices: Price[],
-    name: string
+    name: string,
+    sortField: string,
+    currentPage: number,
+    perPageItems: number
+}
+
+export type CatalogProductsResult = {
+    products: Product[],
+    startIndex: number,
+    endIndex: number,
+    overallAmount: number
 }
 
 export interface ProductState {

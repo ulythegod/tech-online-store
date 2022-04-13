@@ -5,6 +5,7 @@ import categoriesReducer from './features/categories/categoriesSlice';
 import categoryReducer from "features/category/categorySlice";
 import productReduser from "features/product/productSlice";
 import pricesReducer from 'features/prices/pricesSlice';
+import productCardReducer from "features/product-card/productCardSlice";
 
 const store = configureStore({
     reducer: {
@@ -13,7 +14,8 @@ const store = configureStore({
         categories: categoriesReducer,
         category: categoryReducer,
         product: productReduser,
-        prices: pricesReducer
+        prices: pricesReducer,
+        productsCard: productCardReducer
     }
 });
 

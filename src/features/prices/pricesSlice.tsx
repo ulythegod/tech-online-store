@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../../store';
-import {Price} from '../../CustomTypes';
+import { Price } from '../../CustomTypes';
 
 interface PricesState {
     prices: Price[],

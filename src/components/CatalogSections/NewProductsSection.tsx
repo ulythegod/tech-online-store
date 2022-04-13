@@ -2,6 +2,12 @@ import React from 'react';
 import styles from './newProductsSection.module.scss';
 import TurnOverButton from 'components/Buttons/TurnOverButton';
 import ProductItem from 'components/CatalogItem/ProductItem';
+
+import { useSelector } from 'react-redux';
+import { selectAllProducts } from 'features/products/productsSlice';
+import { RootState } from 'store';
+import { Product } from 'CustomTypes';
+
 import prodImg1 from '../../images/new-prod-img1.png';
 import prodImg2 from '../../images/new-prod-img2.png';
 import prodImg3 from '../../images/new-prod-img3.png';
@@ -10,6 +16,8 @@ import prodImg5 from '../../images/new-prod-img5.png';
 import prodImg6 from '../../images/new-prod-img6.png';
 
 function ProductSection(props: any): any {
+    const products: Product[] = useSelector((state: RootState) => selectAllProducts(state));    
+
     return (
         <section className="new-products-section">
             <div className={`${styles["new-products"]}`}>

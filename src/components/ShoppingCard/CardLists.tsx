@@ -1,47 +1,62 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import styles from './cardList.module.scss';
 import CardItem from './CardItem';
 import StoreButton from 'components/Buttons/StoreButton';
-import card1 from '../../images/card1.png';
-import card2 from '../../images/card2.png';
+import { Product } from 'CustomTypes';
 
-function CardLists() {
+import { useSelector, useDispatch } from 'react-redux';
+import { productRemoved, clearCard } from 'features/product-card/productCardSlice';
+
+type Props = {
+    products: Product[],
+    idsCounts: number[]
+}
+
+function CardLists(props: Props) {
+    const dispatch = useDispatch();
+
+    function handleProductRemoved(event: any, productId: number) {        
+        dispatch(productRemoved(productId))
+    }
+    
+    function handleClearCard(event: any) {
+        dispatch(clearCard(event));
+    }
+
+    const cardItems: ReactElement<any, any>[] = props.products.map((product: Product, id: number) => {
+        return (
+            <CardItem
+                key={product.id}
+                image={product.photo[0].url}
+                description={product.name}
+                price={product.price}
+                quantity={props.idsCounts[product.id]}
+                subtotal={String(props.idsCounts[product.id] * Number(product.price))}
+                id={product.id}
+                handleProductRemoved={handleProductRemoved}
+            />
+        )
+    });
+
     return (
         <div className={`${styles["items-list"]}`}>
             <div>
-                <table className={`${styles["list-table"]}`}>
-                    <tbody>
-                        <tr className={`${styles["table-title"]}`}>
-                            <td>Item</td>
-                            <td>Price</td>
-                            <td>Qty</td>
-                            <td>Subtotal</td>
-                            <td></td>
-                        </tr>
-                        <CardItem
-                            image={card1}
-                            description={`
-                                MSI MEG Trident X 10SD-1012AU Intel i7 10700K, 2070 
-                                SUPER, 32GB RAM, 1TB SSD, Windows 10 Home, Gaming 
-                                Keyboard and Mouse 3 Years Warranty
-                            `}
-                            price={"4,349.00"}
-                            quantity={2}
-                            subtotal={"13,047.00"}
-                        />
-                        <CardItem
-                            image={card2}
-                            description={`
-                                MSI MEG Trident X 10SD-1012AU Intel i7 10700K, 2070 
-                                SUPER, 32GB RAM, 1TB SSD, Windows 10 Home, Gaming 
-                                Keyboard and Mouse 3 Years Warranty
-                            `}
-                            price={"4,349.00"}
-                            quantity={2}
-                            subtotal={"13,047.00"}
-                        />
-                    </tbody>
-                </table>
+                {
+                    cardItems &&
+                    <table className={`${styles["list-table"]}`}>
+                        <tbody>
+                            <tr className={`${styles["table-title"]}`}>
+                                <td>Item</td>
+                                <td>Price</td>
+                                <td>Qty</td>
+                                <td>Subtotal</td>
+                                <td></td>
+                            </tr>
+                            {cardItems}
+                        </tbody>
+                    </table>
+                }
+                
             </div>
             <div className={`${styles["card-buttons"]}`}>
                 <div className={`${styles["inner-buttons"]}`}>
@@ -52,6 +67,7 @@ function CardLists() {
                     <StoreButton 
                         style="black-button"
                         content="Clear Shopping Cart"
+                        buttonAction={handleClearCard}
                     />
                 </div>
                 <StoreButton 
