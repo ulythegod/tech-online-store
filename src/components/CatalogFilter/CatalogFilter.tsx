@@ -59,8 +59,6 @@ function CatalogFilter(props: Props) {
     }
 
     let categoriesForFilter: any[] = useSelector((state: RootState) => selectCategoriesProductsAmount(state, subCategoriesIds));
-
-    console.log(categoriesForFilter);
     
     let categoriesFilter: any[] = [];  
 

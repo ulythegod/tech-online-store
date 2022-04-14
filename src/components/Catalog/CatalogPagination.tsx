@@ -13,8 +13,6 @@ type Props = {
 
 function CatalogPagination(props: Props) {
     let pagesAmount = Math.ceil(props.overallAmount/props.perPageAmount);
-
-    console.log(pagesAmount);
     
     let paginationItems: ReactElement<any, any>[] = [];
     if (pagesAmount <= 5) {

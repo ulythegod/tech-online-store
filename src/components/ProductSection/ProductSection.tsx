@@ -20,8 +20,6 @@ type Props = {
 
 function ProductSection(props: Props) {    
     const productCategory: any = useSelector((state: RootState) => selectCategoryById(state, props.product.category.id));
-
-    console.log(props.product);    
     
     return (
         <section className={`${styles["product-section"]}`}>

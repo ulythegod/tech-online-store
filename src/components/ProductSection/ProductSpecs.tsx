@@ -7,7 +7,6 @@ type Props = {
 }
 
 function ProductSpecs(props: Props) {
-    console.log(props);
     const specsItems: ReactElement<any, any>[] = props.specs.map((spec: any, id: number) => {
         return (
             <tr key={id} className={(id % 2) ? `${styles["dark"]}` : ``}>
