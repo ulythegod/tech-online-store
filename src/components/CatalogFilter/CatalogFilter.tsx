@@ -59,6 +59,9 @@ function CatalogFilter(props: Props) {
     }
 
     let categoriesForFilter: any[] = useSelector((state: RootState) => selectCategoriesProductsAmount(state, subCategoriesIds));
+
+    console.log(categoriesForFilter);
+    
     let categoriesFilter: any[] = [];  
 
     if (props.subCategories.length > 0 && categoriesForFilter.length > 0) {

@@ -157,16 +157,6 @@ function CatalogPagination(props: Props) {
             paginationItems.push(firstItem);
             paginationItems.push(firstRestItem);
 
-            let prevItem: ReactElement<any, any> = (
-                <a 
-                    className={`${styles["pagination-element"]}`} 
-                    href="#"
-                    key={props.currentPage - 1}
-                    onClick={(event: any) => props.handlePagination(event, (props.currentPage - 1))}
-                >
-                    {props.currentPage - 1}
-                </a>
-            );
             let currentItem: ReactElement<any, any> = (
                 <a 
                     className={`${classNames(styles["active"], styles["pagination-element"])}`} 
@@ -177,20 +167,7 @@ function CatalogPagination(props: Props) {
                     {props.currentPage}
                 </a>
             );
-            let nexItem: ReactElement<any, any> = (
-                <a 
-                    className={`${styles["pagination-element"]}`} 
-                    href="#"
-                    key={props.currentPage + 1}
-                    onClick={(event: any) => props.handlePagination(event, (props.currentPage + 1))}
-                >
-                    {props.currentPage + 1}
-                </a>
-            );
-
-            paginationItems.push(prevItem);
             paginationItems.push(currentItem);
-            paginationItems.push(nexItem);
 
             let secondRestItem: ReactElement<any, any> = <span className={`${styles["pagination-element"]}`} key={"second-rest"}>...</span>;
             let lastItem: ReactElement<any, any> = (
