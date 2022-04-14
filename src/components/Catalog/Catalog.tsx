@@ -52,7 +52,7 @@ function Catalog() {
         name: "",
         sortField: "",
         currentPage: 1,
-        perPageItems: 5
+        perPageItems: 10
     });
 
     const [appliedFilters, setAppliedFilters] = useState<FillersInterface>({
@@ -63,7 +63,7 @@ function Catalog() {
         name: "",
         sortField: "",
         currentPage: 1,
-        perPageItems: 5
+        perPageItems: 10
     });
     
     function handleCategorySelect(event: any, categoryId: number) {

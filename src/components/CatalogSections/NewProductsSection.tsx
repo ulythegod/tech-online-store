@@ -1,22 +1,72 @@
-import React from 'react';
+import React, { ReactElement, useRef, useState, useEffect } from 'react';
 import styles from './newProductsSection.module.scss';
 import TurnOverButton from 'components/Buttons/TurnOverButton';
 import ProductItem from 'components/CatalogItem/ProductItem';
+import debounce from 'lodash.debounce';
 
 import { useSelector } from 'react-redux';
 import { selectAllProducts } from 'features/products/productsSlice';
 import { RootState } from 'store';
 import { Product } from 'CustomTypes';
 
-import prodImg1 from '../../images/new-prod-img1.png';
-import prodImg2 from '../../images/new-prod-img2.png';
-import prodImg3 from '../../images/new-prod-img3.png';
-import prodImg4 from '../../images/new-prod-img4.png';
-import prodImg5 from '../../images/new-prod-img5.png';
-import prodImg6 from '../../images/new-prod-img6.png';
-
 function ProductSection(props: any): any {
-    const products: Product[] = useSelector((state: RootState) => selectAllProducts(state));    
+    const [canScrollLeft, setCanScrollLeft] = useState<boolean>(false);
+    const [canScrollRight, setCanScrollRight] = useState<boolean>(false);
+
+    const itemsRef = useRef<HTMLDivElement>(null);
+
+    const products: Product[] = useSelector((state: RootState) => selectAllProducts(state));
+
+    const checkForScrollPosition = () => {        
+        const {current} = itemsRef;
+
+        if (current) {
+            const {scrollLeft, scrollWidth, clientWidth} = current;
+            setCanScrollLeft(scrollLeft > 0);
+            setCanScrollRight(scrollLeft !== scrollWidth - clientWidth);
+        }
+    }
+
+    const debounceCheckForScrollPosition = debounce(checkForScrollPosition, 200);
+
+    const scrollContainerBy = (distance: number) => {        
+        return itemsRef.current?.scrollBy({left: distance, behavior: "smooth"});
+    }
+
+    useEffect(() => {
+        const {current} = itemsRef;
+        checkForScrollPosition();
+        current?.addEventListener("scroll", debounceCheckForScrollPosition);
+
+        return () => {
+            current?.removeEventListener("scroll", debounceCheckForScrollPosition);
+            debounceCheckForScrollPosition.cancel();
+        }
+    }, []);
+
+    function handleScrollRight(event: any) {
+        scrollContainerBy(210)
+    }
+
+    function handleScrollLeft(event: any) {
+        scrollContainerBy(-210)
+    }
+    
+    let productsItems: ReactElement<any, any>[] = products.map((product: Product) => {
+        return (
+            <ProductItem 
+                key={product.id}
+                id={product.id}
+                status='check-availability'
+                productImage={product.photo[0].url}
+                name={product.name}
+                price={Number(product.price)}
+                discount={Number(product.price)}
+                reviewsCount={4}
+                isNewProducts={true}
+            />
+        )
+    })
 
     return (
         <section className="new-products-section">
@@ -26,67 +76,18 @@ function ProductSection(props: any): any {
                     <a href="#">See All New Products</a>
                 </div>
                 <div className={`${styles["new-products-list"]}`}>
-                    <div className={`${styles["items"]}`}>           
-                        <ProductItem 
-                            id={1}
-                            status='in-stock'
-                            productImage={prodImg1}
-                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                            price={499.00}
-                            discount={499.00}
-                            reviewsCount={4}
-                        />
-                        <ProductItem 
-                            id={2}
-                            status='check-availability'
-                            productImage={prodImg2}
-                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                            price={499.00}
-                            discount={499.00}
-                            reviewsCount={4}
-                        />
-                        <ProductItem 
-                            id={3}
-                            status='in-stock'
-                            productImage={prodImg3}
-                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                            price={499.00}
-                            discount={499.00}
-                            reviewsCount={4}
-                        />
-                        <ProductItem 
-                            id={4}
-                            status='in-stock'
-                            productImage={prodImg4}
-                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                            price={499.00}
-                            discount={499.00}
-                            reviewsCount={4}
-                        />
-                        <ProductItem 
-                            id={5}
-                            status='in-stock'
-                            productImage={prodImg5}
-                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                            price={499.00}
-                            discount={499.00}
-                            reviewsCount={4}
-                        />
-                        <ProductItem 
-                            id={6}
-                            status='in-stock'
-                            productImage={prodImg6}
-                            name='EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...'
-                            price={499.00}
-                            discount={499.00}
-                            reviewsCount={4}
-                        />
+                    <div className={`${styles["items"]}`}> 
+                        <div className={`${styles["items-overflow"]}`} ref={itemsRef}>
+                            {productsItems}
+                        </div>
                     </div>
                     <TurnOverButton
                         type="button-left"
+                        buttonAction={handleScrollLeft}
                     />
                     <TurnOverButton
                         type="button-right"
+                        buttonAction={handleScrollRight}
                     />
                 </div>
                 

@@ -21,11 +21,25 @@
 }
 
 .items {
+    // display: flex;
+    // flex-direction: row;
+    // align-items: center;
+    // justify-content: space-between;
+    // margin-left: auto;
+    // margin-right: auto;
+    overflow-y: visible;
+}
+
+.items::-webkit-scrollbar {
+    display: none;
+}
+
+.items-overflow {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    position: relative;
     margin-left: auto;
     margin-right: auto;
+    overflow-x: hidden;
 }

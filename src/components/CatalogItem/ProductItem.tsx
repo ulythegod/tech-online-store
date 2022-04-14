@@ -21,7 +21,8 @@ type Props = {
     reviewsCount: number,
     name: string,
     price: number,
-    discount: number
+    discount: number,
+    isNewProducts?: boolean
 }
 
 function ProductItem(props: Props) {
@@ -40,7 +41,12 @@ function ProductItem(props: Props) {
     }
 
     return (
-        <div className={`${styles["product-preview"]}`}>
+        <div className={
+            !props.isNewProducts ?
+            `${styles["product-preview"]}` :
+            `${styles["new-product-preview"]}`
+        }>
+            <div className={styles["item-inner"]}>
             <p className={`${classNames(styles["product-status"], styles[props.status])}`}>
                 {
                     (props.status == "in-stock") ? <InStock /> : 
@@ -96,6 +102,7 @@ function ProductItem(props: Props) {
                     }
                     buttonAction={handleAddToCard}
                 />
+            </div>
             </div>
         </div>
     );
