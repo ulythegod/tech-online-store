@@ -28,6 +28,11 @@ function CatalogPagination(props: Props) {
                         href="#"
                         key={i}
                         onClick={(event: any) => props.handlePagination(event, i)}
+                        data-testid={
+                            (i === pagesAmount) ?
+                            "last-page-num" :
+                            ""
+                        }
                     >
                         {i}
                     </a>
@@ -48,6 +53,13 @@ function CatalogPagination(props: Props) {
                             href="#"
                             key={i}
                             onClick={(event: any) => props.handlePagination(event, i)}
+                            data-testid={
+                                i === (props.currentPage + 1) ? 
+                                "next-page" :
+                                (i === props.currentPage) ?
+                                "current-page" :
+                                ""
+                            }
                         >
                             {i}
                         </a>
@@ -56,13 +68,14 @@ function CatalogPagination(props: Props) {
                     paginationItems.push(item);
                 }
 
-                let restItem: ReactElement<any, any> = <span className={`${styles["pagination-element"]}`}>...</span>;
+                let restItem: ReactElement<any, any> = <span className={`${styles["pagination-element"]}`} key={"rest-item"}>...</span>;
                 let lastItem: ReactElement<any, any> = (
                     <a 
                         className={`${styles["pagination-element"]}`} 
                         href="#"
                         key={pagesAmount}
                         onClick={(event: any) => props.handlePagination(event, pagesAmount)}
+                        data-testid="last-page-num"
                     >
                         {pagesAmount}
                     </a>
@@ -104,7 +117,7 @@ function CatalogPagination(props: Props) {
                         {1}
                     </a>
                 );
-                let restItem: ReactElement<any, any> = <span className={`${styles["pagination-element"]}`}>...</span>;
+                let restItem: ReactElement<any, any> = <span className={`${styles["pagination-element"]}`} key={"rest-item"}>...</span>;
 
                 paginationItems.push(lastLinkItem);
                 paginationItems.push(firstItem);
@@ -121,6 +134,15 @@ function CatalogPagination(props: Props) {
                             href="#"
                             key={i}
                             onClick={(event: any) => props.handlePagination(event, i)}
+                            data-testid={
+                                i === (props.currentPage + 1) ? 
+                                "next-page" :
+                                (i === props.currentPage) ?
+                                "current-page" :
+                                (i === pagesAmount) ?
+                                "last-page-num" :
+                                ""
+                            }
                         >
                             {i}
                         </a>
@@ -162,6 +184,7 @@ function CatalogPagination(props: Props) {
                         href="#"
                         key={props.currentPage}
                         onClick={(event: any) => props.handlePagination(event, props.currentPage)}
+                        data-testid="current-page"
                     >
                         {props.currentPage}
                     </a>
@@ -175,6 +198,7 @@ function CatalogPagination(props: Props) {
                         href="#"
                         key={pagesAmount}
                         onClick={(event: any) => props.handlePagination(event, pagesAmount)}
+                        data-testid="last-page-num"
                     >
                         {pagesAmount}
                     </a>
@@ -185,6 +209,7 @@ function CatalogPagination(props: Props) {
                         href="#"
                         key={"next-" + (props.currentPage + 1)}
                         onClick={(event: any) => props.handlePagination(event, (props.currentPage + 1))}
+                        data-testid="next-page"
                     >
                         <div className={`${styles["next"]}`}>
                     </div>    
