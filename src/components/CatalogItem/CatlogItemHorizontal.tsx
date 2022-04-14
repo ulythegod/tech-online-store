@@ -13,6 +13,9 @@ import { ReactComponent as ProductRating } from '../../images/product-rating.svg
 import { ReactComponent as ProductFav } from '../../images/product-fav.svg';
 import { ReactComponent as AddToCart } from '../../images/add-to-card-prod.svg';
 
+import { useDispatch } from 'react-redux';
+import { productAdded } from 'features/product-card/productCardSlice';
+
 type Props = {
     status: string,
     productImage: string,
@@ -26,12 +29,18 @@ type Props = {
 }
 
 function CatlogItemHorizontal(props: Props) {
+    const dispatch = useDispatch();
+
     let statusText: string = '';
         
     if (props.status == "in-stock") {
         statusText = "in-stock";
     } else if (props.status == "check-availability") {
         statusText = "check-availability";
+    }
+
+    function handleAddToCard(event: any) {
+        dispatch(productAdded(props.id))
     }
 
     return (
@@ -106,6 +115,7 @@ function CatlogItemHorizontal(props: Props) {
                                 Add To Cart
                             </>
                         }
+                        buttonAction={handleAddToCard}
                     />  
                 </div>                    
                 <div className={`${styles["product-buttons"]}`}>

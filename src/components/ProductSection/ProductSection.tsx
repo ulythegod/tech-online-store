@@ -11,7 +11,7 @@ import {Link} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { selectCategoryById } from '../../features/categories/categoriesSlice';
-import { Product } from '../../CustomTypes';
+import { Product, Category } from '../../CustomTypes';
 
 type Props = {
     product: Product,
@@ -19,7 +19,8 @@ type Props = {
 }
 
 function ProductSection(props: Props) {    
-    const productCategory: any = useSelector((state: RootState) => selectCategoryById(state, props.product.category.id));
+    const productCategory: Category | undefined = useSelector((state: RootState) => selectCategoryById(state, props.product.category.id));
+    const image: string = (props?.product?.photo) ? props?.product?.photo[0]?.url : "";
     
     return (
         <section className={`${styles["product-section"]}`}>
@@ -50,7 +51,7 @@ function ProductSection(props: Props) {
                 {
                     (props.product.photo) &&
                     <ProductImageBlock 
-                        image={props.product.photo[0].url}
+                        image={image}
                         name={props.product.name}
                     />
                 }

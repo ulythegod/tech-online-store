@@ -3,25 +3,45 @@ import styles from './addToCartPrices.module.scss';
 import StoreButton from "components/Buttons/StoreButton";
 import { ReactComponent as PayPal } from '../../images/paypal.svg';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { productAdded, decreaseAmount, changeAmount, selectAllProductsIds } from 'features/product-card/productCardSlice';
+import { RootState } from 'store';
+import { selectProductsByIds } from "features/products/productsSlice";
+import { Product } from "CustomTypes";
+
+
 type Props = {
-    productPrice: number
+    productPrice: number,
+    productId: number
 }
 
 function AddToCartPrices(props: Props) {
-    const [amount, setAmount] = useState(1);
+    const dispatch = useDispatch();
+
+    const products = useSelector((state: RootState) => selectProductsByIds(state, [props.productId]));
+
+    const productsIds = useSelector((state: RootState) => selectAllProductsIds(state));
+
+    let idsCounts: number[] = productsIds.reduce(function(stack, value) {
+        return stack[value] ? stack[value]++ : stack[value] = 1, stack;
+    }, {});
+
+    const subtotalValues: number[] = products.map((product: Product, id: number) => {
+        return Number(product.price) * idsCounts[product.id];
+    });
 
     function handleAmountIncrease() {        
-        setAmount(amount + 1);
+        dispatch(productAdded(props.productId))
     }
 
     function handleAmountDecrease() {
-        if (amount > 0) {
-           setAmount(amount - 1); 
-        }        
+        dispatch(decreaseAmount({productId: props.productId, quantity: quantity}))        
     }
 
     function handleAmountChange(event: any) {
-        setAmount(Number(event.target.value));        
+        event.preventDefault();
+
+        dispatch(changeAmount({productId: props.productId, quantity: Number(event.target.value)}))        
     }
 
     return (

@@ -39,8 +39,7 @@ import banner from '../../images/filters-banner.png';
 
 function Catalog() {
     const { categoryId } = useParams();
-    const category = useSelector((state: RootState) => selectCategoryById(state, Number(categoryId)));
-    const categoriesIds = useSelector((state: RootState) => selectCategoriesIds(state, Number(categoryId)));
+    const category = useSelector((state: RootState) => selectCategoryById(state, Number(categoryId)));    
     const prices = useSelector((state: RootState) => selectAllPrices(state));
     const [filtersAmount, setFiltersAmount] = useState(0);  
 
@@ -52,7 +51,7 @@ function Catalog() {
         name: "",
         sortField: "",
         currentPage: 1,
-        perPageItems: 10
+        perPageItems: 5
     });
 
     const [appliedFilters, setAppliedFilters] = useState<FillersInterface>({
@@ -63,8 +62,28 @@ function Catalog() {
         name: "",
         sortField: "",
         currentPage: 1,
-        perPageItems: 10
+        perPageItems: 5
     });
+
+    useEffect(() => {
+        setFilters({
+            ...filters,
+            defaultCategoriesIds: [Number(categoryId)],
+            name: "",
+            sortField: "",
+            currentPage: 1,
+            perPageItems: 5
+        });
+
+        setAppliedFilters({
+            ...appliedFilters,
+            defaultCategoriesIds: [Number(categoryId)],
+            name: "",
+            sortField: "",
+            currentPage: 1,
+            perPageItems: 5
+        })
+    }, [categoryId])
     
     function handleCategorySelect(event: any, categoryId: number) {
         event.preventDefault();        
@@ -215,12 +234,14 @@ function Catalog() {
         if (element.value) {
             setFilters({
                 ...filters,
-                perPageItems: element.value
+                perPageItems: element.value,
+                currentPage: 1
             })
 
             setAppliedFilters({
                 ...appliedFilters,
-                perPageItems: element.value
+                perPageItems: element.value,
+                currentPage: 1
             })
         } 
     }
@@ -253,6 +274,7 @@ function Catalog() {
     }    
     
     const productsResult = useSelector((state: RootState) => perPageProductsSelector(state, appliedFilters));
+    
     const products = productsResult.products;
 
     let productsItems: any [] = [];    

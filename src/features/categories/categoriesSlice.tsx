@@ -89,7 +89,7 @@ export const selectCategoriesProductsAmount = (state: RootState, categoriesIds: 
 }
 
 export const allChildCategoriesSelector = createSelector(
-    (state: RootState, filter: FillersInterface) => {
+    (state: RootState, filter: FillersInterface) => {        
         if (state.categories.categories.length > 0) {
             let categoriesIds: number[] = [];
             let category: Category | undefined = undefined;
