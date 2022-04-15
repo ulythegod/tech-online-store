@@ -30,9 +30,12 @@ describe('my test', () => {
             screen.getByTestId("main-top-menu")
         ).toBeInTheDocument();
 
-        expect(
-            screen.getByTestId("top-menu-item")
-        ).toBeInTheDocument();
+        await waitFor(async () => screen.getAllByTestId("top-menu-item"));
+        await waitFor(async () => screen.getAllByTestId("add-to-basket"))
+
+        // expect(
+        //     screen.getByTestId("top-menu-item")
+        // ).toBeInTheDocument();
 
         // expect(
         //     await screen.findByText(/test test test/i)

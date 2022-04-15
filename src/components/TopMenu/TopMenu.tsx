@@ -21,7 +21,7 @@ function TopMenu() {
         setIsOpenSearchPannel(prevIsOpenSearchPannel => !prevIsOpenSearchPannel);
     }
 
-    let categories = useSelector((state: RootState) => selectParentCategories(state));    
+    let categories = useSelector((state: RootState) => selectParentCategories(state));
 
     return (
         <div className={styles["header-navigation-block"]} data-testid="header-navigation-block">
