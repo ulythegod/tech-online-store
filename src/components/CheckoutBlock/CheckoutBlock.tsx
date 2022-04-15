@@ -7,9 +7,7 @@ function CheckoutBlock() {
     return (
         <div className={`${styles["checkout-block"]}`}>
             <CheckoutForm />
-            <OrderSummary 
-                amount={2}
-            />
+            <OrderSummary />
         </div>
     )
 }

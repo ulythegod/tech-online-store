@@ -28,6 +28,12 @@ function CardSummaryForm(props: Props) {
         }
     }
 
+    function handleMovingToСheckout(event: any) {
+        event.preventDefault();
+
+        window.location.assign('/checkout');
+    }
+
     return (
         <div className={`${styles["card-summary"]}`}>
             <form action="#" className={`${styles["summary-form"]}`}>
@@ -121,6 +127,7 @@ function CardSummaryForm(props: Props) {
                     <StoreButton 
                         style="blue-button"
                         content={"Proceed to Checkout"}
+                        buttonAction={(event: any) => handleMovingToСheckout(event)}
                     />
                     <StoreButton 
                         style="yellow-button-general"

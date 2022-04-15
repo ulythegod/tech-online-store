@@ -70,6 +70,10 @@ function TopMenuBasket() {
         dispatch(productRemoved(productId))
     }
 
+    function handleMovingToCard() {
+        window.location.assign('/shopping-card');
+    }
+
     const productsIds = useSelector((state: RootState) => selectAllProductsIds(state))
 
     let productsIdsWithoutDoubles: number[] = productsIds.filter((item, index) => {
@@ -133,6 +137,7 @@ function TopMenuBasket() {
                             <StoreButton 
                                 style="light-button"
                                 content={"View or Edit Your Cart"}
+                                buttonAction={handleMovingToCard}
                             />
                         </div>
                         <div className="basket-list">

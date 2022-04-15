@@ -1,31 +1,53 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import styles from './orderSummary.module.scss';
 import SummaryItem from 'components/CheckoutBlock/SummaryItem';
 import image1 from '../../images/summary1.png';
 import image2 from '../../images/summary2.png';
 
-type Props = {
-    amount: number
-}
+import { useSelector } from 'react-redux';
+import { RootState } from 'store';
+import { selectAllProductsIds } from 'features/product-card/productCardSlice';
+import { selectProductsByIds } from 'features/products/productsSlice';
 
-function OrderSummary(props: Props) {
+import { Product } from '../../CustomTypes';
+
+function OrderSummary() {
+    const productsIds = useSelector((state: RootState) => selectAllProductsIds(state));    
+
+    let productsIdsWithoutDoubles: number[] = productsIds.filter((item, index) => {
+        return productsIds.indexOf(item) === index
+    });
+
+    let idsCounts: number[] = productsIds.reduce(function(stack, value) {
+        return stack[value] ? stack[value]++ : stack[value] = 1, stack;
+    }, {});
+
+    const products = useSelector((state: RootState) => selectProductsByIds(state, productsIdsWithoutDoubles));
+
+    let subtotalValues: number[] = [];
+    products.forEach((product: Product, id: number) => {
+        subtotalValues[product.id] = Number(product.price) * idsCounts[product.id];
+    });
+
+    const summaryItems: ReactElement<any, any>[] = products.map((product: Product, id: number) => {
+        return (
+            <SummaryItem
+                key={product.id}
+                id={product.id}
+                amount={idsCounts[product.id]}
+                price={subtotalValues[product.id]}
+                name={product.name}
+                image={product.photo[0].url}
+            />
+        )
+    });
+
     return (
         <div className={`${styles["order-summary"]}`}>
             <span className={`${styles["summary-title"]}`}>Order Summary</span>
-            <a className={`${styles["summary-link"]}`} href="#">{props.amount} Items in Cart</a>
+            <a className={`${styles["summary-link"]}`} href="#">{products.length} Items in Cart</a>
             <div className={`${styles["summary-items"]}`}>
-                <SummaryItem
-                    amount={1}
-                    price={3799.00}
-                    name="MSI MEG Trident X 10SD-1012AU Intel i7 10700K, 2070 SUPER..."
-                    image={image1}
-                />
-                <SummaryItem
-                    amount={1}
-                    price={3799.00}
-                    name="MSI MEG Trident X 10SD-1012AU Intel i7 10700K, 2070 SUPER..."
-                    image={image2}
-                />
+                {summaryItems}
             </div>
         </div>
     );

@@ -3,7 +3,7 @@ import styles from './card.module.scss';
 import CardLists from './CardLists';
 import CardSummaryForm from './CardSummaryForm';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState } from 'store';
 import { selectAllProductsIds } from 'features/product-card/productCardSlice';
 import { selectProductsByIds } from 'features/products/productsSlice';
@@ -11,8 +11,6 @@ import { selectProductsByIds } from 'features/products/productsSlice';
 import { Product } from '../../CustomTypes';
 
 function Card() {
-    const dispatch = useDispatch();
-
     const productsIds = useSelector((state: RootState) => selectAllProductsIds(state));    
 
     let productsIdsWithoutDoubles: number[] = productsIds.filter((item, index) => {
