@@ -29,12 +29,12 @@ function TopMenuNavagation(props: Props) {
 
     return (
         <>
-            <ul className={!props.isOpenSearchPannel ? `${style["main-top-menu"]}` : `${classNames(style["main-top-menu"], style["main-top-menu-closed"])}`}>
+            <ul className={!props.isOpenSearchPannel ? style["main-top-menu"] : classNames(style["main-top-menu"], style["main-top-menu-closed"])}>
                 <li>
                     <Link to="/"><Logo /></Link>
                 </li>
                 {menuItems}
-                <li className={props.isOpenSearchPannel ? `${style["hidden"]}` : ''}>
+                <li className={props.isOpenSearchPannel ? style["hidden"] : ''}>
                     <StoreButton
                         style="light-button"
                         content='Our Deals'

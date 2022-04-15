@@ -10,14 +10,14 @@ type Props = {
 
 function AboutUsLeft(props: Props) {
     return (
-        <section className={`${styles["about-us-left"]}`}>
-            <div className={`${styles["image"]}`}>
+        <section className={styles["about-us-left"]}>
+            <div className={styles["image"]}>
                 <img src={props.image} alt={props.title}/>
             </div>
-            <div className={`${styles["description"]}`}>
+            <div className={styles["description"]}>
                 {
                     props.icon && 
-                    <div className={`${styles["description-sign"]}`}>
+                    <div className={styles["description-sign"]}>
                         <img src={props.icon} alt={props.title}/>
                     </div>
                 }

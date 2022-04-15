@@ -38,26 +38,26 @@ function MobileMenu(props: Props) {
     return (
         <>
             <button 
-                className={`${styles["open-menu-button"]}`}
+                className={styles["open-menu-button"]}
                 onClick={() => handleMenuOpening()}
             >
                 <OpenMenuMobile />
             </button>
-            <div className={isOpen ? `${styles["mobile-menu"]}` : `${styles["hidden"]}`}>
-                <ul className={`${styles["items-list"]}`}>
-                    <li className={`${styles["menu-logo"]}`}>
+            <div className={isOpen ? styles["mobile-menu"] : styles["hidden"]}>
+                <ul className={styles["items-list"]}>
+                    <li className={styles["menu-logo"]}>
                         <Link to="/">
                             <MenuLogo />
                         </Link>
                         <button
-                            className={`${styles["close-menu-button"]}`}
+                            className={styles["close-menu-button"]}
                             onClick={() => handleMenuOpening()}
                         >
                             <CloseMenu />
                         </button>
                     </li>
                     {menuItems}
-                    <li className={`${styles["menu-button"]}`}>
+                    <li className={styles["menu-button"]}>
                         <StoreButton
                             style="light-button"
                             content='Our Deals'

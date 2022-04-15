@@ -8,7 +8,7 @@ type Props = {
 
 function CatalogFilterBanner(props: Props) {
     return (
-        <a className={`${styles["banner"]}`} href={props.link}>
+        <a className={styles["banner"]} href={props.link}>
             <img src={props.image} alt="the icon series"/>
         </a>
     );

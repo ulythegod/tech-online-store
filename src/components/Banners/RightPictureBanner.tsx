@@ -10,20 +10,20 @@ type Props = {
 
 function AboutUsRight(props: Props) {
     return (
-        <section className={`${styles["about-us-right"]}`}>
-            <div className={`${styles["description"]}`}>
+        <section className={styles["about-us-right"]}>
+            <div className={styles["description"]}>
                 {
                     props.icon && 
-                    <div className={`${styles["description-sign"]}`}>
+                    <div className={styles["description-sign"]}>
                         <img src={props.icon} alt={props.title}/>
                     </div>
                 }
                 <span>{props.title}</span>
-                <div className={`${styles["description-text"]}`}>
+                <div className={styles["description-text"]}>
                     {props.description}
                 </div>
             </div>
-            <div className={`${styles["image"]}`}>
+            <div className={styles["image"]}>
                 <img src={props.image} alt={props.title}/>
             </div>
         </section>

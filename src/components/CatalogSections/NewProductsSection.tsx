@@ -70,14 +70,14 @@ function ProductSection(props: any): any {
 
     return (
         <section className="new-products-section">
-            <div className={`${styles["new-products"]}`}>
-                <div className={`${styles["section-title"]}`}>
+            <div className={styles["new-products"]}>
+                <div className={styles["section-title"]}>
                     <h3>{props.name}</h3>
                     <a href="#">See All New Products</a>
                 </div>
-                <div className={`${styles["new-products-list"]}`}>
-                    <div className={`${styles["items"]}`}> 
-                        <div className={`${styles["items-overflow"]}`} ref={itemsRef}>
+                <div className={styles["new-products-list"]}>
+                    <div className={styles["items"]}> 
+                        <div className={styles["items-overflow"]} ref={itemsRef}>
                             {productsItems}
                         </div>
                     </div>

@@ -6,8 +6,8 @@ import banner from '../../images/banner.png';
 function BannersSlider() {
     return (
         <section className="main-banners-section">
-            <div className={`${styles["main-banners"]}`}>
-                <img className={`${styles["banner"]}`} src={banner} alt="banner main" />
+            <div className={styles["main-banners"]}>
+                <img className={styles["banner"]} src={banner} alt="banner main" />
                 <TurnOverButton
                     type="button-left"
                 />

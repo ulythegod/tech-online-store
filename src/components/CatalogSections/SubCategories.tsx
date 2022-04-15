@@ -13,7 +13,7 @@ function SubCategories(props: Props) {
         return (
             <li 
                 key={category.id}
-                className={(id === props.activeSubCategory) ? `${styles["active"]}`: ``}
+                className={(id === props.activeSubCategory) ? styles["active"]: ``}
             >
                 <a 
                     href="#"
@@ -26,7 +26,7 @@ function SubCategories(props: Props) {
     });
 
     return (
-        <ul className={`${styles["products-list-menu"]}`}>
+        <ul className={styles["products-list-menu"]}>
             {categoriesItems}
         </ul>
     )

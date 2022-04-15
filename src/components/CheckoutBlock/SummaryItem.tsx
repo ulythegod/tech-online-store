@@ -12,11 +12,11 @@ type Props = {
 
 function SummaryItem(props: Props) {
     return (
-        <div className={`${styles["summary-item"]}`}>
+        <div className={styles["summary-item"]}>
             <Link to={`/product/${props.id}`}><img src={props.image} alt=""/></Link>
-            <div className={`${styles["item-info"]}`}>
-                <span className={`${styles["info-text"]}`}>{props.name}</span>
-                <span className={`${styles["info-price"]}`}>Qty <span>{props.amount}</span> <span>${props.price}</span></span>
+            <div className={styles["item-info"]}>
+                <span className={styles["info-text"]}>{props.name}</span>
+                <span className={styles["info-price"]}>Qty <span>{props.amount}</span> <span>${props.price}</span></span>
             </div>
         </div>
     );

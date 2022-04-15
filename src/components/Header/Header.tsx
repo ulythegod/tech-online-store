@@ -7,16 +7,16 @@ import { Link } from 'react-router-dom';
 function Header() {
     return (
         <header>
-            <div className={`${styles["header"]}`}>
+            <div className={styles["header"]}>
                 <HeaderTime />
-                <p className={`${styles["header-contact"]}`}>
+                <p className={styles["header-contact"]}>
                     Visit our showroom in 1234 Street Adress City Address, 1234 <Link to="/contact-us">Contact Us</Link>
                 </p>
                 <HeaderContacts />
             </div>
-            <div className={`${styles["header-mobile"]}`}>
+            <div className={styles["header-mobile"]}>
                 <HeaderTime />
-                <p className={`${styles["header-contact-mobile"]}`}>
+                <p className={styles["header-contact-mobile"]}>
                     <Link to="/contact-us">Contact Us</Link>
                 </p>
             </div>

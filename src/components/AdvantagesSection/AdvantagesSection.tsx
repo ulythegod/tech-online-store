@@ -18,8 +18,8 @@ function AdvantagesSection(props: Props) {
     }
 
     return (
-        <section className={`${classNames(styles["advantages-section"], styles[backgroundClass])}`}>
-            <div className={`${styles["advantages-list"]}`}>
+        <section className={classNames(styles["advantages-section"], styles[backgroundClass])}>
+            <div className={styles["advantages-list"]}>
                 <AdvantageItem
                     image={Support}
                     name={"Product Support"}

@@ -9,8 +9,8 @@ type Props = {
 
 function Breadcrumbs(props: Props) {    
     return (
-        <nav className={`${styles["breadcrumbs-navigation"]}`}>
-            <ul className={`${styles["breadcrumbs"]}`}>
+        <nav className={styles["breadcrumbs-navigation"]}>
+            <ul className={styles["breadcrumbs"]}>
                 <li><a href="/">Home</a></li>
                 {
                     (props.category) ?

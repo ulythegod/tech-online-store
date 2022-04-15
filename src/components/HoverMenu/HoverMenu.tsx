@@ -42,10 +42,10 @@ function HoverMenu(props: Props) {
     })
 
     return (
-        <div className={`${styles["hover-menu"]}`}>
-            <div className={`${styles["menu-top-block"]}`}>
+        <div className={styles["hover-menu"]}>
+            <div className={styles["menu-top-block"]}>
                 <MultilevelMenu subCategories={props.subCategories} />
-                <div className={`${styles["menu-products-list"]}`}>
+                <div className={styles["menu-products-list"]}>
                     {productsItems}
                 </div>
             </div>

@@ -3,10 +3,10 @@ import styles from './dashboardMenu.module.scss';
 
 function DashboardMenu() {
     return (
-        <ul className={`${styles["menu"]}`}>
-            <li className={`${styles["menu-block"]}`}>
+        <ul className={styles["menu"]}>
+            <li className={styles["menu-block"]}>
                 <ul>
-                    <li className={`${styles["active"]}`}>
+                    <li className={styles["active"]}>
                         <a href="#">Account Dashboard</a>
                     </li>
                     <li>
@@ -20,7 +20,7 @@ function DashboardMenu() {
                     </li>
                 </ul>
             </li>
-            <li className={`${styles["menu-block"]}`}>
+            <li className={styles["menu-block"]}>
                 <ul>
                     <li>
                         <a href="#">My Downloadable Products</a>
@@ -36,7 +36,7 @@ function DashboardMenu() {
                     </li>
                 </ul>
             </li>
-            <li className={`${styles["menu-block"]}`}>
+            <li className={styles["menu-block"]}>
                 <ul>
                     <li>
                         <a href="#">My Product Reviews</a>

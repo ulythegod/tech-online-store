@@ -44,35 +44,35 @@ function CatlogItemHorizontal(props: Props) {
     }
 
     return (
-        <div className={`${styles["product-preview"]}`}>
-            <p className={`${classNames(styles["product-status"], styles[props.status])}`}>
+        <div className={styles["product-preview"]}>
+            <p className={classNames(styles["product-status"], styles[props.status])}>
                 {
                     (props.status == "in-stock") ? <InStock /> : 
                     (props.status == "check-availability") ? <CheckAvailability /> : 
                     ""
                 }
-                <span className={`${styles["status-text"]}`}>{statusText}</span>
+                <span className={styles["status-text"]}>{statusText}</span>
             </p>
-            <div className={`${styles["product-info"]}`}>
-                <Link className={`${styles["product-image"]}`} to={`/product/${props.id}`}><img src={props.productImage} alt="Product" /></Link>
-                <div className={`${styles["about-product"]}`}>
-                    <span className={`${styles["product-model"]}`}>{props.model}</span>
-                    <a className={`${styles["product-title"]}`}>
+            <div className={styles["product-info"]}>
+                <Link className={styles["product-image"]} to={`/product/${props.id}`}><img src={props.productImage} alt="Product" /></Link>
+                <div className={styles["about-product"]}>
+                    <span className={styles["product-model"]}>{props.model}</span>
+                    <a className={styles["product-title"]}>
                         {props.name}
                     </a>
-                    <div className={`${styles["product-prices"]}`}>
-                        <span className={`${styles["product-price"]}`}>${props.price}</span>
-                        <span className={`${styles["product-discount"]}`}>${props.discount}</span>
+                    <div className={styles["product-prices"]}>
+                        <span className={styles["product-price"]}>${props.price}</span>
+                        <span className={styles["product-discount"]}>${props.discount}</span>
                     </div>
                 </div>
-                <div className={`${styles["features"]}`}>
+                <div className={styles["features"]}>
                     <table>
                         <tbody>
                             {
                                 props.specs.map((specsItem: any, id: number) => {
                                     return (
                                         <tr
-                                            className={(id % 2 === 0) ? `${styles["dark"]}` : ``}
+                                            className={(id % 2 === 0) ? styles["dark"] : ``}
                                             key={id}
                                         >
                                             <td>{specsItem.spec}</td>
@@ -85,8 +85,8 @@ function CatlogItemHorizontal(props: Props) {
                     </table>
                 </div>
             </div>
-            <div className={`${styles["product-bottom"]}`}>
-                <div className={`${styles["product-rating"]}`}>
+            <div className={styles["product-bottom"]}>
+                <div className={styles["product-rating"]}>
                         <div>
                             <RatingButton 
                                 isFilled={true}
@@ -106,7 +106,7 @@ function CatlogItemHorizontal(props: Props) {
                         </div>
                     <a>Reviews ({props.reviewsCount})</a>
                 </div>
-                <div className={`${styles["product-button"]}`}>
+                <div className={styles["product-button"]}>
                     <StoreButton 
                         style='light-button'
                         content={
@@ -118,7 +118,7 @@ function CatlogItemHorizontal(props: Props) {
                         buttonAction={handleAddToCard}
                     />  
                 </div>                    
-                <div className={`${styles["product-buttons"]}`}>
+                <div className={styles["product-buttons"]}>
                     <RoundButton 
                         content={<ProductMail />}
                     />

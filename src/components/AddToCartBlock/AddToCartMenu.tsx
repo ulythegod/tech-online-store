@@ -8,12 +8,12 @@ type Props = {
 
 function AddToCartMenu(props: Props) {
     return (
-        <nav className={`${styles["navigation-block"]}`}>
-            <div className={`${styles["product-menu"]}`}>
+        <nav className={styles["navigation-block"]}>
+            <div className={styles["product-menu"]}>
                 <ul>
                     <li>
                         <a 
-                            className={(props.activeInfoBlock === 'ProductInfoBlock') ? `${styles["active"]}` : ''}
+                            className={(props.activeInfoBlock === 'ProductInfoBlock') ? styles["active"] : ''}
                             href="#ProductInfoBlock"
                             onClick={(e) => props.handleInfoBlockChange(e)}
                         >
@@ -22,7 +22,7 @@ function AddToCartMenu(props: Props) {
                     </li>
                     <li>
                         <a 
-                            className={(props.activeInfoBlock === 'ProductDetailes') ? `${styles["active"]}` : ''}
+                            className={(props.activeInfoBlock === 'ProductDetailes') ? styles["active"] : ''}
                             href="#ProductDetailes"
                             onClick={(e) => props.handleInfoBlockChange(e)}
                         >
@@ -31,7 +31,7 @@ function AddToCartMenu(props: Props) {
                     </li>
                     <li>
                         <a 
-                            className={(props.activeInfoBlock === 'ProductSpecs') ? `${styles["active"]}` : ''}
+                            className={(props.activeInfoBlock === 'ProductSpecs') ? styles["active"] : ''}
                             href="#ProductSpecs"
                             onClick={(e) => props.handleInfoBlockChange(e)}
                         >

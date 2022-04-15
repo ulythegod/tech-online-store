@@ -8,7 +8,7 @@ import americanExpress from '../../images/american-express.png';
 
 function FooterCards() {
     return (
-        <div className={`${styles["footer-cards"]}`}>
+        <div className={styles["footer-cards"]}>
             <a href="#"><img src={payPal} alt="paypal" /></a>
             <a href="#"><img src={visa} alt="visa" /></a>
             <a href="#"><img src={maestro} alt="maestro" /></a>

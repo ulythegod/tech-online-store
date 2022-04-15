@@ -13,7 +13,7 @@ function StoreButton(props: Props) {
     return (
         <button 
             className={
-                (props.showOnMobile === false) ? `${classNames(styles[props.style], styles["hidden"])}` : `${styles[props.style]}`
+                (props.showOnMobile === false) ? classNames(styles[props.style], styles["hidden"]) : styles[props.style]
             }
             onClick={(event: any) => props.buttonAction?.(event)}
         >

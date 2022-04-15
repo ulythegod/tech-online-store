@@ -14,8 +14,8 @@ type Props = {
 
 function ProductImageBlock(props: Props) {
     return (
-        <div className={`${styles["product-image-block"]}`}>
-            <div className={`${styles["product-buttons"]}`}>
+        <div className={styles["product-image-block"]}>
+            <div className={styles["product-buttons"]}>
                 <RoundButton 
                     content={<ProductMail />}
                 />
@@ -26,18 +26,18 @@ function ProductImageBlock(props: Props) {
                     content={<ProductFav />}
                 />
             </div>
-            <div className={`${styles["product-image"]}`}>
+            <div className={styles["product-image"]}>
                 <img src={props.image} alt={props.name} />
             </div>
-            <div className={`${styles["zip-info"]}`}>
-                <ZipLogo className={`${styles["zip-logo"]}`} />
-                <span className={`${styles["zip-line"]}`}></span>
-                <span className={`${styles["zip-text"]}`}>
+            <div className={styles["zip-info"]}>
+                <ZipLogo className={styles["zip-logo"]} />
+                <span className={styles["zip-line"]}></span>
+                <span className={styles["zip-text"]}>
                     own it now, up to 6 months interest free <a href="#">learn more</a>
                 </span>
             </div>
-            <div className={`${styles["product-scrolling"]}`} >
-                <PaginationButton className={`${styles["filled"]}`} />
+            <div className={styles["product-scrolling"]} >
+                <PaginationButton className={styles["filled"]} />
                 <PaginationButton />
                 <PaginationButton />
             </div>

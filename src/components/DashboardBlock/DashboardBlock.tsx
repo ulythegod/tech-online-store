@@ -7,13 +7,13 @@ import CompareProducts from "components/CompareProducts/CompareProducts";
 
 function DashboardBlock() {
     return (
-        <div className={`${styles["dashboard-block"]}`}>
-            <div className={`${styles["dashboard-sidebar"]}`}>
+        <div className={styles["dashboard-block"]}>
+            <div className={styles["dashboard-sidebar"]}>
                 <DashboardMenu />
                 <CompareProducts />
                 <WishList />
             </div>
-            <div className={`${styles["dashboard-information"]}`}>
+            <div className={styles["dashboard-information"]}>
                 <DashboardInfo 
                     title={"Account Information"}
                 />

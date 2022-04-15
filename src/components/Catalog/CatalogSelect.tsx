@@ -23,15 +23,15 @@ function CatalogSelect(props: Props) {
 
     if (props.showOnMobile === false) {
         if (selectLabel === "Show") {
-            itemClasses = `${classNames(styles["catalog-select"], styles["hidden"], styles["hidden-mobile"])}`; 
+            itemClasses = classNames(styles["catalog-select"], styles["hidden"], styles["hidden-mobile"]); 
         } else {
-            itemClasses = `${classNames(styles["hidden"], styles["catalog-select"])}`;
+            itemClasses = classNames(styles["hidden"], styles["catalog-select"]);
         }
     } else {
         if (selectLabel === "Show") {
-            itemClasses = `${classNames(styles["catalog-select"], styles["hidden-mobile"])}`; 
+            itemClasses = classNames(styles["catalog-select"], styles["hidden-mobile"]); 
         } else {
-            itemClasses = `${styles["catalog-select"]}`;
+            itemClasses = styles["catalog-select"];
         }
     }
 

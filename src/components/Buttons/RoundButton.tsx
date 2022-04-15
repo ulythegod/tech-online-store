@@ -9,7 +9,7 @@ type Props = {
 
 function RoundButton(props: Props) {
     return (
-        <button className={`${styles["round-button"]}`} onClick={(event: any) => props.buttonAction?.(event, props.itemId)}>
+        <button className={styles["round-button"]} onClick={(event: any) => props.buttonAction?.(event, props.itemId)}>
             {props.content}
         </button>
     );

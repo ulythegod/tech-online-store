@@ -33,7 +33,7 @@ function Card() {
     );
 
     return (
-        <div className={`${styles["shopping-card-block"]}`}>
+        <div className={styles["shopping-card-block"]}>
             <CardLists 
                 products={products}
                 idsCounts={idsCounts}

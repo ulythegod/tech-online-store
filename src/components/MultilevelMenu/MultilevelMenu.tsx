@@ -20,7 +20,7 @@ function MultilevelMenu(props: Props) {
     })
 
     return (
-        <ul className={`${styles["menu-main-list"]}`}>
+        <ul className={styles["menu-main-list"]}>
             {menuItems}
         </ul>
     )

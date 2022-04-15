@@ -61,18 +61,18 @@ function ProductsSection(props: Props) {
     })
 
     return (
-        <section className={`${styles["main-products-list-section"]}`}>
-            <div className={`${styles["products-list"]}`}>
+        <section className={styles["main-products-list-section"]}>
+            <div className={styles["products-list"]}>
                 {subCategoriesList}
-                <div className={`${styles["products"]}`}>
-                    <div className={`${styles["products-list-common"]}`}>
-                        <img className={`${styles["section-image"]}`} src={props.banner} alt="custom-builds" />
-                        <div className={`${styles["section-title"]}`}>
+                <div className={styles["products"]}>
+                    <div className={styles["products-list-common"]}>
+                        <img className={styles["section-image"]} src={props.banner} alt="custom-builds" />
+                        <div className={styles["section-title"]}>
                             <span>{props.name}</span>
                             <Link to={`/catalog/${props.id}`}>See All Products</Link>
                         </div>
                     </div>
-                    <div className={`${styles["items"]}`}>
+                    <div className={styles["items"]}>
                         {productsItems}
                     </div>
                 </div>

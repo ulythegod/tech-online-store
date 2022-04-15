@@ -8,8 +8,8 @@ type Props = {
 
 function AddToCart(props: Props) {
     return (
-        <section className={`${styles["add-to-card-section"]}`}>
-            <div className={`${styles["add-to-card-block"]}`}>
+        <section className={styles["add-to-card-section"]}>
+            <div className={styles["add-to-card-block"]}>
                 {props.renderLeft}
                 {props.renderRight}
             </div>

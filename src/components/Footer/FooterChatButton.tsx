@@ -4,7 +4,7 @@ import chatButton from '../../images/chat-button.png';
 
 function FooterChatButton() {
     return (
-        <button className={`${styles["chat-button"]}`}>
+        <button className={styles["chat-button"]}>
             <img src={chatButton} alt="" />
         </button>
     );

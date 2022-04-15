@@ -70,7 +70,7 @@ function CatalogFilter(props: Props) {
                         to={`/catalog/${category.id}`}
                         onClick={(event: any) => props.handleCategorySelect(event, category.id)}
                         className={
-                            props.appliedFilters.categoriesIds.includes(category.id) ? `${styles["active"]}` : ``
+                            props.appliedFilters.categoriesIds.includes(category.id) ? styles["active"] : ``
                         }                   
                     >
                         {category.name}
@@ -100,7 +100,7 @@ function CatalogFilter(props: Props) {
                     href="#"
                     onClick={(event: any) => props.handlePriceSelect(event, price)}
                     className={
-                        props.appliedFilters.prices.includes(price) ? `${styles["active"]}` : ``
+                        props.appliedFilters.prices.includes(price) ? styles["active"] : ``
                     } 
                 >
                     {price.name}
@@ -122,8 +122,8 @@ function CatalogFilter(props: Props) {
     
     return (
         <>
-            <div className={`${styles["filter-buttons-mobile"]}`}>
-                <div className={`${styles["filter-btn-mobile"]}`}>
+            <div className={styles["filter-buttons-mobile"]}>
+                <div className={styles["filter-btn-mobile"]}>
                     <button
                         onClick={handleFilterOpen}
                     >
@@ -132,11 +132,11 @@ function CatalogFilter(props: Props) {
                 </div>
                 {props.sortPosition}
             </div>
-            <div className={isOpenFilter ? `${styles["catalog-filter-block-mobile"]}` : `${styles["catalog-filter-block"]}`}>
-                <Link className={`${styles["filter-title-link"]}`} to={backLink}>Back</Link>
-                <div className={`${styles["filters"]}`}>
-                    <span className={`${styles["desktop-title"]}`}>Filters</span>
-                    <div className={`${styles["mobile-title"]}`}>
+            <div className={isOpenFilter ? styles["catalog-filter-block-mobile"] : styles["catalog-filter-block"]}>
+                <Link className={styles["filter-title-link"]} to={backLink}>Back</Link>
+                <div className={styles["filters"]}>
+                    <span className={styles["desktop-title"]}>Filters</span>
+                    <div className={styles["mobile-title"]}>
                         Filter by
                         <a onClick={handleFilterOpen} href="#"><CloseMenu /></a>
                     </div>
@@ -146,7 +146,7 @@ function CatalogFilter(props: Props) {
                         showOnMobile={false}
                         buttonAction={props.handleClearFilters}
                     />
-                    <ul className={`${styles["filter-items"]}`}>
+                    <ul className={styles["filter-items"]}>
                         {
                             (categoriesFilter.length > 0) &&
                             <FilterItem 
@@ -211,7 +211,7 @@ function CatalogFilter(props: Props) {
                     />
                 </div>
                 <FilterBrands />
-                <div className={`${styles["filters-rest"]}`}>
+                <div className={styles["filters-rest"]}>
                     <CompareProducts />
                     <WishList />
                     <CatalogFilterBanner 

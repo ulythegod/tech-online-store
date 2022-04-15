@@ -8,10 +8,10 @@ type Props = {
 
 function ReviewItem(props: Props) {
     return (
-        <div className={`${styles["reviews-item"]}`}>
-            <div className={`${styles["reviews-quotes-sign"]}`}>‘’</div>
-            <div className={`${styles["review-content"]}`}>
-                <p className={`${styles["review-text"]}`}>
+        <div className={styles["reviews-item"]}>
+            <div className={styles["reviews-quotes-sign"]}>‘’</div>
+            <div className={styles["review-content"]}>
+                <p className={styles["review-text"]}>
                     {props.text}
                 </p>
                 <span>- {props.author}</span>

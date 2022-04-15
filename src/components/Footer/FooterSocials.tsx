@@ -4,7 +4,7 @@ import SocialsLinks from 'components/Buttons/SocialsLinks';
 
 function FooterSocials() {
     return (
-        <div className={`${styles["footer-socials"]}`}>
+        <div className={styles["footer-socials"]}>
             <SocialsLinks />
         </div>
     );

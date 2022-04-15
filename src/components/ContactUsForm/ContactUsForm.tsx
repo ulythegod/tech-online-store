@@ -8,34 +8,34 @@ function ContactUsForm() {
     const emailMask = "/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/";
 
     return (
-        <div className={`${styles["contact-us-block"]}`}>
-            <div className={`${styles["contact-us-form-block"]}`}>
-                <p className={`${styles["form-description"]}`}>
+        <div className={styles["contact-us-block"]}>
+            <div className={styles["contact-us-form-block"]}>
+                <p className={styles["form-description"]}>
                     We love hearing from you, our Shop customers.<br />
                     Please contact us and we will make sure to get back to you as soon as we possibly can.
                 </p>
-                <form action="#" className={`${styles["contact-us-form"]}`}>
-                    <div className={`${styles["input-items"]}`}>
-                        <div className={`${styles["form-item"]}`}>
+                <form action="#" className={styles["contact-us-form"]}>
+                    <div className={styles["input-items"]}>
+                        <div className={styles["form-item"]}>
                             <label>
                                 <span>Your Name <span>*</span></span>
                                 <input type="text" id="name" required placeholder="Your Name" />
                             </label>
                         </div>
-                        <div className={`${styles["form-item"]}`}>
+                        <div className={styles["form-item"]}>
                             <label>
                                 <span>Your Email <span>*</span></span>
                                 <input type={"email"} placeholder="Your Email" pattern={emailMask} />
                             </label>                                
                         </div>
-                        <div className={`${styles["form-item"]}`}>
+                        <div className={styles["form-item"]}>
                             <label>
                                 Your Phone Number
                                 <InputMask mask="+7 (999) 999-99-99" placeholder='Your Phone' />
                             </label>                                
                         </div>
                     </div>
-                    <div className={`${styles["form-item"]}`}>
+                    <div className={styles["form-item"]}>
                         <label>
                             <span>What’s on your mind? <span>*</span></span>
                             <textarea 

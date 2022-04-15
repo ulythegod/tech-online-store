@@ -5,7 +5,7 @@ import OrderSummary from './OrderSummary';
 
 function CheckoutBlock() {
     return (
-        <div className={`${styles["checkout-block"]}`}>
+        <div className={styles["checkout-block"]}>
             <CheckoutForm />
             <OrderSummary />
         </div>

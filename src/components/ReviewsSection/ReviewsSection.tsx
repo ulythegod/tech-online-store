@@ -6,8 +6,8 @@ import { ReactComponent as PaginationButton } from '../../images/pagiantion-butt
 
 function ReviewsSection() {
     return (
-        <section className={`${styles["main-reviews-section"]}`}>
-            <div className={`${styles["reviews-list"]}`}>
+        <section className={styles["main-reviews-section"]}>
+            <div className={styles["reviews-list"]}>
                 <ReviewItem 
                     text={
                         `My first order arrived today in perfect condition.
@@ -19,13 +19,13 @@ function ReviewsSection() {
                     }
                     author={"Tama Brown"}
                 />
-                <div className={`${styles["reviews-bottom"]}`}>
+                <div className={styles["reviews-bottom"]}>
                     <StoreButton 
                         style="light-button"
                         content={"Leave Us A Review"}
                     />
-                    <div className={`${styles["reviews-scrolling"]}`} >
-                        <PaginationButton className={`${styles["filled"]}`} />
+                    <div className={styles["reviews-scrolling"]} >
+                        <PaginationButton className={styles["filled"]} />
                         <PaginationButton />
                         <PaginationButton />
                         <PaginationButton />

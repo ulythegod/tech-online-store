@@ -52,16 +52,16 @@ function MobileMenuItem(props: Props) {
     }
 
     return (
-        <li key={props.id} className={`${styles["menu-link-inner"]}`}>
-            <div className={openSubcategories ? `${styles["main-item-opened"]}` : `${styles["main-item"]}`}>
+        <li key={props.id} className={styles["menu-link-inner"]}>
+            <div className={openSubcategories ? styles["main-item-opened"] : styles["main-item"]}>
                 <a 
                     href="#"
                     onClick={(event: any) => handleOpenSubcategories(event)}
-                    className={openSubcategories ? `` : `${styles["hidden"]}`}
+                    className={openSubcategories ? `` : styles["hidden"]}
                 >
-                    <div className={`${styles["link-arrow-left"]}`}></div>
+                    <div className={styles["link-arrow-left"]}></div>
                 </a> 
-                <Link to={`/catalog/${props.id}`} className={`${styles["item-link"]}`}>
+                <Link to={`/catalog/${props.id}`} className={styles["item-link"]}>
                     {props.name}
                 </Link>
                 {
@@ -70,9 +70,9 @@ function MobileMenuItem(props: Props) {
                         <a 
                             href="#"
                             onClick={(event: any) => handleOpenSubcategories(event)}
-                            className={openSubcategories ? `${styles["hidden"]}` : ``}
+                            className={openSubcategories ? styles["hidden"] : ``}
                         >
-                            <div className={`${styles["link-arrow"]}`}></div>
+                            <div className={styles["link-arrow"]}></div>
                         </a>
                     </> :
                     <></>
@@ -82,7 +82,7 @@ function MobileMenuItem(props: Props) {
             {
                 (subCategories.length > 0) ?
                 <>                   
-                    <ul className={openSubcategories ? `${styles["second-level"]}` : `${styles["hidden"]}`}>
+                    <ul className={openSubcategories ? styles["second-level"] : styles["hidden"]}>
                         {subCategoriesItems}
                     </ul>
                 </> :

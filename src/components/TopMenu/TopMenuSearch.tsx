@@ -14,22 +14,22 @@ function TopMenuSearch(props: Props) {
     return (
         <>
             {props.isOpenSearchPannel && 
-                <div className={`${styles["search-field-block"]}`}>
-                    <div className={`${styles["search-field-with-button"]}`}>
-                        <input className={`${styles["search-field"]}`} type="text" placeholder='Search entiere store here...'/>
-                        <button className={`${classNames(styles["search-icon"], styles["icon-in-field"])}`}>
+                <div className={styles["search-field-block"]}>
+                    <div className={styles["search-field-with-button"]}>
+                        <input className={styles["search-field"]} type="text" placeholder='Search entiere store here...'/>
+                        <button className={classNames(styles["search-icon"], styles["icon-in-field"])}>
                             <SearchOpenIcon />
                         </button> 
                     </div>                    
                     <button 
-                        className={`${styles["search-icon"]}`}
+                        className={styles["search-icon"]}
                         onClick={props.handleOpenSearchPannel}
                     >
                         <SearchCloseIcon />
                     </button>
                 </div>
             }
-            {!props.isOpenSearchPannel && <button onClick={props.handleOpenSearchPannel} className={`${styles["search-icon"]}`}><SearchIcon /></button>}
+            {!props.isOpenSearchPannel && <button onClick={props.handleOpenSearchPannel} className={styles["search-icon"]}><SearchIcon /></button>}
         </>
     );
 }

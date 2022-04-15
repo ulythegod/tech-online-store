@@ -36,33 +36,33 @@ function CardItem(props: Props) {
     }
 
     return (
-        <tr className={`${styles["card-item"]}`}>
-            <td className={`${styles["item-info"]}`}>
-                <Link className={`${styles["product-image"]}`} to={`/product/${props.id}`}><img src={props.image} alt="Product" /></Link>
-                <p className={`${styles["description"]}`}>
+        <tr className={styles["card-item"]}>
+            <td className={styles["item-info"]}>
+                <Link className={styles["product-image"]} to={`/product/${props.id}`}><img src={props.image} alt="Product" /></Link>
+                <p className={styles["description"]}>
                     {props.description}
                 </p>
             </td>
-            <td className={`${styles["item-price"]}`}>
+            <td className={styles["item-price"]}>
                 <span>${props.price}</span>
             </td>
             <td>
-                <div className={`${styles["number"]}`}>
+                <div className={styles["number"]}>
                     <button 
-                        className={`${styles["add-number"]}`}
+                        className={styles["add-number"]}
                         onClick={(event: any) => handleProductAdd(event, props.id)}
                     ></button>
                     <input type="number" value={props.quantity} onChange={(event: any) => handleOnChangeInput(event, props.id)} />
                     <button 
-                        className={`${styles["decrease-number"]}`}
+                        className={styles["decrease-number"]}
                         onClick={(event: any) => handleProductDecrease(event, props.id, props.quantity)}
                     ></button>
                 </div> 
             </td>
-            <td className={`${styles["item-subtotal"]}`}>
+            <td className={styles["item-subtotal"]}>
                 <span>${props.subtotal}</span>
             </td>
-            <td className={`${styles["item-buttons"]}`}>
+            <td className={styles["item-buttons"]}>
                 <RoundButton 
                     content={<DeleteItem />}
                     buttonAction={props.handleProductRemoved}

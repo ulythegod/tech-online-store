@@ -3,7 +3,7 @@ import styles from './compareProducts.module.scss';
 
 function CompareProducts() {
     return (
-        <div className={`${styles["compare-products"]}`}>
+        <div className={styles["compare-products"]}>
             <span>Compare Products</span>
             <p>You have no items to compare.</p>
         </div>

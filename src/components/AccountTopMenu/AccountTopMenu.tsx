@@ -38,12 +38,12 @@ function AccountTopMenu() {
 
     return (
         <>
-            <button className={`${stylesModule["account-block"]}`} ref={setReferenceElement} onClick={displayMenu}>
+            <button className={stylesModule["account-block"]} ref={setReferenceElement} onClick={displayMenu}>
                 <img src={avatar} alt="avatar"/>
             </button>
             {isDisplayMenu &&
                 <div id="popper" ref={setPopperElement} style={styles.popper} {...attributes.popper}>
-                    <div ref={setArrowRef} className={`${stylesModule["arrow"]}`}></div>
+                    <div ref={setArrowRef} className={stylesModule["arrow"]}></div>
                     <MenuList />
                 </div>
             }

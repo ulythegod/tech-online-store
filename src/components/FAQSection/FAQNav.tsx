@@ -3,9 +3,9 @@ import styles from './faqNav.module.scss';
 
 function FAQNav() {
     return (
-        <div className={`${styles["faq-navigation"]}`}>
+        <div className={styles["faq-navigation"]}>
             <ul>
-                <li className={`${styles["active"]}`}>
+                <li className={styles["active"]}>
                     <a className="active" href="#definitions">Definitions & Interpretation</a>
                 </li>
                 <li>

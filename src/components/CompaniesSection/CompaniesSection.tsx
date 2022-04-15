@@ -21,27 +21,27 @@ function CompaniesSection(props: Props) {
     }
 
     return (
-        <section className={`${classNames(styles["main-companies-section"], styles[sectionClass])}`}>
-            <ul className={`${styles["companies-list"]}`}>
-                <li className={`${styles["companies-item"]}`}>
+        <section className={classNames(styles["main-companies-section"], styles[sectionClass])}>
+            <ul className={styles["companies-list"]}>
+                <li className={styles["companies-item"]}>
                     <a href="#"><img src={CompanyLogo1} alt="roccat" /></a>
                 </li>
-                <li className={`${styles["companies-item"]}`}>
+                <li className={styles["companies-item"]}>
                     <a href="#"><img src={CompanyLogo2} alt="msi" /></a>
                 </li>
-                <li className={`${styles["companies-item"]}`}>
+                <li className={styles["companies-item"]}>
                     <a href="#"><img src={CompanyLogo3} alt="razer"/></a>
                 </li>
-                <li className={`${styles["companies-item"]}`}>
+                <li className={styles["companies-item"]}>
                     <a href="#"><img src={CompanyLogo4} alt="thermaltake"/></a>
                 </li>
-                <li className={`${styles["companies-item"]}`}>
+                <li className={styles["companies-item"]}>
                     <a href="#"><img src={CompanyLogo5} alt="adata"/></a>
                 </li>
-                <li className={`${styles["companies-item"]}`}>
+                <li className={styles["companies-item"]}>
                     <a href="#"><img src={CompanyLogo6} alt="hewlett packard"/></a>
                 </li>
-                <li className={`${styles["companies-item"]}`}>
+                <li className={styles["companies-item"]}>
                     <a href="#"><img src={CompanyLogo7} alt="gigabyte"/></a>
                 </li>
             </ul>

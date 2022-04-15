@@ -4,8 +4,8 @@ import StoreButton from 'components/Buttons/StoreButton';
 
 function CatalogDescription() {
     return (
-        <div className={`${styles["catalog-description"]}`}>
-            <p className={`${styles["description-text"]}`}>
+        <div className={styles["catalog-description"]}>
+            <p className={styles["description-text"]}>
                 MSI has unveiled the Prestige Series line of business-class 
                 and gaming notebooks. Tuned for color accuracy, the Prestige 
                 Series also leverages True Color Technology, which allows 

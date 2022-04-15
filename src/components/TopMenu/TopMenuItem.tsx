@@ -65,18 +65,18 @@ function TopMenuItem(props: Props) {
 
     return (
         <li 
-            className={!props.isHidden ? `${stylesModule["menu-link"]}` : `${stylesModule["hidden"]}`}
+            className={!props.isHidden ? stylesModule["menu-link"] : stylesModule["hidden"]}
             onMouseEnter={() => handleOpenHoveredMenu()}
             onMouseLeave={() => handleCloseHoveredMenu()}
             onFocus={() => handleOpenHoveredMenu()}
             onBlur={() => handleCloseHoveredMenu()}
             ref={setReferenceElement}
         >
-            <Link className={isItemHovered ? `${stylesModule["menu-link-inner-hover"]}` : `${stylesModule["menu-link-inner"]}`} to={props.link}>
+            <Link className={isItemHovered ? stylesModule["menu-link-inner-hover"] : stylesModule["menu-link-inner"]} to={props.link}>
                 {props.text}
             </Link>            
             <ul 
-                className={(props.renderHoverMenu && showHoverMenu) ? `${stylesModule["hover-menu-block"]}` : `${stylesModule["hidden"]}`}
+                className={(props.renderHoverMenu && showHoverMenu) ? stylesModule["hover-menu-block"] : stylesModule["hidden"]}
                 ref={setPopperElement}
                 style={styles.popper} {...attributes.popper}
             >

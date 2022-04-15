@@ -9,7 +9,7 @@ type Props = {
 
 function NewsItem(props: Props) {
     return (
-        <div className={`${styles["news-item"]}`}>
+        <div className={styles["news-item"]}>
             <img src={props.image} alt="news1" />
             <p>
                 {props.name}

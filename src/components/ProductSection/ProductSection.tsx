@@ -23,9 +23,9 @@ function ProductSection(props: Props) {
     const image: string = (props?.product?.photo) ? props?.product?.photo[0]?.url : "";
     
     return (
-        <section className={`${styles["product-section"]}`}>
-            <div className={`${styles["product-block"]}`}>
-                <div className={`${styles["product-info-block"]}`}>
+        <section className={styles["product-section"]}>
+            <div className={styles["product-block"]}>
+                <div className={styles["product-info-block"]}>
                     <Breadcrumbs 
                         category={productCategory}
                     />
@@ -33,20 +33,20 @@ function ProductSection(props: Props) {
                         title={props.product.name}
                         isProductPage={true}
                     />
-                    <a className={`${styles["review-link"]}`} href="#">Be the first to review this product</a>
+                    <a className={styles["review-link"]} href="#">Be the first to review this product</a>
                     {
                         (props.activeInfoBlock === 'ProductInfoBlock') ? <ProductInfoBlock /> :
                         (props.activeInfoBlock === 'ProductDetailes') ? <ProductDetailes details={props.product.details} /> :
                         (props.activeInfoBlock === 'ProductSpecs') ? <ProductSpecs specs={props.product.specs} /> : ''
                     }                     
-                    <div className={`${styles["product-rest"]}`}>
-                        <p className={`${styles["product-have-questions"]}`}>
+                    <div className={styles["product-rest"]}>
+                        <p className={styles["product-have-questions"]}>
                             <span>Have a Question?</span>
                             <span><Link to="/contact-us">Contact Us</Link></span>
                         </p>
                         <span>SKU D5515AI</span>
                     </div>
-                    <a className={`${styles["more-info-link"]}`} href="#">+ More information</a>
+                    <a className={styles["more-info-link"]} href="#">+ More information</a>
                  </div>
                 {
                     (props.product.photo) &&

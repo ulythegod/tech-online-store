@@ -6,8 +6,8 @@ import Steps from "./Steps";
 
 function CheckoutHeader() {
     return (
-        <div className={`${styles["section-header"]}`}>
-            <div className={`${styles["title-part"]}`}>
+        <div className={styles["section-header"]}>
+            <div className={styles["title-part"]}>
                 <PageTitle
                     title='Shopping Cart'
                 />

@@ -8,12 +8,12 @@ type Props = {
 
 function CatalogSelectedFilters(props: Props) {
     return (
-        <div className={`${styles["catalog-selected-filters"]}`}>
+        <div className={styles["catalog-selected-filters"]}>
             {props.filtersItems}
             {
                 props.filtersItems.length > 0 &&
                 <button 
-                    className={`${styles["clear-all-btn"]}`}
+                    className={styles["clear-all-btn"]}
                     onClick={(event: any) => props.handleClearFilters(event)}
                 >
                     Clear All

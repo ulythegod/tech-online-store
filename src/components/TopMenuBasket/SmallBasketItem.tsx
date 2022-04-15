@@ -14,13 +14,13 @@ type Props = {
 
 function SmallBasketItem(props: Props) {
     return (
-        <div className={`${styles["basket-list-item"]}`}>
+        <div className={styles["basket-list-item"]}>
             <span>{props.amount} x</span>
-            <img className={`${styles["item-img"]}`} src={props.imagePath} alt=""/>
-            <Link className={`${styles["item-link"]}`} to={`/product/${props.id}`}>
+            <img className={styles["item-img"]} src={props.imagePath} alt=""/>
+            <Link className={styles["item-link"]} to={`/product/${props.id}`}>
                 {props.name}
             </Link>
-            <div className={`${styles["item-buttons"]}`}>
+            <div className={styles["item-buttons"]}>
                 <button onClick={(event: any) => props.handleProductRemoved(event, props.id)}>
                     <RemoveItem />
                 </button>

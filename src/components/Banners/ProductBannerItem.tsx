@@ -13,14 +13,14 @@ function ProductBannerItem(props: Props) {
     }
 
     return (
-        <div className={`${styles["product-advantages-banner"]}`}>
-            <div className={`${styles["banner-description"]}`}>
+        <div className={styles["product-advantages-banner"]}>
+            <div className={styles["banner-description"]}>
                 <span>{props.name}</span>
                 <div>
                     {props.description}
                 </div>
             </div>
-            <div className={`${styles["banner-image"]}`} style={imageStyles}></div>
+            <div className={styles["banner-image"]} style={imageStyles}></div>
         </div>
     );
 }

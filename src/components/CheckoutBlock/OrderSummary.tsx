@@ -43,10 +43,10 @@ function OrderSummary() {
     });
 
     return (
-        <div className={`${styles["order-summary"]}`}>
-            <span className={`${styles["summary-title"]}`}>Order Summary</span>
-            <a className={`${styles["summary-link"]}`} href="#">{products.length} Items in Cart</a>
-            <div className={`${styles["summary-items"]}`}>
+        <div className={styles["order-summary"]}>
+            <span className={styles["summary-title"]}>Order Summary</span>
+            <a className={styles["summary-link"]} href="#">{products.length} Items in Cart</a>
+            <div className={styles["summary-items"]}>
                 {summaryItems}
             </div>
         </div>

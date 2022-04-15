@@ -12,7 +12,7 @@ function ProductDetailes(props: Props) {
     });    
 
     return (
-        <div className={`${styles["product-detailes"]}`}>
+        <div className={styles["product-detailes"]}>
             <ul>
                 {details}
             </ul>

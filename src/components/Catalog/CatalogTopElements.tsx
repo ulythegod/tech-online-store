@@ -13,7 +13,7 @@ type Props = {
 
 function CatalogTopElements(props: Props) {
     return (
-        <div className={`${styles["catalog-top-elements"]}`}>
+        <div className={styles["catalog-top-elements"]}>
             <span>Items {props.startIndex + 1}-{props.endIndex} of {props.overallAmount}</span>
             {props.sortPosition}
             {props.perPage}

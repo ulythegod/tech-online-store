@@ -19,24 +19,24 @@ function ProductInfoBlock(props: Props) {
 
     return (
         <>
-            <p className={`${styles["product-description"]}`}>
+            <p className={styles["product-description"]}>
                 {props.description}
             </p>
-            <div className={`${styles["product-options"]}`}>
+            <div className={styles["product-options"]}>
                 <button
-                    className={(activeColor === "black") ? `${styles["active"]}` : ``}
+                    className={(activeColor === "black") ? styles["active"] : ``}
                     onClick={(event: any) => handleActiveColorChange(event)}
                 >
                     <img src={color1} id='black' alt="black"/>
                 </button>
                 <button 
-                    className={(activeColor === "yellow") ? `${styles["active"]}` : ``}
+                    className={(activeColor === "yellow") ? styles["active"] : ``}
                     onClick={(event: any) => handleActiveColorChange(event)}
                 >
                     <img src={color2} id='yellow' alt="yellow"/>
                 </button>
                 <button 
-                    className={(activeColor === "grey") ? `${styles["active"]}` : ``}
+                    className={(activeColor === "grey") ? styles["active"] : ``}
                     onClick={(event: any) => handleActiveColorChange(event)}
                 >
                     <img src={color3} id='grey' alt="grey"/>

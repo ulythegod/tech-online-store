@@ -395,8 +395,8 @@ function Catalog() {
                     isCatalogPage={true}
                 />
             }           
-            <section className={`${styles["catalog-section"]}`}>
-            <div className={`${styles["catalog-block"]}`}>
+            <section className={styles["catalog-section"]}>
+            <div className={styles["catalog-block"]}>
                 <CatalogFilter 
                     currentCategory={category}
                     subCategories={subCategories}
@@ -417,7 +417,7 @@ function Catalog() {
                         />
                     }
                 />
-                <div className={`${styles["catalog"]}`}>
+                <div className={styles["catalog"]}>
                     <CatalogTopElements
                         startIndex={productsResult.startIndex}
                         endIndex={productsResult.endIndex}
@@ -460,8 +460,8 @@ function Catalog() {
                         handleClearFilters={handleClearFilters}
                     />
                     <div className={
-                        (view === "table") ? `${styles["catalog-table-view"]}` : 
-                        (view === "column") ? `${styles["catalog-column-view"]}` : ``
+                        (view === "table") ? styles["catalog-table-view"] : 
+                        (view === "column") ? styles["catalog-column-view"] : ``
                     }>
                         {productsItems}
                     </div>
@@ -473,7 +473,7 @@ function Catalog() {
                         currentPage={appliedFilters.currentPage}
                         handlePagination={handlePagination}
                     />
-                    <div className={`${styles["filters-rest"]}`}>
+                    <div className={styles["filters-rest"]}>
                         <CompareProducts />
                         <WishList />
                         <CatalogFilterBanner 

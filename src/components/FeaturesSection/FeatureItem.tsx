@@ -8,11 +8,11 @@ type Props = {
 
 function FeatureItem(props: Props) {
     return (
-        <div className={`${styles["feature-item"]}`}>
-            <div className={`${styles["item-icon"]}`}>
+        <div className={styles["feature-item"]}>
+            <div className={styles["item-icon"]}>
                 <img src={props.image} alt="intel" />
             </div>
-            <p className={`${styles["item-text"]}`}>
+            <p className={styles["item-text"]}>
                 {props.description}
             </p>
         </div>

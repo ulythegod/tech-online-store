@@ -2,14 +2,14 @@ import React, { ReactElement } from 'react';
 import styles from './faqItem.module.scss';
 
 type Props = {
-    id: number,
+    id: string,
     name: string,
-    description: ReactElement<any, any>
+    description: any
 }
 
-function FAQItem(props: any): any {
+function FAQItem(props: Props) {
     return (
-        <div className={`${styles["faq-item"]}`} id={props.id}>
+        <div className={styles["faq-item"]} id={props.id}>
             <h3>{props.name}</h3>
             <div>
                 {props.description}

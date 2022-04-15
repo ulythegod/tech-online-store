@@ -22,7 +22,7 @@ function PageTitle(props: Props) {
     }
 
     return (
-        <h1 className={`${styles[className]}`}>{props.title}</h1>
+        <h1 className={styles[className]}>{props.title}</h1>
     );
 }
 

@@ -12,10 +12,10 @@ import newsImg8 from '../../images/news8.png';
 
 function NewsSection() {
     return (
-        <section className={`${styles["main-news-section"]}`}>
-            <div className={`${styles["main-news-block"]}`}>
-                <p className={`${styles["news-title"]}`}>Follow us on Instagram for News, Offers & More</p>
-                <div className={`${styles["news-list"]}`}>
+        <section className={styles["main-news-section"]}>
+            <div className={styles["main-news-block"]}>
+                <p className={styles["news-title"]}>Follow us on Instagram for News, Offers & More</p>
+                <div className={styles["news-list"]}>
                     <NewsItem
                         image={newsImg1}
                         name={

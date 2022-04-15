@@ -8,13 +8,13 @@ import FooterChatButton from './FooterChatButton';
 
 function Footer() {
     return (
-        <footer className={`${styles["footer"]}`}>
+        <footer className={styles["footer"]}>
             <FooterSubscribeForm />
             <FooterMenu />
-            <div className={`${styles["footer-bottom-section"]}`}>
+            <div className={styles["footer-bottom-section"]}>
                 <FooterSocials />
                 <FooterCards />
-                <span className={`${styles["footer-copyright"]}`}>Copyright © 2020 Shop Pty. Ltd.</span>
+                <span className={styles["footer-copyright"]}>Copyright © 2020 Shop Pty. Ltd.</span>
             </div>
             <FooterChatButton />
         </footer>

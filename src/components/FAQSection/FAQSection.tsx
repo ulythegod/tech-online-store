@@ -5,8 +5,8 @@ import FAQNav from './FAQNav';
 
 function FAQSection() {
     return (
-        <section className={`${styles["faq-section"]}`}>
-            <div className={`${styles["faq-questions"]}`}>
+        <section className={styles["faq-section"]}>
+            <div className={styles["faq-questions"]}>
                 <h2>GENERAL TERMS AND CONDITIONS FOR SALE OF PRODUCTS AND SERVICES</h2>
                 <FAQItem
                     id="definitions"

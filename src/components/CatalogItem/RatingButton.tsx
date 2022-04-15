@@ -8,8 +8,8 @@ type Props = {
 
 function RatingButton(props: Props) {
     return (
-        <button className={`${styles["rating-button"]}`}>
-            <RatingStar className={(props.isFilled) ? `${styles["filled"]}` : ''
+        <button className={styles["rating-button"]}>
+            <RatingStar className={(props.isFilled) ? styles["filled"] : ''
         }/>
         </button>
     );

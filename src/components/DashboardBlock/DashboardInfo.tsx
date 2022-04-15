@@ -7,20 +7,20 @@ type Props = {
 
 function DashboardInfo(props: Props) {
     return (
-        <div className={`${styles["information-item"]}`}>
-            <span className={`${styles["item-title"]}`}>{props.title}</span>
+        <div className={styles["information-item"]}>
+            <span className={styles["item-title"]}>{props.title}</span>
             <div className="item-description">
-                <table className={`${styles["description-table"]}`}>
+                <table className={styles["description-table"]}>
                     <tbody>
                         <tr>
                             <td>
                                 <div>
-                                    <span className={`${styles["info-title"]}`}>Contact Information</span>
-                                    <p className={`${styles["info-block"]}`}>
+                                    <span className={styles["info-title"]}>Contact Information</span>
+                                    <p className={styles["info-block"]}>
                                         Alex Driver
                                         ExampeAdress@gmail.com
                                     </p>
-                                    <p className={`${styles["info-links"]}`}>
+                                    <p className={styles["info-links"]}>
                                         <a href="#">Edit</a>
                                         <a href="#">Change Password</a>
                                     </p>
@@ -28,12 +28,12 @@ function DashboardInfo(props: Props) {
                             </td>
                             <td>
                                 <div>
-                                    <span className={`${styles["info-title"]}`}>Newsletters</span>
-                                    <p className={`${styles["info-block"]}`}>
+                                    <span className={styles["info-title"]}>Newsletters</span>
+                                    <p className={styles["info-block"]}>
                                         You don't subscribe 
                                         to our newsletter.
                                     </p>
-                                    <p className={`${styles["info-links"]}`}>
+                                    <p className={styles["info-links"]}>
                                         <a href="#">Edit</a>
                                     </p>
                                 </div>

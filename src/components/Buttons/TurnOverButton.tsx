@@ -11,10 +11,10 @@ type Props = {
 function TurnOverButton(props: Props) {
     return (
         <button 
-            className={`${classNames(styles["button"], styles[props.type])}`} 
+            className={classNames(styles["button"], styles[props.type])} 
             onClick={(event: any) => props.buttonAction?.(event)}
         >
-            <Arrow className={`${styles["arrow-image"]}`} />
+            <Arrow className={styles["arrow-image"]} />
         </button>
     );
 }

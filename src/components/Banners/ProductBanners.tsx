@@ -6,8 +6,8 @@ import ProductBannerItem from './ProductBannerItem';
 
 function ProductBanners() {
     return (
-        <section className={`${styles["product-advantages-banners-section"]}`}>
-            <div className={`${styles["product-advantages-banners"]}`}>
+        <section className={styles["product-advantages-banners-section"]}>
+            <div className={styles["product-advantages-banners"]}>
                 <ProductBannerItem
                     name='Outplay the Competittion'
                     description={
@@ -21,8 +21,8 @@ function ProductBanners() {
                     image={banner}
                 />
             </div>
-            <div className={`${styles["banners-scrolling"]}`}>
-                <a href="#"><PaginationButton className={`${styles["filled"]}`} /></a>
+            <div className={styles["banners-scrolling"]}>
+                <a href="#"><PaginationButton className={styles["filled"]} /></a>
                 <a href="#"><PaginationButton /></a>
                 <a href="#"><PaginationButton /></a>
             </div>

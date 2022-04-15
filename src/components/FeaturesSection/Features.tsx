@@ -13,12 +13,12 @@ type Props = {
 
 function Features(props: Props) {
     return(
-        <section className={`${styles["features-section"]}`}>
-            <span className={`${styles["features-title"]}`}>{props.sectionName}</span>
-            <p className={`${styles["features-description"]}`}>
+        <section className={styles["features-section"]}>
+            <span className={styles["features-title"]}>{props.sectionName}</span>
+            <p className={styles["features-description"]}>
                 {props.sectionDescription}
             </p>
-            <div className={`${styles["features-block"]}`}>
+            <div className={styles["features-block"]}>
                 <FeatureItem 
                     image={IntelLogo}
                     description={

@@ -38,21 +38,21 @@ function HeaderTime() {
     ); 
     
     return (
-        <div className={`${stylesModule["header-time"]}`}>
+        <div className={stylesModule["header-time"]}>
             Mon-Thu:
             <span>9:00 AM - 5:30 PM</span>
-            <a ref={setReferenceElement} onClick={handleOpenShopInfo} href="#" className={isOpenShopInfo ? `${stylesModule["arrow-down"]}` : ''}>
+            <a ref={setReferenceElement} onClick={handleOpenShopInfo} href="#" className={isOpenShopInfo ? stylesModule["arrow-down"] : ''}>
                 <ArrowDown />
             </a>
             {isOpenShopInfo && 
                 <div 
                     id="popper"
-                    className={`${stylesModule["shop-info-block"]}`}
+                    className={stylesModule["shop-info-block"]}
                     ref={setPopperElement}
                     style={styles.popper} 
                     {...attributes.popper}
                 >
-                    <div ref={setArrowRef} className={`${stylesModule["arrow"]}`}></div>
+                    <div ref={setArrowRef} className={stylesModule["arrow"]}></div>
                     <HoverShopInfo />
                 </div>
             }

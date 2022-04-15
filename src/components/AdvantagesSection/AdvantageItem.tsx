@@ -9,7 +9,7 @@ type Props = {
 
 function AdvantageItem(props: Props) {
     return (
-        <div className={`${styles["advantages-item"]}`}>
+        <div className={styles["advantages-item"]}>
             <img src={props.image} alt={props.name}/>
             <span>{props.name}</span>
             <p>

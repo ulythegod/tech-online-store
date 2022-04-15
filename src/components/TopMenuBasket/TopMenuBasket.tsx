@@ -114,26 +114,26 @@ function TopMenuBasket() {
 
     return (
         <>
-            <div className={`${stylesModule["basket-top"]}`}
+            <div className={stylesModule["basket-top"]}
                 onMouseEnter={(event: any) => handleOnMouseEnter(event)}
                 onMouseLeave={(event: any) => handleOnMouseLeave(event)}
                 ref={setReferenceElement}
             >
-                <div className={`${stylesModule["basket-icon"]}`}>
-                    <BasketLogo className={`${stylesModule["basket-logo"]}`} />
-                    <span className={`${stylesModule["basket-amount"]}`}>{basketItems.length}</span>
+                <div className={stylesModule["basket-icon"]}>
+                    <BasketLogo className={stylesModule["basket-logo"]} />
+                    <span className={stylesModule["basket-amount"]}>{basketItems.length}</span>
                 </div>
                 <div
-                    className={isOpenBasket ? `${stylesModule["appearing-block"]}` : `${stylesModule["hidden"]}`}
+                    className={isOpenBasket ? stylesModule["appearing-block"] : stylesModule["hidden"]}
                     ref={setPopperElement}
                     style={styles.popper} 
                     {...attributes.popper}
                 >
-                    <div className={`${stylesModule["arrow"]}`} ref={setArrowRef}></div>
-                    <div className={`${stylesModule["appearing-basket-top"]}`}>
-                        <div className={`${stylesModule["inner-basket-top"]}`}>
-                            <span className={`${stylesModule["basket-title"]}`}>My Cart</span>
-                            <span className={`${stylesModule["basket-amount-title"]}`}>{basketItems.length} item in cart</span>
+                    <div className={stylesModule["arrow"]} ref={setArrowRef}></div>
+                    <div className={stylesModule["appearing-basket-top"]}>
+                        <div className={stylesModule["inner-basket-top"]}>
+                            <span className={stylesModule["basket-title"]}>My Cart</span>
+                            <span className={stylesModule["basket-amount-title"]}>{basketItems.length} item in cart</span>
                             <StoreButton 
                                 style="light-button"
                                 content={"View or Edit Your Cart"}
@@ -143,8 +143,8 @@ function TopMenuBasket() {
                         <div className="basket-list">
                             {basketItems}
                         </div>
-                        <div className={`${stylesModule["basket-bottom"]}`}>
-                            <span className={`${stylesModule["subtotal"]}`}>Subtotal: <span>${subtotal}</span></span>
+                        <div className={stylesModule["basket-bottom"]}>
+                            <span className={stylesModule["subtotal"]}>Subtotal: <span>${subtotal}</span></span>
                             <StoreButton 
                                 style="blue-button"
                                 content={"Go to Checkout"}

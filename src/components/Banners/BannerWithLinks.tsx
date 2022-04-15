@@ -8,9 +8,9 @@ function ProductLinks() {
     }
 
     return (
-        <section className={`${styles["product-links-section"]}`}>
-            <div className={`${styles["product-links-block"]}`}>
-                <div className={`${styles["links"]}`}>
+        <section className={styles["product-links-section"]}>
+            <div className={styles["product-links-block"]}>
+                <div className={styles["links"]}>
                     <ul>
                         <li>
                             <a href="#">Product Support</a>
@@ -26,7 +26,7 @@ function ProductLinks() {
                         </li>
                     </ul>
                 </div>
-                <div className={`${styles["banner-image"]}`} style={imageStyles}></div>
+                <div className={styles["banner-image"]} style={imageStyles}></div>
             </div>
         </section>
     );

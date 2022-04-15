@@ -43,66 +43,66 @@ function ProductItem(props: Props) {
     return (
         <div className={
             !props.isNewProducts ?
-            `${styles["product-preview"]}` :
-            `${styles["new-product-preview"]}`
+            styles["product-preview"] :
+            styles["new-product-preview"]
         }>
             <div className={styles["item-inner"]}>
-            <p className={`${classNames(styles["product-status"], styles[props.status])}`}>
-                {
-                    (props.status == "in-stock") ? <InStock /> : 
-                    (props.status == "check-availability") ? <CheckAvailability /> : 
-                    ""
-                }
-                <span className={`${styles["status-text"]}`}>{statusText}</span>
-            </p>
-            <div className={`${styles["product-buttons"]}`}>
-                <StoreButton
-                    style="icon-button"
-                    content={<AddToFav />}
-                />
-                <StoreButton
-                    style="icon-button"
-                    content={<AddToRating />}
-                />
-            </div>
-            <Link className={`${styles["product-image-link"]}`} to={`/product/${props.id}`}>
-                <img className={`${styles["product-image"]}`} src={props.productImage} alt="Product" />
-            </Link>
-            <div className={`${styles["product-rating"]}`}>
-                <div className={`${styles["rating-buttons"]}`}>
-                    <RatingButton 
-                        isFilled={true}
+                <p className={classNames(styles["product-status"], styles[props.status])}>
+                    {
+                        (props.status == "in-stock") ? <InStock /> : 
+                        (props.status == "check-availability") ? <CheckAvailability /> : 
+                        ""
+                    }
+                    <span className={styles["status-text"]}>{statusText}</span>
+                </p>
+                <div className={styles["product-buttons"]}>
+                    <StoreButton
+                        style="icon-button"
+                        content={<AddToFav />}
                     />
-                    <RatingButton 
-                        isFilled={true}
-                    />
-                    <RatingButton 
-                        isFilled={true}
-                    />
-                    <RatingButton 
-                        isFilled={false}
-                    />
-                    <RatingButton 
-                        isFilled={false}
+                    <StoreButton
+                        style="icon-button"
+                        content={<AddToRating />}
                     />
                 </div>
-                <a className={`${styles["reviews-link"]}`} href='#'>Reviews ({props.reviewsCount})</a>
-            </div>
-            <Link to={`/product/${props.id}`} className={`${styles["product-title"]}`}>{props.name}</Link>
-            <span className={`${styles["product-price"]}`}>${props.price}</span>
-            <span className={`${styles["product-discount"]}`}>${props.discount}</span>
-            <div className={`${styles["add-to-card-btn"]}`}>
-                <StoreButton 
-                    style="light-button-narrow"
-                    content={
-                        <>
-                            <AddToCart />
-                            <span>Add To Cart</span>
-                        </>
-                    }
-                    buttonAction={handleAddToCard}
-                />
-            </div>
+                <Link className={styles["product-image-link"]} to={`/product/${props.id}`}>
+                    <img className={styles["product-image"]} src={props.productImage} alt="Product" />
+                </Link>
+                <div className={styles["product-rating"]}>
+                    <div className={styles["rating-buttons"]}>
+                        <RatingButton 
+                            isFilled={true}
+                        />
+                        <RatingButton 
+                            isFilled={true}
+                        />
+                        <RatingButton 
+                            isFilled={true}
+                        />
+                        <RatingButton 
+                            isFilled={false}
+                        />
+                        <RatingButton 
+                            isFilled={false}
+                        />
+                    </div>
+                    <a className={styles["reviews-link"]} href='#'>Reviews ({props.reviewsCount})</a>
+                </div>
+                <Link to={`/product/${props.id}`} className={styles["product-title"]}>{props.name}</Link>
+                <span className={styles["product-price"]}>${props.price}</span>
+                <span className={styles["product-discount"]}>${props.discount}</span>
+                <div className={styles["add-to-card-btn"]}>
+                    <StoreButton 
+                        style="light-button-narrow"
+                        content={
+                            <>
+                                <AddToCart />
+                                <span>Add To Cart</span>
+                            </>
+                        }
+                        buttonAction={handleAddToCard}
+                    />
+                </div>
             </div>
         </div>
     );

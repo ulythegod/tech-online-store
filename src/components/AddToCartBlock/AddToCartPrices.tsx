@@ -47,8 +47,8 @@ function AddToCartPrices(props: Props) {
     }
 
     return (
-        <div className={`${styles["prices-block"]}`}>
-            <span className={`${styles["on-sale"]}`}>
+        <div className={styles["prices-block"]}>
+            <span className={styles["on-sale"]}>
                 On Sale from 
                 <span>
                     {`$${
@@ -58,10 +58,10 @@ function AddToCartPrices(props: Props) {
                     }`}
                 </span>
             </span>
-            <div className={`${styles["number"]}`}>
-                <button className={`${styles["add-number"]}`} onClick={handleAmountIncrease}></button>
+            <div className={styles["number"]}>
+                <button className={styles["add-number"]} onClick={handleAmountIncrease}></button>
                 <input type="number" value={productCount} onChange={(event: any) => handleAmountChange(event)} />
-                <button className={`${styles["decrease-number"]}`} onClick={handleAmountDecrease}></button>
+                <button className={styles["decrease-number"]} onClick={handleAmountDecrease}></button>
             </div>                    
             <StoreButton 
                 style='blue-button-narrow'

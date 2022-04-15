@@ -21,8 +21,8 @@ function FilterItem(props: Props) {
 
     return (
         <>
-            <a onClick={(e) => handleIsOpenedChange(e)} className={`${classNames(styles["item-options"], styles[itemType])}`} href="#">{props.name}</a>
-            <li className={`${classNames(styles["item"], styles[itemIconsClass])}`}>
+            <a onClick={(e) => handleIsOpenedChange(e)} className={classNames(styles["item-options"], styles[itemType])} href="#">{props.name}</a>
+            <li className={classNames(styles["item"], styles[itemIconsClass])}>
                 {(isOpened && props.items) ? props.items : ""}
             </li>
         </>

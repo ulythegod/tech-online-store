@@ -11,7 +11,7 @@ import img6 from '../../images/brand6.png';
 
 function FilterBrands() {
     return (
-        <div className={`${styles["brands"]}`}>
+        <div className={styles["brands"]}>
             <span>Brands</span>
             <StoreButton
                 style='grey-button'

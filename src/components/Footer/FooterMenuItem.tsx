@@ -18,11 +18,11 @@ function FooterMenuItem(props: Props) {
     return (
         <li>
             <a 
-                className={`${styles["menu-title"]}`}
+                className={styles["menu-title"]}
                 onClick={handleMenuOpen}
             >
                 {props.name}
-                <span className={!isOpen ? `${styles["arrow-sign"]}` : `${styles["arrow-sign-open"]}`}></span>
+                <span className={!isOpen ? styles["arrow-sign"] : styles["arrow-sign-open"]}></span>
             </a>
             <ul 
                 className={`${classNames(

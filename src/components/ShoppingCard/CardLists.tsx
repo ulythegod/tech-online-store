@@ -39,13 +39,13 @@ function CardLists(props: Props) {
     });
 
     return (
-        <div className={`${styles["items-list"]}`}>
+        <div className={styles["items-list"]}>
             <div>
                 {
                     cardItems &&
-                    <table className={`${styles["list-table"]}`}>
+                    <table className={styles["list-table"]}>
                         <tbody>
-                            <tr className={`${styles["table-title"]}`}>
+                            <tr className={styles["table-title"]}>
                                 <td>Item</td>
                                 <td>Price</td>
                                 <td>Qty</td>
@@ -58,8 +58,8 @@ function CardLists(props: Props) {
                 }
                 
             </div>
-            <div className={`${styles["card-buttons"]}`}>
-                <div className={`${styles["inner-buttons"]}`}>
+            <div className={styles["card-buttons"]}>
+                <div className={styles["inner-buttons"]}>
                     <StoreButton 
                         style="grey-button"
                         content="Continue Shopping"

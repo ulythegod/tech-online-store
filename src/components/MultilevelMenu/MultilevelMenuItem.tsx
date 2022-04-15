@@ -28,15 +28,15 @@ function MultilevelMenuItem(props: Props) {
     let nextLevel: number = 0;
 
     if (props.level === 1) {
-        liClassName = `${classNames(styles["main-list-item"], styles["item-with-level"])}`;
+        liClassName = classNames(styles["main-list-item"], styles["item-with-level"]);
         ulClassName = "second-level-list";
         nextLevel = 2;
     } else if (props.level === 2) {
-        liClassName = `${classNames(styles["main-list-item"], styles["item-with-third-level"])}`;
+        liClassName = classNames(styles["main-list-item"], styles["item-with-third-level"]);
         ulClassName = "third-level-list";
         nextLevel = 3;
     } else {
-        liClassName = `${styles["main-list-item"]}`;
+        liClassName = styles["main-list-item"];
     }
 
     let menuItems: any[] = [];
@@ -57,18 +57,18 @@ function MultilevelMenuItem(props: Props) {
         <li 
             className={liClassName}
         >
-            <Link className={`${styles["menu-link-inner"]}`} to={`/catalog/${props.id}`}>
+            <Link className={styles["menu-link-inner"]} to={`/catalog/${props.id}`}>
                 {   
                     (props.level === 3) ?
-                    <>{props.name} <span className={`${styles["amount"]}`}>(12)</span></> :
+                    <>{props.name} <span className={styles["amount"]}>(12)</span></> :
                     props.name
                 }
             </Link>
             {
                 (notEmptySubcategories) ? 
                 <>
-                    <span className={`${styles["arrow-next-level"]}`}></span>
-                    <ul className={`${styles[ulClassName]}`}>
+                    <span className={styles["arrow-next-level"]}></span>
+                    <ul className={styles[ulClassName]}>
                         {menuItems}
                     </ul>
                 </> :
