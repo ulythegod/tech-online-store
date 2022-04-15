@@ -4,7 +4,7 @@ import PageTitle from 'components/PageTitle/PageTitle';
 import DashboardBlock from 'components/DashboardBlock/DashboardBlock';
 import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 
-function Dashboard(props: any): any {
+function Dashboard() {
     return (
         <>
             <section className="dashboard-section">

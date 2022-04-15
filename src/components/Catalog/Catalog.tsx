@@ -1,18 +1,15 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 
-import { useSelector, useDispatch } from 'react-redux';
-import { selectCategoryById, selectCategoriesIds} from 'features/categories/categoriesSlice';
+import { useSelector } from 'react-redux';
+import { selectCategoryById } from 'features/categories/categoriesSlice';
 import { perPageProductsSelector } from '../../features/products/productsSlice';
 import { RootState }  from '../../store';
-import { sortedAndFilteredProductsSelector } from '../../features/products/productsSlice';
-import { selectAllPrices, selectAllPricesId } from 'features/prices/pricesSlice';
+import { selectAllPrices } from 'features/prices/pricesSlice';
 
 import { 
-    FillersInterface, 
-    Product, 
-    Price,
-    CatalogProductsResult 
+    FillersInterface,
+    Price, 
 } from '../../CustomTypes';
 
 import styles from './catalog.module.scss';

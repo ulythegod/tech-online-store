@@ -14,7 +14,7 @@ import au4 from '../images/about-us4.png';
 import au5 from '../images/about-us5.png';
 import aui4 from '../images/about-us-sign4.png';
 
-function AboutUs(props: any): any {
+function AboutUs() {
     return (
         <>
             <Breadcrumbs />

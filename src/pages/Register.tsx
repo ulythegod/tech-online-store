@@ -4,7 +4,7 @@ import PageTitle from 'components/PageTitle/PageTitle';
 import LoginForm from 'components/LoginForm/LoginForm';
 import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 
-function Register(props: any): any {
+function Register() {
     return (
         <>
             <section className="register-section">

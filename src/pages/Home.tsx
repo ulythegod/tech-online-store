@@ -8,7 +8,7 @@ import NewsSection from 'components/NewsSection/NewsSection';
 import ReviewsSection from 'components/ReviewsSection/ReviewsSection';
 import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 
-function Home(props: any): any {
+function Home() {
     return (
         <>
             <BannersSlider />

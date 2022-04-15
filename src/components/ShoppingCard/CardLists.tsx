@@ -4,7 +4,7 @@ import CardItem from './CardItem';
 import StoreButton from 'components/Buttons/StoreButton';
 import { Product } from 'CustomTypes';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { productRemoved, clearCard } from 'features/product-card/productCardSlice';
 
 type Props = {

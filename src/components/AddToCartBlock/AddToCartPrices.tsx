@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from './addToCartPrices.module.scss';
 import StoreButton from "components/Buttons/StoreButton";
 import { ReactComponent as PayPal } from '../../images/paypal.svg';
@@ -7,8 +7,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { productAdded, decreaseAmount, changeAmount, selectAllProductsIds } from 'features/product-card/productCardSlice';
 import { RootState } from 'store';
 import { selectProductsByIds } from "features/products/productsSlice";
-import { Product } from "CustomTypes";
-
 
 type Props = {
     productPrice: number,

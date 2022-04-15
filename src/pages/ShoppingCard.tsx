@@ -4,7 +4,7 @@ import PageTitle from 'components/PageTitle/PageTitle';
 import Card from 'components/ShoppingCard/Card';
 import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 
-function ShoppingCard(props: any): any {
+function ShoppingCard() {
     return (
         <>
             <section className="shopping-card-section">

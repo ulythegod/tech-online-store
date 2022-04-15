@@ -4,7 +4,7 @@ import PageTitle from 'components/PageTitle/PageTitle';
 import ContactUsForm from 'components/ContactUsForm/ContactUsForm';
 import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 
-function ContactUs(props: any): any {
+function ContactUs() {
     return (
         <>
             <section className="contact-us-section">

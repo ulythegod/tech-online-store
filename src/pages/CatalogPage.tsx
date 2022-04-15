@@ -4,7 +4,7 @@ import Catalog from 'components/Catalog/Catalog';
 import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 import banner from '../images/catalog-banner.png';
 
-function CatalogPage(props: any): any {
+function CatalogPage() {
     return (
         <>
             <SingleBanner

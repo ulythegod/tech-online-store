@@ -4,7 +4,7 @@ import PageTitle from 'components/PageTitle/PageTitle';
 import FAQSection from 'components/FAQSection/FAQSection';
 import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 
-function FAQ(props: any): any {
+function FAQ() {
     return (
         <>
             <Breadcrumbs />

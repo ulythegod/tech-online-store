@@ -7,12 +7,11 @@ import StoreButton from '../Buttons/StoreButton';
 import banner from '../../images/filters-banner.png';
 import WishList from 'components/WishList/WishList';
 import CompareProducts from 'components/CompareProducts/CompareProducts';
-import CatalogSelect from 'components/Catalog/CatalogSelect';
 import { Link } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 import { RootState } from 'store';
-import { selectAllCategories, selectCategoriesProductsAmount } from 'features/categories/categoriesSlice';
+import { selectCategoriesProductsAmount } from 'features/categories/categoriesSlice';
 import { selectProductsAmountForPrices } from 'features/products/productsSlice';
 import { Category, FillersInterface, Price } from '../../CustomTypes';
 

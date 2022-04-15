@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, useState } from 'react';
+import React, { MouseEventHandler } from 'react';
 import styles from './topMenuSearch.module.scss'
 import { ReactComponent as SearchIcon } from '../../images/search.svg';
 import { ReactComponent as SearchOpenIcon } from '../../images/search-open.svg';

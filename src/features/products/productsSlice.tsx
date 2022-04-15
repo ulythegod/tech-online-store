@@ -3,12 +3,8 @@ import { RootState }  from '../../store';
 import { allChildCategoriesSelector } from '../categories/categoriesSlice';
 import { selectAllPrices } from 'features/prices/pricesSlice';
 import { 
-    ProductState, 
-    Photo, 
-    Detail, 
-    Spec, 
+    ProductState,
     Product, 
-    Category, 
     FillersInterface, 
     Price,
     CatalogProductsResult

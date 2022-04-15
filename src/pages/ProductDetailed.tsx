@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Product from 'components/ProductSection/Product';
 import ProductLinks from 'components/Banners/BannerWithLinks';
 import ProductFeatures from 'components/FeaturesSection/Features';
 import ProductBanners from 'components/Banners/ProductBanners';
 import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 
-function ProductDetailed(props: any): any {
+function ProductDetailed() {
     return (
         <>
             <Product />

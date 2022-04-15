@@ -2,7 +2,7 @@ import {
     createSlice, 
     createAsyncThunk, 
 } from "@reduxjs/toolkit";
-import { Product, CategoriesState, Image, Category, FillersInterface } from '../../CustomTypes';
+import { Product, CategoriesState, Category, FillersInterface } from '../../CustomTypes';
 import { createSelector } from 'reselect';
 import { RootState } from "store";
 

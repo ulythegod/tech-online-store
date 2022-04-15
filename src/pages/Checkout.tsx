@@ -4,7 +4,7 @@ import CheckoutHeader from 'components/CheckoutBlock/CheckoutHeader';
 import CheckoutBlock from 'components/CheckoutBlock/CheckoutBlock';
 import AdvantagesSection from 'components/AdvantagesSection/AdvantagesSection';
 
-function Checkout(props: any): any {
+function Checkout() {
     return (
         <>
             <section className="checkout-section">

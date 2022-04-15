@@ -1,8 +1,6 @@
 import React, { ReactElement } from 'react';
 import styles from './orderSummary.module.scss';
 import SummaryItem from 'components/CheckoutBlock/SummaryItem';
-import image1 from '../../images/summary1.png';
-import image2 from '../../images/summary2.png';
 
 import { useSelector } from 'react-redux';
 import { RootState } from 'store';
