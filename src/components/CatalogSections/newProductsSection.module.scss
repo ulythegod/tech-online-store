@@ -21,13 +21,9 @@
 }
 
 .items {
-    // display: flex;
-    // flex-direction: row;
-    // align-items: center;
-    // justify-content: space-between;
-    // margin-left: auto;
-    // margin-right: auto;
     overflow-y: visible;
+    height: 400px;
+    margin-top: -60px;
 }
 
 .items::-webkit-scrollbar {
@@ -41,5 +37,8 @@
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
-    overflow-x: hidden;
+    overflow: hidden;
+    width: 1332px;
+    height: 470px;
+    position: absolute;
 }
