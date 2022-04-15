@@ -1,8 +1,46 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import styles from './footerMenu.module.scss';
 import FooterMenuItem from './FooterMenuItem';
+import { Link } from 'react-router-dom';
+
+import { selectParentCategories } from '../../features/categories/categoriesSlice';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store';
+import { Category } from 'CustomTypes';
 
 function FooterMenu() {
+    let categories = useSelector((state: RootState) => selectParentCategories(state));
+    let categoriesItems: ReactElement<any, any>[] = [];
+
+    if (categories.length > 0) {
+        for (let i = 0; i < 3; i++) {
+            let links: ReactElement<any, any>[] = [];
+            if (categories[i].subCategories) {
+                links = categories[i].subCategories.map((category: Category, id: number) => {
+                    return (
+                        <Link key={category.id} to={`/catalog/${category.id}`}>{category.name}</Link>
+                    )
+                })
+            }
+            
+            let item: ReactElement<any, any> = (
+                <FooterMenuItem 
+                    key={categories[i].id}
+                    id={categories[i].id}
+                    name={categories[i].name}
+                    items={
+                        <>
+                            {links}
+                        </>
+                    }
+                />
+            );
+                    
+            categoriesItems.push(item)
+        }
+    }
+    
+
     return (
         <nav className={styles["footer-menu"]}>
             <ul className={styles["menu-outer-part"]}>
@@ -22,49 +60,7 @@ function FooterMenu() {
                         </>
                     }
                 />
-                <FooterMenuItem 
-                    name={"PC Parts"}
-                    items={
-                        <>
-                            <li><a href="#">CPUS</a></li>
-                            <li><a href="#">Add On Cards</a></li>
-                            <li><a href="#">Hard Drives (Internal)</a></li>
-                            <li><a href="#">Graphic Cards</a></li>
-                            <li><a href="#">Keyboards / Mice</a></li>
-                            <li><a href="#">Cases / Power Supplies / Cooling</a></li>
-                            <li><a href="#">RAM (Memory)</a></li>
-                            <li><a href="#">Software</a></li>
-                            <li><a href="#">Speakers / Headsets</a></li>
-                            <li><a href="#">Motherboards</a></li>
-                        </>
-                    }
-                />
-                <FooterMenuItem 
-                    name={"Desktop PCs"}
-                    items={
-                        <>
-                            <li><a href="#">Custom PCs</a></li>
-                            <li><a href="#">Servers</a></li>
-                            <li><a href="#">MSI All-In-One PCs</a></li>
-                            <li><a href="#">HP/Compaq PCs</a></li>
-                            <li><a href="#">HP/Compaq PCs ASUS PCs</a></li>
-                            <li><a href="#">Tecs PCs</a></li>
-                        </>
-                    }
-                />
-                <FooterMenuItem 
-                    name={"Laptops"}
-                    items={
-                        <>
-                            <li><a href="#">Evryday Use Notebooks</a></li>
-                            <li><a href="#">MSI Workstation Series</a></li>
-                            <li><a href="#">MSI Prestige Series</a></li>
-                            <li><a href="#">Tablets and Pads</a></li>
-                            <li><a href="#">Netbooks</a></li>
-                            <li><a href="#">Infinity Gaming Notebooks</a></li>
-                        </>
-                    }
-                />
+                {categoriesItems}
                 <FooterMenuItem 
                     name={"Address"}
                     items={

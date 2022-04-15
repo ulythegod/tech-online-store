@@ -12,9 +12,11 @@ type Props = {
 }
 
 function CatalogTopElements(props: Props) {
+    let startNumber: number = props.overallAmount ? (props.startIndex + 1) : 0;
+
     return (
         <div className={styles["catalog-top-elements"]}>
-            <span>Items {props.startIndex + 1}-{props.endIndex} of {props.overallAmount}</span>
+            <span>Items {startNumber}-{props.endIndex} of {props.overallAmount}</span>
             {props.sortPosition}
             {props.perPage}
             {props.tableButton}
