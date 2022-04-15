@@ -1,29 +1,50 @@
 import '@testing-library/jest-dom';
 import '@testing-library/react';
-import React from 'react';
-import { render, fireEvent } from "@testing-library/react";
+import React, { ReactElement } from 'react';
+import { render, screen, waitFor, fireEvent } from '../custom-render';
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from 'components/Header/Header';
-import TopMenu from 'components/TopMenu/TopMenu';
 import CatalogPage from 'pages/CatalogPage';
+import { act } from 'react-dom/test-utils';
+import { unmountComponentAtNode } from 'react-dom';
 
-import store from '../store';
-import { Provider } from 'react-redux';
-import { fetchCategories } from '../features/categories/categoriesSlice';
-import { fetchProducts } from '../features/products/productsSlice';
+let container: any = null;
 
-test("checks amount of products that is shown on thw page", () => {
-    store.dispatch(fetchCategories());
-    store.dispatch(fetchProducts());
+beforeEach(() => {
+    container = document.createElement("div");
+    document.body.appendChild(container);
+});
 
-    // <Provider store={store}>
-    //     <Router>
-    //         <Header />
-    //         <TopMenu />
-    //         <Routes>
-    //             <Route path="/catalog/:categoryId" element={<CatalogPage />}/>
-    //         </Routes>
-    //     </Router>
-    // </Provider>
+afterEach(() => {
+    unmountComponentAtNode(container);
+    container.remove();
+    container = null;
+});
+
+describe('my test', () => {
+    it("checks amount of products that is shown on the page", async () => {
+        await act(async () => {
+            render(<CatalogPage />);          
+        });
+
+        expect(
+            screen.getByTestId("main-top-menu")
+        ).toBeInTheDocument();
+
+        expect(
+            screen.getByTestId("top-menu-item")
+        ).toBeInTheDocument();
+
+        // expect(
+        //     await screen.findByText(/test test test/i)
+        // ).toBeInTheDocument();
+       
+        // let buttons = screen.getByTestId("add-to-basket");
+        // console.log(buttons)
+        
+        // fireEvent.click(await screen.findByText(/test test test/i));
+        
+        // expect(
+        //     node
+        // ).toBeInTheDocument();      
+    })
 })

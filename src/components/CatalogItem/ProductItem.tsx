@@ -59,10 +59,12 @@ function ProductItem(props: Props) {
                     <StoreButton
                         style="icon-button"
                         content={<AddToFav />}
+                        isDataTest={true}
                     />
                     <StoreButton
                         style="icon-button"
                         content={<AddToRating />}
+                        isDataTest={true}
                     />
                 </div>
                 <Link className={styles["product-image-link"]} to={`/product/${props.id}`}>

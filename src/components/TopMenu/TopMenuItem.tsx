@@ -72,7 +72,7 @@ function TopMenuItem(props: Props) {
             onBlur={() => handleCloseHoveredMenu()}
             ref={setReferenceElement}
         >
-            <Link className={isItemHovered ? stylesModule["menu-link-inner-hover"] : stylesModule["menu-link-inner"]} to={props.link}>
+            <Link data-testid="top-menu-item" className={isItemHovered ? stylesModule["menu-link-inner-hover"] : stylesModule["menu-link-inner"]} to={props.link}>
                 {props.text}
             </Link>            
             <ul 
