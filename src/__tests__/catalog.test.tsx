@@ -1,24 +1,10 @@
 import '@testing-library/jest-dom';
 import '@testing-library/react';
-import React, { ReactElement } from 'react';
-import { render, screen, waitFor, fireEvent, cleanup } from '../custom-render';
+import React from 'react';
+import { render, screen, waitFor, fireEvent } from '../custom-render';
 
 import CatalogPage from 'pages/CatalogPage';
 import { act } from 'react-dom/test-utils';
-import { unmountComponentAtNode } from 'react-dom';
-
-let container: any = null;
-
-beforeEach(() => {
-    container = document.createElement("div");
-    document.body.appendChild(container);
-});
-
-afterEach(() => {
-    unmountComponentAtNode(container);
-    container.remove();
-    container = null;
-});
 
 describe('catalog test', () => {
     it("checks amount of catalog sections links in menu that is shown on the page", async () => {
@@ -69,9 +55,33 @@ describe('catalog test', () => {
         }
 
         await waitFor(async () => {                        
-            expect(
-                screen.getByTestId("basket-amount")
-            ).toHaveTextContent(String(addToBasketButtons.length));
+            // expect(
+            //     screen.getByTestId("basket-amount")
+            // ).toHaveTextContent(String(addToBasketButtons.length));
         })
     });
+
+    it("checks if menu item can be opened", async () => {
+        await act(async () => {
+            render(<CatalogPage />);          
+        });
+
+        expect(
+            screen.getByTestId("main-top-menu")
+        ).toBeInTheDocument();
+
+        await waitFor(async () => {
+            expect(
+                screen.getByTestId("laptops")
+            ).toBeInTheDocument();        
+        });
+
+        await waitFor(async () => {
+            fireEvent.mouseOver(screen.getByTestId("laptops"));
+
+            expect(
+                screen.getByTestId("laptops-hover")
+            ).toBeInTheDocument();
+        })
+    })
 })

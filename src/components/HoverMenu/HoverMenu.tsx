@@ -11,7 +11,8 @@ import { Category } from '../../CustomTypes';
 
 type Props = {
     categoryId: number,
-    subCategories: Category[]
+    subCategories: Category[],
+    testId?: string
 }
 
 function HoverMenu(props: Props) {
@@ -42,7 +43,7 @@ function HoverMenu(props: Props) {
     })
 
     return (
-        <div className={styles["hover-menu"]}>
+        <div className={styles["hover-menu"]} data-testid={props.testId}>
             <div className={styles["menu-top-block"]}>
                 <MultilevelMenu subCategories={props.subCategories} />
                 <div className={styles["menu-products-list"]}>

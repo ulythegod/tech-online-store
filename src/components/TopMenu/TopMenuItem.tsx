@@ -9,7 +9,8 @@ type Props = {
     id: number,
     isHidden: boolean,
     text: string,
-    link: string
+    link: string,
+    testId?: string
 }
 
 function TopMenuItem(props: Props) {
@@ -71,8 +72,13 @@ function TopMenuItem(props: Props) {
             onFocus={() => handleOpenHoveredMenu()}
             onBlur={() => handleCloseHoveredMenu()}
             ref={setReferenceElement}
+            data-testid="top-menu-item"
         >
-            <Link data-testid="top-menu-item" className={isItemHovered ? stylesModule["menu-link-inner-hover"] : stylesModule["menu-link-inner"]} to={props.link}>
+            <Link  
+                className={isItemHovered ? stylesModule["menu-link-inner-hover"] : stylesModule["menu-link-inner"]} 
+                to={props.link}
+                data-testid={props.testId}
+            >
                 {props.text}
             </Link>            
             <ul 
