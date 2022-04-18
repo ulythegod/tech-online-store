@@ -15,19 +15,20 @@ describe('catalog test', () => {
             screen.getByTestId("main-top-menu")
         ).toBeInTheDocument();
 
-        await waitFor(async () => {
-            expect(
-                screen.getAllByTestId("top-menu-item")
-            ).toHaveLength(5);
-        }, {
-            timeout: 5000
-        });     
+        await waitFor(
+            async () => {
+                expect(
+                    screen.getAllByTestId("top-menu-item")
+                ).toHaveLength(5);
+            },
+            {
+                timeout: 5000
+            }
+        );     
     });
 
     it("checks that products are shown on the page", async () => {
-        await act(async () => {
-            render(<CatalogPage />);          
-        });
+        render(<CatalogPage />);
 
         await waitFor(async () => {
             screen.getAllByTestId("product-preview");            
@@ -37,32 +38,28 @@ describe('catalog test', () => {
     });
 
     it("checks that products can be add to basket", async () => {
-        await act(async () => {
-            render(<CatalogPage />);          
-        });
+        render(<CatalogPage />);
 
         let products: any[] = [];
-        await waitFor(async () => {
-            products = screen.getAllByTestId("product-preview");
-            expect(
-                products.length
-            ).toBeGreaterThan(0)          
-        },
-        {
-            timeout: 5000
-        }
+        await waitFor(
+            async () => {
+                products = screen.getAllByTestId("product-preview");
+                expect(
+                    products.length
+                ).toBeGreaterThan(0)          
+            },
+            {
+                timeout: 5000
+            }
         );        
-
-        console.log(products.length);
         
-        
-            products.slice(0, 5).forEach((product: any) => {
-               const button = getByRole(product, "button", {name: "Add To Cart"});
-               expect(
-                   button
-               ).toBeInTheDocument();
-               fireEvent.click(button);
-            });
+        products.slice(0, 5).forEach((product: any) => {
+           const button = getByRole(product, "button", {name: "Add To Cart"});
+           expect(
+               button
+           ).toBeInTheDocument();
+           fireEvent.click(button);
+        });
 
         await waitFor(async () => {                        
             expect(
@@ -71,11 +68,9 @@ describe('catalog test', () => {
         })
     });
 
-    it("checks if menu item can be opened", async () => {
-        await act(async () => {
-            render(<CatalogPage />);          
-        });
-
+    it("checks if menu item can be opened", async () => {        
+        render(<CatalogPage />);
+        
         expect(
             screen.getByTestId("main-top-menu")
         ).toBeInTheDocument();
@@ -92,6 +87,10 @@ describe('catalog test', () => {
             expect(
                 screen.getByTestId("laptops-hover")
             ).toBeVisible()
-        })
-    })
+        });
+    });
+
+    it("checks elements of product block", async () => {
+        render(<CatalogPage />);
+    });
 })
