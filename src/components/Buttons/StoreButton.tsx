@@ -7,7 +7,7 @@ type Props = {
     content: any,
     showOnMobile?: boolean,
     buttonAction?: Function,
-    isDataTest?: boolean
+    label?: string
 }
 
 function StoreButton(props: Props) {
@@ -17,11 +17,7 @@ function StoreButton(props: Props) {
                 (props.showOnMobile === false) ? classNames(styles[props.style], styles["hidden"]) : styles[props.style]
             }
             onClick={(event: any) => props.buttonAction?.(event)}
-            data-testid={
-                props.isDataTest ?
-                "add-to-basket" :
-                ""
-            }
+            aria-label={props.label}
         >
                 {props.content}
         </button>
