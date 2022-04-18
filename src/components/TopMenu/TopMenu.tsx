@@ -35,7 +35,9 @@ function TopMenu() {
                         isOpenSearchPannel={isOpenSearchPannel}
                         handleOpenSearchPannel={handleOpenSearchPannel}
                     />
-                    <TopMenuBasket />
+                    <TopMenuBasket 
+                        testId='basket-amount'
+                    />
                     <AccountTopMenu />                    
                 </div>
             </nav>
