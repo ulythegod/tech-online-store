@@ -145,8 +145,7 @@ describe('catalog test', () => {
         await waitFor(async () => {
             expect(
                 screen.queryByTestId("basket-amount")
-            ).toHaveTextContent("1");
-            
+            ).toHaveTextContent("1");            
         });
     });
 })
