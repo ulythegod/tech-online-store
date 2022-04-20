@@ -14,26 +14,21 @@ describe('catalog test', () => {
         expect(
             screen.getByTestId("main-top-menu")
         ).toBeInTheDocument();
-
-        await waitFor(
-            async () => {
-                expect(
-                    screen.getAllByTestId("top-menu-item")
-                ).toHaveLength(5);
-            },
-            {
-                timeout: 5000
-            }
-        );     
+        
+        await screen.findAllByTestId("top-menu-item", {}, {timeout: 5000}).then(async (topMenuItems: any[]) => {
+            expect(
+                (topMenuItems.length === 5)
+            ).toBeTruthy();            
+        });
     });
 
     it("checks that products are shown on the page", async () => {
         render(<CatalogPage />);
 
-        await waitFor(async () => {
-            screen.getAllByTestId("product-preview");            
-        }, {
-            timeout: 5000
+        await screen.findAllByTestId("product-preview", {}, {timeout: 5000}).then(async (productItems: any[]) => {
+            expect(
+                productItems.length
+            ).toBeGreaterThan(0);        
         });
     });
 
@@ -87,65 +82,6 @@ describe('catalog test', () => {
             expect(
                 screen.getByTestId("laptops-hover")
             ).toBeVisible()
-        });
-    });
-
-    it("checks elements of product block", async () => {
-        render(<CatalogPage />);
-
-        let products: any[] = [];
-        await waitFor(
-            async () => {
-                products = screen.getAllByTestId("product-preview");
-                expect(
-                    products.length
-                ).toBeGreaterThan(0)          
-            },
-            {
-                timeout: 5000
-            }
-        );
-
-        const product: any = products[0];
-        
-        if (product) {
-            let status = getByText(product, 'in-stock') || getByText(product, 'check-availability');
-            expect(
-                status
-            ).toBeInTheDocument();
-        }
-
-        fireEvent.mouseOver(product);
-        let productButtons: any[] = queryAllByRole(product, 'button');
-        productButtons.forEach((button: any) => {
-            expect(
-                button
-            ).toBeVisible();
-        });
-        
-        expect(
-            getByRole(product, 'img')
-        ).toBeInTheDocument();
-
-        let productName = getByText(product, 'EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On')
-        expect(
-            productName
-        ).toBeInTheDocument();
-
-        let price = getByTestId(product, "price");
-        let discount = getByTestId(product, "discount");
-
-        expect(
-            (price >= discount)
-        ).toBeTruthy()
-        
-        const buttonAddToCart = getByRole(product, "button", {name: "Add To Cart"});
-        fireEvent.click(buttonAddToCart);
-
-        await waitFor(async () => {
-            expect(
-                screen.queryByTestId("basket-amount")
-            ).toHaveTextContent("1");            
         });
     });
 })
