@@ -15,7 +15,7 @@ type Props = {
 
 function TopMenuNavagation(props: Props) {
     const menuItems: any[] = props.categories.map((category: any, id: number) => {
-        let testId: string = (category.name === "Laptops") ? "laptops" : ""
+        let label: string = (category.name === "Laptops") ? "laptops" : ""
         
         return (
             <TopMenuItem 
@@ -26,19 +26,24 @@ function TopMenuNavagation(props: Props) {
                     <HoverMenu 
                         subCategories={category.subCategories} 
                         categoryId={category.id}
-                        testId={testId ? testId + "-hover" : ""}
+                        label={label ? label + "-hover" : ""}
                     />
                 }
                 id={id}
                 key={category.id}
-                testId={testId}
             />
         )
     });
 
     return (
         <>
-            <ul data-testid="main-top-menu" className={!props.isOpenSearchPannel ? style["main-top-menu"] : classNames(style["main-top-menu"], style["main-top-menu-closed"])}>
+            <ul 
+                aria-label="main-top-menu" 
+                className={!props.isOpenSearchPannel ? 
+                    style["main-top-menu"] : 
+                    classNames(style["main-top-menu"], style["main-top-menu-closed"])}
+                role="menu"
+            >
                 <li>
                     <Link to="/"><Logo /></Link>
                 </li>

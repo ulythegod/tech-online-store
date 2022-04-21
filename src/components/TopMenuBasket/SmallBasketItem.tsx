@@ -14,8 +14,8 @@ type Props = {
 
 function SmallBasketItem(props: Props) {
     return (
-        <div className={styles["basket-list-item"]} data-testid="small-basket-item">
-            <span><span data-testid="amount-of-item">{props.amount}</span> x</span>
+        <div className={styles["basket-list-item"]} role="small-basket-item">
+            <span><span role="amount-of-item">{props.amount}</span> x</span>
             <img className={styles["item-img"]} src={props.imagePath} alt=""/>
             <Link className={styles["item-link"]} to={`/product/${props.id}`}>
                 {props.name}

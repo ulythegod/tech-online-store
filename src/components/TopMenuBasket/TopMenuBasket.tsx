@@ -14,11 +14,7 @@ import { ReactComponent as BasketLogo } from '../../images/basket.svg';
 import { ReactComponent as PayPal } from '../../images/paypal.svg';
 import { Product } from 'CustomTypes';
 
-type Props = {
-    testId?: string
-}
-
-function TopMenuBasket(props: Props) {
+function TopMenuBasket() {
     const dispatch = useDispatch();
     const [referenceElement, setReferenceElement] = useState<HTMLDivElement | null>(null);
     const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(null);
@@ -125,7 +121,7 @@ function TopMenuBasket(props: Props) {
             >
                 <div className={stylesModule["basket-icon"]}>
                     <BasketLogo className={stylesModule["basket-logo"]} />
-                    <div className={stylesModule["basket-amount"]} data-testid={props.testId}>{basketItems.length}</div>
+                    <div className={stylesModule["basket-amount"]} role="basket-amount">{basketItems.length}</div>
                 </div>
                 <div
                     className={isOpenBasket ? stylesModule["appearing-block"] : stylesModule["hidden"]}

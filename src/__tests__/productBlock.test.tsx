@@ -4,7 +4,7 @@ import React from 'react';
 import { render, screen, waitFor, fireEvent } from '../custom-render';
 
 import CatalogPage from 'pages/CatalogPage';
-import { findByRole, getByRole, getByTestId, getByText, queryAllByRole, waitForElementToBeRemoved } from '@testing-library/react';
+import { findByRole, findByText, getByRole, getByTestId, getByText, queryAllByRole } from '@testing-library/react';
 
 describe('product block', () => {
     it("checks elements of product block", async () => {
@@ -13,7 +13,7 @@ describe('product block', () => {
         let products: any[] = [];
         await waitFor(
             async () => {
-                products = screen.getAllByTestId("product-preview");
+                products = screen.getAllByRole("product", {name: "product-preview"});
                 expect(
                     products.length
                 ).toBeGreaterThan(0)          
@@ -26,7 +26,18 @@ describe('product block', () => {
         const product: any = products[0];
         
         if (product) {
-            let status = getByText(product, 'in-stock') || getByText(product, 'check-availability');
+            let status: any = {};
+            
+            await findByText(product, 'in-stock', {}, {timeout: 5000}).then(async (statusElem: any) => {
+                status = statusElem;     
+            });
+
+            if (!status) {
+                await findByText(product, 'check-availability', {}, {timeout: 5000}).then(async (statusElem: any) => {
+                    status = statusElem;     
+                });
+            }
+
             expect(
                 status
             ).toBeInTheDocument();
@@ -49,17 +60,18 @@ describe('product block', () => {
             productName
         ).toBeInTheDocument();
 
-        let price = getByTestId(product, "price");
-        let discount = getByTestId(product, "discount");
+        let price = getByRole(product, "price");
+        let discount = getByRole(product, "discount");
 
         expect(
             (price >= discount)
         ).toBeTruthy()
         
         //проверяется добавление и удаление одного товара из корзины
-        const basket = screen.queryByTestId("basket-amount");
+        const baskets: any[] = screen.getAllByRole("basket-amount");
+        const basketDesktop = baskets[0];
 
-        expect(basket).toBeInTheDocument();
+        expect(basketDesktop).toBeInTheDocument();
 
         const buttonAddToCart = getByRole(product, "button", {name: "Add To Cart"});
         fireEvent.click(buttonAddToCart);
@@ -68,12 +80,12 @@ describe('product block', () => {
 
         await waitFor(async () => {
             expect(
-                basket
+                basketDesktop
             ).toHaveTextContent("1");            
         });
 
         await waitFor(async () => {
-            const amountItems: any[] = screen.queryAllByTestId("amount-of-item");
+            const amountItems: any[] = screen.queryAllByRole("amount-of-item");
 
             amountItems.forEach((item: any, id: number) => {
                 expect(
@@ -83,7 +95,7 @@ describe('product block', () => {
         });
 
         let desktopItem: any = {};
-        await screen.findAllByTestId("small-basket-item", {}, { timeout: 5000 }).then((basketItems: any[]) => {
+        await screen.findAllByRole("small-basket-item", {}, { timeout: 5000 }).then((basketItems: any[]) => {
             expect(
                 basketItems.length
             ).toBe(2);
@@ -99,7 +111,7 @@ describe('product block', () => {
 
         await waitFor(async () => {
             expect(
-                basket
+                basketDesktop
             ).toHaveTextContent("0");            
         });
     });

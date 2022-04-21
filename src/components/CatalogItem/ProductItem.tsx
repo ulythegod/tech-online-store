@@ -47,9 +47,10 @@ function ProductItem(props: Props) {
                 styles["product-preview"] :
                 styles["new-product-preview"]
             }
-            data-testid="product-preview"
+            aria-label="product-preview"
+            role="product"
         >
-            <div className={styles["item-inner"]} data-testid="product-item">
+            <div className={styles["item-inner"]}>
                 <p className={classNames(styles["product-status"], styles[props.status])} aria-label="product-status">
                     {
                         (props.status == "in-stock") ? <InStock /> : 
@@ -92,8 +93,8 @@ function ProductItem(props: Props) {
                     <a className={styles["reviews-link"]} href='#'>Reviews ({props.reviewsCount})</a>
                 </div>
                 <Link to={`/product/${props.id}`} className={styles["product-title"]}>{props.name}</Link>
-                <span className={styles["product-price"]} data-testid="price">${props.price}</span>
-                <span className={styles["product-discount"]} data-testid="discount">${props.discount}</span>
+                <span className={styles["product-price"]} role="price">${props.price}</span>
+                <span className={styles["product-discount"]} role="discount">${props.discount}</span>
                 <div className={styles["add-to-card-btn"]}>
                     <StoreButton 
                         style="light-button-narrow"

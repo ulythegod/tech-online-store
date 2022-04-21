@@ -21,8 +21,8 @@ test("checks new page number after jump on the next page", () => {
             handlePagination={onClick}
     />);
 
-    fireEvent.click(catalogPagination.getByTestId("next-page"));
-    expect(catalogPagination.getByTestId("current-page").innerHTML).toBe("1");
+    fireEvent.click(catalogPagination.getByRole("next-page"));
+    expect(catalogPagination.getByRole("current-page").innerHTML).toBe("1");
     expect(onClick).toHaveBeenCalled();
 });
 
@@ -43,5 +43,5 @@ test("checks last page number", () => {
             handlePagination={onClick}
     />);
 
-    expect(catalogPagination.getByTestId("last-page-num").innerHTML).toBe("3");
+    expect(catalogPagination.getByRole("last-page-num").innerHTML).toBe("3");
 });

@@ -28,7 +28,7 @@ function CatalogPagination(props: Props) {
                         href="#"
                         key={i}
                         onClick={(event: any) => props.handlePagination(event, i)}
-                        data-testid={
+                        role={
                             (i === pagesAmount) ?
                             "last-page-num" :
                             ""
@@ -53,7 +53,7 @@ function CatalogPagination(props: Props) {
                             href="#"
                             key={i}
                             onClick={(event: any) => props.handlePagination(event, i)}
-                            data-testid={
+                            role={
                                 i === (props.currentPage + 1) ? 
                                 "next-page" :
                                 (i === props.currentPage) ?
@@ -75,7 +75,7 @@ function CatalogPagination(props: Props) {
                         href="#"
                         key={pagesAmount}
                         onClick={(event: any) => props.handlePagination(event, pagesAmount)}
-                        data-testid="last-page-num"
+                        role="last-page-num"
                     >
                         {pagesAmount}
                     </a>
@@ -134,7 +134,7 @@ function CatalogPagination(props: Props) {
                             href="#"
                             key={i}
                             onClick={(event: any) => props.handlePagination(event, i)}
-                            data-testid={
+                            role={
                                 i === (props.currentPage + 1) ? 
                                 "next-page" :
                                 (i === props.currentPage) ?
@@ -184,7 +184,7 @@ function CatalogPagination(props: Props) {
                         href="#"
                         key={props.currentPage}
                         onClick={(event: any) => props.handlePagination(event, props.currentPage)}
-                        data-testid="current-page"
+                        role="current-page"
                     >
                         {props.currentPage}
                     </a>
@@ -198,7 +198,7 @@ function CatalogPagination(props: Props) {
                         href="#"
                         key={pagesAmount}
                         onClick={(event: any) => props.handlePagination(event, pagesAmount)}
-                        data-testid="last-page-num"
+                        role="last-page-num"
                     >
                         {pagesAmount}
                     </a>
@@ -209,7 +209,7 @@ function CatalogPagination(props: Props) {
                         href="#"
                         key={"next-" + (props.currentPage + 1)}
                         onClick={(event: any) => props.handlePagination(event, (props.currentPage + 1))}
-                        data-testid="next-page"
+                        role="next-page"
                     >
                         <div className={styles["next"]}>
                     </div>    
