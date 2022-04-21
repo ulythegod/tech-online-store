@@ -1,86 +1,73 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from 'react';
+import { Story, Meta } from '@storybook/react';
 
-import { StoreButton } from "./StoreButton";
+import StoreButton from '../components/Buttons/StoreButton';
+import { StoreButtonProps } from 'CustomTypes';
+import { ReactComponent as PayPal } from '../../images/paypal.svg';
 
 export default {
-    title: 'Store Button',
     component: StoreButton,
-    argTypes: {
-        backgroundColor: { control: 'light' },
-    },
-} as ComponentMeta<typeof StoreButton>;
+    title: 'Buttons/Store Button'
+} as Meta;
 
-const Template: ComponentStory<typeof StoreButton> = (args) => <StoreButton {...args} />;
+const Template: Story<StoreButtonProps> = (args: StoreButtonProps) => <StoreButton {...args} />
 
-export const Primary = Template.bind({});
-Primary.args = {
-    backgroundColor: "light",
-    content: "Our Deals"
-}
-
-export const LightNarrow = Template.bind({});
-LightNarrow.args = {
-    backgroundColor: "light",
-    state: "narrow",
-    content: "Our Deals"
+export const Default = Template.bind({});
+Default.args = {
+    style: 'light-button',
+    content: "Add to Cart"
 };
 
-export const Blue = Template.bind({});
-Blue.args = {
-    backgroundColor: "blue",
-    content: "Our Deals"
+export const LigthButtonNarrow = Template.bind({});
+LigthButtonNarrow.args = {
+    ...Default.args,
+    style: 'light-button-narrow',
+};
+
+export const BlueButton = Template.bind({});
+BlueButton.args = {
+    ...Default.args,
+    style: 'blue-button',
 }
 
-export const BlueNarrow = Template.bind({});
-BlueNarrow.args = {
-    backgroundColor: "blue",
-    state: "narrow",
-    content: "Our Deals"
+export const YellowButton = Template.bind({});
+YellowButton.args = {
+    ...Default.args,
+    style: 'yellow-button',
 }
 
-export const YellowNarrow = Template.bind({});
-YellowNarrow.args = {
-    backgroundColor: "yellow",
-    state: "narrow",
-    content: "Our Deals"
+export const BlueButtonNarrow = Template.bind({});
+BlueButtonNarrow.args = {
+    ...Default.args,
+    style: 'blue-button-narrow',
 }
 
-export const YellowGeneral = Template.bind({});
-YellowGeneral.args = {
-    backgroundColor: "yellow",
-    state: "general",
-    content: "Our Deals"
+export const YellowButtonNarrow = Template.bind({});
+YellowButtonNarrow.args = {
+    ...Default.args,
+    style: 'yellow-button-narrow',
 }
 
-export const YellowHeader = Template.bind({});
-YellowHeader.args = {
-    backgroundColor: "yellow",
-    state: "header",
-    content: "Our Deals"
+export const YellowButtonGeneral = Template.bind({});
+YellowButtonGeneral.args = {
+    ...Default.args,
+    style: 'yellow-button-general',
 }
 
-export const Grey = Template.bind({});
-Grey.args = {
-    backgroundColor: "grey",
-    content: "Our Deals"
+export const GreyButton = Template.bind({});
+GreyButton.args = {
+    ...Default.args,
+    style: 'grey-button',
 }
 
-export const GreyGeneral = Template.bind({});
-GreyGeneral.args = {
-    backgroundColor: "grey",
-    state: "general",
-    content: "Our Deals"
+export const GreyButtonGeneral = Template.bind({});
+GreyButtonGeneral.args = {
+    ...Default.args,
+    style: 'grey-button',
 }
 
-export const Black = Template.bind({});
-Black.args = {
-    backgroundColor: "black",
-    content: "Our Deals"
-}
-
-export const Icon = Template.bind({});
-Icon.args = {
-    state: "icon",
-    content: "4"
+export const BlackButton = Template.bind({});
+BlackButton.args = {
+    ...Default.args,
+    style: 'black-button',
 }

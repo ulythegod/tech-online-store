@@ -1,16 +1,9 @@
 import React from 'react';
 import styles from './storeButton.module.scss';
 import classNames from 'classnames';
+import { StoreButtonProps } from 'CustomTypes';
 
-type Props = {
-    style: string,
-    content: any,
-    showOnMobile?: boolean,
-    buttonAction?: Function,
-    label?: string
-}
-
-function StoreButton(props: Props) {
+function StoreButton(props: StoreButtonProps) {
     return (
         <button 
             className={

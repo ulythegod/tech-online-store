@@ -92,3 +92,11 @@ export interface Price {
     name: string,
     segmentValues: number[]
 }
+
+export type StoreButtonProps = {
+    style: string,
+    content: any,
+    showOnMobile?: boolean,
+    buttonAction?: Function,
+    label?: string
+}
