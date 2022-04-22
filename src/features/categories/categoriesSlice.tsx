@@ -70,7 +70,7 @@ export const selectCategoriesProductsAmount = (state: RootState, categoriesIds: 
                 let categoryProducts: any[] = [];
                 
                 state.products.products.forEach((product: Product) => {                                  
-                    if (product.category.id == categoryId) {
+                    if (product.category.id === categoryId) {
                         categoryProducts.push(product);
                     }
                 });                

@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import '@testing-library/react';
 import React from 'react';
 import { render, fireEvent } from "@testing-library/react";
-import CatalogPagination from 'components/Catalog/CatalogPagination';
+import CatalogPagination from '../components/Catalog/CatalogPagination';
 
 test("checks new page number after jump on the next page", () => {
     const onClick = jest.fn();

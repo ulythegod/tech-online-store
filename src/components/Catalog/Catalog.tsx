@@ -2,10 +2,10 @@ import React, { ReactElement, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 
 import { useSelector } from 'react-redux';
-import { selectCategoryById } from 'features/categories/categoriesSlice';
+import { selectCategoryById } from '../../features/categories/categoriesSlice';
 import { perPageProductsSelector } from '../../features/products/productsSlice';
 import { RootState }  from '../../store';
-import { selectAllPrices } from 'features/prices/pricesSlice';
+import { selectAllPrices } from '../../features/prices/pricesSlice';
 
 import { 
     FillersInterface,
@@ -14,19 +14,19 @@ import {
 
 import styles from './catalog.module.scss';
 
-import Breadcrumbs from 'components/Breadcrumbs/Breadcrumbs';
-import PageTitle from 'components/PageTitle/PageTitle';
+import Breadcrumbs from '../Breadcrumbs/Breadcrumbs';
+import PageTitle from '../PageTitle/PageTitle';
 import CatalogTopElements from './CatalogTopElements';
 import CatalogSelectedFilters from './CatalogSelectedFilters';
 import CatalogPagination from './CatalogPagination';
-import CatalogFilter from 'components/CatalogFilter/CatalogFilter';
+import CatalogFilter from '../CatalogFilter/CatalogFilter';
 import CatalogDescription from './CatalogDescription';
-import CatlogItemHorizontal from 'components/CatalogItem/CatlogItemHorizontal';
-import ProductItem from 'components/CatalogItem/ProductItem';
-import StoreButton from 'components/Buttons/StoreButton';
-import CompareProducts from 'components/CompareProducts/CompareProducts';
-import WishList from 'components/WishList/WishList';
-import CatalogFilterBanner from 'components/CatalogFilter/CatalogFilterBanner';
+import CatlogItemHorizontal from '../CatalogItem/CatlogItemHorizontal';
+import ProductItem from '../CatalogItem/ProductItem';
+import StoreButton from '../Buttons/StoreButton';
+import CompareProducts from '../CompareProducts/CompareProducts';
+import WishList from '../WishList/WishList';
+import CatalogFilterBanner from '../CatalogFilter/CatalogFilterBanner';
 import SelectedFilter from './SelectedFilter';
 import CatalogSelect from './CatalogSelect';
 

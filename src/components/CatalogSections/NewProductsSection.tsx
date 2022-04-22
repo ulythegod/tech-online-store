@@ -1,11 +1,11 @@
 import React, { ReactElement, useRef, useState, useEffect } from 'react';
 import styles from './newProductsSection.module.scss';
-import TurnOverButton from 'components/Buttons/TurnOverButton';
-import ProductItem from 'components/CatalogItem/ProductItem';
+import TurnOverButton from '../Buttons/TurnOverButton';
+import ProductItem from '../CatalogItem/ProductItem';
 import debounce from 'lodash.debounce';
 
 import { useSelector } from 'react-redux';
-import { selectAllProducts } from 'features/products/productsSlice';
+import { selectAllProducts } from '../../features/products/productsSlice';
 import { RootState } from 'store';
 import { Product } from 'CustomTypes';
 

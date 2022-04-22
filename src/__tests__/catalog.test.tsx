@@ -3,7 +3,7 @@ import '@testing-library/react';
 import React from 'react';
 import { render, screen, waitFor, fireEvent } from '../custom-render';
 
-import CatalogPage from 'pages/CatalogPage';
+import CatalogPage from '../pages/CatalogPage';
 import { getByRole } from '@testing-library/react';
 
 describe('catalog test', () => {
@@ -48,6 +48,7 @@ describe('catalog test', () => {
         );        
         
         products.slice(0, 5).forEach((product: any) => {
+           // eslint-disable-next-line testing-library/prefer-screen-queries
            const button = getByRole(product, "button", {name: "Add To Cart"});
            expect(
                button

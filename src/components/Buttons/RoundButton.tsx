@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './roundButton.module.scss';
 
 type Props = {
-    content: object,
+    content: any,
     buttonAction?: Function,
     itemId?: number
 }

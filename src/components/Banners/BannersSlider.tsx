@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './bannersSlider.module.scss';
-import TurnOverButton from 'components/Buttons/TurnOverButton';
+import TurnOverButton from '../Buttons/TurnOverButton';
 import banner from '../../images/banner.png';
 
 function BannersSlider() {

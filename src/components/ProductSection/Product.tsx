@@ -20,7 +20,7 @@ function Product() {
         if (status === 'idle' || Number(productId) !== product.id) {
             dispatch(fetchProductById(Number(productId)));
         }
-    }, [dispatch, status, productId]);          
+    }, [dispatch, status, productId, product.id]);          
 
     const [activeInfoBlock, setActiveInfoBlock] = useState('ProductInfoBlock');
     function handleInfoBlockChange(e: any): void {

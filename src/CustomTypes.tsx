@@ -1,3 +1,5 @@
+import { PropsWithChildren, ReactElement, ValidationMap, WeakValidationMap } from "react"
+
 export type FillersInterface = {
     categoriesIds: number[],
     defaultCategoriesIds: number[],
@@ -99,4 +101,12 @@ export type StoreButtonProps = {
     showOnMobile?: boolean,
     buttonAction?: Function,
     label?: string
+}
+
+export interface FunctionComponent<P = {}> {
+    (props: PropsWithChildren<P>, context?: any): ReactElement | null;
+    propTypes?: WeakValidationMap<P>;
+    contextTypes?: ValidationMap<any>;
+    defaultProps?: Partial<P>;
+    displayName?: string;
 }

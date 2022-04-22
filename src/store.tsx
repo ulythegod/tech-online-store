@@ -15,7 +15,12 @@ const store = configureStore({
         category: categoryReducer,
         product: productReduser,
         prices: pricesReducer,
-        productsCard: productCardReducer
+        productsCard: productCardReducer,
+        test: (state: any = {"test1": 123}, action) => {
+            state.test1 = 2;
+
+            return state;
+        }
     }
 });
 

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styles from './addToCart.module.scss';
 
 type Props = {
-    renderLeft: object,
-    renderRight: object
+    renderLeft: ReactNode,
+    renderRight: ReactNode
 }
 
 function AddToCart(props: Props) {

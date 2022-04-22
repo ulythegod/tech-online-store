@@ -3,8 +3,8 @@ import '@testing-library/react';
 import React from 'react';
 import { render, screen, waitFor, fireEvent } from '../custom-render';
 
-import CatalogPage from 'pages/CatalogPage';
-import { findByRole, findByText, getByRole, getByTestId, getByText, queryAllByRole } from '@testing-library/react';
+import CatalogPage from '../pages/CatalogPage';
+import { findByText, getByRole, getByText, queryAllByRole } from '@testing-library/react';
 
 describe('product block', () => {
     it("checks elements of product block", async () => {
@@ -24,26 +24,28 @@ describe('product block', () => {
         );
 
         const product: any = products[0];
-        
-        if (product) {
-            let status: any = {};
-            
+        let status: any = {};
+
+        if (product) {          
+            // eslint-disable-next-line testing-library/prefer-screen-queries
             await findByText(product, 'in-stock', {}, {timeout: 5000}).then(async (statusElem: any) => {
                 status = statusElem;     
             });
 
             if (!status) {
+                // eslint-disable-next-line testing-library/prefer-screen-queries
                 await findByText(product, 'check-availability', {}, {timeout: 5000}).then(async (statusElem: any) => {
                     status = statusElem;     
                 });
             }
-
-            expect(
-                status
-            ).toBeInTheDocument();
         }
 
+        expect(
+            status
+        ).toBeInTheDocument();
+
         fireEvent.mouseOver(product);
+        // eslint-disable-next-line testing-library/prefer-screen-queries
         let productButtons: any[] = queryAllByRole(product, 'button');
         productButtons.forEach((button: any) => {
             expect(
@@ -52,15 +54,19 @@ describe('product block', () => {
         });
         
         expect(
+            // eslint-disable-next-line testing-library/prefer-screen-queries
             getByRole(product, 'img')
         ).toBeInTheDocument();
 
+        // eslint-disable-next-line testing-library/prefer-screen-queries
         let productName = getByText(product, 'EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On')
         expect(
             productName
         ).toBeInTheDocument();
 
+        // eslint-disable-next-line testing-library/prefer-screen-queries
         let price = getByRole(product, "price");
+        // eslint-disable-next-line testing-library/prefer-screen-queries
         let discount = getByRole(product, "discount");
 
         expect(
@@ -73,6 +79,7 @@ describe('product block', () => {
 
         expect(basketDesktop).toBeInTheDocument();
 
+        // eslint-disable-next-line testing-library/prefer-screen-queries
         const buttonAddToCart = getByRole(product, "button", {name: "Add To Cart"});
         fireEvent.click(buttonAddToCart);
         fireEvent.click(buttonAddToCart);
@@ -104,6 +111,7 @@ describe('product block', () => {
         });
 
         expect(desktopItem).toBeInTheDocument();            
+        // eslint-disable-next-line testing-library/prefer-screen-queries
         const deleteItemButton = getByRole(desktopItem, 'button', {name: 'remove-product'});
         expect(deleteItemButton).toBeInTheDocument();
 

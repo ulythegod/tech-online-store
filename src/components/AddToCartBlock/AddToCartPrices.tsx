@@ -1,12 +1,12 @@
 import React from "react";
 import styles from './addToCartPrices.module.scss';
-import StoreButton from "components/Buttons/StoreButton";
+import StoreButton from "../Buttons/StoreButton";
 import { ReactComponent as PayPal } from '../../images/paypal.svg';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { productAdded, decreaseAmount, changeAmount, selectAllProductsIds } from 'features/product-card/productCardSlice';
-import { RootState } from 'store';
-import { selectProductsByIds } from "features/products/productsSlice";
+import { productAdded, decreaseAmount, changeAmount, selectAllProductsIds } from '../../features/product-card/productCardSlice';
+import { RootState } from '../../store';
+import { selectProductsByIds } from "../../features/products/productsSlice";
 
 type Props = {
     productPrice: number,
