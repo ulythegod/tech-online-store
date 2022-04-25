@@ -12,7 +12,7 @@ function ProductInfoBlock(props: Props) {
     const [activeColor, setActiveColor] = useState("black");
 
     function handleActiveColorChange(event: any) {
-        if (event.target.id != activeColor) {
+        if (event.target.id !== activeColor) {
             setActiveColor(event.target.id);
         }        
     }

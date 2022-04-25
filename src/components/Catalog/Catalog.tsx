@@ -80,7 +80,7 @@ function Catalog() {
             currentPage: 1,
             perPageItems: 5
         })
-    }, [categoryId])
+    }, [categoryId, filters, appliedFilters])
     
     function handleCategorySelect(event: any, categoryId: number) {
         event.preventDefault();        

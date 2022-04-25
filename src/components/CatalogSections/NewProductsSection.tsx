@@ -42,7 +42,7 @@ function ProductSection(props: any): any {
             current?.removeEventListener("scroll", debounceCheckForScrollPosition);
             debounceCheckForScrollPosition.cancel();
         }
-    }, []);
+    }, [debounceCheckForScrollPosition]);
 
     function handleScrollRight(event: any) {
         scrollContainerBy(210)
