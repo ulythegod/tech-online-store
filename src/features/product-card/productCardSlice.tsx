@@ -17,24 +17,24 @@ const productsCardSlice = createSlice({
             return []
         },
         decreaseAmount(state, action) {            
-            const {productId, quantity} = action.payload;        
+            const {productId, quantity} = action.payload;       
 
             state = state.filter((id) => id !== productId);
             
             for (let i = 0; i < (quantity - 1); i++) {
                 state.push(productId);
-            }         
+            }
 
             return state;
         },
         changeAmount(state, action) {            
-            const {productId, quantity} = action.payload;        
+            const {productId, newQuantity} = action.payload;   
 
             state = state.filter((id) => id !== productId);
             
-            for (let i = 0; i < quantity; i++) {
+            for (let i = 0; i < newQuantity; i++) {
                 state.push(productId);
-            }         
+            }
 
             return state;
         }

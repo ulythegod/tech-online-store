@@ -6,7 +6,6 @@ import { ReactComponent as PayPal } from '../../images/paypal.svg';
 import { useSelector, useDispatch } from 'react-redux';
 import { productAdded, decreaseAmount, changeAmount, selectAllProductsIds } from '../../features/product-card/productCardSlice';
 import { RootState } from '../../store';
-import { selectProductsByIds } from "../../features/products/productsSlice";
 
 type Props = {
     productPrice: number,
@@ -15,8 +14,6 @@ type Props = {
 
 function AddToCartPrices(props: Props) {
     const dispatch = useDispatch();
-
-    const products = useSelector((state: RootState) => selectProductsByIds(state, [props.productId]));
 
     const productsIds = useSelector((state: RootState) => selectAllProductsIds(state));
 
@@ -41,7 +38,7 @@ function AddToCartPrices(props: Props) {
     }
 
     function handleAmountChange(event: any) {
-        dispatch(changeAmount({productId: props.productId, quantity: Number(event.target.value)}));    
+        dispatch(changeAmount({productId: props.productId, newQuantity: Number(event.target.value)}));    
     }
 
     return (
@@ -62,13 +59,13 @@ function AddToCartPrices(props: Props) {
                 <button className={styles["decrease-number"]} onClick={handleAmountDecrease}></button>
             </div>                    
             <StoreButton 
-                style='blue-button-narrow'
+                buttonStyle={"blue-button-narrow"}
                 content={"Add to Cart"}
                 buttonAction={handleAddToCard}
 
             />
             <StoreButton 
-                style='yellow-button-narrow'
+                buttonStyle={"yellow-button-narrow"}
                 content={<PayPal />}
             />
         </div>

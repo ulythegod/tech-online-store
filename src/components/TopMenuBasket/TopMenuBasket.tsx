@@ -135,7 +135,7 @@ function TopMenuBasket() {
                             <span className={stylesModule["basket-title"]}>My Cart</span>
                             <span className={stylesModule["basket-amount-title"]}>{basketItems.length} item in cart</span>
                             <StoreButton 
-                                style="light-button"
+                                buttonStyle="light-button"
                                 content={"View or Edit Your Cart"}
                                 buttonAction={handleMovingToCard}
                             />
@@ -146,11 +146,11 @@ function TopMenuBasket() {
                         <div className={stylesModule["basket-bottom"]}>
                             <span className={stylesModule["subtotal"]}>Subtotal: <span>${subtotal}</span></span>
                             <StoreButton 
-                                style="blue-button"
+                                buttonStyle="blue-button"
                                 content={"Go to Checkout"}
                             />
                             <StoreButton 
-                                style="yellow-button-header"
+                                buttonStyle="yellow-button-header"
                                 content={
                                     <>
                                         Check out with

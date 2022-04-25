@@ -12,7 +12,7 @@ function FooterSubscribeForm() {
             <form className={styles["subscribe-form"]} action="#">
                 <input type="email" placeholder='Your Email' />
                 <StoreButton 
-                    style="blue-button"
+                    buttonStyle="blue-button"
                     content={"Subscribe"}
                 />
             </form>

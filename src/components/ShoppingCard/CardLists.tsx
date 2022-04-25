@@ -61,17 +61,17 @@ function CardLists(props: Props) {
             <div className={styles["card-buttons"]}>
                 <div className={styles["inner-buttons"]}>
                     <StoreButton 
-                        style="grey-button"
+                        buttonStyle="grey-button"
                         content="Continue Shopping"
                     />
                     <StoreButton 
-                        style="black-button"
+                        buttonStyle="black-button"
                         content="Clear Shopping Cart"
                         buttonAction={handleClearCard}
                     />
                 </div>
                 <StoreButton 
-                    style="black-button"
+                    buttonStyle="black-button"
                     content="Update Shopping Cart"
                 />
             </div>

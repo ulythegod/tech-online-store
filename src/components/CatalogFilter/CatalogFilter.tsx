@@ -140,7 +140,7 @@ function CatalogFilter(props: Props) {
                         <a onClick={handleFilterOpen} href="#"><CloseMenu /></a>
                     </div>
                     <StoreButton
-                        style='grey-button'
+                        buttonStyle='grey-button'
                         content={"Clear Filter"}
                         showOnMobile={false}
                         buttonAction={props.handleClearFilters}
@@ -204,7 +204,7 @@ function CatalogFilter(props: Props) {
                         />
                     </ul>
                     <StoreButton
-                        style='blue-button'
+                        buttonStyle='blue-button'
                         content={`Apply Filters (${props.filtersAmount})`}
                         buttonAction={props.handleApplyFilters}
                     />

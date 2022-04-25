@@ -21,7 +21,7 @@ function ReviewsSection() {
                 />
                 <div className={styles["reviews-bottom"]}>
                     <StoreButton 
-                        style="light-button"
+                        buttonStyle="light-button"
                         content={"Leave Us A Review"}
                     />
                     <div className={styles["reviews-scrolling"]} >

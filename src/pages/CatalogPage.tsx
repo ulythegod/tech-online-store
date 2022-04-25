@@ -7,7 +7,6 @@ import banner from '../images/catalog-banner.png';
 function CatalogPage() {
     return (
         <>
-            <div>test test test</div>
             <SingleBanner
                 image={banner}
             />

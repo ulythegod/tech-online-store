@@ -22,17 +22,17 @@ function CardItem(props: Props) {
     const dispatch = useDispatch();
 
     function handleProductAdd(event: any, productId: number) {
-        dispatch(productAdded(productId))
+        dispatch(productAdded(productId));
     }
 
     function handleProductDecrease(event: any, productId: number, quantity: number) {
-        dispatch(decreaseAmount({productId: productId, quantity: quantity}))
+        dispatch(decreaseAmount({productId: productId, quantity: quantity}));
     }
 
     function handleOnChangeInput(event: any, productId: number) {
         event.preventDefault();
 
-        dispatch(changeAmount({productId: productId, quantity: event.target.value}))
+        dispatch(changeAmount({productId: productId, newQuantity: event.target.value}));
     }
 
     return (

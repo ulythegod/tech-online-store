@@ -12,7 +12,7 @@ function CheckoutHeader() {
                     title='Shopping Cart'
                 />
                 <StoreButton 
-                    style="light-button-narrow"
+                    buttonStyle="light-button-narrow"
                     content={"Sign In"}
                 />
             </div>

@@ -25,7 +25,7 @@ function CatalogDescription() {
                 movie mode" for which contrast is increased.
             </p>
             <StoreButton 
-                style="grey-button"
+                buttonStyle="grey-button"
                 content={"More"}
             />
         </div>

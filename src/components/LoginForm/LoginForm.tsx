@@ -28,7 +28,7 @@ function LoginForm() {
                         </div>
                         <div className={styles["form-buttons"]}>
                             <StoreButton 
-                                style="blue-button-narrow"
+                                buttonStyle="blue-button-narrow"
                                 content={"Sign In"}
                             />
                             <a className={styles["forget-password-link"]} href="#">Forgot Your Password?</a>

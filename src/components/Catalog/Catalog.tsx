@@ -437,7 +437,7 @@ function Catalog() {
                         }
                         tableButton={
                             <StoreButton 
-                                style={(view === "table") ? 'icon-button' : 'icon-button-disabled'}
+                                buttonStyle={(view === "table") ? 'icon-button' : 'icon-button-disabled'}
                                 content={<TableView />}
                                 buttonAction={handleViewChage}
                                 showOnMobile={false}
@@ -445,7 +445,7 @@ function Catalog() {
                         }
                         linesButton={
                             <StoreButton 
-                                style={(view === "column") ? 'icon-button' : 'icon-button-disabled'}
+                                buttonStyle={(view === "column") ? 'icon-button' : 'icon-button-disabled'}
                                 content={<LinesView />}
                                 buttonAction={handleViewChage}
                                 showOnMobile={false}

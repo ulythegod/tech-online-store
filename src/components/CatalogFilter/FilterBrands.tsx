@@ -14,7 +14,7 @@ function FilterBrands() {
         <div className={styles["brands"]}>
             <span>Brands</span>
             <StoreButton
-                style='grey-button'
+                buttonStyle='grey-button'
                 content={"All Brands"}
             />
             <ul>

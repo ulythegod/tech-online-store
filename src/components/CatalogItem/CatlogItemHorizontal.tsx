@@ -108,7 +108,7 @@ function CatlogItemHorizontal(props: Props) {
                 </div>
                 <div className={styles["product-button"]}>
                     <StoreButton 
-                        style='light-button'
+                        buttonStyle='light-button'
                         content={
                             <>
                                 <AddToCart />

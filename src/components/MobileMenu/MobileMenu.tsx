@@ -59,7 +59,7 @@ function MobileMenu(props: Props) {
                     {menuItems}
                     <li className={styles["menu-button"]}>
                         <StoreButton
-                            style="light-button"
+                            buttonStyle="light-button"
                             content='Our Deals'
                         />
                     </li>

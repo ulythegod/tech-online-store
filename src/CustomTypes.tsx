@@ -96,7 +96,7 @@ export interface Price {
 }
 
 export type StoreButtonProps = {
-    style: string,
+    buttonStyle: string,
     content: any,
     showOnMobile?: boolean,
     buttonAction?: Function,

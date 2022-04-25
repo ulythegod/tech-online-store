@@ -7,7 +7,9 @@ function StoreButton(props: StoreButtonProps) {
     return (
         <button 
             className={
-                (props.showOnMobile === false) ? classNames(styles[props.style], styles["hidden"]) : styles[props.style]
+                (props.showOnMobile === false) ? 
+                    classNames(styles[props.buttonStyle], styles["hidden"]) : 
+                    styles[props.buttonStyle]
             }
             onClick={(event: any) => props.buttonAction?.(event)}
             aria-label={props.label}

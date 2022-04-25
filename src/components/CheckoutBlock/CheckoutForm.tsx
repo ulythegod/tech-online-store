@@ -107,7 +107,7 @@ function CheckoutForm() {
                 </div>                    
             </div>
             <StoreButton 
-                style="blue-button-narrow"
+                buttonStyle="blue-button-narrow"
                 content={"Next"}
             />
         </form>

@@ -15,7 +15,7 @@ function CardSummaryForm(props: Props) {
     const [isOpenApplyDiscountCode, setIsOpenApplyDiscountCode] = useState(false);
 
     function handleOpenFormPart(event: any, partName: string) {
-        event.preventDefault();
+        event.preventDefault();      
 
         if (partName === "estimateShippingAndTax") {
             setIsOpenEstimateShippingAndTax(
@@ -39,7 +39,12 @@ function CardSummaryForm(props: Props) {
             <form action="#" className={styles["summary-form"]}>
                 <span className={styles["form-title"]}>Summary</span>
                 <div className={styles["form-unit-title"]}>
-                    <a onClick={(event) => handleOpenFormPart(event, "estimateShippingAndTax")} href="#">
+                    <a 
+                        onClick={(event) => handleOpenFormPart(event, "estimateShippingAndTax")} 
+                        href="#"
+                        aria-label='Estimate Shipping and Tax'
+                        role={"open-link"}
+                    >
                         Estimate Shipping and Tax
                         <span 
                             className={isOpenEstimateShippingAndTax ? styles["opened-unit"] : styles["closed-unit"]}
@@ -48,29 +53,49 @@ function CardSummaryForm(props: Props) {
                 </div>
                 <div className={styles["form-block-inner"]}>
                     <p>Enter your destination to get a shipping estimate.</p>                            
-                    <label htmlFor='country' className={isOpenEstimateShippingAndTax ? styles["form-block-inner-input"] : styles["hidden"]}>
+                    <label 
+                        htmlFor='country' 
+                        className={isOpenEstimateShippingAndTax ? styles["form-block-inner-input"] : styles["hidden"]}
+                        aria-label='Country input'                        
+                    >
                         <span>Country</span>
                         <select name="country" id="country">
                             <option value="1">Australia</option>
                         </select>
                     </label>
-                    <label htmlFor='state' className={isOpenEstimateShippingAndTax ? styles["form-block-inner-input"] : styles["hidden"]}>
+                    <label 
+                        htmlFor='state' 
+                        className={isOpenEstimateShippingAndTax ? styles["form-block-inner-input"] : styles["hidden"]}
+                        aria-label='State/Province input'
+                    >
                         <span>State/Province</span>
                         <input type="text" id="state"></input>
                     </label>
-                    <label htmlFor='code' className={isOpenEstimateShippingAndTax ? styles["form-block-inner-input"] : styles["hidden"]}>
+                    <label 
+                        htmlFor='code' 
+                        className={isOpenEstimateShippingAndTax ? styles["form-block-inner-input"] : styles["hidden"]}
+                        aria-label='Zip/Postal Code input'
+                    >
                         <span>Zip/Postal Code</span>
                         <InputMask mask="999999" id="code" />
                     </label>
-                    <label htmlFor='rate' className={isOpenEstimateShippingAndTax ? styles["form-block-inner-input"] : styles["hidden"]}>
+                    <label 
+                        htmlFor='rate' 
+                        className={isOpenEstimateShippingAndTax ? styles["form-block-inner-input"] : styles["hidden"]}
+                        aria-label='Standard Rate input'
+                    >
                         <span>Standard Rate</span>
                         <div className={styles["radio-input"]}>
-                            <input className={styles["radio-input-field"]} checked type="radio" id="rate"></input>
+                            <input className={styles["radio-input-field"]} defaultChecked type="radio" id="rate"></input>
                             <span className={styles["radio-input-button"]}></span>
                             <span className={styles["radio-input-text"]}>Price may vary depending on the item/destination. Shop Staff will contact you. $21.00</span>
                         </div>
                     </label>
-                    <label htmlFor='store' className={isOpenEstimateShippingAndTax ? styles["form-block-inner-input"] : styles["hidden"]}>
+                    <label 
+                        htmlFor='store' 
+                        className={isOpenEstimateShippingAndTax ? styles["form-block-inner-input"] : styles["hidden"]}
+                        aria-label='Pickup from store input'
+                    >
                         <span>Pickup from store</span>
                         <div className={styles["radio-input"]}>
                             <input className={styles["radio-input-field"]} type="radio" id="store"></input>
@@ -93,7 +118,7 @@ function CardSummaryForm(props: Props) {
                         <InputMask mask="999999" id="discount-code" placeholder="Enter Discount code" />
                     </label>
                     <StoreButton 
-                        style="light-button"
+                        buttonStyle="light-button"
                         content={"Apply Discount"}
                     />
                 </div>                
@@ -125,12 +150,12 @@ function CardSummaryForm(props: Props) {
                         <span>$13,068.00</span>
                     </div>
                     <StoreButton 
-                        style="blue-button"
+                        buttonStyle="blue-button"
                         content={"Proceed to Checkout"}
                         buttonAction={(event: any) => handleMovingToСheckout(event)}
                     />
                     <StoreButton 
-                        style="yellow-button-general"
+                        buttonStyle="yellow-button-general"
                         content={
                             <>
                                 Check out with
@@ -139,7 +164,7 @@ function CardSummaryForm(props: Props) {
                         }
                     />
                     <StoreButton 
-                        style="grey-button-general"
+                        buttonStyle="grey-button-general"
                         content={"Check Out with Multiple Addresses"}
                     />
                 </div>

@@ -50,7 +50,7 @@ function TopMenuNavagation(props: Props) {
                 {menuItems}
                 <li className={props.isOpenSearchPannel ? style["hidden"] : ''}>
                     <StoreButton
-                        style="light-button"
+                        buttonStyle="light-button"
                         content='Our Deals'
                     />
                 </li>

@@ -61,11 +61,11 @@ function ProductItem(props: Props) {
                 </p>
                 <div className={styles["product-buttons"]}>
                     <StoreButton
-                        style="icon-button"
+                        buttonStyle="icon-button"
                         content={<AddToFav />}
                     />
                     <StoreButton
-                        style="icon-button"
+                        buttonStyle="icon-button"
                         content={<AddToRating />}
                     />
                 </div>
@@ -97,7 +97,7 @@ function ProductItem(props: Props) {
                 <span className={styles["product-discount"]} role="discount">${props.discount}</span>
                 <div className={styles["add-to-card-btn"]}>
                     <StoreButton 
-                        style="light-button-narrow"
+                        buttonStyle="light-button-narrow"
                         content={
                             <>
                                 <AddToCart />

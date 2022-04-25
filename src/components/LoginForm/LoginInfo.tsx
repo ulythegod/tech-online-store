@@ -17,7 +17,7 @@ function LoginInfo() {
                 </p>
                 <div className={styles["info-buttons"]}>
                     <StoreButton 
-                        style="blue-button-narrow"
+                        buttonStyle="blue-button-narrow"
                         content="Create An Account"
                     />  
                 </div>
