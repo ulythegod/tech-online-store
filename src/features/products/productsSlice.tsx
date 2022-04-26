@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit';
 import { RootState }  from '../../store';
 import { allChildCategoriesSelector } from '../categories/categoriesSlice';
-import { selectAllPrices } from 'features/prices/pricesSlice';
+import { selectAllPrices } from '../prices/pricesSlice';
 import { 
     ProductState,
     Product, 

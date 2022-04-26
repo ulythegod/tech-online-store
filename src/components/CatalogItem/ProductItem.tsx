@@ -13,26 +13,18 @@ import { ReactComponent as CheckAvailability } from '../../images/check-availabi
 import { ReactComponent as AddToFav } from '../../images/prod-add-fav.svg';
 import { ReactComponent as AddToRating } from '../../images/prod-add-rating.svg';
 import { ReactComponent as AddToCart } from '../../images/add-to-card-prod.svg';
+import { ProductItemProps } from 'CustomTypes';
 
-type Props = {
-    status: string,
-    id: number,
-    productImage: string,
-    reviewsCount: number,
-    name: string,
-    price: number,
-    discount: number,
-    isNewProducts?: boolean
-}
-
-function ProductItem(props: Props) {
+function ProductItem(props: ProductItemProps) {
     const dispatch = useDispatch();
+
+    console.log("props", props);    
 
     let statusText: string = '';
         
-    if (props.status == "in-stock") {
+    if (props.status === "in-stock") {
         statusText = "in-stock";
-    } else if (props.status == "check-availability") {
+    } else if (props.status === "check-availability") {
         statusText = "check-availability";
     }
 
@@ -53,8 +45,8 @@ function ProductItem(props: Props) {
             <div className={styles["item-inner"]}>
                 <p className={classNames(styles["product-status"], styles[props.status])} aria-label="product-status">
                     {
-                        (props.status == "in-stock") ? <InStock /> : 
-                        (props.status == "check-availability") ? <CheckAvailability /> : 
+                        (props.status === "in-stock") ? <InStock /> : 
+                        (props.status === "check-availability") ? <CheckAvailability /> : 
                         ""
                     }
                     <span className={styles["status-text"]}>{statusText}</span>

@@ -110,3 +110,14 @@ export interface FunctionComponent<P = {}> {
     defaultProps?: Partial<P>;
     displayName?: string;
 }
+
+export type ProductItemProps = {
+    status: string,
+    id: number,
+    productImage: string,
+    reviewsCount: number,
+    name: string,
+    price: number,
+    discount: number,
+    isNewProducts?: boolean
+}
