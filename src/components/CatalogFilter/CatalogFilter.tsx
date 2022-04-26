@@ -34,12 +34,18 @@ type Props = {
     sortPosition: ReactElement<any, any>
 }
 
-function CatalogFilter(props: Props) {
+export const useOpenFilter = () => {
     const [isOpenFilter, setIsOpenFilter] = useState(false);
 
-    function handleFilterOpen() {
+    const handleFilterOpen = () => {
         setIsOpenFilter(prevIsOpenFilter => !prevIsOpenFilter);
-    }
+    };
+
+    return {isOpenFilter, handleFilterOpen};
+}
+
+function CatalogFilter(props: Props) {
+    const {isOpenFilter, handleFilterOpen} = useOpenFilter();
 
     let backLink: string = "/";
     if (props.currentCategory) {
