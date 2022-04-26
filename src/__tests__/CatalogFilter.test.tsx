@@ -11,4 +11,10 @@ test('can open filter', () => {
     });
 
     expect(result.current.isOpenFilter).toBe(true);
+
+    act(() => {
+        result.current.handleFilterOpen();
+    });
+
+    expect(result.current.isOpenFilter).toBe(false);
 }); 
