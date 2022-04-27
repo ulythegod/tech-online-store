@@ -5,8 +5,10 @@ import RatingButton from './RatingButton';
 import StoreButton from '../Buttons/StoreButton';
 import classNames from 'classnames';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { productAdded } from '../../features/product-card/productCardSlice';
+import { RootState } from '../../store';
+import { selectProduct } from '../../features/product/productSlice';
 
 import { ReactComponent as InStock } from '../../images/in-stock.svg';
 import { ReactComponent as CheckAvailability } from '../../images/check-availability.svg';
@@ -17,25 +19,40 @@ import { ProductItemProps } from 'CustomTypes';
 
 function ProductItem(props: ProductItemProps) {
     const dispatch = useDispatch();
+    const incomingProduct = useSelector((store: RootState) => selectProduct(store));
+    
+    let product: ProductItemProps = {
+        ...props
+    };
 
-    console.log("props", props);    
+    if (props.isUseFetch) {
+        if (incomingProduct.id > 0) {
+            product = {
+                ...props,
+                discount: Number(incomingProduct.price),
+                price: Number(incomingProduct.price),
+                name: incomingProduct.name,
+                productImage: incomingProduct.photo[0].url
+            }
+        }                
+    }
 
     let statusText: string = '';
         
-    if (props.status === "in-stock") {
+    if (product.status === "in-stock") {
         statusText = "in-stock";
-    } else if (props.status === "check-availability") {
+    } else if (product.status === "check-availability") {
         statusText = "check-availability";
     }
 
     function handleAddToCard(event: any) {
-        dispatch(productAdded(props.id))
+        dispatch(productAdded(product.id))
     }
 
     return (
         <div 
             className={
-                !props.isNewProducts ?
+                !product.isNewProducts ?
                 styles["product-preview"] :
                 styles["new-product-preview"]
             }
@@ -43,10 +60,10 @@ function ProductItem(props: ProductItemProps) {
             role="product"
         >
             <div className={styles["item-inner"]}>
-                <p className={classNames(styles["product-status"], styles[props.status])} aria-label="product-status">
+                <p className={classNames(styles["product-status"], styles[product.status])} aria-label="product-status">
                     {
-                        (props.status === "in-stock") ? <InStock /> : 
-                        (props.status === "check-availability") ? <CheckAvailability /> : 
+                        (product.status === "in-stock") ? <InStock /> : 
+                        (product.status === "check-availability") ? <CheckAvailability /> : 
                         ""
                     }
                     <span className={styles["status-text"]}>{statusText}</span>
@@ -61,8 +78,8 @@ function ProductItem(props: ProductItemProps) {
                         content={<AddToRating />}
                     />
                 </div>
-                <Link className={styles["product-image-link"]} to={`/product/${props.id}`}>
-                    <img className={styles["product-image"]} src={props.productImage} alt="Product" />
+                <Link className={styles["product-image-link"]} to={`/product/${product.id}`}>
+                    <img className={styles["product-image"]} src={product.productImage} alt="Product" />
                 </Link>
                 <div className={styles["product-rating"]}>
                     <div className={styles["rating-buttons"]}>
@@ -82,11 +99,11 @@ function ProductItem(props: ProductItemProps) {
                             isFilled={false}
                         />
                     </div>
-                    <a className={styles["reviews-link"]} href='#'>Reviews ({props.reviewsCount})</a>
+                    <a className={styles["reviews-link"]} href='#'>Reviews ({product.reviewsCount})</a>
                 </div>
-                <Link to={`/product/${props.id}`} className={styles["product-title"]}>{props.name}</Link>
-                <span className={styles["product-price"]} role="price">${props.price}</span>
-                <span className={styles["product-discount"]} role="discount">${props.discount}</span>
+                <Link to={`/product/${product.id}`} className={styles["product-title"]}>{product.name}</Link>
+                <span className={styles["product-price"]} role="price">${product.price}</span>
+                <span className={styles["product-discount"]} role="discount">${product.discount}</span>
                 <div className={styles["add-to-card-btn"]}>
                     <StoreButton 
                         buttonStyle="light-button-narrow"

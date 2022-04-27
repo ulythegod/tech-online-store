@@ -119,5 +119,62 @@ export type ProductItemProps = {
     name: string,
     price: number,
     discount: number,
-    isNewProducts?: boolean
+    isNewProducts?: boolean,
+    isUseFetch?: boolean
+}
+
+export type CatlogItemHorizontalProps = {
+    status: string,
+    productImage: string,
+    model: string,
+    name: string,
+    price: number,
+    discount: number,
+    specs: Spec[],
+    reviewsCount: number,
+    id: number,
+    isUseFetch?: boolean
+}
+
+export type RoundButtonProps = {
+    content: any,
+    buttonAction?: Function,
+    itemId?: number
+}
+
+export type TurnOverButtonProps = {
+    type: string,
+    buttonAction?: Function
+}
+
+export type AdvantagesSectionProps = {
+    isBackground: boolean
+}
+
+export type CompaniesSectionProps = {
+    isInMenu?: boolean
+}
+
+export type AboutUsBlockProps = {
+    icon?: string,
+    title: string,
+    description: ReactElement<any, any>,
+    image: string
+}
+
+export type PageTitleProps = {
+    isCatalogPage?: boolean,
+    isProductPage?: boolean,
+    isCheckoutPage?: boolean,
+    title: string
+}
+
+export type BreadcrumbsProps = {
+    category?: Category | undefined,
+}
+
+export type ProductsSectionProps = {
+    id: number,
+    banner: string,
+    name: string
 }

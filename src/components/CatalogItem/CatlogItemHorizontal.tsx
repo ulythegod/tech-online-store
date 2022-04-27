@@ -1,75 +1,83 @@
 import React from 'react';
 import styles from './catalogItemHorizontal.module.scss';
 import RatingButton from './RatingButton';
-import StoreButton from 'components/Buttons/StoreButton';
-import RoundButton from 'components/Buttons/RoundButton';
+import StoreButton from '../../components/Buttons/StoreButton';
+import RoundButton from '../../components/Buttons/RoundButton';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
-import { Spec } from '../../CustomTypes';
 import { ReactComponent as InStock } from '../../images/in-stock.svg';
 import { ReactComponent as CheckAvailability } from '../../images/check-availability.svg';
 import { ReactComponent as ProductMail } from '../../images/product-mail.svg';
 import { ReactComponent as ProductRating } from '../../images/product-rating.svg';
 import { ReactComponent as ProductFav } from '../../images/product-fav.svg';
 import { ReactComponent as AddToCart } from '../../images/add-to-card-prod.svg';
+import { CatlogItemHorizontalProps } from "CustomTypes";
 
-import { useDispatch } from 'react-redux';
-import { productAdded } from 'features/product-card/productCardSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { productAdded } from '../../features/product-card/productCardSlice';
+import { RootState } from '../../store';
+import { selectProduct } from '../../features/product/productSlice';
 
-type Props = {
-    status: string,
-    productImage: string,
-    model: string,
-    name: string,
-    price: number,
-    discount: number,
-    specs: Spec[],
-    reviewsCount: number,
-    id: number
-}
-
-function CatlogItemHorizontal(props: Props) {
+function CatlogItemHorizontal(props: CatlogItemHorizontalProps) {
     const dispatch = useDispatch();
+    const incomingProduct = useSelector((store: RootState) => selectProduct(store));
+    
+    let product: CatlogItemHorizontalProps = {
+        ...props
+    };
+
+    if (props.isUseFetch) {
+        if (incomingProduct.id > 0) {
+            product = {
+                ...props,
+                discount: Number(incomingProduct.price),
+                price: Number(incomingProduct.price),
+                name: incomingProduct.name,
+                productImage: incomingProduct.photo[0].url,
+                specs: incomingProduct.specs,
+            }
+        }                
+    }   
 
     let statusText: string = '';
         
-    if (props.status == "in-stock") {
+    if (product.status === "in-stock") {
         statusText = "in-stock";
-    } else if (props.status == "check-availability") {
+    } else if (product.status === "check-availability") {
         statusText = "check-availability";
     }
 
     function handleAddToCard(event: any) {
-        dispatch(productAdded(props.id))
+        dispatch(productAdded(product.id))
     }
 
     return (
         <div className={styles["product-preview"]}>
-            <p className={classNames(styles["product-status"], styles[props.status])}>
+            <p className={classNames(styles["product-status"], styles[product.status])}>
                 {
-                    (props.status == "in-stock") ? <InStock /> : 
-                    (props.status == "check-availability") ? <CheckAvailability /> : 
+                    (product.status === "in-stock") ? <InStock /> : 
+                    (product.status === "check-availability") ? <CheckAvailability /> : 
                     ""
                 }
                 <span className={styles["status-text"]}>{statusText}</span>
             </p>
             <div className={styles["product-info"]}>
-                <Link className={styles["product-image"]} to={`/product/${props.id}`}><img src={props.productImage} alt="Product" /></Link>
+                <Link className={styles["product-image"]} to={`/product/${product.id}`}><img src={product.productImage} alt="Product" /></Link>
                 <div className={styles["about-product"]}>
-                    <span className={styles["product-model"]}>{props.model}</span>
+                    <span className={styles["product-model"]}>{product.model}</span>
                     <a className={styles["product-title"]}>
-                        {props.name}
+                        {product.name}
                     </a>
                     <div className={styles["product-prices"]}>
-                        <span className={styles["product-price"]}>${props.price}</span>
-                        <span className={styles["product-discount"]}>${props.discount}</span>
+                        <span className={styles["product-price"]}>${product.price}</span>
+                        <span className={styles["product-discount"]}>${product.discount}</span>
                     </div>
                 </div>
                 <div className={styles["features"]}>
                     <table>
                         <tbody>
                             {
-                                props.specs.map((specsItem: any, id: number) => {
+                                product.specs.map((specsItem: any, id: number) => {
                                     return (
                                         <tr
                                             className={(id % 2 === 0) ? styles["dark"] : ``}
@@ -104,7 +112,7 @@ function CatlogItemHorizontal(props: Props) {
                                 isFilled={false}
                             />
                         </div>
-                    <a>Reviews ({props.reviewsCount})</a>
+                    <a>Reviews ({product.reviewsCount})</a>
                 </div>
                 <div className={styles["product-button"]}>
                     <StoreButton 

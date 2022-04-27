@@ -2,15 +2,12 @@ import React from 'react';
 import styles from './advantagesSection.module.scss';
 import AdvantageItem from './AdvantageItem';
 import classNames from 'classnames';
+import { AdvantagesSectionProps } from 'CustomTypes';
 import Support from '../../images/Support.png';
 import Account from '../../images/Account.png';
 import Saving from '../../images/Saving.png';
 
-type Props = {
-    isBackground: boolean
-}
-
-function AdvantagesSection(props: Props) {
+function AdvantagesSection(props: AdvantagesSectionProps) {
     let backgroundClass = "";
 
     if (props.isBackground) {

@@ -25,3 +25,13 @@
     border-radius: 0px 30px 30px 0px;
     transform: rotate(-180deg);
 }
+
+@media (max-width: 1800px) {
+    .button-left {
+        left: 11em;
+    }
+    
+    .button-right {
+        right: 11em;
+    }
+}

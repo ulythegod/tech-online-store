@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './reviewsSection.module.scss';
-import StoreButton from 'components/Buttons/StoreButton';
+import StoreButton from '../../components/Buttons/StoreButton';
 import ReviewItem from './ReviewItem';
 import { ReactComponent as PaginationButton } from '../../images/pagiantion-button.svg';
 

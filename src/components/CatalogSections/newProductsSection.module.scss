@@ -10,6 +10,7 @@
 .section-title {
     @include sections.section-styles;
     justify-content: space-between;
+    width: 1332px;
 }
 
 .section-title a {
@@ -18,6 +19,7 @@
 
 .new-products-list {
     @include sections.section-styles;
+    width: 1332px;
 }
 
 .items {

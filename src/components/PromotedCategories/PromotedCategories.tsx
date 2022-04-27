@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import ProductsSection from 'components/CatalogSections/ProductsSection';
+import ProductsSection from '../../components/CatalogSections/ProductsSection';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchPromotedCategories, selectAllPromotedCategories } from '../../features/promoted-categories/promotedCategoriesSlice';

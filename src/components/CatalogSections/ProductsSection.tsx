@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
 import styles from './productsSection.module.scss';
-import ProductItem from 'components/CatalogItem/ProductItem';
+import ProductItem from '../../components/CatalogItem/ProductItem';
 import SubCategories from './SubCategories';
 import { Link } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
-import { selectProductsByCategoryId } from 'features/products/productsSlice';
-import { selectCategoryById } from 'features/categories/categoriesSlice';
+import { selectProductsByCategoryId } from '../../features/products/productsSlice';
+import { selectCategoryById } from '../../features/categories/categoriesSlice';
+import { ProductsSectionProps } from 'CustomTypes';
 
-type Props = {
-    id: number,
-    banner: string,
-    name: string
-}
-
-function ProductsSection(props: Props) {
+function ProductsSection(props: ProductsSectionProps) {
     const [activeSubCategory, setActiveSubCategory] = useState(0);
     function handleSubcategoryChange(event: any, categoryIdInArray: number) {
         event.preventDefault();

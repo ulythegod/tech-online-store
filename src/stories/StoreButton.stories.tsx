@@ -3,7 +3,8 @@ import { Story, Meta } from '@storybook/react';
 
 import StoreButton from '../components/Buttons/StoreButton';
 import { StoreButtonProps } from 'CustomTypes';
-import { ReactComponent as PayPal } from '../../images/paypal.svg';
+import { ReactComponent as PayPal } from '../images/paypal.svg';
+import { ReactComponent as TableView } from '../images/table-view.svg';
 
 export default {
     component: StoreButton,
@@ -54,6 +55,20 @@ YellowButtonGeneral.args = {
     buttonStyle: 'yellow-button-general',
 }
 
+export const YellowButtonWithIcon = Template.bind({});
+YellowButtonWithIcon.args = {
+    ...Default.args,
+    buttonStyle: 'yellow-button-general',
+    content: <PayPal />,
+}
+
+export const YellowCheckoutButton = Template.bind({});
+YellowCheckoutButton.args = {
+    ...Default.args,
+    buttonStyle: 'yellow-button-general',
+    content: <>Checkout with<PayPal /></>,
+}
+
 export const GreyButton = Template.bind({});
 GreyButton.args = {
     ...Default.args,
@@ -70,4 +85,17 @@ export const BlackButton = Template.bind({});
 BlackButton.args = {
     ...Default.args,
     buttonStyle: 'black-button',
+}
+
+export const IconButton = Template.bind({});
+IconButton.args = {
+    ...Default.args,
+    buttonStyle: "icon-button",
+    content: <TableView />
+}
+
+export const IconButtonDisabled = Template.bind({});
+IconButtonDisabled.args = {
+    ...IconButton.args,
+    buttonStyle: "icon-button-disabled",
 }

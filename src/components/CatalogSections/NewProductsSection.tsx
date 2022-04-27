@@ -9,7 +9,11 @@ import { selectAllProducts } from '../../features/products/productsSlice';
 import { RootState } from 'store';
 import { Product } from 'CustomTypes';
 
-function ProductSection(props: any): any {
+type Props = {
+    name: string
+}
+
+function ProductSection(props: Props) {
     const [canScrollLeft, setCanScrollLeft] = useState<boolean>(false);
     const [canScrollRight, setCanScrollRight] = useState<boolean>(false);
 

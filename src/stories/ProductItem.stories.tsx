@@ -2,20 +2,23 @@ import React from "react";
 import { Story, Meta } from '@storybook/react';
 
 import ProductItem from "../components/CatalogItem/ProductItem";
-import { Product, ProductItemProps } from 'CustomTypes';
+import { ProductItemProps } from 'CustomTypes';
 
-import { Provider } from "react-redux";
-
-import { useSelector } from "react-redux";
-import store, { RootState } from "../store";
-import { fetchCategories } from '../features/categories/categoriesSlice';
-import { fetchProducts, selectAllProducts } from '../features/products/productsSlice';
-
-import AppProvider from '../components/AppProvider/AppProvider';
+import { AppProvider } from '../components/AppProvider/AppProvider';
 
 export default {
     component: ProductItem,
-    title: 'Products/ProductItem'
+    title: 'Products/Product Item',
+    decorators: [
+        (story: Function) => {
+            return (
+               <AppProvider>
+                    {story()}
+                </AppProvider> 
+            )
+            
+        }
+    ]
 } as Meta;
 
 const Template: Story<ProductItemProps> = (args: ProductItemProps) => {return <ProductItem {...args} />};
@@ -30,4 +33,29 @@ Default.args = {
     price: 1234,
     discount: 123,
     isNewProducts: false
+}
+
+export const CheckAvailabilityStatus = Template.bind({});
+CheckAvailabilityStatus.args = {
+    ...Default.args,
+    name: "Product CheckAvailabilityStatus",
+    status: "check-availability"
+}
+
+export const NewProductPreview = Template.bind({});
+NewProductPreview.args = {
+    ...Default.args,
+    name: "Product NewProductPreview",
+    isNewProducts: true
+}
+
+export const ProductWithRealData = Template.bind({});
+ProductWithRealData.args = {
+    ...Default.args,
+    id: 47,
+    productImage: "",
+    name: "",
+    price: 0,
+    discount: 0,
+    isUseFetch: true
 }

@@ -1,12 +1,14 @@
+import React from "react";
 import { addDecorator } from "@storybook/react";
 import { BrowserRouter as Router } from "react-router-dom";
-import { initialize, mswDecorator } from 'msw-storybook-addon';
+import { GlobalStyle } from '../src/shared/global';
 
-addDecorator(story => <Router>{story()}</Router>);
-
-initialize();
-
-export const decorators = [mswDecorator];
+addDecorator(
+  story => <Router>
+    <GlobalStyle />
+    {story()}
+  </Router>
+);
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

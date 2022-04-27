@@ -2,13 +2,9 @@ import React from 'react';
 import styles from './turnOverButton.module.scss';
 import classNames from 'classnames';
 import { ReactComponent as Arrow } from '../../images/arrow-right.svg';
+import { TurnOverButtonProps } from 'CustomTypes';
 
-type Props = {
-    type: string,
-    buttonAction?: Function
-}
-
-function TurnOverButton(props: Props) {
+function TurnOverButton(props: TurnOverButtonProps) {
     return (
         <button 
             className={classNames(styles["button"], styles[props.type])} 
