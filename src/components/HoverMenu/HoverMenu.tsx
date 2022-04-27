@@ -1,12 +1,12 @@
 import React from "react";
 import styles from './hoverMenu.module.scss';
-import CompaniesSection from "components/CompaniesSection/CompaniesSection";
-import ProductItem from "components/CatalogItem/ProductItem";
+import CompaniesSection from "../../components/CompaniesSection/CompaniesSection";
+import ProductItem from "../../components/CatalogItem/ProductItem";
 import MultilevelMenu from "../MultilevelMenu/MultilevelMenu";
 
 import { useSelector } from "react-redux";
 import { RootState } from "store";
-import { selectProductsByCategoryId } from "features/products/productsSlice";
+import { selectProductsByCategoryId } from "../../features/products/productsSlice";
 import { Category } from '../../CustomTypes';
 
 type Props = {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import stylesModule from './headerTime.module.scss';
-import HoverShopInfo from 'components/HoverShopInfo/HoverShopInfo';
+import HoverShopInfo from '../../components/HoverShopInfo/HoverShopInfo';
 import { usePopper } from 'react-popper';
 import { ReactComponent as ArrowDown } from '../../images/arrow-down.svg';
 

@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactElement, ValidationMap, WeakValidationMap } from "react"
+import { MouseEventHandler, PropsWithChildren, ReactElement, ValidationMap, WeakValidationMap } from "react"
 
 export type FillersInterface = {
     categoriesIds: number[],
@@ -177,4 +177,14 @@ export type ProductsSectionProps = {
     id: number,
     banner: string,
     name: string
+}
+
+export type TopMenuNavigationProps = {
+    categories: Category[],
+    isOpenSearchPannel: boolean,
+}
+
+export type TopMenuSearchProps = {
+    isOpenSearchPannel: boolean,
+    handleOpenSearchPannel?: MouseEventHandler<HTMLButtonElement>
 }

@@ -2,18 +2,15 @@ import React from 'react';
 import style from './topMenuNavigation.module.scss'
 import { ReactComponent as Logo } from '../../images/logo.svg';
 import { Link } from 'react-router-dom';
-import StoreButton from 'components/Buttons/StoreButton';
+import StoreButton from '../../components/Buttons/StoreButton';
 import TopMenuItem from './TopMenuItem';
 import HoverMenu from '../HoverMenu/HoverMenu';
 import classNames from 'classnames';
-import { Category } from '../../CustomTypes';
+import { TopMenuNavigationProps } from '../../CustomTypes';
 
-type Props = {
-    categories: Category[],
-    isOpenSearchPannel: boolean,
-}
-
-function TopMenuNavagation(props: Props) {
+function TopMenuNavigation(props: TopMenuNavigationProps) {
+    console.log(props.categories);
+    
     const menuItems: any[] = props.categories.map((category: any, id: number) => {
         let label: string = (category.name === "Laptops") ? "laptops" : ""
         
@@ -59,4 +56,4 @@ function TopMenuNavagation(props: Props) {
     );
 }
 
-export default TopMenuNavagation;
+export default TopMenuNavigation;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './footerSubscribeForm.module.scss';
-import StoreButton from 'components/Buttons/StoreButton';
+import StoreButton from '../../components/Buttons/StoreButton';
 
 function FooterSubscribeForm() {
     return (
