@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import PageTitle from '../components/PageTitle/PageTitle';
-import { PageTitleProps } from 'CustomTypes';
+import { PageTitleProps } from 'CustomPropsTypes';
 
 export default {
     component: PageTitle,

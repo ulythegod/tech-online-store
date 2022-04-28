@@ -43,6 +43,42 @@ export default productsSlice.reducer;
 
 export const selectAllProducts = (state: RootState) => state.products.products;
 
+export const selectProductById = (state: RootState, id: number) => {
+    let productRes: Product = {
+        id: 0,
+        published_at: "",
+        created_at: "",
+        updated_at: "",
+        category: {
+            id: 0,
+            subCategories: [],
+            parent: null,
+            name: "",
+            created_at: "",
+            updated_at: "",
+            image: {
+                id: 0,
+                url: ""
+            }
+        },
+        name: "",
+        price: "",
+        photo: [],
+        details: [],
+        specs: []
+    };
+
+    if (state.products.products) {
+        state.products.products.forEach((product: Product) => {
+            if (product.id === id) {
+                productRes = product;
+            }
+        });
+    }
+
+    return productRes;
+}
+
 export const selectProductsByCategoryId = (state: RootState, categoriesIds: number[]) => {
     let products: Product[] = [];
 

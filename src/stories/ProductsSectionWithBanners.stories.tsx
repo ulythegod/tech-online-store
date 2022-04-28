@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
 import ProductSection from '../components/CatalogSections/ProductsSection';
-import { ProductsSectionProps } from 'CustomTypes';
+import { ProductsSectionProps } from 'CustomPropsTypes';
 
 import { AppProvider } from '../components/AppProvider/AppProvider';
 

@@ -11,16 +11,16 @@ import { ReactComponent as ProductMail } from '../../images/product-mail.svg';
 import { ReactComponent as ProductRating } from '../../images/product-rating.svg';
 import { ReactComponent as ProductFav } from '../../images/product-fav.svg';
 import { ReactComponent as AddToCart } from '../../images/add-to-card-prod.svg';
-import { CatlogItemHorizontalProps } from "CustomTypes";
+import { CatlogItemHorizontalProps } from 'CustomPropsTypes';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { productAdded } from '../../features/product-card/productCardSlice';
 import { RootState } from '../../store';
-import { selectProduct } from '../../features/product/productSlice';
+import { selectProductById } from '../../features/products/productsSlice';
 
 function CatlogItemHorizontal(props: CatlogItemHorizontalProps) {
     const dispatch = useDispatch();
-    const incomingProduct = useSelector((store: RootState) => selectProduct(store));
+    const incomingProduct = useSelector((store: RootState) => selectProductById(store, props.id));
     
     let product: CatlogItemHorizontalProps = {
         ...props

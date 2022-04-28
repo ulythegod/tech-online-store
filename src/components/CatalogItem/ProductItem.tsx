@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './productItem.module.scss';
 import { Link } from 'react-router-dom';
 import RatingButton from './RatingButton';
@@ -8,19 +8,19 @@ import classNames from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 import { productAdded } from '../../features/product-card/productCardSlice';
 import { RootState } from '../../store';
-import { selectProduct } from '../../features/product/productSlice';
+import { selectProductById } from '../../features/products/productsSlice';
 
 import { ReactComponent as InStock } from '../../images/in-stock.svg';
 import { ReactComponent as CheckAvailability } from '../../images/check-availability.svg';
 import { ReactComponent as AddToFav } from '../../images/prod-add-fav.svg';
 import { ReactComponent as AddToRating } from '../../images/prod-add-rating.svg';
 import { ReactComponent as AddToCart } from '../../images/add-to-card-prod.svg';
-import { ProductItemProps } from 'CustomTypes';
+import { ProductItemProps } from 'CustomPropsTypes';
 
 function ProductItem(props: ProductItemProps) {
     const dispatch = useDispatch();
-    const incomingProduct = useSelector((store: RootState) => selectProduct(store));
-    
+    const incomingProduct = useSelector((store: RootState) => selectProductById(store, props.id));
+        
     let product: ProductItemProps = {
         ...props
     };

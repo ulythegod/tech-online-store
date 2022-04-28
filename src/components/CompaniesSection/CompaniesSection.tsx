@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './companiesSection.module.scss';
 import classNames from 'classnames';
-import { CompaniesSectionProps } from 'CustomTypes';
+import { CompaniesSectionProps } from 'CustomPropsTypes';
 import CompanyLogo1 from '../../images/companies1.png';
 import CompanyLogo2 from '../../images/companies2.png';
 import CompanyLogo3 from '../../images/companies3.png';

@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { selectProductsByCategoryId } from '../../features/products/productsSlice';
 import { selectCategoryById } from '../../features/categories/categoriesSlice';
-import { ProductsSectionProps } from 'CustomTypes';
+import { ProductsSectionProps } from 'CustomPropsTypes';
 
 function ProductsSection(props: ProductsSectionProps) {
     const [activeSubCategory, setActiveSubCategory] = useState(0);

@@ -17,20 +17,6 @@
     padding-left: 5px;
 }
 
-.catalog-table-view {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-.catalog-column-view {
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
 .filters-rest {
     display: none;
 }
@@ -41,21 +27,9 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 1600px) {
-    .catalog-table-view {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
 @media (max-width: 1024px) {
     .catalog-section {
         @include sections.mobile-section-paddings;
-    }
-}
-
-@media (max-width: 896px) {
-    .catalog-table-view {
-        grid-template-columns: repeat(2, 1fr);
     }
 }
 

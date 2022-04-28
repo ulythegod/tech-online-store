@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import AdvantagesSection from '../components/AdvantagesSection/AdvantagesSection';
-import { AdvantagesSectionProps } from 'CustomTypes';
+import { AdvantagesSectionProps } from 'CustomPropsTypes';
 
 export default {
     component: AdvantagesSection,

@@ -2,7 +2,7 @@ import React from "react";
 import { Meta, Story } from '@storybook/react';
 
 import AboutUsRight from "../components/Banners/RightPictureBanner";
-import { AboutUsBlockProps } from 'CustomTypes';
+import { AboutUsBlockProps } from 'CustomPropsTypes';
 import au1 from '../images/about-us1.png';
 import aui1 from '../images/about-us-sign1.png';
 

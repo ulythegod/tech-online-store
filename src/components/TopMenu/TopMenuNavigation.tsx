@@ -6,7 +6,7 @@ import StoreButton from '../../components/Buttons/StoreButton';
 import TopMenuItem from './TopMenuItem';
 import HoverMenu from '../HoverMenu/HoverMenu';
 import classNames from 'classnames';
-import { TopMenuNavigationProps } from '../../CustomTypes';
+import { TopMenuNavigationProps } from 'CustomPropsTypes';
 
 function TopMenuNavigation(props: TopMenuNavigationProps) {
     console.log(props.categories);

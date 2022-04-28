@@ -66,11 +66,11 @@ function FooterMenu() {
                     items={
                         <>
                             <li>Address: 1234 Street Adress City Address, 1234</li>
-                            <li>Phones: <a className={styles["contacts-link"]} href="tel:00-1234-5678">(00) 1234 5678</a></li>
+                            <li>Phones: <a href="tel:00-1234-5678">(00) 1234 5678</a></li>
                             <li>We are open: Monday-Thursday: 9:00 AM - 5:30 PM</li>
                             <li>Friday: 9:00 AM - 6:00 PM</li>
                             <li>Saturday: 11:00 AM - 5:00 PM</li>
-                            <li>E-mail: <a className={styles["contacts-link"]} href="mailto:shop@email.com">shop@email.com</a></li>
+                            <li>E-mail: <a href="mailto:shop@email.com">shop@email.com</a></li>
                         </>
                     }
                     isContacts={true}

@@ -1,16 +1,10 @@
-import React, { ReactElement, useState } from "react";
+import React, { useState } from "react";
 import styles from './footerMenuItem.module.scss';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
+import { FooterMenuItemProps } from 'CustomPropsTypes';
 
-type Props = {
-    name: string,
-    id?: number,
-    isContacts?: boolean,
-    items: ReactElement<any, any>
-}
-
-function FooterMenuItem(props: Props) {
+function FooterMenuItem(props: FooterMenuItemProps) {
     const [isOpen, setIsOpen] = useState(false);
 
     function handleMenuOpen() {

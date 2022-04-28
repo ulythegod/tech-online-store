@@ -2,7 +2,7 @@ import React from "react";
 import { Meta, Story } from "@storybook/react";
 
 import CompaniesSection from "../components/CompaniesSection/CompaniesSection";
-import { CompaniesSectionProps } from 'CustomTypes';
+import { CompaniesSectionProps } from 'CustomPropsTypes';
 
 export default {
     component: CompaniesSection,

@@ -2,7 +2,7 @@ import React from "react";
 import { Story, Meta } from "@storybook/react";
 
 import CatlogItemHorizontal from "../components/CatalogItem/CatlogItemHorizontal";
-import { CatlogItemHorizontalProps } from "CustomTypes";
+import { CatlogItemHorizontalProps } from 'CustomPropsTypes';
 
 import { AppProvider } from '../components/AppProvider/AppProvider';
 

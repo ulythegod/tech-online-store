@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './breadcrumbs.module.scss';
 import { Link } from 'react-router-dom';
-import { BreadcrumbsProps } from 'CustomTypes';
+import { BreadcrumbsProps } from 'CustomPropsTypes';
 
 function Breadcrumbs(props: BreadcrumbsProps) {    
     return (

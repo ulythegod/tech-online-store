@@ -29,6 +29,7 @@ import WishList from '../WishList/WishList';
 import CatalogFilterBanner from '../CatalogFilter/CatalogFilterBanner';
 import SelectedFilter from './SelectedFilter';
 import CatalogSelect from './CatalogSelect';
+import CatalogProductsList from './CatalogProductsList';
 
 import { ReactComponent as TableView } from '../../images/table-view.svg';
 import { ReactComponent as LinesView } from '../../images/lines-view.svg';
@@ -456,12 +457,10 @@ function Catalog() {
                         filtersItems={activeFilteres}
                         handleClearFilters={handleClearFilters}
                     />
-                    <div className={
-                        (view === "table") ? styles["catalog-table-view"] : 
-                        (view === "column") ? styles["catalog-column-view"] : ``
-                    }>
-                        {productsItems}
-                    </div>
+                    <CatalogProductsList 
+                        view={view}
+                        productsItems={productsItems}
+                    />
                     <CatalogPagination 
                         startIndex={productsResult.startIndex}
                         endIndex={productsResult.endIndex}

@@ -2,7 +2,7 @@ import React from "react";
 import { Meta, Story } from "@storybook/react";
 
 import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
-import { BreadcrumbsProps } from 'CustomTypes';
+import { BreadcrumbsProps } from 'CustomPropsTypes';
 
 export default {
     component: Breadcrumbs,

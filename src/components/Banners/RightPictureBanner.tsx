@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './rightPictureBanner.module.scss';
-import { AboutUsBlockProps } from 'CustomTypes';
+import { AboutUsBlockProps } from 'CustomPropsTypes';
 
 function AboutUsRight(props: AboutUsBlockProps) {
     return (

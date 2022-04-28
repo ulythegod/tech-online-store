@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
 import TopMenuSearch from '../components/TopMenu/TopMenuSearch';
-import { TopMenuSearchProps } from 'CustomTypes';
+import { TopMenuSearchProps } from 'CustomPropsTypes';
 
 export default {
     component: TopMenuSearch,

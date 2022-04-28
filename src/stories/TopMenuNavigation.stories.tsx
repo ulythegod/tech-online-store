@@ -2,7 +2,7 @@ import React from "react";
 import { Meta, Story } from "@storybook/react";
 
 import TopMenuNavigation from "../components/TopMenu/TopMenuNavigation";
-import { TopMenuNavigationProps } from 'CustomTypes';
+import { TopMenuNavigationProps } from 'CustomPropsTypes';
 
 export default {
     component: TopMenuNavigation,

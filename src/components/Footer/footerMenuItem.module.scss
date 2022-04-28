@@ -2,6 +2,10 @@
 @use '../../_sections.scss' as sections;
 @use  '../../_arrows.scss' as arrows;
 
+li {
+    list-style: none;
+}
+
 .menu-title {
     font-size: 14px;
     font-weight: 600;
@@ -23,6 +27,8 @@
     padding: 0px;
     display: flex;
     flex-direction: column;
+    color: white;
+    list-style: none;
 }
 
 .inner-items a {

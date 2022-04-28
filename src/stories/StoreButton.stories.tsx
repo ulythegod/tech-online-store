@@ -2,7 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import StoreButton from '../components/Buttons/StoreButton';
-import { StoreButtonProps } from 'CustomTypes';
+import { StoreButtonProps } from 'CustomPropsTypes';
 import { ReactComponent as PayPal } from '../images/paypal.svg';
 import { ReactComponent as TableView } from '../images/table-view.svg';
 

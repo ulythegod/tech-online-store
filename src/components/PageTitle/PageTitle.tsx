@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './pageTitle.module.scss';
-import { PageTitleProps } from 'CustomTypes';
+import { PageTitleProps } from 'CustomPropsTypes';
 
 function PageTitle(props: PageTitleProps) {
     let className = "";

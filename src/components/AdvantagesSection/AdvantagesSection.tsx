@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './advantagesSection.module.scss';
 import AdvantageItem from './AdvantageItem';
 import classNames from 'classnames';
-import { AdvantagesSectionProps } from 'CustomTypes';
+import { AdvantagesSectionProps } from 'CustomPropsTypes';
 import Support from '../../images/Support.png';
 import Account from '../../images/Account.png';
 import Saving from '../../images/Saving.png';

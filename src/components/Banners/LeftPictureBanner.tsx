@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './leftPictureBanner.module.scss';
-import { AboutUsBlockProps } from 'CustomTypes';
+import { AboutUsBlockProps } from 'CustomPropsTypes';
 
 function AboutUsLeft(props: AboutUsBlockProps) {
     return (

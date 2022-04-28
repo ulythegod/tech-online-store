@@ -2,7 +2,7 @@ import React from "react";
 import { Story, Meta } from '@storybook/react';
 
 import TurnOverButton from "../components/Buttons/TurnOverButton";
-import { TurnOverButtonProps } from "CustomTypes";
+import { TurnOverButtonProps } from 'CustomPropsTypes';
 
 export default {
     component: TurnOverButton,
