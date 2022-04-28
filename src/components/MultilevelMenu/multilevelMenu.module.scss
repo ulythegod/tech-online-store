@@ -3,9 +3,12 @@
 
 .menu-main-list {
     border: 1px solid colors.$grey;
-    width: 23%;
+    width: 330px;
     list-style: none;
     padding: 0px;
     height: 350px;
+    position: relative;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 

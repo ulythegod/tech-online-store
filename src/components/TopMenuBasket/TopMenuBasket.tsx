@@ -89,7 +89,8 @@ function TopMenuBasket(props: TopMenuBasketProps) {
     let basketItems: ReactElement<any, any>[] = props.basketItems ? props.basketItems : [];
     if (products.length) {
         basketItems =  products.map((product: Product, id: number) => {
-            let productAmount: number = idsCounts[product.id];          
+            let productAmount: number = idsCounts[product.id];
+            let isFirstChild: boolean = (id === 0) ? true : false;          
 
             return (
                 <SmallBasketItem 
@@ -99,6 +100,7 @@ function TopMenuBasket(props: TopMenuBasketProps) {
                     name={product.name}
                     id={product.id}
                     handleProductRemoved={handleProductRemoved}
+                    isFirstChild={isFirstChild}
                 />
             )
         })

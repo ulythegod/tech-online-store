@@ -5,9 +5,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    border-top: 1px solid colors.$grey;
     border-bottom: 1px solid colors.$grey;
     padding: 5px 20px;
+}
+
+.basket-list-item-first {
+    border-top: 1px solid colors.$grey;
 }
 
 .item-img {

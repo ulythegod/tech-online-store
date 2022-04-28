@@ -31,6 +31,7 @@ const basketItems: ReactElement<any, any>[] = [
         name={"Product Default"}
         id={1}
         handleProductRemoved={() => {}}
+        isFirstChild={true}
     />,
     <SmallBasketItem 
         key={2}

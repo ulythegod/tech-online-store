@@ -8,7 +8,26 @@ import { ReactComponent as TableView } from '../../images/table-view.svg';
 
 export default {
     component: StoreButton,
-    title: 'Buttons/Store Button'
+    title: 'Buttons/Store Button',
+    argTypes: {
+        buttonStyle: {
+            options: [
+                'light-button', 
+                'light-button-narrow',
+                'blue-button',
+                'yellow-button',
+                'blue-button-narrow',
+                'yellow-button-narrow',
+                'yellow-button-general',
+                'grey-button',
+                'grey-button-general',
+                'black-button',
+                'icon-button',
+                'icon-button-disabled'
+            ],
+            control: { type: 'radio' },
+        },
+    },
 } as Meta;
 
 const Template: Story<StoreButtonProps> = (args: StoreButtonProps) => <StoreButton {...args} />
@@ -66,7 +85,7 @@ export const YellowCheckoutButton = Template.bind({});
 YellowCheckoutButton.args = {
     ...Default.args,
     buttonStyle: 'yellow-button-general',
-    content: <>Checkout with<PayPal /></>,
+    content: <>Checkout with <PayPal /></>,
 }
 
 export const GreyButton = Template.bind({});
@@ -78,7 +97,7 @@ GreyButton.args = {
 export const GreyButtonGeneral = Template.bind({});
 GreyButtonGeneral.args = {
     ...Default.args,
-    buttonStyle: 'grey-button',
+    buttonStyle: 'grey-button-general',
 }
 
 export const BlackButton = Template.bind({});

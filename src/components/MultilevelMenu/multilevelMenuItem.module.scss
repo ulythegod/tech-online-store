@@ -2,7 +2,7 @@
 @use '../../_arrows.scss' as arrows;
 
 .main-list-item {
-    padding: 10px;
+    padding: 10px 20px;
 }
 
 .item-with-level {
@@ -20,14 +20,14 @@
     display: block;
     position: absolute;
     background-color: white;
-    margin-left: 295px;
+    left: 314px;
     z-index: 1;
     list-style: none;
-    top: 5.2%;
+    top: -1px;
     padding: 0px;
     height: 350px;
     border: 1px solid colors.$grey;
-    width: 18%;
+    width: 300px;
 }
 
 .menu-link-inner {
@@ -61,15 +61,15 @@
     display: block;
     position: absolute;
     background-color: white;
-    margin-left: 249px;
+    left: 300px;
     z-index: 1;
     list-style: none;
-    top: 0;
+    top: -1px;
     bottom: 0;
     padding: 0px;
-    height: 349px;
+    height: 350px;
     border: 1px solid #CCCCCC;
-    width: 100%;    
+    width: 300px;    
 }
 
 .item-with-third-level {

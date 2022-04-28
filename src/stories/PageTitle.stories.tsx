@@ -6,7 +6,46 @@ import { PageTitleProps } from 'CustomPropsTypes';
 
 export default {
     component: PageTitle,
-    title: 'Page Title'
+    title: 'Page Title',
+    argTypes: {
+        title: {
+            name: "Title",
+            type: { name: 'string', required: true },
+            defaultValue: "Title",
+            description: 'Set Title',
+            table: {
+                category: 'Title Text',
+            },
+            control: { type: 'text' },
+        },
+        isCatalogPage: {
+            name: "isCatalogPage",
+            type: { name: 'boolean', required: false },
+            defaultValue: false,
+            description: 'Set isCatalogPage',
+            table: {
+                category: 'Title Style',
+            },
+        },
+        isProductPage: {
+            name: "isProductPage",
+            type: { name: 'boolean', required: false },
+            defaultValue: false,
+            description: 'Set isProductPage',
+            table: {
+                category: 'Title Style',
+            },
+        },
+        isCheckoutPage: {
+            name: "isCheckoutPage",
+            type: { name: 'boolean', required: false },
+            defaultValue: false,
+            description: 'Set isCheckoutPage',
+            table: {
+                category: 'Title Style',
+            },
+        },
+    },
 } as Meta;
 
 const Template: Story<PageTitleProps> = (args: PageTitleProps) => <PageTitle {...args} />;

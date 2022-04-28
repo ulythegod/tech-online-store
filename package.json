@@ -36,7 +36,8 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "test": "react-scripts test",
-    "test:watch": "npm test -- --watch"
+    "test:watch": "npm test -- --watch",
+    "chromatic": "npx chromatic --project-token=35d63360e40f"
   },
   "eslintConfig": {
     "extends": [
@@ -68,6 +69,7 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.4.22",
+    "@storybook/addon-controls": "^6.4.22",
     "@storybook/addon-essentials": "^6.4.22",
     "@storybook/addon-interactions": "^6.4.22",
     "@storybook/addon-links": "^6.4.22",
@@ -87,6 +89,7 @@
     "@types/react-router": "^5.1.18",
     "@types/styled-components": "^5.1.24",
     "@types/testing-library__react": "^10.2.0",
+    "chromatic": "^6.5.4",
     "dom-testing-library": "^5.0.0",
     "msw": "^0.39.2",
     "msw-storybook-addon": "^1.6.3",

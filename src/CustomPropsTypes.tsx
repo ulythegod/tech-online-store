@@ -108,7 +108,8 @@ export type SmallBasketItemProps = {
     imagePath: string,
     name: string,
     id: number,
-    handleProductRemoved: Function
+    handleProductRemoved: Function,
+    isFirstChild?: boolean
 }
 
 export type TopMenuItemProps = {

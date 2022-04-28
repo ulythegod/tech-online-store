@@ -1,7 +1,10 @@
 @use '../../_colors.scss' as colors;
 
-.basket-logo {
+.basket-icon {
     position: relative;
+}
+
+.basket-logo {
     margin-right: -5px;
 }
 
@@ -17,7 +20,7 @@
     text-align: center;
     line-height: 1.5em;
     position: absolute;
-    top: 65px;
+    top: -8px;
 }
 
 .hidden {

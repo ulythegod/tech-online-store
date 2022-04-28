@@ -64,7 +64,7 @@ ItemWithHoverMenu.args = {
         categoryId={7}
         subCategories={subCategories}
     />,
-    id: 7,
+    id: 1,
     isHidden: false,
     text: "Desktop PCs",
     link: `/catalog/7`

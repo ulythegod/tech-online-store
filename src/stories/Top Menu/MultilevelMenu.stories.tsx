@@ -105,10 +105,10 @@ ThirdLevelMenu.args = {
 
 const subCategoriesSecondLevel: Category[] = [
     {
-        id: 36,
-        created_at: "2020-12-21T09:54:45.773Z",
-        updated_at: "2021-01-13T11:16:51.828Z",
-        name: "Everyday Use Notebooks",
+        id: 43,
+        created_at: "2022-04-08T10:02:42.853Z",
+        updated_at: "2022-04-08T10:04:51.474Z",
+        name: "Second Level subcategory",
         parent: null,
         image: {
             id: 1,
@@ -117,47 +117,10 @@ const subCategoriesSecondLevel: Category[] = [
         subCategories: []
     },
     {
-        id: 37,
-        created_at: "2020-12-21T09:55:47.997Z",
-        updated_at: "2021-01-13T11:16:51.828Z",
-        name: "Netbooks",
-        parent: null,
-        image: {
-            id: 1,
-            url: ""
-        },
-        subCategories: [
-            {
-                id: 43,
-                created_at: "2022-04-08T10:02:42.853Z",
-                updated_at: "2022-04-08T10:04:51.474Z",
-                name: "Second Level subcategory",
-                parent: null,
-                image: {
-                    id: 1,
-                    url: ""
-                },
-                subCategories: []
-            },
-            {
-                id: 45,
-                created_at: "2022-04-08T10:41:59.922Z",
-                updated_at: "2022-04-08T10:42:15.301Z",
-                name: "Second Level subcategory 2",
-                parent: null,
-                image: {
-                    id: 1,
-                    url: ""
-                },
-                subCategories: []
-            },
-        ]
-    },
-    {
-        id: 38,
-        created_at: "2020-12-21T09:56:04.611Z",
-        updated_at: "2021-01-13T11:16:51.828Z",
-        name: "Gaming notebooks",
+        id: 45,
+        created_at: "2022-04-08T10:41:59.922Z",
+        updated_at: "2022-04-08T10:42:15.301Z",
+        name: "Second Level subcategory 2",
         parent: null,
         image: {
             id: 1,

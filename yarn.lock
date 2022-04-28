@@ -1951,7 +1951,7 @@
     "ts-dedent" "^2.0.0"
     "util-deprecate" "^1.0.2"
 
-"@storybook/addon-controls@6.4.22":
+"@storybook/addon-controls@^6.4.22", "@storybook/addon-controls@6.4.22":
   "integrity" "sha512-f/M/W+7UTEUnr/L6scBMvksq+ZA8GTfh3bomE5FtWyOyaFppq9k8daKAvdYNlzXAOrUUsoZVJDgpb20Z2VBiSQ=="
   "resolved" "https://registry.npmjs.org/@storybook/addon-controls/-/addon-controls-6.4.22.tgz"
   "version" "6.4.22"
@@ -5389,6 +5389,11 @@
   "integrity" "sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ=="
   "resolved" "https://registry.npmjs.org/chownr/-/chownr-2.0.0.tgz"
   "version" "2.0.0"
+
+"chromatic@^6.5.4":
+  "integrity" "sha512-/yunI/+rdc56C6x0IhpPmdfK/DRMOvQ2hoNyAe6uuU9rdWRoAH72lYatr2NcpdsOdHGOcV5DKgIaKgVdPfUk1w=="
+  "resolved" "https://registry.npmjs.org/chromatic/-/chromatic-6.5.4.tgz"
+  "version" "6.5.4"
 
 "chrome-trace-event@^1.0.2":
   "integrity" "sha512-p3KULyQg4S7NIHixdwbGX+nFHkoBiA4YQmyWtjb8XngSKV124nJmRysgAeujbUVb15vh+RvFUfCPqU7rXk+hZg=="
