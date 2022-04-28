@@ -81,7 +81,7 @@ function Catalog() {
             currentPage: 1,
             perPageItems: 5
         })
-    }, [categoryId, filters, appliedFilters])
+    }, [categoryId])
     
     function handleCategorySelect(event: any, categoryId: number) {
         event.preventDefault();        
