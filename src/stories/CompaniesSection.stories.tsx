@@ -7,7 +7,7 @@ import { CompaniesSectionProps } from 'CustomPropsTypes';
 export default {
     component: CompaniesSection,
     title: 'Companies Section'
-}
+} as Meta;
 
 const Template: Story<CompaniesSectionProps> = (args: CompaniesSectionProps) => <CompaniesSection {...args} />;
 
