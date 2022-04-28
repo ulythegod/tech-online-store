@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styles from './mobileMenu.module.scss';
 import { Link } from 'react-router-dom';
-import StoreButton from "components/Buttons/StoreButton";
+import StoreButton from "../../components/Buttons/StoreButton";
 import MobileMenuItem from "./MobileMenuItem";
-import { Category } from "../../CustomTypes";
+import { Category } from "CustomTypes";
 import { ReactComponent as OpenMenuMobile } from '../../images/open-menu-mobile.svg';
 import { ReactComponent as MenuLogo } from '../../images/tech-logo.svg';
 import { ReactComponent as CloseMenu } from '../../images/close-menu.svg';

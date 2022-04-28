@@ -6,22 +6,19 @@ import {Link} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { selectCategoryById } from '../../features/categories/categoriesSlice';
+import { MultilevelMenuItemProps } from 'CustomPropsTypes';
 
-type Props = {
-    level: number,
-    id: number,
-    name: string
-}
-
-function MultilevelMenuItem(props: Props) {
+function MultilevelMenuItem(props: MultilevelMenuItemProps) {
     let categoryWithSubcategories: any = useSelector((state: RootState) => selectCategoryById(state, props.id));
     let notEmptySubcategories: boolean = false;
 
-    if (categoryWithSubcategories.subCategories) { 
-        if (categoryWithSubcategories.subCategories.length > 0) {
-            notEmptySubcategories = true;
+    if (categoryWithSubcategories) {
+        if (categoryWithSubcategories.subCategories) { 
+            if (categoryWithSubcategories.subCategories.length > 0) {
+                notEmptySubcategories = true;
+            }
         }
-    }
+    }    
 
     let liClassName: string = "";
     let ulClassName: string = "";

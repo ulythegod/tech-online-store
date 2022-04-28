@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styles from './topMenu.module.scss'
 import TopMenuSearch from './TopMenuSearch';
 import TopMenuBasket from '../TopMenuBasket/TopMenuBasket';

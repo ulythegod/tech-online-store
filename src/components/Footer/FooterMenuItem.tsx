@@ -12,7 +12,7 @@ function FooterMenuItem(props: FooterMenuItemProps) {
     }
 
     return (
-        <li>
+        <li className={styles["item"]}>
             <Link 
                 className={styles["menu-title"]}
                 onClick={handleMenuOpen}

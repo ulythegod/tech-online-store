@@ -6,12 +6,24 @@ import StoreButton from '../../components/Buttons/StoreButton';
 import TopMenuItem from './TopMenuItem';
 import HoverMenu from '../HoverMenu/HoverMenu';
 import classNames from 'classnames';
+import { Category } from 'CustomTypes';
 import { TopMenuNavigationProps } from 'CustomPropsTypes';
 
+import { selectParentCategories } from '../../features/categories/categoriesSlice';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store';
+
 function TopMenuNavigation(props: TopMenuNavigationProps) {
-    console.log(props.categories);
+    let categories: Category[] = [];
+    const allCategories: Category[] = useSelector((state: RootState) => selectParentCategories(state));
+
+    if (props.categories.length === 0) {
+        categories = allCategories;
+    } else {
+        categories = props.categories;
+    }
     
-    const menuItems: any[] = props.categories.map((category: any, id: number) => {
+    const menuItems: any[] = categories.map((category: any, id: number) => {
         let label: string = (category.name === "Laptops") ? "laptops" : ""
         
         return (

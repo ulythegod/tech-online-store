@@ -1,20 +1,21 @@
 import React, { ReactElement, useState } from 'react';
 import stylesModule from './topMenuBasket.module.scss';
 import SmallBasketItem from './SmallBasketItem';
-import StoreButton from 'components/Buttons/StoreButton';
+import StoreButton from '../../components/Buttons/StoreButton';
 import { usePopper } from 'react-popper';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from 'store';
-import { selectAllProductsIds } from 'features/product-card/productCardSlice';
-import { selectProductsByIds } from 'features/products/productsSlice';
-import { productRemoved } from 'features/product-card/productCardSlice';
+import { selectAllProductsIds } from '../../features/product-card/productCardSlice';
+import { selectProductsByIds } from '../../features/products/productsSlice';
+import { productRemoved } from '../../features/product-card/productCardSlice';
 
 import { ReactComponent as BasketLogo } from '../../images/basket.svg';
 import { ReactComponent as PayPal } from '../../images/paypal.svg';
 import { Product } from 'CustomTypes';
+import { TopMenuBasketProps } from 'CustomPropsTypes';
 
-function TopMenuBasket() {
+function TopMenuBasket(props: TopMenuBasketProps) {
     const dispatch = useDispatch();
     const [referenceElement, setReferenceElement] = useState<HTMLDivElement | null>(null);
     const [popperElement, setPopperElement] = useState<HTMLDivElement | null>(null);
@@ -85,7 +86,7 @@ function TopMenuBasket() {
     }, {});
 
     const products = useSelector((state: RootState) => selectProductsByIds(state, productsIdsWithoutDoubles));    
-    let basketItems: ReactElement<any, any>[] = [];
+    let basketItems: ReactElement<any, any>[] = props.basketItems ? props.basketItems : [];
     if (products.length) {
         basketItems =  products.map((product: Product, id: number) => {
             let productAmount: number = idsCounts[product.id];          

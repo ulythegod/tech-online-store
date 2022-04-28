@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './checkoutForm.module.scss';
 import InputMask from "react-input-mask";
 import StoreButton from 'components/Buttons/StoreButton';
+import FormItemText from '../FormItem/FormItemText';
 
 function CheckoutForm() {
     const emailMask = "/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/";
@@ -18,39 +19,54 @@ function CheckoutForm() {
                     <div className={styles["form-separator"]}></div>
                 </label>
             </div>
-            <div className={styles["form-item"]}>
-                <label htmlFor='first-name'>
-                    <span>First Name <span>*</span></span>
-                    <input className={styles["form-input"]} type="text" id="first-name" required></input>
-                </label>
-            </div>
-            <div className={styles["form-item"]}>
-                <label htmlFor='last-name'>
-                    <span>Last Name <span>*</span></span>
-                    <input className={styles["form-input"]} type="text" id="last-name" required></input>
-                </label>
-            </div>
-            <div className={styles["form-item"]}>
-                <label htmlFor='company'>
-                    <span>Company <span>*</span></span>
-                    <input className={styles["form-input"]} type="text" id="company" required></input>
-                </label>
-            </div>
-            <div className={styles["form-item"]}>
-                <label htmlFor='street-address-1'>
-                    <span>Street Address <span>*</span></span>
-                    <input className={styles["form-input"]} type="text" id="street-address-1" required></input>
-                </label>
-                <label htmlFor='street-address-2'>
-                    <input className={styles["form-input"]} type="text" id="street-address-2" required></input>
-                </label>
-            </div>
-            <div className={styles["form-item"]}>
-                <label htmlFor='city'>
-                    <span>City <span>*</span></span>
-                    <input className={styles["form-input"]} type="text" id="city" required></input>
-                </label>
-            </div>
+            <FormItemText
+                label='First Name'
+                required={true}
+                type="text"
+                id='first-name'
+                placeholder='First Name'
+                isNarrow={true}
+            />
+            <FormItemText
+                label='Last Name'
+                required={true}
+                type="text"
+                id='last-name'
+                placeholder='Last Name'
+                isNarrow={true}
+            />
+            <FormItemText
+                label='Company'
+                required={true}
+                type="text"
+                id='company'
+                placeholder='Company'
+                isNarrow={true}
+            />
+            <FormItemText
+                label='Street Address'
+                required={true}
+                type="text"
+                id='street-address-1'
+                placeholder=''
+                isNarrow={true}
+            />
+            <FormItemText
+                label=''
+                required={true}
+                type="text"
+                id='street-address-2'
+                placeholder=''
+                isNarrow={true}
+            />
+            <FormItemText
+                label='City'
+                required={true}
+                type="text"
+                id='city'
+                placeholder='City'
+                isNarrow={true}
+            />
             <div className={styles["form-item"]}>
                 <label htmlFor='state'>
                     <span>State/Province <span>*</span></span>
@@ -59,12 +75,15 @@ function CheckoutForm() {
                     </select>
                 </label>
             </div>
-            <div className={styles["form-item"]}>
-                <label htmlFor='zip-code'>
-                    <span>Zip/Postal Code <span>*</span></span>
-                    <InputMask mask="999999" className={styles["form-input"]} id="zip-code" required/>
-                </label>
-            </div>
+            <FormItemText
+                label='Zip/Postal Code'
+                required={true}
+                type="text"
+                id='zip-code'
+                placeholder=''
+                isNarrow={true}
+                mask={"999999"}
+            />
             <div className={styles["form-item"]}>
                 <label htmlFor='country'>
                     <span>Country <span>*</span></span>
@@ -73,12 +92,15 @@ function CheckoutForm() {
                     </select>
                 </label>
             </div>
-            <div className={styles["form-item"]}>
-                <label htmlFor='phone-number'>
-                    <span>Phone Number <span>*</span></span>
-                    <InputMask mask="+7 (999) 999-99-99" className={styles["form-input"]} id="phone-number" required/>
-                </label>
-            </div>
+            <FormItemText
+                label='Phone Number'
+                required={true}
+                type="text"
+                id='phone-number'
+                placeholder=''
+                isNarrow={true}
+                mask={"+7 (999) 999-99-99"}
+            />
             <div className={styles["form-separator"]}></div>
             <div className={styles["form-radio-item"]}>
                 <span>Standard Rate</span>

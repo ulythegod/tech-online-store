@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './contactUsForm.module.scss';
 import ContactsBlock from 'components/ContactsBlock/ContactsBlock';
 import StoreButton from 'components/Buttons/StoreButton';
-import InputMask from "react-input-mask";
+import FormItemText from '../FormItem/FormItemText';
 
 function ContactUsForm() {
     const emailMask = "/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/";
@@ -16,24 +16,29 @@ function ContactUsForm() {
                 </p>
                 <form action="#" className={styles["contact-us-form"]}>
                     <div className={styles["input-items"]}>
-                        <div className={styles["form-item"]}>
-                            <label>
-                                <span>Your Name <span>*</span></span>
-                                <input type="text" id="name" required placeholder="Your Name" />
-                            </label>
-                        </div>
-                        <div className={styles["form-item"]}>
-                            <label>
-                                <span>Your Email <span>*</span></span>
-                                <input type={"email"} placeholder="Your Email" pattern={emailMask} />
-                            </label>                                
-                        </div>
-                        <div className={styles["form-item"]}>
-                            <label>
-                                Your Phone Number
-                                <InputMask mask="+7 (999) 999-99-99" placeholder='Your Phone' />
-                            </label>                                
-                        </div>
+                        <FormItemText
+                            label='Your Name'
+                            required={true}
+                            type="text"
+                            id='name'
+                            placeholder='Your Name'
+                        />
+                        <FormItemText
+                            label='Your Email'
+                            required={true}
+                            type="email"
+                            id='email'
+                            placeholder='Your Email'
+                            pattern={emailMask}
+                        />
+                        <FormItemText
+                            label='Your Phone Number'
+                            required={false}
+                            type="phone"
+                            id='phone'
+                            placeholder='Your Phone'
+                            mask='+7 (999) 999-99-99'
+                        />
                     </div>
                     <div className={styles["form-item"]}>
                         <label>

@@ -1,0 +1,23 @@
+@use '../../_forms.scss' as forms;
+
+.form-item label {
+    @include forms.from-label;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-item label span span {
+    @include forms.required-field;
+}
+
+.form-item input {
+    @include forms.form-input;
+}
+
+.form-item-narrow {
+    width: 65%;
+}
+
+.form-item-narrow input {
+    width: 96%;
+}

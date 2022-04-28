@@ -1,18 +1,11 @@
-import React, { ReactElement, useState } from "react";
+import React, { useState } from "react";
 import stylesModule from './topMenuItem.module.scss';
 import { Link } from 'react-router-dom';
 import { usePopper } from 'react-popper';
 import { Placement } from "@popperjs/core";
+import { TopMenuItemProps } from 'CustomPropsTypes';
 
-type Props = {
-    renderHoverMenu: ReactElement<any, any>,
-    id: number,
-    isHidden: boolean,
-    text: string,
-    link: string
-}
-
-function TopMenuItem(props: Props) {
+function TopMenuItem(props: TopMenuItemProps) {
     const [showHoverMenu, setShowHoverMenu] = useState(false);
     const [isItemHovered, setIsItemHovered] = useState(false);
     

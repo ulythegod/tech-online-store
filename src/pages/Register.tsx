@@ -12,7 +12,7 @@ function Register() {
                 <PageTitle
                     title='Customer Login'
                 />
-                <LoginForm/>
+                <LoginForm />
             </section>
             <AdvantagesSection 
               isBackground={true}

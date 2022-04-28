@@ -98,3 +98,50 @@ export type CatalogProductsListProps = {
     view: string,
     productsItems: any []
 }
+
+export type TopMenuBasketProps = {
+    basketItems?: ReactElement<any, any>[]
+}
+
+export type SmallBasketItemProps = {
+    amount: number,
+    imagePath: string,
+    name: string,
+    id: number,
+    handleProductRemoved: Function
+}
+
+export type TopMenuItemProps = {
+    renderHoverMenu: ReactElement<any, any>,
+    id: number,
+    isHidden: boolean,
+    text: string,
+    link: string
+}
+
+export type HoverMenuProps = {
+    categoryId: number,
+    subCategories: Category[],
+    label?: string
+}
+
+export type MultilevelMenuProps = {
+    subCategories: Category[]
+}
+
+export type MultilevelMenuItemProps = {
+    level: number,
+    id: number,
+    name: string
+}
+
+export type FormItemTextProps = {
+    label?: string,
+    required: boolean,
+    type: string,
+    placeholder: string,
+    id?: string,
+    pattern?: string,
+    mask?: string,
+    isNarrow?: boolean
+}

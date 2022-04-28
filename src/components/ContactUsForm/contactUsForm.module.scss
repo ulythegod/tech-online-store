@@ -1,5 +1,4 @@
 @use '../../_sections.scss' as sections;
-@use '../../_forms.scss' as forms;
 @use '../../_colors.scss' as colors;
 
 .contact-us-block {
@@ -27,18 +26,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: start;
-}
-
-.form-item label {
-    @include forms.from-label;
-}
-
-.form-item label span span {
-    @include forms.required-field;
-}
-
-.form-item input {
-    @include forms.form-input;
 }
 
 .form-item textarea {
