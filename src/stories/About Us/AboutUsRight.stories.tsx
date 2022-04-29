@@ -1,5 +1,6 @@
 import React from "react";
 import { Meta, Story } from '@storybook/react';
+import AboutUsRightCustomDocs from './AboutUsRightCustomDocs.mdx'
 
 import AboutUsRight from "../../components/Banners/RightPictureBanner";
 import { AboutUsBlockProps } from 'CustomPropsTypes';
@@ -8,7 +9,53 @@ import aui1 from '../../images/about-us-sign1.png';
 
 export default {
     component: AboutUsRight,
-    title: 'About Us/About us right block'
+    title: 'About Us/About us right block',
+    parameters: {
+        docs: {
+            page: AboutUsRightCustomDocs
+        }
+    },
+    argTypes: {
+        image: {
+            name: "Image",
+            type: { name: 'string', required: true },
+            defaultValue: "",
+            description: 'Set Image',
+            table: {
+                category: 'Images',
+            },
+            control: { type: 'text' },
+        },
+        title: {
+            name: "Title",
+            type: { name: 'string', required: true },
+            defaultValue: "",
+            description: 'Set Title',
+            table: {
+                category: 'Texts',
+            },
+            control: { type: 'text' },
+        },
+        description: {
+            name: "Description",
+            type: { name: 'string', required: true },
+            defaultValue: "",
+            description: 'Set Description',
+            table: {
+                category: 'Texts',
+            },
+        },
+        icon: {
+            name: "Icon",
+            type: { name: 'string', required: false },
+            defaultValue: "",
+            description: 'Set Icon',
+            table: {
+                category: 'Images',
+            },
+            control: { type: 'text' },
+        },
+    }
 } as Meta;
 
 const Template: Story<AboutUsBlockProps> = (args: AboutUsBlockProps) => <AboutUsRight {...args} />;

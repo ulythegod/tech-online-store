@@ -1,5 +1,6 @@
 import React from "react";
 import { Meta, Story } from '@storybook/react';
+import MobileMenuItemCustomDocs from './MobileMenuItemCustomDocs.mdx';
 
 import MobileMenuItem from "../../components/MobileMenu/MobileMenuItem";
 import { MobileMenuItemProps } from 'CustomPropsTypes';
@@ -16,7 +17,30 @@ export default {
                 {story()}
             </AppProvider>
         )
-    ]
+    ],
+    parameters: {
+        docs: {
+            page: MobileMenuItemCustomDocs
+        }
+    },
+    argTypes: {
+        id: {
+            name: "ID",
+            type: { name: 'number', required: true },
+            description: 'Set ID',
+        },
+        name: {
+            name: "Name",
+            type: { name: 'string', required: true },
+            defaultValue: "Name",
+            description: 'Set Name',
+            control: { type: 'text' },
+        },
+        subCategories: {
+            name: "subCategories",
+            description: 'Set subCategories Array',
+        }
+    }
 } as Meta;
 
 const Template: Story<MobileMenuItemProps> = (args: MobileMenuItemProps) => <MobileMenuItem {...args} />;

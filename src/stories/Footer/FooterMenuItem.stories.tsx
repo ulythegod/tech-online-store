@@ -1,5 +1,6 @@
 import React from "react";
 import { Meta, Story } from '@storybook/react';
+import FooterMenuItemCustomTypes from './FooterMenuItemCustomTypes.mdx';
 
 import FooterMenuItem from "../../components/Footer/FooterMenuItem";
 import { FooterMenuItemProps } from 'CustomPropsTypes';
@@ -21,6 +22,22 @@ export default {
               },
             ],
         },
+        docs: {
+            page: FooterMenuItemCustomTypes
+        }
+    },
+    argTypes: {
+        name: {
+            name: "Name",
+            type: { name: 'string', required: true },
+            defaultValue: "Name",
+            description: 'Set Name',
+            control: { type: 'text' },
+        },
+        items: {
+            name: "Items",
+            description: "Set Items"
+        }
     }
 } as Meta;
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { Story, Meta } from '@storybook/react';
+import ProductItemCustomDocs from './ProductItemCustomDocs.mdx';
 
 import ProductItem from "../../components/CatalogItem/ProductItem";
 import { ProductItemProps } from 'CustomPropsTypes';
@@ -18,7 +19,12 @@ export default {
             )
             
         }
-    ]
+    ],
+    parameters: {
+        docs: {
+            page: ProductItemCustomDocs
+        }
+    }
 } as Meta;
 
 const Template: Story<ProductItemProps> = (args: ProductItemProps) => {return <ProductItem {...args} />};

@@ -1,15 +1,35 @@
 import React, { ReactElement } from "react";
 import { Meta, Story } from '@storybook/react';
+import SmallBasketCustomDocs from './SmallBasketCustomDocs.mdx';
 
 import SmallBasket from "../../components/TopMenuBasket/SmallBasket";
 import { SmallBasketProps } from 'CustomPropsTypes';
 import SmallBasketItem from "../../components/TopMenuBasket/SmallBasketItem";
 
-import { AppProvider } from "@/components/AppProvider/AppProvider";
-
 export default {
     component: SmallBasket,
-    title: 'Top Menu/Basket Popup'
+    title: 'Top Menu/Basket Popup',
+    argTypes: {
+        basketItems: {
+            name: "Basket Items",
+            description: "Set Basket Items Array"
+        },
+        subtotal: {
+            name: "Subtotal",
+            type: { name: 'number', required: true },
+            defaultValue: 0,
+            description: 'Set Subtotal',
+        },
+        handleMovingToCard: {
+            name: "handleMovingToCard",
+            description: "Set handleMovingToCard"
+        },
+    },
+    parameters: {
+        docs: {
+            page: SmallBasketCustomDocs
+        }
+    }
 } as Meta;
 
 const Template: Story<SmallBasketProps> = (args: SmallBasketProps) => <SmallBasket {...args} />;

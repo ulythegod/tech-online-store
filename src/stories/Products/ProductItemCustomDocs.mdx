@@ -1,0 +1,28 @@
+import { Story } from "@storybook/addon-docs";
+import { ArgsTable } from '@storybook/addon-docs';
+
+import ProductItem from "../../components/CatalogItem/ProductItem";
+
+# Product Item
+
+ProductItem is the primary component. It has four possible states. It can be used in products lists or in catalog.
+
+- [Default](#Default)
+- [CheckAvailabilityStatus](#CheckAvailabilityStatus)
+- [NewProductPreview](#NewProductPreview)
+- [ProductWithRealData](#ProductWithRealData)
+
+# Args 
+<ArgsTable of={ProductItem} />
+
+## Default
+<Story id="products-product-item--default" />
+
+## With Check Availability Status
+<Story id="products-product-item--check-availability-status" />
+
+## New Product For New Products Block
+<Story id="products-product-item--new-product-preview" />
+
+## Product With Real Data
+<Story id="products-product-item--product-with-real-data" />

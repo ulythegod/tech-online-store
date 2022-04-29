@@ -1,5 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
+import CatlogItemHorizontalCustomDocs from './CatlogItemHorizontalCustomDocs.mdx';
 
 import CatlogItemHorizontal from "../../components/CatalogItem/CatlogItemHorizontal";
 import { CatlogItemHorizontalProps } from 'CustomPropsTypes';
@@ -18,7 +19,12 @@ export default {
             )
             
         }
-    ]
+    ],
+    parameters: {
+        docs: {
+            page: CatlogItemHorizontalCustomDocs
+        }
+    }
 } as Meta;
 
 const Template: Story<CatlogItemHorizontalProps> = (args: CatlogItemHorizontalProps) => <CatlogItemHorizontal {...args} />

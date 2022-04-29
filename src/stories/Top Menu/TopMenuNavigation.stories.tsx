@@ -1,5 +1,6 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
+import TopMenuNavigationCustomTypes from './TopMenuNavigationCustomTypes.mdx';
 
 import TopMenuNavigation from "../../components/TopMenu/TopMenuNavigation";
 import { TopMenuNavigationProps } from 'CustomPropsTypes';
@@ -15,7 +16,25 @@ export default {
                 {story()}
             </AppProvider>
         )
-    ]
+    ],
+    argTypes: {
+        isOpenSearchPannel: {
+            name: "isOpenSearchPannel",
+            type: { name: 'boolean', required: true },
+            defaultValue: false,
+            description: 'Set isOpenSearchPannel',
+        },
+        categories: {
+            name: "categories",
+            defaultValue: [],
+            description: "Set Categories Array"
+        }
+    },
+    parameters: {
+        docs: {
+            page: TopMenuNavigationCustomTypes
+        }
+    }
 } as Meta;
 
 const Template: Story<TopMenuNavigationProps> = (args: TopMenuNavigationProps) => <TopMenuNavigation {...args} />;

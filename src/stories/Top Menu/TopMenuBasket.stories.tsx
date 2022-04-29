@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import { Meta, Story } from '@storybook/react';
+import TopMenuBasketCustomDocs from './TopMenuBasketCustomDocs.mdx';
 
 import TopMenuBasket from "../../components/TopMenuBasket/TopMenuBasket";
 import { TopMenuBasketProps } from 'CustomPropsTypes';
@@ -16,7 +17,19 @@ export default {
                 {story()}
             </AppProvider>
         )
-    ]
+    ],
+    argTypes: {
+        basketItems: {
+            name: "basketItems",
+            description: "Set basketItems Array",
+            defaultValue: []
+        }
+    },
+    parameters: {
+        docs: {
+            page: TopMenuBasketCustomDocs
+        }
+    }
 } as Meta;
 
 const Template: Story<TopMenuBasketProps> = (args: TopMenuBasketProps) => <TopMenuBasket {...args} />;

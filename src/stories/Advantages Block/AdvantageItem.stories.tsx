@@ -5,7 +5,7 @@ import Support from '../../images/Support.png';
 
 export default {
     component: AdvantageItem,
-    title: 'Advantages Block/Advantage Item'
+    title: 'Advantages Block/Advantage Item',
 } as Meta;
 
 export const Item = () => (

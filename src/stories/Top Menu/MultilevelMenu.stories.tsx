@@ -1,5 +1,6 @@
 import React from "react";
 import { Meta, Story } from '@storybook/react';
+import MultilevelMenuCustomDocs from './MultilevelMenuCustomDocs.mdx';
 
 import MultilevelMenu from "../../components/MultilevelMenu/MultilevelMenu";
 import { MultilevelMenuProps } from 'CustomPropsTypes';
@@ -16,7 +17,18 @@ export default {
                 {story()}
             </AppProvider>
         )
-    ]
+    ],
+    parameters: {
+        docs: {
+            page: MultilevelMenuCustomDocs
+        }
+    },
+    argTypes: {
+        subCategories: {
+            name: "subCategories",
+            description: 'Set subCategories Array',
+        }
+    }
 } as Meta;
 
 const Template: Story<MultilevelMenuProps> = (args: MultilevelMenuProps) => <MultilevelMenu {...args} />;

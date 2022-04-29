@@ -1,5 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
+import StoreButtonCustomDocs from './StoreButtonCustomDocs.mdx';
 
 import StoreButton from '../../components/Buttons/StoreButton';
 import { StoreButtonProps } from 'CustomPropsTypes';
@@ -11,6 +12,8 @@ export default {
     title: 'Buttons/Store Button',
     argTypes: {
         buttonStyle: {
+            name: "buttonStyle",
+            type: { name: 'string', required: true },
             options: [
                 'light-button', 
                 'light-button-narrow',
@@ -25,9 +28,20 @@ export default {
                 'icon-button',
                 'icon-button-disabled'
             ],
+            description: 'Set Button Style',
             control: { type: 'radio' },
         },
+        content: {
+            name: "Content",
+            defaultValue: "Add to Cart",
+            description: 'Set Content',
+        }
     },
+    parameters: {
+        docs: {
+            page: StoreButtonCustomDocs
+        }
+    }
 } as Meta;
 
 const Template: Story<StoreButtonProps> = (args: StoreButtonProps) => <StoreButton {...args} />

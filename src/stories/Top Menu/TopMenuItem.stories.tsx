@@ -1,5 +1,6 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
+import TopMenuItemCustomDocs from './TopMenuItemCustomDocs.mdx';
 
 import TopMenuItem from "../../components/TopMenu/TopMenuItem";
 import { TopMenuItemProps } from 'CustomPropsTypes';
@@ -17,7 +18,45 @@ export default {
                 {story()}
             </AppProvider>
         )
-    ]
+    ],
+    argTypes: {
+        renderHoverMenu: {
+            name: "renderHoverMenu",
+            defaultValue: <></>,
+            description: "Set renderHoverMenu"
+        },
+        id: {
+            name: "ID",
+            type: { name: 'number', required: true },
+            defaultValue: 1,
+            description: 'Set ID',
+        },
+        isHidden: {
+            name: "isHidden",
+            type: { name: 'boolean', required: true },
+            defaultValue: false,
+            description: 'Set isHidden',
+        },
+        text: {
+            name: "Text",
+            type: { name: 'string', required: true },
+            defaultValue: "",
+            description: 'Set Text',
+            control: { type: 'text' },
+        },
+        link: {
+            name: "Link",
+            type: { name: 'string', required: true },
+            defaultValue: "#",
+            description: 'Set Link',
+            control: { type: 'text' },
+        }
+    },
+    parameters: {
+        docs: {
+            page: TopMenuItemCustomDocs
+        }
+    }
 } as Meta;
 
 const Template: Story<TopMenuItemProps> = (args: TopMenuItemProps) => <TopMenuItem {...args} />;

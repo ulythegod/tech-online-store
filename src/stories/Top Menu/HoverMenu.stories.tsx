@@ -1,5 +1,6 @@
 import React from "react";
 import { Meta, Story } from '@storybook/react';
+import HoverMenuCustomDocs from './HoverMenuCustomDocs.mdx';
 
 import HoverMenu from "../../components/HoverMenu/HoverMenu";
 import { HoverMenuProps } from 'CustomPropsTypes';
@@ -16,7 +17,30 @@ export default {
                 {story()}
             </AppProvider>
         )
-    ]
+    ],
+    argTypes: {
+        categoryId: {
+            name: "categoryId",
+            type: { name: 'number', required: true },
+            defaultValue: "",
+            description: 'Set Category Id',
+            table: {
+                category: 'Hover Menu Props',
+            },
+        },
+        subCategories: {
+            name: "subCategories",
+            description: 'Set subCategories Array',
+            table: {
+                category: 'Hover Menu Props',
+            },
+        },
+    },
+    parameters: {
+        docs: {
+            page: HoverMenuCustomDocs
+        }
+    }
 } as Meta;
 
 const Template: Story<HoverMenuProps> = (args: HoverMenuProps) => <HoverMenu {...args} />;

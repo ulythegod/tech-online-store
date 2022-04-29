@@ -6,7 +6,15 @@ import { AdvantagesSectionProps } from 'CustomPropsTypes';
 
 export default {
     component: AdvantagesSection,
-    title: 'Advantages Block/Advantage Section'
+    title: 'Advantages Block/Advantage Section',
+    argTypes: {
+        isBackground: {
+            name: "isBackground",
+            type: { name: 'boolean', required: true },
+            defaultValue: false,
+            description: 'Set isBackground',
+        }
+    }
 } as Meta;
 
 const Template: Story<AdvantagesSectionProps> = (args: AdvantagesSectionProps) => <AdvantagesSection {...args} />;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
+import ProductSectionCustomDocs from './ProductSectionCustomDocs.mdx';
 
 import ProductSection from '../../components/CatalogSections/ProductsSection';
 import { ProductsSectionProps } from 'CustomPropsTypes';
@@ -18,7 +19,34 @@ export default {
             )
             
         }
-    ]
+    ],
+    argTypes: {
+        id: {
+            name: "ID",
+            type: { name: 'number', required: true },
+            defaultValue: "",
+            description: 'Set ID',
+        },
+        name: {
+            name: "Name",
+            type: { name: 'string', required: true },
+            defaultValue: "Name",
+            description: 'Set Name',
+            control: { type: 'text' },
+        },
+        banner: {
+            name: "Banner",
+            type: { name: 'string', required: true },
+            defaultValue: "Banner",
+            description: 'Set Banner',
+            control: { type: 'text' },
+        }
+    },
+    parameters: {
+        docs: {
+            page: ProductSectionCustomDocs
+        }
+    }
 } as Meta;
 
 const Template: Story<ProductsSectionProps> = (args: ProductsSectionProps) => {return <ProductSection {...args} />};
