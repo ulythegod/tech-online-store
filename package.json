@@ -69,6 +69,7 @@
     ]
   },
   "devDependencies": {
+    "@mdx-js/loader": "^2.1.1",
     "@storybook/addon-actions": "^6.4.22",
     "@storybook/addon-controls": "^6.4.22",
     "@storybook/addon-essentials": "^6.4.22",

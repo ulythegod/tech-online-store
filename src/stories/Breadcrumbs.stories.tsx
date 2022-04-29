@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
-import BreadcrumbsCustomDocs from './BreadcrumbsCustomDocs.mdx';
+import { BreadcrumbsCustomDocs } from './BreadcrumbsCustomDocs.mdx';
 
 import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
 import { BreadcrumbsProps } from 'CustomPropsTypes';
