@@ -146,3 +146,9 @@ export type FormItemTextProps = {
     mask?: string,
     isNarrow?: boolean
 }
+
+export type SmallBasketProps = {
+    basketItems: ReactElement<any, any>[],
+    handleMovingToCard: MouseEventHandler<HTMLButtonElement>,
+    subtotal: number
+}

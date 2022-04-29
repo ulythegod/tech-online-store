@@ -1,15 +1,10 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import stylesModule from './smallBasket.module.scss';
 import StoreButton from '../../components/Buttons/StoreButton';
 import { ReactComponent as PayPal } from '../../images/paypal.svg';
+import { SmallBasketProps } from 'CustomPropsTypes';
 
-type Props = {
-    basketItems: ReactElement<any, any>[],
-    handleMovingToCard: Function,
-    subtotal: number
-}
-
-function SmallBasket(props: Props) {
+function SmallBasket(props: SmallBasketProps) {
     return (
         <div className={stylesModule["appearing-basket-top"]}>
             <div className={stylesModule["inner-basket-top"]}>

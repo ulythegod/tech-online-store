@@ -1,8 +1,11 @@
+@use '../../_colors.scss' as colors;
+
 .appearing-basket-top {
     background-color: white;
     display: flex;
     flex-direction: column;
     box-shadow: -1px 1px 13px 4px #02020314;
+    width: 325px;
 }
 
 .inner-basket-top {
