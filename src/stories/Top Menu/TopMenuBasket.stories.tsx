@@ -53,4 +53,4 @@ const basketItems: ReactElement<any, any>[] = [
 export const FullBasket = Template.bind({});
 FullBasket.args = {
     basketItems: basketItems
-}
+};

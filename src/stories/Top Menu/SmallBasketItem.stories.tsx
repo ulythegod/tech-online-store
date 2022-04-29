@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta, Story } from '@storybook/react';
 
-import SmallBasketItem from "../components/TopMenuBasket/SmallBasketItem";
+import SmallBasketItem from "../../components/TopMenuBasket/SmallBasketItem";
 import { SmallBasketItemProps } from 'CustomPropsTypes';
 
 export default {

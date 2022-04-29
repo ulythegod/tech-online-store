@@ -1,7 +1,7 @@
 import React, { ReactElement, useState } from 'react';
 import stylesModule from './topMenuBasket.module.scss';
+import SmallBasket from './SmallBasket';
 import SmallBasketItem from './SmallBasketItem';
-import StoreButton from '../../components/Buttons/StoreButton';
 import { usePopper } from 'react-popper';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -11,7 +11,6 @@ import { selectProductsByIds } from '../../features/products/productsSlice';
 import { productRemoved } from '../../features/product-card/productCardSlice';
 
 import { ReactComponent as BasketLogo } from '../../images/basket.svg';
-import { ReactComponent as PayPal } from '../../images/paypal.svg';
 import { Product } from 'CustomTypes';
 import { TopMenuBasketProps } from 'CustomPropsTypes';
 
@@ -133,36 +132,11 @@ function TopMenuBasket(props: TopMenuBasketProps) {
                     {...attributes.popper}
                 >
                     <div className={stylesModule["arrow"]} ref={setArrowRef}></div>
-                    <div className={stylesModule["appearing-basket-top"]}>
-                        <div className={stylesModule["inner-basket-top"]}>
-                            <span className={stylesModule["basket-title"]}>My Cart</span>
-                            <span className={stylesModule["basket-amount-title"]}>{basketItems.length} item in cart</span>
-                            <StoreButton 
-                                buttonStyle="light-button"
-                                content={"View or Edit Your Cart"}
-                                buttonAction={handleMovingToCard}
-                            />
-                        </div>
-                        <div className="basket-list">
-                            {basketItems}
-                        </div>
-                        <div className={stylesModule["basket-bottom"]}>
-                            <span className={stylesModule["subtotal"]}>Subtotal: <span>${subtotal}</span></span>
-                            <StoreButton 
-                                buttonStyle="blue-button"
-                                content={"Go to Checkout"}
-                            />
-                            <StoreButton 
-                                buttonStyle="yellow-button-header"
-                                content={
-                                    <>
-                                        Check out with
-                                        <PayPal />
-                                    </>
-                                }
-                            />
-                        </div>
-                    </div>
+                    <SmallBasket 
+                        basketItems={basketItems}
+                        handleMovingToCard={handleMovingToCard}
+                        subtotal={subtotal}
+                    />
                 </div>          
             </div>
         </>

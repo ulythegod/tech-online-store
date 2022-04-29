@@ -1,0 +1,50 @@
+.appearing-basket-top {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -1px 1px 13px 4px #02020314;
+}
+
+.inner-basket-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.basket-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.basket-amount-title {
+    color: colors.$grey;
+    font-size: 12px;
+    font-weight: 400px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.basket-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 20px 10px;
+}
+
+.basket-bottom button {
+    margin-top: 10px;
+}
+
+.subtotal {
+    font-size: 14px;
+    color: colors.$grey;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.subtotal span {
+    font-size: 18px;
+    color: colors.$black;
+    font-weight: 600;
+}
