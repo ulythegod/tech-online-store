@@ -1,12 +1,18 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
+import FormItemTextCustomDocs from './FormItemTextCustomDocs.mdx';
 
 import FormItemText from "../components/FormItem/FormItemText";
 import { FormItemTextProps } from 'CustomPropsTypes';
 
 export default {
     component: FormItemText,
-    title: 'Form Item Text'
+    title: 'Form Item Text',
+    parameters: {
+        docs: {
+            page: FormItemTextCustomDocs
+        }
+    }
 } as Meta;
 
 const Template: Story<FormItemTextProps> = (args: FormItemTextProps) => <FormItemText {...args} />;

@@ -1969,7 +1969,7 @@
     "lodash" "^4.17.21"
     "ts-dedent" "^2.0.0"
 
-"@storybook/addon-docs@6.4.22":
+"@storybook/addon-docs@^6.4.22", "@storybook/addon-docs@6.4.22":
   "integrity" "sha512-9j+i+W+BGHJuRe4jUrqk6ubCzP4fc1xgFS2o8pakRiZgPn5kUQPdkticmsyh1XeEJifwhqjKJvkEDrcsleytDA=="
   "resolved" "https://registry.npmjs.org/@storybook/addon-docs/-/addon-docs-6.4.22.tgz"
   "version" "6.4.22"

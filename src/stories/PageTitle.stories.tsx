@@ -1,5 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
+import PageTitleCustomDocs from './PageTitleCustomDocs.mdx';
 
 import PageTitle from '../components/PageTitle/PageTitle';
 import { PageTitleProps } from 'CustomPropsTypes';
@@ -46,6 +47,11 @@ export default {
             },
         },
     },
+    parameters: {
+        docs: {
+            page: PageTitleCustomDocs
+        }
+    }
 } as Meta;
 
 const Template: Story<PageTitleProps> = (args: PageTitleProps) => <PageTitle {...args} />;

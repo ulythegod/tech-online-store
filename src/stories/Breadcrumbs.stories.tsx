@@ -1,5 +1,6 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
+import BreadcrumbsCustomDocs from './BreadcrumbsCustomDocs.mdx';
 
 import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
 import { BreadcrumbsProps } from 'CustomPropsTypes';
@@ -7,6 +8,21 @@ import { BreadcrumbsProps } from 'CustomPropsTypes';
 export default {
     component: Breadcrumbs,
     title: 'Breadcrumbs',
+    parameters: {
+        docs: {
+          page: BreadcrumbsCustomDocs,
+        },
+    },
+    argTypes: {
+        category: {
+            name: "Category",
+            defaultValue: undefined,
+            description: 'Set Category',
+            table: {
+                category: 'Category data for breadcrumbs',
+            },
+        }
+    }
 } as Meta;
 
 const Template: Story<BreadcrumbsProps> = (args: BreadcrumbsProps) => <Breadcrumbs {...args} />;

@@ -1,0 +1,25 @@
+import { Story } from "@storybook/addon-docs";
+import { ArgsTable } from '@storybook/addon-docs';
+import { Meta } from '@storybook/addon-docs';
+
+import PageTitle from '../components/PageTitle/PageTitle';
+
+# Page Title
+
+PageTitle is the primary component. It has three possible states.
+
+- [CatalogPageTitle](#CatalogPageTitle)
+- [ProductPageTitle](#ProductPageTitle)
+- [CheckoutPageTitle](#CheckoutPageTitle)
+
+# Page Title Args 
+<ArgsTable of={PageTitle} />
+
+## Catalog Page Title
+<Story id="page-title--catalog-page-title" />
+
+## Product Page Title
+<Story id="page-title--product-page-title" />
+
+## Checkout Page Title
+<Story id="page-title--checkout-page-title" />
