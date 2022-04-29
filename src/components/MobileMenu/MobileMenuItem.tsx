@@ -1,20 +1,14 @@
-import React, { useState } from "react";
+import React, { ReactElement, useState } from "react";
 import styles from './mobileMenuItem.module.scss';
 import { Link } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { selectCategoryById } from '../../features/categories/categoriesSlice';
-import { Category } from '../../CustomTypes';
+import { MobileMenuItemProps } from 'CustomPropsTypes';
+import { Category } from "CustomTypes";
 
-type Props = {
-    subCategories?: Category[],
-    id: number,
-    name: string,
-    handleOpenSubcategories?: Function
-}
-
-function MobileMenuItem(props: Props) {
+function MobileMenuItem(props: MobileMenuItemProps) {
     const [openSubcategories, setOpenSubcategories] = useState(false);
 
     function handleOpenSubcategories(event: any) {
@@ -23,18 +17,20 @@ function MobileMenuItem(props: Props) {
         setOpenSubcategories(!openSubcategories);
     }
 
-    let category: any = useSelector((state: RootState) => selectCategoryById(state, props.id));     
-    let subCategories: any[] = [];
+    let category: Category | undefined = useSelector((state: RootState) => selectCategoryById(state, props.id));     
+    let subCategories: Category[] = [];
 
     if (props.subCategories) {
         if (props.subCategories.length > 0) {
             subCategories = props.subCategories;
         }        
     } else {
-        subCategories = category.subCategories;
+        if (category) {
+            subCategories = category.subCategories;
+        }        
     }
 
-    let subCategoriesItems: any[] = [];
+    let subCategoriesItems: ReactElement<any, any>[] = [];
 
     if (subCategories) {
         if (subCategories.length > 0) {

@@ -1,3 +1,4 @@
+import { type } from "@testing-library/user-event/dist/type"
 import { Category, Spec } from "CustomTypes"
 import { MouseEventHandler, ReactElement } from "react"
 
@@ -151,4 +152,15 @@ export type SmallBasketProps = {
     basketItems: ReactElement<any, any>[],
     handleMovingToCard: MouseEventHandler<HTMLButtonElement>,
     subtotal: number
+}
+
+export type MobileMenuProps = {
+    categories: Category[]
+}
+
+export type MobileMenuItemProps = {
+    subCategories?: Category[],
+    id: number,
+    name: string,
+    handleOpenSubcategories?: Function
 }
