@@ -2,6 +2,8 @@ import React, { ReactElement } from "react";
 import { Meta, Story } from '@storybook/react';
 import TopMenuBasketCustomDocs from './TopMenuBasketCustomDocs.mdx';
 
+import { userEvent, within } from '@storybook/testing-library';
+
 import TopMenuBasket from "../../components/TopMenuBasket/TopMenuBasket";
 import { TopMenuBasketProps } from 'CustomPropsTypes';
 import SmallBasketItem from "../../components/TopMenuBasket/SmallBasketItem";
@@ -35,6 +37,11 @@ export default {
 const Template: Story<TopMenuBasketProps> = (args: TopMenuBasketProps) => <TopMenuBasket {...args} />;
 
 export const Default = Template.bind({});
+Default.play = async ({ canvasElement }: any) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.hover(canvas.getByRole("basket-amount"));
+};
 
 const basketItems: ReactElement<any, any>[] = [
     <SmallBasketItem
@@ -66,4 +73,10 @@ const basketItems: ReactElement<any, any>[] = [
 export const FullBasket = Template.bind({});
 FullBasket.args = {
     basketItems: basketItems
+};
+
+FullBasket.play = async ({ canvasElement }: any) => {
+    const canvas = within(canvasElement);
+
+    await userEvent.hover(canvas.getByRole("basket-amount"));
 };
