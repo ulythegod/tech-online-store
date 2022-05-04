@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './checkoutForm.module.scss';
-import InputMask from "react-input-mask";
 import StoreButton from 'components/Buttons/StoreButton';
 import FormItemText from '../FormItem/FormItemText';
 

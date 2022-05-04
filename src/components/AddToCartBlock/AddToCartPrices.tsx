@@ -17,7 +17,7 @@ function AddToCartPrices(props: Props) {
 
     const productsIds = useSelector((state: RootState) => selectAllProductsIds(state));
 
-    let idsCounts: number[] = productsIds.reduce(function(stack, value) {
+    let idsCounts: number[] = productsIds.reduce(function(stack: { [x: string]: number; }, value: string | number) {
         return stack[value] ? stack[value]++ : stack[value] = 1, stack;
     }, {});
 

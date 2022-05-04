@@ -1,4 +1,3 @@
-import { type } from "@testing-library/user-event/dist/type"
 import { Category, Spec } from "CustomTypes"
 import { MouseEventHandler, ReactElement } from "react"
 

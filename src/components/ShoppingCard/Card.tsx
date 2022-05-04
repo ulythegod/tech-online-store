@@ -13,11 +13,11 @@ import { Product } from '../../CustomTypes';
 function Card() {
     const productsIds = useSelector((state: RootState) => selectAllProductsIds(state));    
 
-    let productsIdsWithoutDoubles: number[] = productsIds.filter((item, index) => {
+    let productsIdsWithoutDoubles: number[] = productsIds.filter((item: any, index: any) => {
         return productsIds.indexOf(item) === index
     });
 
-    let idsCounts: number[] = productsIds.reduce(function(stack, value) {
+    let idsCounts: number[] = productsIds.reduce(function(stack: { [x: string]: number; }, value: string | number) {
         return stack[value] ? stack[value]++ : stack[value] = 1, stack;
     }, {});
 
