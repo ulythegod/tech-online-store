@@ -12,7 +12,7 @@ test("checks new page number after jump on the next page", () => {
     const overallAmount: number = 28;
     let currentPage: number = 1;
 
-    const catalogPagination = render(<CatalogPagination
+    const view = render(<CatalogPagination
             startIndex={startIndex}
             endIndex={endIndex}
             perPageAmount={perPageAmount}
@@ -21,8 +21,10 @@ test("checks new page number after jump on the next page", () => {
             handlePagination={onClick}
     />);
 
-    fireEvent.click(catalogPagination.getByRole("next-page"));
-    expect(catalogPagination.getByRole("current-page").innerHTML).toBe("1");
+    // eslint-disable-next-line testing-library/prefer-screen-queries
+    fireEvent.click(view.getByRole("next-page"));
+    // eslint-disable-next-line testing-library/prefer-screen-queries
+    expect(view.getByRole("current-page").innerHTML).toBe("1");
     expect(onClick).toHaveBeenCalled();
 });
 
@@ -34,7 +36,7 @@ test("checks last page number", () => {
     const overallAmount: number = 28;
     let currentPage: number = 1;
 
-    const catalogPagination = render(<CatalogPagination
+    const view = render(<CatalogPagination
             startIndex={startIndex}
             endIndex={endIndex}
             perPageAmount={perPageAmount}
@@ -43,5 +45,6 @@ test("checks last page number", () => {
             handlePagination={onClick}
     />);
 
-    expect(catalogPagination.getByRole("last-page-num").innerHTML).toBe("3");
+    // eslint-disable-next-line testing-library/prefer-screen-queries
+    expect(view.getByRole("last-page-num").innerHTML).toBe("3");
 });
